@@ -1,5 +1,30 @@
 <?php
 
+if(!defined("API")) { return false; }
+
+/**
+ * This program was created to make a set of classes to be used for easy
+ * website creation. Usage: simply extend the DB_Object class to make models
+ * and the OUT_Request class to make controllers. HTML is stored in templates
+ * with special tags. See the OUT_Template class for more details.
+ * Made by Tyler Romeo <tylerromeo@gmail.com>
+ *
+ * Copyright (C) 2009 Tyler Romeo
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
  * Interacts with a MySQL or Mssql database to store and retrieve
  * information.
@@ -11,12 +36,6 @@
  */
 class DB_Database
 {
-	/**
-	 * The type of database to use.
-	 * @static
-	 */
-	static $type = "mysql";
-
 	/**
 	 * Array of database functions to be used
 	 * in object.
@@ -89,22 +108,34 @@ class DB_Database
 	/**
 	 * Stores connection data and attempts to connect.
 	 *
-	 * @param string $server    Server address to connect to
-	 * @param string $username  Username for the server
-	 * @param string $password  Password for the server
-	 * @param string $database  Database name to connect to
-	 * @param array  $functions PHP functions used to interact with database
+	 * The database type is given in the parameters. For MySQL and extensions
+	 * with similar function calls can be built into the class. Otherwise, child
+	 * classes will be automatically created if they exist.
+	 *
+	 * @param string  $server    Server address to connect to
+	 * @param string  $username  Username for the server
+	 * @param string  $password  Password for the server
+	 * @param string  $database  Database name to connect to
+	 * @param object &$log       MAIN_Logger object
+	 * @param string  $type      Name of database type
 	 *
 	 * @return bool|object Returns false if connection fails, returns object otherwise
 	 */
-	public function __construct($server, $username, $password, $database, &$log) {
+	public function __construct($server, $username, $password, $database, &$log, $type = 'mysql') {
 		if(!$log instanceof MAIN_Logger) {
+			return false;
+		}
+
+		if(isset(self::$globalfunctions[self::$type])) {
+			$this->functions =  self::$globalfunctions[$type];
+		} elseif(class_exists($classname = "DB_Database_" . ucfirst(strtolower($type)))) {
+			return $classname($server, $username, $password, $database, $log);
+		} else {
 			return false;
 		}
 
 		$this->conndata  =  array($server, $username, $password);
 		$this->dbname    =  $database;
-		$this->functions =  self::$globalfunctions[self::$type];
 		$this->log       =& $log;
 
 		// Real connection attempt starts here.
