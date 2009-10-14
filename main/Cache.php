@@ -55,8 +55,8 @@ class MAIN_Cache
 	 * @param object &$controller MAIN_Controller object
 	 */
 	public function __construct(&$config, &$session) {
-		if(!$config instanceof MAIN_Config ||
-		   !$controller instanceof OUT_Session) {
+		if(!($config instanceof MAIN_Config &&
+		   $session instanceof OUT_Session)) {
 			return false;
 		}
 

@@ -89,9 +89,9 @@ class OUT_Session
 		$plaintext = $this->getIpAddress() . $this->getText('HTTP_USER_AGENT', 'SERVER');
 		$hash      = hash('sha512', $plaintext);
 
-
 		// Check hash if already existant.
-		if(!empty($oldhash = $this->getText('verifyid', 'SESSION')) && $oldhash != $hash) {
+		$oldhash = $this->getText('verifyid', 'SESSION', '');
+		if(!empty($oldhash) && $oldhash != $hash) {
 			// Invalid hash. Get new session.
 			session_write_close();
 			session_regenerate_id();
@@ -116,9 +116,9 @@ class OUT_Session
 	}
 
 	public function getIpAddress() {
-		if (!empty($this->getText('HTTP_CLIENT_IP', 'SERVER')))   {
+		if ($this->getText('HTTP_CLIENT_IP', 'SERVER') != '')   {
 			$ip = $this->getText('HTTP_CLIENT_IP', 'SERVER');
-		} elseif(!empty($this->getText('HTTP_X_FORWARDED_FOR', 'SERVER'))) {
+		} elseif($this->getText('HTTP_X_FORWARDED_FOR', 'SERVER') != '') {
 			$ip = $this->getText('HTTP_X_FORWARDED_FOR', 'SERVER');
 		} else {
 			$ip = $this->getText('REMOTE_ADDR', 'SERVER');
@@ -171,8 +171,8 @@ class OUT_Session
 	 *
 	 * @return string Variable if it exists, $default otherwise
 	 */
-	public function getText($name, $default = '', $from = 'GET') {
-		return (string) $this->getVal($name, $default, $from);
+	public function getText($name, $from = 'GET', $default = '') {
+		return (string) $this->getVal($name, $from, $default);
 	}
 
 	/**
@@ -186,8 +186,8 @@ class OUT_Session
 	 *
 	 * @return int Variable if it exists, $default otherwise
 	 */
-	public function getInt($name, $default = 0, $from = 'GET') {
-		return (int) $this->getVal($name, $default, $from);
+	public function getInt($name, $from = 'GET', $default = 0) {
+		return (int) $this->getVal($name, $from, $default);
 	}
 
 	/**
@@ -201,8 +201,8 @@ class OUT_Session
 	 *
 	 * @return float Variable if it exists, $default otherwise
 	 */
-	public function getFloat($name, $default = 0.0, $from = 'GET') {
-		return (float) $this->getVal($name, $default, $from);
+	public function getFloat($name, $from = 'GET', $default = 0.0) {
+		return (float) $this->getVal($name, $from, $default);
 	}
 
 	/**
@@ -216,7 +216,7 @@ class OUT_Session
 	 *
 	 * @return bool Variable if it exists, $default otherwise
 	 */
-	public function getBool($name, $default = false, $from = 'GET') {
-		return (bool) $this->getVal($name, $default, $from);
+	public function getBool($name, $from = 'GET', $default = false) {
+		return (bool) $this->getVal($name, $from, $default);
 	}
 }

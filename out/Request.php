@@ -53,10 +53,9 @@ class OUT_Request
 	 *
 	 * @param object &$config MAIN_Config object
 	 */
-	public function __construct(&$config, &$db) {
+	public function __construct(&$config, &$db, &$session) {
 		if(!$config  instanceof MAIN_Config ||
-		   !$db      instanceof DB_Database ||
-		   !$session instanceof OUT_Session    ) {
+		   !$db      instanceof DB_Database   ) {
 			return false;
 		}
 		$this->config  =& $config;

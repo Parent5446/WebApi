@@ -6,7 +6,10 @@ define("API", true);
 // Startup the autoloader
 $rootdir = dirname(__FILE__);
 require "$rootdir/main/Autoloader.php";
-MAIN_Autoloader->getInstance();
+MAIN_Autoloader::getInstance($rootdir);
+
+// Load the custom classes
+MAIN_Autoloader::loadFile("$rootdir/custom.php");
 
 // Get the controller and load the configuration.
 $controller = new MAIN_Controller();

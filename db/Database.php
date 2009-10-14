@@ -126,7 +126,7 @@ class DB_Database
 			return false;
 		}
 
-		if(isset(self::$globalfunctions[self::$type])) {
+		if(isset(self::$globalfunctions[$type])) {
 			$this->functions =  self::$globalfunctions[$type];
 		} elseif(class_exists($classname = "DB_Database_" . ucfirst(strtolower($type)))) {
 			return $classname($server, $username, $password, $database, $log);

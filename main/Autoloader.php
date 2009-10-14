@@ -25,12 +25,12 @@ if(!defined("API")) { return false; }
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-class MAIN_Autoload
+class MAIN_Autoloader
 {
 	private static $instance;
 
 	private $rootdir;
-	private $loaded;
+	private $loaded = array();
 	private $classlist = array(
 			'MAIN_Controller' => '/main/Controller.php',
 			'MAIN_Cache'      => '/main/Cache.php',
@@ -55,9 +55,9 @@ class MAIN_Autoload
 	public function loadClass($classname) {
 		if(!array_key_exists($classname, $this->classlist)) {
 			return false;
-		} elseif(array_key_exists($classname, $loaded)) {
+		} elseif(array_key_exists($classname, $this->loaded)) {
 			return true;
-		} self::loadFile($this->classlist[$classname]);
+		} self::loadFile($this->rootdir . $this->classlist[$classname]);
 		$this->loaded[$classname] = true;
 		return true;
 	}
@@ -65,7 +65,7 @@ class MAIN_Autoload
 	public static function loadFile($filename) {
 		if(!file_exists($filename) ||
 		   !is_file(    $filename) ||
-		   !is_readable($filename) {
+		   !is_readable($filename) ) {
 			return false;
 		} require($filename);
 		return true;
@@ -79,5 +79,5 @@ class MAIN_Autoload
 }
 
 function __autoload($classname) {
-	MAIN_Autoload::getInstance()->loadClass($classname);
+	MAIN_Autoloader::getInstance()->loadClass($classname);
 }
