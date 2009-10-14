@@ -255,7 +255,7 @@ class MAIN_Controller
 		}
 
 		$paths = $this->config->getOption('paths');
-		if(($res = $this->logger->export($paths['logfile'])) instanceof MAIN_Error) {
+		if(($res = $this->logger->export($paths['log'])) instanceof MAIN_Error) {
 			if($debug) {
 				@ob_end_flush();
 			} else {

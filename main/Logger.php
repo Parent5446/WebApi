@@ -132,10 +132,11 @@ class MAIN_Logger
 	 * @return int|bool Returns the number of bytes written, or false on error
 	 */
 	public function export($filename) {
+		clearstatcache();
 		// Check the filename and return if already exists AND
 		// is not a normal file.
 		$filename = realpath($filename);
-		if(file_exists($filename) && !is_file($filename)) {
+		if(!file_exists($filename) || !is_file($filename)) {
 			return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Logger::export', 'Log file is not a valid file.', $this);
 		} $file = fopen($filename, 'a');
 

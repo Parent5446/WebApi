@@ -159,7 +159,7 @@ class OUT_Request
 			'doctype' => 'strict',
 			'drop-font-tags' => true,
 			'drop-proprietary-attributes' => true,
-			'enclose-block-text' => true
+			'enclose-block-text' => true,
 			'index-cdata' => true,
 			'output-xhtml' => true,
 			'accessibility-check' => 3,
