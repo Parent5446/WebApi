@@ -73,7 +73,7 @@ class OUT_Request
 	 */
 	public function send() {
 		$html = $this->template->execute();
-		echo $html;
+		echo self::tidy($html);
 	}
 
 	/**
@@ -143,5 +143,30 @@ class OUT_Request
 			return true;
 		} return false;
 	}
-}
 
+	/**
+	 * Parses a given HTML string, then formats and repairs it using
+	 * the Tidy extension in PHP.
+	 *
+	 * @param string $html HTML to tidy up
+	 *
+	 * @return object Tidy object
+	 */
+	private static function tidy($html) {
+		$config = array(
+			'add-xml-space' => true,
+			'clean' => true,
+			'doctype' => 'strict',
+			'drop-font-tags' => true,
+			'drop-proprietary-attributes' => true,
+			'enclose-block-text' => true
+			'index-cdata' => true,
+			'output-xhtml' => true,
+			'accessibility-check' => 3,
+			'indent' => 'auto',
+			'sort-attributes' => 'alpha' );
+		$tidy = tidy_parse_string($html, $config);
+		$tidy->cleanRepair();
+		return $tidy;
+	}
+}
