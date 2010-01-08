@@ -47,6 +47,7 @@ if(!defined("API")) { return false; }
  *  * trim=4          - Trim the value to the given number of characters
  *  * padding=2       - Pad the value to the given number of characters
  *  * padvalue=\n     - Use the given value to pad the value rather than spaces
+ *  * template        - Instead of inserting data from the database, it inserts another template
  *
  * @package API
  * @author Tyler Romeo <tylerromeo@gmail.com>
@@ -152,7 +153,7 @@ class OUT_Template
 		$whole      = $matches[0];
 		$rawoptions = implode(',', $matches[1]);
 		$tagname    = trim($matches[2]);
-		$value      = $this->values[$tagname];
+		$value      = isset($this->values[$tagname]) ? $this->values[$tagname] : false;
 
 		// Put options into proper array
 		$options = array();
@@ -165,6 +166,14 @@ class OUT_Template
 			} else {
 				$options[$temp[0]] = true;
 			}
+		}
+
+		// If the template option is set, stop here and load the second template.
+		if(array_key_exists('template' $options)) {
+			$filename = dirname($this->filename) . "/$tagname.template";
+			$template = new OUT_Template($filename);
+			$value    = $template->execute();
+			$options['noescape'] = true
 		}
 
 		// If array option is set, value should be an array of items.
@@ -180,6 +189,7 @@ class OUT_Template
 				}
 			}
 			$options['noescape'] = true;
+			if(!is_array($value)) { return false; }
 			$value = implode($separator, $value);
 		}
 
