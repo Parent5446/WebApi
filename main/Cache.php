@@ -135,8 +135,9 @@ class MAIN_Cache
 	 * @return string Valid filename
 	 */
 	private function getCacheFilename() {
-		$paths     = $this->config->getOption('paths');
-		$uri       = $this->session->getText('REQUEST_URI', 'SERVER');
+		$paths = $this->config->getOption('paths');
+		$path  = isset($paths['cache']) ? $paths['cache'] : "$rootdir/cache";
+		$uri   = $this->session->getText('REQUEST_URI', 'SERVER');
 		return $paths['cache'] . '/' . $uri;
 	}
 }

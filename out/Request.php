@@ -111,8 +111,9 @@ class OUT_Request
 	 * @return object Template for the request
 	 */
 	protected function getTemplate() {
+		global $rootdir;
 		$paths        = $this->config->getOption('paths');
-		$dirname      = $paths['templates'];
+		$dirname      = isset($paths['templates']) ? $paths['templates'] : "$rootdir/templates";
 		$templatename = strtolower(get_class($this));
 		$template     = new OUT_Template("$dirname/$templatename.template");
 
@@ -138,7 +139,8 @@ class OUT_Request
 		}
 
 		$paths       = $this->config->getOption('paths');
-		$destination = $paths['uploads'] . '/' . addslashes($name);
+		$uploaddir   = isset($paths['uploads']) ? $paths['uploads'] : "$rootdir/uploads";
+		$destination = $uploaddir . '/' . addslashes($name);
 		if (move_uploaded_file($_FILES[$source]['tmp_name'], $destination)) {
 			return true;
 		} return false;

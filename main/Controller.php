@@ -154,6 +154,16 @@ class MAIN_Controller
 		$this->configfile = $filename;
 		$this->dbopts     = $config->getOption('database');
 		$this->actionlist = $config->getOption('actions' );
+
+		foreach($config->getOption('models') as $name => $options) {
+			$options = explode(',', $options);
+			foreach($options as &$option) { $option = trim($option); }
+
+			$protect = in_array("protect", $options);
+			$parent  = in_array("parent",  $options);
+
+			$this->newDatabaseObject($name, $protect, $parent);
+		}
 	}
 
 	/**
@@ -241,8 +251,7 @@ class MAIN_Controller
 	 * @return bool True on success, false on error
 	 */
 	public function cleanup() {
-		$globals = $this->config->getOption('globals');
-		$debug = $globals['debug'];
+		$debug = $this->config->getOption('debug');
 		if(($res = $this->database->close()) instanceof MAIN_Error) {
 			if($debug) {
 				@ob_end_flush();
@@ -255,7 +264,8 @@ class MAIN_Controller
 		}
 
 		$paths = $this->config->getOption('paths');
-		if(($res = $this->logger->export($paths['log'])) instanceof MAIN_Error) {
+		$logpath = isset($paths['log']) ? $paths['log'] : "$rootdir/log";
+		if(($res = $this->logger->export($logpath)) instanceof MAIN_Error) {
 			if($debug) {
 				@ob_end_flush();
 			} else {
@@ -288,5 +298,21 @@ class MAIN_Controller
 	 */
 	public function getError() {
 		return isset($this->error) ? $this->error : false;
+	}
+
+	/**
+	 * Create a new database class definition with the given options.
+	 *
+	 * @param string $name    Name of the class to create
+	 * @param bool   $protect Whether to allow password protection
+	 * @param bool   $parent  Whether to allow child objects
+	 */
+	private function newDatabaseObject($name, $protect, $parent) {
+		$protect = (bool) $protect;
+		$parent  = (bool) $parent;
+		$exec = "class $name extends DB_Object {\n" .
+		        "\tprivate static \$parent = $parent;\n" .
+		        "\tprivate static \$enableprotect = $protect;\n}";
+		eval($exec);
 	}
 }

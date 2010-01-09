@@ -1,0 +1,48 @@
+;; Enable debug messages
+;debug = true
+
+;; Database information, including server,
+;; username, password, and database.
+[database]
+server   = localhost:3390
+username = root
+password = test123
+database = my_db
+
+;; Map of different actions (give to the script
+;; by the user using GET) to different controllers
+;; to handle those actions.
+[actions]
+action1 = StaticPage
+action2 = Login
+action3 = Register
+default = action1
+
+;; List of custom models. The name is mapped to a list
+;; of options. The protect option enables password
+;; protection. The parent object allows the object to take
+;; on child objects. It is valid to give no options.
+[models]
+User    = protect,parent
+Page    = protect
+Video   = parent
+Comment =
+
+;; Cache options. Use "action.actionname" replacing actionnname
+;; with one of the actions above to enable to disable caching for
+;; that action. The expires option is how long until a
+;; cache expires in seconds.
+[cache]
+action.action1 = true
+action.action2 = false
+action.action3 = false
+expires = 3600
+
+;; Custom paths to the cache, templates, log, and uploads.
+;; The section MUST exist, but all of the entries can be
+;; left out, because they have default values.
+[paths]
+cache = /path/to/cache
+templates = /path/to/templates
+log = /path/to/log
+uploads = /path/to/uploads
