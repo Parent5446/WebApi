@@ -2,6 +2,7 @@
 
 // Entry point for script.
 define("API", true);
+define("ID", uniqid("webapi_", true);
 
 // Startup the autoloader
 $rootdir = dirname(__FILE__);
