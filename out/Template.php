@@ -169,11 +169,11 @@ class OUT_Template
 		}
 
 		// If the template option is set, stop here and load the second template.
-		if(array_key_exists('template' $options)) {
+		if(array_key_exists('template', $options)) {
 			$filename = dirname($this->filename) . "/$tagname.template";
 			$template = new OUT_Template($filename);
 			$value    = $template->execute();
-			$options['noescape'] = true
+			$options['noescape'] = true;
 		}
 
 		// If array option is set, value should be an array of items.

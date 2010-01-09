@@ -159,10 +159,12 @@ class MAIN_Controller
 			$options = explode(',', $options);
 			foreach($options as &$option) { $option = trim($option); }
 
-			$protect = in_array("protect", $options);
-			$parent  = in_array("parent",  $options);
-
-			$this->newDatabaseObject($name, $protect, $parent);
+			if(is_array($options)) {
+				$protect = in_array("protect", $options);
+				$parent  = in_array("parent",  $options);
+			} else {
+				$protect = $parent = false;
+			} $this->newDatabaseObject($name, $protect, $parent);
 		}
 	}
 
@@ -251,6 +253,7 @@ class MAIN_Controller
 	 * @return bool True on success, false on error
 	 */
 	public function cleanup() {
+		global $rootdir;
 		$debug = $this->config->getOption('debug');
 		if(($res = $this->database->close()) instanceof MAIN_Error) {
 			if($debug) {
@@ -307,9 +310,9 @@ class MAIN_Controller
 	 * @param bool   $protect Whether to allow password protection
 	 * @param bool   $parent  Whether to allow child objects
 	 */
-	private function newDatabaseObject($name, $protect, $parent) {
-		$protect = (bool) $protect;
-		$parent  = (bool) $parent;
+	private function newDatabaseObject($name, $protect = false, $parent = false) {
+		$protect = (int) $protect;
+		$parent  = (int) $parent;
 		$exec = "class $name extends DB_Object {\n" .
 		        "\tprivate static \$parent = $parent;\n" .
 		        "\tprivate static \$enableprotect = $protect;\n}";
