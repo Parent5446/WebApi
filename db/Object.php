@@ -91,6 +91,7 @@ class DB_Object
 	 */
 	public static function newFromId(&$db, $id) {
 		$info = self::loadOld($db, 'id', $id);
+		if(empty($info)) { return false; }
 		return new self($db, $id, $info['name'], $info['password'],
 		                 $info['hash'], $info['hashnum'], unserialize($info['profile']));
 	}
@@ -106,7 +107,8 @@ class DB_Object
 	 */
 	public static function newFromName(&$db, $name) {
 		$info = self::loadOld($db, 'name', $name);
-		return new self($db, $id, $info['name'], $info['password'],
+		if(empty($info)) { return false; }
+		return new self($db, $info['id'], $name, $info['password'],
 		                 $info['hash'], $info['hashnum'], unserialize($info['profile']));
 	}
 
@@ -122,9 +124,10 @@ class DB_Object
 	 */
 	public static function newFromDetail(&$db, $column, $value) {
 		$info = self::loadOld($db, $column, $value, true);
+		if(empty($info)) { return false; }
 		$retval = array();
 		foreach($info as $row) {
-			$retval[] = new self($db, $id, $info['name'], $info['password'],
+			$retval[] = new self($db, $info['id'], $info['name'], $info['password'],
 		                        $info['hash'], $info['hashnum'], unserialize($info['profile']));
 		} return $retval;
 	}

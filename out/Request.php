@@ -156,13 +156,12 @@ class OUT_Request
 	 */
 	private static function tidy($html) {
 		$config = array(
-			'add-xml-space' => true,
 			'clean' => true,
 			'doctype' => 'strict',
 			'drop-font-tags' => true,
 			'drop-proprietary-attributes' => true,
 			'enclose-block-text' => true,
-			'index-cdata' => true,
+			'indent-cdata' => true,
 			'output-xhtml' => true,
 			'accessibility-check' => 3,
 			'indent' => 'auto',

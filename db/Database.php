@@ -141,8 +141,8 @@ class DB_Database
 		// Real connection attempt starts here.
 		$this->conn      = false;
 		$this->connect();
-		if($this->conn === false) {
-			return false;
+		if($this->conn instanceof MAIN_Error) {
+			return $this->conn;
 		}
 	}
 
