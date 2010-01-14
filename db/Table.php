@@ -58,10 +58,6 @@ class DB_Table
 	 * @param string  $tablename Name of the table to use
 	 */
 	public function __construct(&$database, $tablename) {
-		if(!$log instanceof MAIN_Logger) {
-			return false;
-		}
-
 		$this->log =& $database->getLog();
 
 		if(!$database instanceof DB_Database) {

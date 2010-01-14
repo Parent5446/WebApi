@@ -40,13 +40,13 @@ class OUT_Request
 	 * A valid MAIN_Config object.
 	 * @private
 	 */
-	private $config;
+	protected $config;
 
 	/**
 	 * A valid DB_Database object.
 	 * @private
 	 */
-	private $db;
+	protected $db;
 
 	/**
 	 * Store the configuration and database objects.

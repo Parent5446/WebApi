@@ -1,3 +1,3 @@
 * Put in commands to use the Logger in appropriate places.
-* Export database objects into the configuration file.
 * Create easy-to-use functions that might be helpful in writing controllers.
+* Integrate loadOld and loadNew database object functions into object context.

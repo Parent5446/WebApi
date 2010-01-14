@@ -72,7 +72,7 @@ class DB_Object
 	 * Requires the proper client-side scripts to be in place.
 	 * @private
 	 */
-	private $clienthashing = true;
+	private $clienthashing = false;
 
 	/**
 	 * A DB_Table object to be used for all database queries.
@@ -155,7 +155,7 @@ class DB_Object
 			return $error;
 		}
 
-		$info = self::loadOld(&$db, 'name', $username);
+		$info = self::loadNew($db, $info);
 		return new self($db, $id, $info['name'], $info['password'],
 		                 $info['hash'], $info['hashnum'], unserialize($info['profile']));
 	}
@@ -389,7 +389,7 @@ class DB_Object
 			return false;
 		}
 
-		$table = $db->getTable(strtolower(get_class($this)));
+		$table = $db->getTable(strtolower(get_called_class()));
 		$res   = $table->select('*', array($column => $value));
 
 		if($multiple) {
@@ -417,11 +417,10 @@ class DB_Object
 
 		// Check for duplicates first.
 		if(count(self::loadOld($db, 'name', $info['name'], true)) > 0) {
-			return new MAIN_Error(MAIN_Error::User, get_class($this) . '::loadNew',
-			                       "The name '{$info['name']}' is already taken." );
+			return false;
 		}
 
-		$table  = $db->getTable(strtolower(get_class($this)));
+		$table  = $db->getTable(strtolower(get_called_class()));
 		return $table->insert($info);
 	}
 }

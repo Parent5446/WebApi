@@ -124,10 +124,10 @@ class OUT_Template
 	 * @return string Template with substituted tags
 	 */
 	public function execute() {
-		$pattern  = '<!([a-zA-Z0-9]*)\[\[([a-zA-Z0-9]+)\]\]!>';
+		$pattern  = '(<!([a-zA-Z0-9]*)\[\[([a-zA-Z0-9]+)\]\]>)';
 		$callback = array(&$this, 'replaceTag');
 		$subject  = $this->template;
-		return preg_replace_callback($pattern, $callback, $subject);
+		print preg_replace_callback($pattern, $callback, $subject);
 	}
 
 	/**
@@ -151,7 +151,7 @@ class OUT_Template
 		//    tagname    - Name of the tag
 		//    value      - Value corresponding to the tag name
 		$whole      = $matches[0];
-		$rawoptions = implode(',', $matches[1]);
+		$rawoptions = strpos($matches[1], ',') ? implode(',', $matches[1]) : array();
 		$tagname    = trim($matches[2]);
 		$value      = isset($this->values[$tagname]) ? $this->values[$tagname] : false;
 
