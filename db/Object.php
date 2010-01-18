@@ -123,7 +123,7 @@ class DB_Object
 				$info['hasnum'] = 1000;
 			} $this->updateToDatabase();
 		} $this->log->log(MAIN_Logger::NOTICE, get_class() . '::__construct',
-		                  "Creating new object with info: " . var_dump($info);
+		                  "Creating new object with info: " . strtr(var_export($info, true), "\n", ''));
 	}
 
 	/**

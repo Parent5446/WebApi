@@ -314,8 +314,8 @@ class MAIN_Controller
 		$protect = (int) $protect;
 		$parent  = (int) $parent;
 		$exec = "class $name extends DB_Object {\n" .
-		        "\tprivate static \$parent = $parent;\n" .
-		        "\tprivate static \$enableprotect = $protect;\n}";
+		        "\tprotected static \$parent = $parent;\n" .
+		        "\tprotected static \$enableprotect = $protect;\n}";
 		eval($exec);
 	}
 }

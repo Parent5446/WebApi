@@ -160,7 +160,7 @@ class DB_Database
 		if(is_resource($this->conn)) {
 			$this->close();
 		} $this->log->log(MAIN_Logger::INFO, 'DB_Database::connect',
-		                 'Starting database connection with connection data: ' . var_dump($this->conndata));
+		                 'Starting database connection with connection data: ' . strtr(var_export($this->conndata, true), "\n", ''));
 
 		// Check for connect function and connect to server.
 		if(!function_exists($this->functions["connect"])) {
