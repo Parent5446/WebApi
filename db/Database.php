@@ -131,7 +131,7 @@ class DB_Database
 		} elseif(class_exists($classname = "DB_Database_" . ucfirst(strtolower($type)))) {
 			return $classname($server, $username, $password, $database, $log);
 		} else {
-			return false;
+			throw new MAIN_Error(MAIN_Error::ERROR, 'DB_Database::__construct', 'Invalid database type.', $log);
 		}
 
 		$this->conndata  =  array($server, $username, $password);
@@ -142,7 +142,7 @@ class DB_Database
 		$this->conn      = false;
 		$this->connect();
 		if($this->conn instanceof MAIN_Error) {
-			return $this->conn;
+			throw $this->conn;
 		}
 	}
 
@@ -159,7 +159,8 @@ class DB_Database
 		 */
 		if(is_resource($this->conn)) {
 			$this->close();
-		}
+		} $this->log->log(MAIN_Logger::INFO, 'DB_Database::connect',
+		                 'Starting database connection with connection data: ' . var_dump($this->conndata));
 
 		// Check for connect function and connect to server.
 		if(!function_exists($this->functions["connect"])) {
@@ -210,6 +211,7 @@ class DB_Database
 	 */
 	public function close() {
 		// If there is no connection, return.
+		$this->log->log(MAIN_Logger::INFO, 'DB_Database::close', 'Closing connection.');
 		if(!is_resource($this->conn)) {
 			return new MAIN_Error(MAIN_Error::NOTICE, 'DB_Database::connect', 'Closing connection that never opened.', $this->log);
 			return true;
@@ -236,6 +238,11 @@ class DB_Database
 	                         resource for SELECT queries.
 	 */
 	public function query($sql) {
+		$curtime = gmdate('c');
+		$sql = "/* Time: $curtime */ /* DB: {$this->dbname} */ " . $sql;
+
+		$this->log->log(MAIN_Logger::INFO, 'DB_Database::query', "Making query: $sql");
+
 		// Check for a connection first.
 		if(!is_resource($this->conn)) {
 			return new MAIN_Error(MAIN_Error::WARNING, 'DB_Database::query', 'Database not connected yet.', $this->log);
@@ -245,9 +252,6 @@ class DB_Database
 		if(!function_exists($this->functions["query"])) {
 			return new MAIN_Error(MAIN_Error::ERROR, 'DB_Database::query', 'Query function does not exist.', $this->log);
 		}
-
-		$curtime = gmdate('c');
-		$sql = "/* Time: $curtime */ /* DB: {$this->dbname} */ " . $sql;
 
 		$retval = call_user_func($this->functions["query"], $sql, $this->conn);
 
@@ -312,13 +316,15 @@ class DB_Database
 	 * @return object|bool Returns Table object, or false if table does not exist
 	 */
 	public function getTable($tablename) {
+		$this->log->log(MAIN_Logger::INFO, 'DB_Database::getTable', "Getting table $tablename.");
 		if($this->tables[$tablename] instanceof DB_Table) {
 			return $this->tables[$tablename];
 		} elseif($this->tables[$tablename] === false) {
 			$this->tables[$tablename] = new DB_Table($this, $tablename);
 			return $this->tables[$tablename];
 		} else {
-			return false;
+			return new MAIN_Error(MAIN_Error::WARNING, 'DB_Database::getTable',
+			                      "$tablename does not exist.");
 		}
 	}
 

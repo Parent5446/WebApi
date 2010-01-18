@@ -43,7 +43,7 @@ class DB_Object
 	 * @static
 	 * @private
 	 */
-	private static $enableprotect = true;
+	protected static $enableprotect = true;
 
 	/**
 	 * Determines whether the object can take in other objects as its children. When
@@ -51,20 +51,20 @@ class DB_Object
 	 * @static
 	 * @private
 	 */
-	private static $parent = true;
+	protected static $parent = true;
 
 	/**
 	 * Stores information about the object that has been retrieved
 	 * from the database.
 	 * @private
 	 */
-	private $info = array();
+	protected $info = array();
 
 	/**
 	 * Determines whether to enable password protection on a per-object basis.
 	 * @private
 	 */
-	private $protect       = true;
+	protected $protect       = true;
 
 	/**
 	 * Whether to enable client hashing, when a password is entered by a user,
@@ -72,93 +72,13 @@ class DB_Object
 	 * Requires the proper client-side scripts to be in place.
 	 * @private
 	 */
-	private $clienthashing = false;
+	protected $clienthashing = false;
 
 	/**
 	 * A DB_Table object to be used for all database queries.
 	 * @private
 	 */
-	private $table;
-
-	/**
-	 * Create a new DB_Object object by retrieving information from the database
-	 * associated with the given ID.
-	 *
-	 * @param object &$db A valid DB_Database object used for database queries
-	 * @param int     $id The ID referring to the object
-	 *
-	 * @return object A new DB_Object
-	 */
-	public static function newFromId(&$db, $id) {
-		$info = self::loadOld($db, 'id', $id);
-		if(empty($info)) { return false; }
-		return new self($db, $id, $info['name'], $info['password'],
-		                 $info['hash'], $info['hashnum'], unserialize($info['profile']));
-	}
-
-	/**
-	 * Create a new DB_Object object by retrieving information from the database
-	 * associated with the given name.
-	 *
-	 * @param object &$db   A valid DB_Database object used for database queries
-	 * @param int     $name The name referring to the object
-	 *
-	 * @return object A new DB_Object
-	 */
-	public static function newFromName(&$db, $name) {
-		$info = self::loadOld($db, 'name', $name);
-		if(empty($info)) { return false; }
-		return new self($db, $info['id'], $name, $info['password'],
-		                 $info['hash'], $info['hashnum'], unserialize($info['profile']));
-	}
-
-	/**
-	 * Create a new DB_Object object by retrieving information from the database
-	 * associated with the given column value in the database.
-	 *
-	 * @param object &$db     A valid DB_Database object used for database queries
-	 * @param string  $column Column of the field to look at
-	 * @param string  $value  Value of the field to look for
-	 *
-	 * @return array Array of database objects matching the criteria
-	 */
-	public static function newFromDetail(&$db, $column, $value) {
-		$info = self::loadOld($db, $column, $value, true);
-		if(empty($info)) { return false; }
-		$retval = array();
-		foreach($info as $row) {
-			$retval[] = new self($db, $info['id'], $info['name'], $info['password'],
-		                        $info['hash'], $info['hashnum'], unserialize($info['profile']));
-		} return $retval;
-	}
-
-	/**
-	 * Create a new DB_Object object by taking the given information and creating
-	 * a new entry in the database.
-	 *
-	 * @param object &$db            A valid DB_Database object used for database queries
-	 * @param int     $name          The name for the new object
-	 * @param string  $password      The password for the new object, if applicable
-	 * @param bool    $clienthashing Whether hash chaining should be enabled
-	 *
-	 * @return object A new DB_Object
-	 */
-	public static function newFromNew(&$db, $name, $password = "", $clienthashing = false, $profile = array()) {
-		$password = empty($password) ? "" : self::hashPassword($password);
-		$hash     = !empty($password) && $clienthashing ? self::hashPassword($password, 1000) : "";
-		$info = array( 'name'     => $name,
-		               'password' => $password,
-		               'hash'     => $hash,
-		               'hashnum'  => empty($hash) ? -1 : 1000,
-		               'profile'  => serialize($profile) );
-		if($error = self::loadNew($db, $info) instanceof MAIN_Error) {
-			return $error;
-		}
-
-		$info = self::loadNew($db, $info);
-		return new self($db, $id, $info['name'], $info['password'],
-		                 $info['hash'], $info['hashnum'], unserialize($info['profile']));
-	}
+	protected $table;
 
 	/**
 	 * Store the database and given information within the object. If an empty password
@@ -173,26 +93,37 @@ class DB_Object
 	 * @param int     $curpassnum The number of hash iterations for the $curpass
 	 * @param array   $profile    Any information specific to the object from the database
 	 */
-	protected function __construct(&$db, $id, $name, $origpass, $curpass = "", $curpassnum = -1, $profile = array()) {
-		if(!is_int($id) ||
-		   !is_string($name) ||
-		   !is_string($origpass) ||
-		   !$db instanceof DB_Database) {
-			return new MAIN_Error(MAIN_Error::WARNING, get_class($this) . '::__construct', 'Parameter is not the correct data type.', $this->log);
+	protected function __construct(&$db, &$config, $column, $value, $profile = array(), $new = false) {
+		// Check the parmeters.
+		if(!is_string($column) ||
+		   !is_string($value) ||
+		   !$db instanceof DB_Database ||
+		   !config instanceof MAIN_Config) {
+			return new MAIN_Error(MAIN_Error::WARNING, get_class($this) .
+			       '::__construct', 'Parameter is not the correct data type.', $this->log);
 		}
 
+		// Store local table, log, and options.
 		$this->table         =& $db->getTable(strtolower(get_class($this)));
 		$this->log           =& $db->getLog();
-		$this->protect       = empty($origpass) || !self::$enableprotect;
-		$this->clienthashing =  ($curpassnum == -1 && $curpass == "");
+		$this->protect       =  self::$enableprotect;
+		$this->clienthashing =  $config->getOption('clienthashing');
 
-		$this->info = array(
-			'id' => $id,
-			'name'     => $username,
-			'password' => $password,
-			'passhash' => array($curpassnum, $curpass),
-			'profile'  => $profile
-		);
+		// Initiate the object.
+		if(!$new) {
+			// Object is old, get info from database.
+			$this->updateFromDatabase($column, $value);
+		} else {
+			// Object is new; put together info array and push to database.
+			$this->info = array();
+			$info[$column] = $value;
+			$info = array_merge($info, $profile);
+			if($this->clienthashing) {
+				$info['hash'  ] = self::hashPassword($info['password'], 1000);
+				$info['hasnum'] = 1000;
+			} $this->updateToDatabase();
+		} $this->log->log(MAIN_Logger::NOTICE, get_class() . '::__construct',
+		                  "Creating new object with info: " . var_dump($info);
 	}
 
 	/**
@@ -317,7 +248,7 @@ class DB_Object
 	 *
 	 * @param string $new The new plaintext password
 	 *
-	 * @return bool True on success, false on error
+	 * @return bool True on success, false on failure.
 	 */
 	public function changePassword($new) {
 		if(!$this->protect || !self::$enableprotect) {
@@ -333,8 +264,7 @@ class DB_Object
 
 		$this->info['password'] = $password;
 		$this->info['passhash'] = array(1000, $hash);
-
-		return $this->table->update($row, $where);
+		return $this->updateToDatabase();
 	}
 
 	/**
@@ -358,6 +288,37 @@ class DB_Object
 	}
 
 	/**
+	 * Get properties about the object from the database.
+	 *
+	 * @param string $column Column to search for info from.
+	 * @param string $value  Value in the column to match the object to.
+	 */
+	public function updateFromDatabase($column, $value) {
+		if(!$db instanceof DB_Database) {
+			return false;
+		}
+
+		$table = $db->getTable(strtolower(get_called_class()));
+		$res   = $table->select('*', array($column => $value));
+
+		$this->info = $table->result($res);
+	}
+
+	/**
+	 * Update properties about the object to the database.
+	 *
+	 * @return bool True on success, false on failure.
+	 */
+	public function updateToDatabase() {
+		if(!$db instanceof DB_Database) {
+			return false;
+		}
+
+		$table  = $db->getTable(strtolower(get_class()));
+		return $table->insert($this->info);
+	}
+
+	/**
 	 * Hash a given plaintext password a given number of times (1 hash is the default).
 	 *
 	 * @param string $password   The password to hash
@@ -369,59 +330,6 @@ class DB_Object
 		for($i = 0; $i < $iterations; $i++) {
 			$hash = hash('sha512', $password);
 		} return $hash;
-	}
-
-	/**
-	 * Retrieves a row from the database that has a given value
-	 * in a given column. For use by the static newFrom* functions
-	 * to retrieve information about an object. The table used is
-	 * determined by the lowercase version of the class name.
-	 *
-	 * @param object &$db      A valid DB_Database object for database queries
-	 * @param string  $column  The column to be used in the WHERE statement
-	 * @param string  $value   The value to be used in the WHERE statement
-	 * @param bool    $mutiple Whether to expect multiple rows or now
-	 *
-	 * @return array Row from the database or an array of rows if applicable
-	 */
-	protected static function loadOld(&$db, $column, $value, $multiple = false) {
-		if(!$db instanceof DB_Database) {
-			return false;
-		}
-
-		$table = $db->getTable(strtolower(get_called_class()));
-		$res   = $table->select('*', array($column => $value));
-
-		if($multiple) {
-			$retval = array();
-			while($row = $table->result($res)) {
-				$retval[] = $row;
-			} return $retval;
-		} return $table->result($res);
-	}
-
-	/**
-	 * Inserts a new row in the database with information about an object.
-	 * For use by the static newFrom* functions to store information about an object.
-	 * The table used is determined by the lowercase version of the class name.
-	 *
-	 * @param object &$db    A valid DB_Database object for database queries
-	 * @param array    $info The row to be inserted into the database
-	 *
-	 * @return bool True on success, false on error
-	 */
-	protected static function loadNew(&$db, $info) {
-		if(!$db instanceof DB_Database) {
-			return false;
-		}
-
-		// Check for duplicates first.
-		if(count(self::loadOld($db, 'name', $info['name'], true)) > 0) {
-			return false;
-		}
-
-		$table  = $db->getTable(strtolower(get_called_class()));
-		return $table->insert($info);
 	}
 }
 
