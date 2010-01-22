@@ -106,6 +106,7 @@ class DB_Object
 		// Store local table, log, and options.
 		$this->table         =& $db->getTable(strtolower(get_class($this)));
 		$this->log           =& $db->getLog();
+		$this->config        =& $config;
 		$this->protect       =  self::$enableprotect;
 		$this->clienthashing =  $config->getOption('clienthashing');
 
@@ -145,13 +146,62 @@ class DB_Object
 	}
 
 	/**
-	 * Get the profile of the object.
+	 * Get any property of an object, checking if the object
+	 * is allowed to access the property first.
 	 *
-	 * @return array The profile of the object
+	 * The permission to get the value of any property is in the form of
+	 * "$classname-get-$name", where $classname is the name of this object,
+	 * and $name is the property being accessed. However, if the object has:
+	 *  * "*-get-$name" (get $name from any object),
+	 *  * "$classname-*-$name" (do anything to $name for this class),
+	 *  * "$classname-get-*" (get anything from the object)
+	 * or any combination of those, the request will also be allowed.
+	 *
+	 * @param object $obj  A copy of the calling object (just give $this)
+	 * @param string $name Name of the property to access
+	 *
+	 * @return mixed The requested property if allowed, MAIN_Error if not allowed
 	 */
-	public function getProfile() {
-		return $this->info['profile'];
+	public function getInfo($obj, $name) {
+		$classname   = strtolower(get_class());
+		$srcclass    = get_class($obj);
+
+		if($obj->isAllowed($classname, 'get', $property) ||
+		   !$this->protect || !self::$enableprotect ) {
+			return $this->info[$name];
+		} return new MAIN_Error(MAIN_Error::WARNING, "$classname::getInfo",
+		                        "$srcclass tried to access $name but was disallowed.");
 	}
+
+	/**
+	 * Set any property of an object, checking if the object
+	 * is allowed to access the property first.
+	 *
+	 * The permission to set the value of any property is in the form of
+	 * "$classname-set-$name", where $classname is the name of this object,
+	 * and $name is the property being accessed. However, if the object has:
+	 *  * "*-set-$name" (get $name from any object),
+	 *  * "$classname-*-$name" (do anything to $name for this class),
+	 *  * "$classname-set-*" (get anything from the object)
+	 * or any combination of those, the request will also be allowed.
+	 *
+	 * @param object $obj   A copy of the calling object (just give $this)
+	 * @param string $name  Name of the property to give a new value
+	 * @param string $value Value to give the property
+	 *
+	 * @return mixed The requested property if allowed, MAIN_Error if not allowed
+	 */
+	public function putInfo($obj, $property, $value) {
+		$classname   = strtolower(get_class());
+		$srcclass    = get_class($obj);
+
+		if($obj->isAllowed($classname, 'set', $property) ||
+		   !$this->protect || !self::$enableprotect  ) {
+			$this->info[$name] = $value;
+			return true;
+		} return new MAIN_Error(MAIN_Error::WARNING, "$classname::putInfo",
+		                        "$srcclass tried to set $name to $value but was disallowed.");
+	}		
 
 	/**
 	 * Merges a child database object with the current object.
@@ -174,10 +224,10 @@ class DB_Object
 		if(isset($this->profile[$classname]) && is_array($this->profile[$classname])) {
 			$this->profile[$classname][] = $child->getProfile();
 		} else {
-			$this->profile[$classname] = array('id'      => $child->getId(),
-		                                           'name'    => $child->getName(),
-		                                           'profile' => $child->getProfile(),
-		                                           'object'  => &$child);
+			$this->profile[$classname] = array(array('id'      => $child->getId(),
+		                                                 'name'    => $child->getName(),
+		                                                 'profile' => $child->getProfile(),
+		                                                 'object'  => &$child));
 		} return true;
 	}
 
@@ -288,6 +338,55 @@ class DB_Object
 	}
 
 	/**
+	 * Check if the object is allowed to do a certain action.
+	 *
+	 * Checks the groups of the object, and uses MAIN_Config to compile
+	 * an array of permissions from those groups. Then checks if the
+	 * $action is in the array.
+	 *
+	 * The format of a permission is "$classname-$action-$property", where
+	 * $classname is the object being accessed, $action is either 'get' or
+	 * 'set', and $property is the name of the property. By having that
+	 * permission, the action is allowed. In addition, the asterisk wildcard
+	 * can be used in any field to give permission for any class, any action,
+	 * any property, or a combination of the three.
+	 *
+	 * @param string $action Requested action
+	 *
+	 * @return bool True if allowed, false otherwise
+	 */
+	public function isAllowed($classname, $action, $property) {
+		if(empty($this->auth)) {
+			$autharray = $this->config->getOption('auth');
+			$groups = explode(',', $this->info['auth']);
+			$permissions = array();
+			foreach($groups as $group) {
+				if(array_key_exists($group, $autharray)) {
+					$permissions = array_merge($permissions, $autharray[$group]);
+				}
+			} $this->auth = $permissions;
+		}
+
+		$x111 = "$classname-$action-$property";
+		$x011 = "*-$action-$property";
+		$x101 = "$classname-*-$property";
+		$x110 = "$classname-$action-*";
+		$x001 = "*-*-$property";
+		$x010 = "*-$action-*";
+		$x100 = "$classname-*-*";
+		$x000 = "*-*-*";
+
+		return in_array($x111, $this->auth) ||
+		       in_array($x011, $this->auth) ||
+		       in_array($x101, $this->auth) ||
+		       in_array($x110, $this->auth) ||
+		       in_array($x001, $this->auth) ||
+		       in_array($x010, $this->auth) ||
+		       in_array($x100, $this->auth) ||
+		       in_array($x000, $this->auth);
+	}
+
+	/**
 	 * Get properties about the object from the database.
 	 *
 	 * @param string $column Column to search for info from.
@@ -300,7 +399,6 @@ class DB_Object
 
 		$table = $db->getTable(strtolower(get_called_class()));
 		$res   = $table->select('*', array($column => $value));
-
 		$this->info = $table->result($res);
 	}
 

@@ -28,6 +28,13 @@ Page    = protect
 Video   = parent
 Comment =
 
+;; List of possible groups. Each group is set to a comma-separated
+;; list of permissions. See db/Object.php for more information on
+;; how to format permissions.
+[auth]
+admin = *-*-*
+regular = Page-get-*
+
 ;; Cache options. Use "action.actionname" replacing actionnname
 ;; with one of the actions above to enable to disable caching for
 ;; that action. The expires option is how long until a
