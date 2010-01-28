@@ -82,12 +82,17 @@ class OUT_Template
 	 * @param string $filename Filename of template
 	 */
 	public function __construct($filename) {
-		if(!file_exists($filename) || !is_readable($filename)) {
+		if($filename instanceof DOMDocument) {
+			$template = $filename->saveHTML();
+			$filename = '-';
+		} elseif(!file_exists($filename) || !is_readable($filename)) {
 			return new MAIN_Error(MAIN_Error::WARNING, get_class($this) . '::__construct', 'Parameter is not the correct data type.', $this->log);
+		} else {
+			$template = file_get_contents($filename);
 		}
 
 		$this->filename = $filename;
-		$this->template = file_get_contents($filename);
+		$this->template = $template;
 	}
 
 	/**
@@ -127,7 +132,7 @@ class OUT_Template
 		$pattern  = '(<!([a-zA-Z0-9]*)\[\[([a-zA-Z0-9]+)\]\]>)';
 		$callback = array(&$this, 'replaceTag');
 		$subject  = $this->template;
-		print preg_replace_callback($pattern, $callback, $subject);
+		return preg_replace_callback($pattern, $callback, $subject);
 	}
 
 	/**

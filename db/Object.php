@@ -104,9 +104,10 @@ class DB_Object
 		}
 
 		// Store local table, log, and options.
-		$this->table         =& $db->getTable(strtolower(get_class($this)));
+		$this->db            =& $db;
 		$this->log           =& $db->getLog();
 		$this->config        =& $config;
+		$this->table         =& $this->getTable();
 		$this->protect       =  self::$enableprotect;
 		$this->clienthashing =  $config->getOption('clienthashing');
 
@@ -393,11 +394,11 @@ class DB_Object
 	 * @param string $value  Value in the column to match the object to.
 	 */
 	public function updateFromDatabase($column, $value) {
-		if(!$db instanceof DB_Database) {
+		if(!$this->db instanceof DB_Database) {
 			return false;
 		}
 
-		$table = $db->getTable(strtolower(get_called_class()));
+		$table = $this->getTable();
 		$res   = $table->select('*', array($column => $value));
 		$this->info = $table->result($res);
 	}
@@ -408,12 +409,79 @@ class DB_Object
 	 * @return bool True on success, false on failure.
 	 */
 	public function updateToDatabase() {
-		if(!$db instanceof DB_Database) {
+		if(!$this->db instanceof DB_Database) {
 			return false;
 		}
 
-		$table  = $db->getTable(strtolower(get_class()));
+		$table  = $this->getTable();
 		return $table->insert($this->info);
+	}
+
+	/**
+	 * Gets the table associated with this object, and sets it up if it
+	 * does not exist.
+	 *
+	 * First checks if the table already exists, and returns it if it does.
+	 * If not, constructs SQL to create a new table using definitions in
+	 * the configuration file, then submits the query, reloads the database,
+	 * and tries to get the table again.
+	 *
+	 * @return object DB_Table on success, MAIN_Error on error
+	 */
+	protected function getTable() {
+		if(!$this->db     instanceof DB_Database ||
+		   !$this->config instanceof MAIN_Config   ) {
+			return false;
+		} $table = false;
+
+		// First check if the table exists.
+		$table = $this->db->getTable(strtolower(get_class()));
+		if($table !== false) {
+			return $table;
+		}
+
+		// Table is not set up, prepare to make new table.
+		$models = $this->config->getOption('models');
+		$columns = array_pop($models[get_class()]);
+		$tablename = strtolower(get_class());
+		$sql = "CREATE TABLE $tablename (\n";
+		foreach($columns as &$column) {
+			$column = explode(',', $column);
+			$name = array_pop($column);
+			$type = array_pop($column);
+
+			$sql .= $name . ' ' . $type;
+			foreach($column as &$option) {
+				$option = strtolower($option);
+				if($option == 'null') {
+					$sql .= 'NULL ';
+					continue;
+				} else {
+					$sql .= 'NOT NULL ';
+				}
+
+				if($option == 'auto_increment') {
+					$sql .= 'AUTO_INCREMENT ';
+					continue;
+				} $option = explode('=', $option);
+
+				if($option[0] == 'default') {
+					$sql .= "DEFAULT '" . $option[1] . "' ";
+				} elseif($option[0] == 'comment') {
+					$sql .= "COMMENT '" . $option[1] . "' ";
+				} elseif($option[0] == 'key') {
+					$sql .= strtoupper($option[1]) . ' KEY';
+				}
+			} $sql .= ",\n";
+		} $sql .= ');';
+
+		if($this->db->query($sql) && $this->db->connect() &&
+		   $table = $this->db->getTable(strtolower(get_class()))) {
+			return $table;
+		} else {
+			return new MAIN_Error(MAIN_Error::ERROR, get_class . '::getTable',
+			                      'Error setting up tabel in database.');
+		}
 	}
 
 	/**
@@ -430,4 +498,3 @@ class DB_Object
 		} return $hash;
 	}
 }
-

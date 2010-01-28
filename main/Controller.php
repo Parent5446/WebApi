@@ -155,9 +155,9 @@ class MAIN_Controller
 		$this->dbopts     = $config->getOption('database');
 		$this->actionlist = $config->getOption('actions' );
 
-		foreach($config->getOption('models') as $name => $options) {
-			$options = explode(',', $options);
-			foreach($options as &$option) { $option = trim($option); }
+		$models = $config->getOption('models');
+		foreach($models as $name => $value) {
+			$options = $value[0];
 
 			if(is_array($options)) {
 				$protect = in_array("protect", $options);

@@ -48,6 +48,7 @@ class DB_Database
 	                                 	"query"   => "mysql_query",
 	                                 	"result"  => "mysql_result",
 	                                 	"array"   => "mysql_fetch_array",
+						"assoc"   => "mysql_fetch_assoc",
 	                                 	"escape"  => "mysql_real_escape_string",
 	                                 	"numrows" => "mysql_num_rows" ),
 	                                 "mssql" => array(

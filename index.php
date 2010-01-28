@@ -14,7 +14,7 @@ MAIN_Autoloader::loadFile("$rootdir/custom.php");
 
 // Get the controller and load the configuration.
 $controller = new MAIN_Controller();
-$controller->loadConfig(dirname(__FILE__) . '/config');
+$controller->loadConfig(dirname(__FILE__) . '/config.php');
 
 // Perform the request.
 $controller->boot();

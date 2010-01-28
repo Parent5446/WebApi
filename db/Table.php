@@ -250,6 +250,16 @@ class DB_Table
 	}
 
 	/**
+	 * Returns an associative array of the columns for the table.
+	 *
+	 * @return array Columns and their descriptions
+	 */
+	public function columns() {
+		$res = $this->query("SHOW COLUMNS FROM {$this->tablename}");
+		return $this->result($res ,'assoc');
+	}
+
+	/**
 	 * Takes a user-given array of information and makes a SQL WHERE statement.
 	 *
 	 * @param array  $where       Where to select information from

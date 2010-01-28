@@ -1,13 +1,15 @@
+; <?php exit(); ?>
 ;; Enable debug messages
 ;debug = true
 
 ;; Database information, including server,
 ;; username, password, and database.
 [database]
-server   = localhost:3390
+server = localhost:3390
 username = root
 password = test123
 database = my_db
+
 
 ;; Map of different actions (give to the script
 ;; by the user using GET) to different controllers
@@ -18,15 +20,30 @@ action2 = Login
 action3 = Register
 default = action1
 
-;; List of custom models. The name is mapped to a list
-;; of options. The protect option enables password
-;; protection. The parent object allows the object to take
-;; on child objects. It is valid to give no options.
+
+;; List of custom models. Each model is defined using a number of lines. The
+;; first line is the options for the model, i.e. whether it is a parent for
+;; other models, and whether it can be password-protected. Every line after
+;; that is a column in the database.
+;;
+;; The columns lines determines the format of the database table. Each
+;; column is its line with a number of comma-seprated values. The first value
+;; must be the name of the column, and the second value must be the type. After
+;; that, everything else is option.
+;;
+;; Optional value: key (whether the column is a key), null (if the
+;; column can be NULL), auto_increment (does the column automatically increment),
+;; default (default value for the column), and comment (comment for the column).
 [models]
-User    = protect,parent
-Page    = protect
-Video   = parent
-Comment =
+User[] = "protect,parent"
+User[] = "id,int,key=primary,auto_increment=true"
+User[] = "name,varchar(11),key=unique"
+User[] = "password,blob"
+User[] = "email,varchar(50),null"
+
+Page[] = "parent"
+Page[] = "id,int,key=primary,auto_increment=1"
+Page[] = "name,varchar(11),key=unique"
 
 ;; List of possible groups. Each group is set to a comma-separated
 ;; list of permissions. See db/Object.php for more information on
@@ -34,6 +51,7 @@ Comment =
 [auth]
 admin = *-*-*
 regular = Page-get-*
+
 
 ;; Cache options. Use "action.actionname" replacing actionnname
 ;; with one of the actions above to enable to disable caching for
@@ -45,6 +63,7 @@ action.action2 = false
 action.action3 = false
 expires = 3600
 
+
 ;; Custom paths to the cache, templates, log, and uploads.
 ;; The section MUST exist, but all of the entries can be
 ;; left out, because they have default values.
@@ -53,3 +72,4 @@ cache = /path/to/cache
 templates = /path/to/templates
 log = /path/to/log
 uploads = /path/to/uploads
+

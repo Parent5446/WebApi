@@ -68,6 +68,20 @@ class MAIN_Config
 	}
 
 	/**
+	 * Helper function to insert plugins. Inserts the options of the given
+	 * plugin configuration filename under the plugin_$name key in the
+	 * global configuration.
+	 *
+	 * @param string $name     Base name for the plugin
+	 * @param string $filename Full filename for the config file
+	 *
+	 * @return bool True on success, false on failure
+	 */
+	public function insertPlugin($name, $filename) {
+		$this->updateFromFile($filename, "plugin_$name");
+	}
+
+	/**
 	 * Load configuration options from a file, where each option has its
 	 * own new line, and the option name is separated from the value with
 	 * an '='.
@@ -76,7 +90,7 @@ class MAIN_Config
 	 *
 	 * @return bool True on success, false on failure
 	 */
-	public function updateFromFile($filename) {
+	public function updateFromFile($filename, $name = '') {
 		// Check the filename and return if already exists AND
 		// is not a normal file.
 		if(file_exists($filename) && !is_file($filename)) {
@@ -87,10 +101,11 @@ class MAIN_Config
 		// then check if it is writable.
 		if($options === false) {
 			return false;
-		} else {
+		} elseif($name == '') {
 			$this->options = $options;
-			return true;
-		}
+		} else {
+			$this->options[$name] = $options;
+		} return true;
 	}
 
 	/**
@@ -119,7 +134,9 @@ class MAIN_Config
 
 		$lines = array();
 		foreach($this->options as $key => $value) {
-			if(is_array($value)) {
+			if(strpos($key, 'plugin_')) {
+				continue;
+			} elseif(is_array($value)) {
 				$lines[] = "\n[$key]";
 				foreach($value as $curkey => $curval) {
 					$lines[] = "$curkey = $curval";
