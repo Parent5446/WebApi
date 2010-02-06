@@ -1,0 +1,404 @@
+.TH "DB_Object" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DB_Object \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgetName\fP ()"
+.br
+.ti -1c
+.RI "\fBgetId\fP ()"
+.br
+.ti -1c
+.RI "\fBgetInfo\fP ($obj, $name)"
+.br
+.ti -1c
+.RI "\fBputInfo\fP ($obj, $property, $value)"
+.br
+.ti -1c
+.RI "\fBaddChild\fP ($child)"
+.br
+.ti -1c
+.RI "\fBaddChildren\fP ($children)"
+.br
+.ti -1c
+.RI "\fBgetPassKey\fP ()"
+.br
+.ti -1c
+.RI "\fBcheckPassword\fP ($new, $original=false)"
+.br
+.ti -1c
+.RI "\fBchangePassword\fP ($new)"
+.br
+.ti -1c
+.RI "\fBisAllowed\fP ($classname, $action, $property)"
+.br
+.ti -1c
+.RI "\fBupdateFromDatabase\fP ($column, $value)"
+.br
+.ti -1c
+.RI "\fBupdateToDatabase\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBhashPassword\fP ($password, $iterations=1)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (&$db, &$config, $column, $value, $profile=array(), $new=false)"
+.br
+.ti -1c
+.RI "\fBchangePasshash\fP ($new)"
+.br
+.ti -1c
+.RI "\fBgetTable\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$info\fP = array()"
+.br
+.ti -1c
+.RI "\fB$protect\fP = true"
+.br
+.ti -1c
+.RI "\fB$clienthashing\fP = false"
+.br
+.ti -1c
+.RI "\fB$table\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fB$enableprotect\fP = true"
+.br
+.ti -1c
+.RI "static \fB$parent\fP = true"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 38 of file Object.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DB_Object::__construct (&$ db, &$ config, $ column, $ value, $ profile = \fCarray()\fP, $ new = \fCfalse\fP)\fC [protected]\fP"Store the database and given information within the object. If an empty password is given then password protection is disabled. If the $curpass variable is empty then client hashing will be disabled.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP &$db A \fBDB_Database\fP object used for database queries 
+.br
+\fIint\fP $id The ID of the object 
+.br
+\fIstring\fP $name The name of the object (e.g. username for users) 
+.br
+\fIstring\fP $origpass A SHA512 hash of the original password protecting the object 
+.br
+\fIstring\fP $curpass The current one-time key produced by hash chaining 
+.br
+\fIint\fP $curpassnum The number of hash iterations for the $curpass 
+.br
+\fIarray\fP $profile Any information specific to the object from the database 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file Object.php.
+.PP
+References $config, $info, getTable(), hashPassword(), MAIN_Logger::NOTICE, updateFromDatabase(), updateToDatabase(), and MAIN_Error::WARNING.
+.SH "Member Function Documentation"
+.PP 
+.SS "DB_Object::addChild ($ child)"Merges a child database object with the current object.
+.PP
+Adds an array with the child object's ID, name, profile, and the object itself into the current object's profile. It is stored in: $<currentObject>->profile[<nameOfChildObject>][]
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP $child Child object to store
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 218 of file Object.php.
+.PP
+Referenced by addChildren().
+.SS "DB_Object::addChildren ($ children)"Merges multiple child database objects with the current object. Calls the addChild function for each child given.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP $child Child objects to add
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 243 of file Object.php.
+.PP
+References addChild().
+.SS "DB_Object::changePasshash ($ new)\fC [protected]\fP"Used for one time keys when hash chaining and client-side hashing is enabled. Decreases the hash chain count by one and uses the given hash as the new current hash.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $new The next hash in the hash chain (as supplied by the user)
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on failure 
+.RE
+.PP
+
+.PP
+Definition at line 329 of file Object.php.
+.PP
+References $info.
+.PP
+Referenced by checkPassword().
+.SS "DB_Object::changePassword ($ new)"Change the password for the object.
+.PP
+Store a new password hash in the database as well as the password hashed 1000 times for client side hashing.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $new The new plaintext password
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 304 of file Object.php.
+.PP
+References hashPassword(), and updateToDatabase().
+.SS "DB_Object::checkPassword ($ new, $ original = \fCfalse\fP)"Compare a given password to the stored password hash.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $new The password to check 
+.br
+\fIbool\fP $original Whether the given password is the actual plaintext password or a one time key on the hash chain
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if the password is correct, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 273 of file Object.php.
+.PP
+References changePasshash(), and hashPassword().
+.SS "DB_Object::getId ()"Get the ID of the object.
+.PP
+\fBReturns:\fP
+.RS 4
+int The ID of the object 
+.RE
+.PP
+
+.PP
+Definition at line 145 of file Object.php.
+.SS "DB_Object::getInfo ($ obj, $ name)"Get any property of an object, checking if the object is allowed to access the property first.
+.PP
+The permission to get the value of any property is in the form of '$classname-get-$name', where $classname is the name of this object, and $name is the property being accessed. However, if the object has: * '*-get-$name' (get $name from any object), * '$classname-*-$name' (do anything to $name for this class), * '$classname-get-*' (get anything from the object) or any combination of those, the request will also be allowed.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP $obj A copy of the calling object (just give $this) 
+.br
+\fIstring\fP $name Name of the property to access
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+mixed The requested property if allowed, \fBMAIN_Error\fP if not allowed 
+.RE
+.PP
+
+.PP
+Definition at line 166 of file Object.php.
+.PP
+References MAIN_Error::WARNING.
+.SS "DB_Object::getName ()"Get the name of the object.
+.PP
+\fBReturns:\fP
+.RS 4
+string The name of the object 
+.RE
+.PP
+
+.PP
+Definition at line 136 of file Object.php.
+.SS "DB_Object::getPassKey ()"Get the current iteration on the hash chain.
+.PP
+\fBReturns:\fP
+.RS 4
+array The current iteration on the hash chain 
+.RE
+.PP
+
+.PP
+Definition at line 257 of file Object.php.
+.SS "DB_Object::getTable ()\fC [protected]\fP"Gets the table associated with this object, and sets it up if it does not exist.
+.PP
+First checks if the table already exists, and returns it if it does. If not, constructs SQL to create a new table using definitions in the configuration file, then submits the query, reloads the database, and tries to get the table again.
+.PP
+\fBReturns:\fP
+.RS 4
+object \fBDB_Table\fP on success, \fBMAIN_Error\fP on error 
+.RE
+.PP
+
+.PP
+Definition at line 431 of file Object.php.
+.PP
+References $table, and MAIN_Error::ERROR.
+.PP
+Referenced by __construct(), updateFromDatabase(), and updateToDatabase().
+.SS "static DB_Object::hashPassword ($ password, $ iterations = \fC1\fP)\fC [static]\fP"Hash a given plaintext password a given number of times (1 hash is the default).
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $password The password to hash 
+.br
+\fIint\fP $iterations Number of times to hash the password
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+string Hash of the password 
+.RE
+.PP
+
+.PP
+Definition at line 495 of file Object.php.
+.PP
+Referenced by __construct(), changePassword(), and checkPassword().
+.SS "DB_Object::isAllowed ($ classname, $ action, $ property)"Check if the object is allowed to do a certain action.
+.PP
+Checks the groups of the object, and uses \fBMAIN_Config\fP to compile an array of permissions from those groups. Then checks if the $action is in the array.
+.PP
+The format of a permission is '$classname-$action-$property', where $classname is the object being accessed, $action is either 'get' or 'set', and $property is the name of the property. By having that permission, the action is allowed. In addition, the asterisk wildcard can be used in any field to give permission for any class, any action, any property, or a combination of the three.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $action Requested action
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if allowed, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 359 of file Object.php.
+.SS "DB_Object::putInfo ($ obj, $ property, $ value)"Set any property of an object, checking if the object is allowed to access the property first.
+.PP
+The permission to set the value of any property is in the form of '$classname-set-$name', where $classname is the name of this object, and $name is the property being accessed. However, if the object has: * '*-set-$name' (get $name from any object), * '$classname-*-$name' (do anything to $name for this class), * '$classname-set-*' (get anything from the object) or any combination of those, the request will also be allowed.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP $obj A copy of the calling object (just give $this) 
+.br
+\fIstring\fP $name Name of the property to give a new value 
+.br
+\fIstring\fP $value Value to give the property
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+mixed The requested property if allowed, \fBMAIN_Error\fP if not allowed 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file Object.php.
+.PP
+References MAIN_Error::WARNING.
+.SS "DB_Object::updateFromDatabase ($ column, $ value)"Get properties about the object from the database.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $column Column to search for info from. 
+.br
+\fIstring\fP $value Value in the column to match the object to. 
+.RE
+.PP
+
+.PP
+Definition at line 396 of file Object.php.
+.PP
+References $table, and getTable().
+.PP
+Referenced by __construct().
+.SS "DB_Object::updateToDatabase ()"Update properties about the object to the database.
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 411 of file Object.php.
+.PP
+References $table, and getTable().
+.PP
+Referenced by __construct(), and changePassword().
+.SH "Member Data Documentation"
+.PP 
+.SS "DB_Object::$clienthashing = false\fC [protected]\fP"Whether to enable client hashing, when a password is entered by a user, hash chaining is used on the client side to prevent man-in-the-middle attacks. Requires the proper client-side scripts to be in place. 
+.PP
+Definition at line 75 of file Object.php.
+.SS "DB_Object::$enableprotect = true\fC [static, protected]\fP"Determines whether to enable password protection on a global scope. Should be customized in the child class definition. 
+.PP
+Definition at line 46 of file Object.php.
+.SS "DB_Object::$info = array()\fC [protected]\fP"Stores information about the object that has been retrieved from the database. 
+.PP
+Definition at line 61 of file Object.php.
+.PP
+Referenced by __construct(), and changePasshash().
+.SS "DB_Object::$parent = true\fC [static, protected]\fP"Determines whether the object can take in other objects as its children. When taking in a child object, the profiles of the two are merged. 
+.PP
+Definition at line 54 of file Object.php.
+.SS "DB_Object::$protect = true\fC [protected]\fP"Determines whether to enable password protection on a per-object basis. 
+.PP
+Definition at line 67 of file Object.php.
+.SS "DB_Object::$table\fC [protected]\fP"A \fBDB_Table\fP object to be used for all database queries. 
+.PP
+Definition at line 81 of file Object.php.
+.PP
+Referenced by getTable(), updateFromDatabase(), and updateToDatabase().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

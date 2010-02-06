@@ -1,0 +1,282 @@
+\hypertarget{classDB__Database}{
+\section{DB\_\-Database Class Reference}
+\label{d3/d63/classDB__Database}\index{DB\_\-Database@{DB\_\-Database}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDB__Database_aa7b0b5a7fa10d3928e1b95664662a9a2}{\_\-\_\-construct} (\$server, \$username, \$password, \$database, \&\$log, \$type= 'mysql')
+\item 
+\hyperlink{classDB__Database_a3312e7903885b871d21a18efbe558580}{connect} ()
+\item 
+\hyperlink{classDB__Database_ad8f40ab058e072bc074a9447eb8a7762}{close} ()
+\item 
+\hyperlink{classDB__Database_a67786f5c272e27980edf76a57fc16902}{query} (\$sql)
+\item 
+\hyperlink{classDB__Database_a2739adb306d170f19c0e87a61a2bfc05}{result} (\$res, \$type=\char`\"{}array\char`\"{})
+\item 
+\hyperlink{classDB__Database_af8c352a06f1cff03f2c782b9aa431b44}{escape} (\$string)
+\item 
+\hyperlink{classDB__Database_a3c1f6f79bdf1a2f2d019fd4fbf156819}{getTable} (\$tablename)
+\item 
+\& \hyperlink{classDB__Database_a98b8b2e954b888100ca2b6c00be811be}{getLog} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classDB__Database_a79a31df0a3e64b5758441ce9bc2ffa70}{\$globalfunctions}
+\item 
+static \hyperlink{classDB__Database_a05ffbe581936d85f566ded58d8841b5b}{\$instance}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDB__Database_a8cc2ee198b44ecef38ffaaef255bee93}{\$conn} = false
+\item 
+\hyperlink{classDB__Database_a052600d78f57d7af178e13ab7992949a}{\$conndata}
+\item 
+\hyperlink{classDB__Database_accd8f5296560fb4ce0cc8aa294b3951e}{\$dbname}
+\item 
+\hyperlink{classDB__Database_acd9a4a4dae5229e946ab585b919e3563}{\$functions}
+\item 
+\hyperlink{classDB__Database_a96d1439bc2c2a8edfaf03b593898b3f2}{\$tables}
+\item 
+\hyperlink{classDB__Database_a707cb0823a2ad42054c4ab650b2dd01b}{\$log}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file Database.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDB__Database_aa7b0b5a7fa10d3928e1b95664662a9a2}{
+\index{DB\_\-Database@{DB\_\-Database}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\_\-\_\-construct (\$ {\em server}, \/  \$ {\em username}, \/  \$ {\em password}, \/  \$ {\em database}, \/  \&\$ {\em log}, \/  \$ {\em type} = {\ttfamily 'mysql'})}}
+\label{d3/d63/classDB__Database_aa7b0b5a7fa10d3928e1b95664662a9a2}
+Stores connection data and attempts to connect.
+
+The database type is given in the parameters. For MySQL and extensions with similar function calls can be built into the class. Otherwise, child classes will be automatically created if they exist.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$server Server address to connect to \item[{\em string}]\$username Username for the server \item[{\em string}]\$password Password for the server \item[{\em string}]\$database Database name to connect to \item[{\em object}]\&\$log \hyperlink{classMAIN__Logger}{MAIN\_\-Logger} object \item[{\em string}]\$type Name of database type\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool$|$object Returns false if connection fails, returns object otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file Database.php.
+
+References \$log, connect(), and MAIN\_\-Error::ERROR.
+
+\subsection{Member Function Documentation}
+\hypertarget{classDB__Database_ad8f40ab058e072bc074a9447eb8a7762}{
+\index{DB\_\-Database@{DB\_\-Database}!close@{close}}
+\index{close@{close}!DB_Database@{DB\_\-Database}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::close ()}}
+\label{d3/d63/classDB__Database_ad8f40ab058e072bc074a9447eb8a7762}
+Checks if a database connection is open, and if so shuts the connection.
+
+\begin{DoxyReturn}{Returns}
+bool Returns true for success, false for failure 
+\end{DoxyReturn}
+
+
+Definition at line 213 of file Database.php.
+
+References MAIN\_\-Error::ERROR, MAIN\_\-Logger::INFO, and MAIN\_\-Error::NOTICE.
+
+Referenced by connect().\hypertarget{classDB__Database_a3312e7903885b871d21a18efbe558580}{
+\index{DB\_\-Database@{DB\_\-Database}!connect@{connect}}
+\index{connect@{connect}!DB_Database@{DB\_\-Database}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::connect ()}}
+\label{d3/d63/classDB__Database_a3312e7903885b871d21a18efbe558580}
+Connects to a database server, e.g. MySQL, and stores the connection.
+
+\begin{DoxyReturn}{Returns}
+bool Returns true for success, false for failure 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file Database.php.
+
+References close(), MAIN\_\-Error::ERROR, MAIN\_\-Logger::INFO, query(), result(), and MAIN\_\-Error::WARNING.
+
+Referenced by \_\-\_\-construct().\hypertarget{classDB__Database_af8c352a06f1cff03f2c782b9aa431b44}{
+\index{DB\_\-Database@{DB\_\-Database}!escape@{escape}}
+\index{escape@{escape}!DB_Database@{DB\_\-Database}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::escape (\$ {\em string})}}
+\label{d3/d63/classDB__Database_af8c352a06f1cff03f2c782b9aa431b44}
+Escapes a string for use in a database query.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$string The string to escape\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool$|$string Returns the escaped string, or false on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 295 of file Database.php.
+
+References MAIN\_\-Error::ERROR, and MAIN\_\-Error::WARNING.\hypertarget{classDB__Database_a98b8b2e954b888100ca2b6c00be811be}{
+\index{DB\_\-Database@{DB\_\-Database}!getLog@{getLog}}
+\index{getLog@{getLog}!DB_Database@{DB\_\-Database}}
+\subsubsection[{getLog}]{\setlength{\rightskip}{0pt plus 5cm}\& DB\_\-Database::getLog ()}}
+\label{d3/d63/classDB__Database_a98b8b2e954b888100ca2b6c00be811be}
+Get the log object for the database.
+
+\begin{DoxyReturn}{Returns}
+object \hyperlink{classMAIN__Logger}{MAIN\_\-Logger} instance 
+\end{DoxyReturn}
+
+
+Definition at line 337 of file Database.php.\hypertarget{classDB__Database_a3c1f6f79bdf1a2f2d019fd4fbf156819}{
+\index{DB\_\-Database@{DB\_\-Database}!getTable@{getTable}}
+\index{getTable@{getTable}!DB_Database@{DB\_\-Database}}
+\subsubsection[{getTable}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::getTable (\$ {\em tablename})}}
+\label{d3/d63/classDB__Database_a3c1f6f79bdf1a2f2d019fd4fbf156819}
+Get a table object for query usage.
+
+Retrive an object for a specific table, rather than using the general query function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$tablename Name of the table\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object$|$bool Returns Table object, or false if table does not exist 
+\end{DoxyReturn}
+
+
+Definition at line 319 of file Database.php.
+
+References MAIN\_\-Logger::INFO, and MAIN\_\-Error::WARNING.\hypertarget{classDB__Database_a67786f5c272e27980edf76a57fc16902}{
+\index{DB\_\-Database@{DB\_\-Database}!query@{query}}
+\index{query@{query}!DB_Database@{DB\_\-Database}}
+\subsubsection[{query}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::query (\$ {\em sql})}}
+\label{d3/d63/classDB__Database_a67786f5c272e27980edf76a57fc16902}
+Submits a query to the database server, then returns the result of the query function.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$sql A SQL query to submit\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool$|$resource Returns true or false for INSERT, DELETE, and other related queries. Returns a result resource for SELECT queries. 
+\end{DoxyReturn}
+
+
+Definition at line 241 of file Database.php.
+
+References MAIN\_\-Error::ERROR, MAIN\_\-Logger::INFO, and MAIN\_\-Error::WARNING.
+
+Referenced by connect().\hypertarget{classDB__Database_a2739adb306d170f19c0e87a61a2bfc05}{
+\index{DB\_\-Database@{DB\_\-Database}!result@{result}}
+\index{result@{result}!DB_Database@{DB\_\-Database}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::result (\$ {\em res}, \/  \$ {\em type} = {\ttfamily \char`\"{}array\char`\"{}})}}
+\label{d3/d63/classDB__Database_a2739adb306d170f19c0e87a61a2bfc05}
+Obtains a result set from a result resource.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em resource}]\$res Result resource to get data from \item[{\em string}]\$type The function to use to get the data\item[{\em array}]Array of all the rows retrieved \end{DoxyParams}
+
+
+Definition at line 270 of file Database.php.
+
+References MAIN\_\-Error::ERROR, and MAIN\_\-Error::WARNING.
+
+Referenced by connect().
+
+\subsection{Member Data Documentation}
+\hypertarget{classDB__Database_a8cc2ee198b44ecef38ffaaef255bee93}{
+\index{DB\_\-Database@{DB\_\-Database}!\$conn@{\$conn}}
+\index{\$conn@{\$conn}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$conn}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$conn = false\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d3/d63/classDB__Database_a8cc2ee198b44ecef38ffaaef255bee93}
+Stores resource for database connection. 
+
+Definition at line 74 of file Database.php.\hypertarget{classDB__Database_a052600d78f57d7af178e13ab7992949a}{
+\index{DB\_\-Database@{DB\_\-Database}!\$conndata@{\$conndata}}
+\index{\$conndata@{\$conndata}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$conndata}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$conndata\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d3/d63/classDB__Database_a052600d78f57d7af178e13ab7992949a}
+Stores connection data for database, i.e. server, username, and password. 
+
+Definition at line 81 of file Database.php.\hypertarget{classDB__Database_accd8f5296560fb4ce0cc8aa294b3951e}{
+\index{DB\_\-Database@{DB\_\-Database}!\$dbname@{\$dbname}}
+\index{\$dbname@{\$dbname}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$dbname}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$dbname\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d3/d63/classDB__Database_accd8f5296560fb4ce0cc8aa294b3951e}
+Stores the database name to connect to. 
+
+Definition at line 87 of file Database.php.\hypertarget{classDB__Database_acd9a4a4dae5229e946ab585b919e3563}{
+\index{DB\_\-Database@{DB\_\-Database}!\$functions@{\$functions}}
+\index{\$functions@{\$functions}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$functions}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$functions\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d3/d63/classDB__Database_acd9a4a4dae5229e946ab585b919e3563}
+Stores the functions to interact with the database. Usually loaded from one of the static variables. 
+
+Definition at line 95 of file Database.php.\hypertarget{classDB__Database_a79a31df0a3e64b5758441ce9bc2ffa70}{
+\index{DB\_\-Database@{DB\_\-Database}!\$globalfunctions@{\$globalfunctions}}
+\index{\$globalfunctions@{\$globalfunctions}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$globalfunctions}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$globalfunctions\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{d3/d63/classDB__Database_a79a31df0a3e64b5758441ce9bc2ffa70}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array( "mysql" => array(
+                                                "connect" => "mysql_connect",
+                                                "close"   => "mysql_close",
+                                                "db"      => "mysql_select_db",
+                                                "query"   => "mysql_query",
+                                                "result"  => "mysql_result",
+                                                "array"   => "mysql_fetch_array",
+      
+                                                "assoc"   => "mysql_fetch_assoc",
+      
+                                                "escape"  => "mysql_real_escape_s
+      tring",
+                                                "numrows" => "mysql_num_rows" ),
+                                         "mssql" => array(
+                                                "connect" => "mssql_connect",
+                                                "close"   => "mssql_close",
+                                                "db"      => "mssql_select_db",
+                                                "query"   => "mssql_query",
+                                                "result"  => "mssql_result",
+                                                "array"   => "mssql_fetch_array",
+      
+                                                "escape"  => "addslashes" )
+                                 )
+\end{DoxyCode}
+Array of database functions to be used in object. 
+
+Definition at line 44 of file Database.php.\hypertarget{classDB__Database_a05ffbe581936d85f566ded58d8841b5b}{
+\index{DB\_\-Database@{DB\_\-Database}!\$instance@{\$instance}}
+\index{\$instance@{\$instance}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$instance}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$instance\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{d3/d63/classDB__Database_a05ffbe581936d85f566ded58d8841b5b}
+Stores singleton instance of object. 
+
+Definition at line 68 of file Database.php.\hypertarget{classDB__Database_a707cb0823a2ad42054c4ab650b2dd01b}{
+\index{DB\_\-Database@{DB\_\-Database}!\$log@{\$log}}
+\index{\$log@{\$log}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$log}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$log\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d3/d63/classDB__Database_a707cb0823a2ad42054c4ab650b2dd01b}
+Stores a \hyperlink{classMAIN__Logger}{MAIN\_\-Logger} object. 
+
+Definition at line 107 of file Database.php.
+
+Referenced by \_\-\_\-construct().\hypertarget{classDB__Database_a96d1439bc2c2a8edfaf03b593898b3f2}{
+\index{DB\_\-Database@{DB\_\-Database}!\$tables@{\$tables}}
+\index{\$tables@{\$tables}!DB_Database@{DB\_\-Database}}
+\subsubsection[{\$tables}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Database::\$tables\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d3/d63/classDB__Database_a96d1439bc2c2a8edfaf03b593898b3f2}
+Stores table objects. 
+
+Definition at line 101 of file Database.php.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/db/\hyperlink{Database_8php}{Database.php}\end{DoxyCompactItemize}

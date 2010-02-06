@@ -1,0 +1,147 @@
+\hypertarget{classMAIN__Autoloader}{
+\section{MAIN\_\-Autoloader Class Reference}
+\label{dd/d71/classMAIN__Autoloader}\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Autoloader_a58a2d3299366e703eebd60192d927ed9}{loadClass} (\$classname)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMAIN__Autoloader_a458b2d4ca327f7e614a9f99e7df23ba7}{loadFile} (\$filename)
+\item 
+static \hyperlink{classMAIN__Autoloader_aa3acf8b51f564e1d79d622b6e5fcf1a4}{getInstance} (\$rootdir= '')
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Autoloader_a201bd218d1efdce335722cd1e60ef599}{\_\-\_\-construct} (\$rootdir)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Autoloader_ab05969a6f2b5904a8de5e2f530441be7}{\$rootdir}
+\item 
+\hyperlink{classMAIN__Autoloader_a93fa8cea8b9c2e30d179521ab8c3edab}{\$loaded} = array()
+\item 
+\hyperlink{classMAIN__Autoloader_a1ba4327fb805ecd48589610463c3a8c4}{\$classlist}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classMAIN__Autoloader_a00cdc353ce3e2665f86e87e3abb8bf0a}{\$instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This program was created to make a set of classes to be used for easy website creation. Usage: simply extend the \hyperlink{classDB__Object}{DB\_\-Object} class to make models and the \hyperlink{classOUT__Request}{OUT\_\-Request} class to make controllers. HTML is stored in templates with special tags. See the \hyperlink{classOUT__Template}{OUT\_\-Template} class for more details. Made by Tyler Romeo $<$\href{mailto:tylerromeo@gmail.com}{\tt tylerromeo@gmail.com}$>$
+
+Copyright (C) 2009 Tyler Romeo
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see $<$\href{http://www.gnu.org/licenses/}{\tt http://www.gnu.org/licenses/}$>$. 
+
+Definition at line 28 of file Autoloader.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMAIN__Autoloader_a201bd218d1efdce335722cd1e60ef599}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Autoloader::\_\-\_\-construct (\$ {\em rootdir})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{dd/d71/classMAIN__Autoloader_a201bd218d1efdce335722cd1e60ef599}
+
+
+Definition at line 49 of file Autoloader.php.
+
+References \$rootdir.
+
+\subsection{Member Function Documentation}
+\hypertarget{classMAIN__Autoloader_aa3acf8b51f564e1d79d622b6e5fcf1a4}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{getInstance}]{\setlength{\rightskip}{0pt plus 5cm}static MAIN\_\-Autoloader::getInstance (\$ {\em rootdir} = {\ttfamily ''})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{dd/d71/classMAIN__Autoloader_aa3acf8b51f564e1d79d622b6e5fcf1a4}
+
+
+Definition at line 74 of file Autoloader.php.
+
+References \$rootdir.
+
+Referenced by \_\-\_\-autoload().\hypertarget{classMAIN__Autoloader_a58a2d3299366e703eebd60192d927ed9}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!loadClass@{loadClass}}
+\index{loadClass@{loadClass}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{loadClass}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Autoloader::loadClass (\$ {\em classname})}}
+\label{dd/d71/classMAIN__Autoloader_a58a2d3299366e703eebd60192d927ed9}
+
+
+Definition at line 55 of file Autoloader.php.
+
+References loadFile().\hypertarget{classMAIN__Autoloader_a458b2d4ca327f7e614a9f99e7df23ba7}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!loadFile@{loadFile}}
+\index{loadFile@{loadFile}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{loadFile}]{\setlength{\rightskip}{0pt plus 5cm}static MAIN\_\-Autoloader::loadFile (\$ {\em filename})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{dd/d71/classMAIN__Autoloader_a458b2d4ca327f7e614a9f99e7df23ba7}
+
+
+Definition at line 65 of file Autoloader.php.
+
+Referenced by loadClass().
+
+\subsection{Member Data Documentation}
+\hypertarget{classMAIN__Autoloader_a1ba4327fb805ecd48589610463c3a8c4}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!\$classlist@{\$classlist}}
+\index{\$classlist@{\$classlist}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{\$classlist}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Autoloader::\$classlist\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{dd/d71/classMAIN__Autoloader_a1ba4327fb805ecd48589610463c3a8c4}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ array(
+                        'MAIN_Controller' => '/app/main/Controller.php',
+                        'MAIN_Cache'      => 'app/main/Cache.php',
+                        'MAIN_Config'     => 'app/main/Config.php',
+                        'MAIN_Error'      => 'app/main/Error.php',
+                        'MAIN_Logger'     => 'app/main/Logger.php',
+
+                        'DB_Database'     => 'app/db/Database.php',
+                        'DB_Object'       => 'app/db/Object.php',
+                        'DB_Table'        => 'app/db/Table.php',
+
+                        'OUT_Request'     => 'app/out/Request.php',
+                        'OUT_Session'     => 'app/out/Session.php',
+                        'OUT_Template'    => 'app/out/Template.php' )
+\end{DoxyCode}
+
+
+Definition at line 34 of file Autoloader.php.\hypertarget{classMAIN__Autoloader_a00cdc353ce3e2665f86e87e3abb8bf0a}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!\$instance@{\$instance}}
+\index{\$instance@{\$instance}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{\$instance}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Autoloader::\$instance\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{dd/d71/classMAIN__Autoloader_a00cdc353ce3e2665f86e87e3abb8bf0a}
+
+
+Definition at line 30 of file Autoloader.php.\hypertarget{classMAIN__Autoloader_a93fa8cea8b9c2e30d179521ab8c3edab}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!\$loaded@{\$loaded}}
+\index{\$loaded@{\$loaded}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{\$loaded}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Autoloader::\$loaded = array()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{dd/d71/classMAIN__Autoloader_a93fa8cea8b9c2e30d179521ab8c3edab}
+
+
+Definition at line 33 of file Autoloader.php.\hypertarget{classMAIN__Autoloader_ab05969a6f2b5904a8de5e2f530441be7}{
+\index{MAIN\_\-Autoloader@{MAIN\_\-Autoloader}!\$rootdir@{\$rootdir}}
+\index{\$rootdir@{\$rootdir}!MAIN_Autoloader@{MAIN\_\-Autoloader}}
+\subsubsection[{\$rootdir}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Autoloader::\$rootdir\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{dd/d71/classMAIN__Autoloader_ab05969a6f2b5904a8de5e2f530441be7}
+
+
+Definition at line 32 of file Autoloader.php.
+
+Referenced by \_\-\_\-construct(), and getInstance().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{Autoloader_8php}{Autoloader.php}\end{DoxyCompactItemize}

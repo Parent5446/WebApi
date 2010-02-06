@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="dir_7d88a5b383e8e51ff5c4147e9e5e9cbd" kind="dir">
+    <compoundname>app/main/</compoundname>
+    <innerfile refid="dc/df3/Autoloader_8php">Autoloader.php</innerfile>
+    <innerfile refid="d5/d6c/Cache_8php">Cache.php</innerfile>
+    <innerfile refid="d7/d8c/Config_8php">Config.php</innerfile>
+    <innerfile refid="da/d82/Controller_8php">Controller.php</innerfile>
+    <innerfile refid="da/d79/Error_8php">Error.php</innerfile>
+    <innerfile refid="d3/d5e/Logger_8php">Logger.php</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/"/>
+  </compounddef>
+</doxygen>

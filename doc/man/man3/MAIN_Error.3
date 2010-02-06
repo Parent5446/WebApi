@@ -1,0 +1,141 @@
+.TH "MAIN_Error" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MAIN_Error \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ($level, $callback, $message, &$log)"
+.br
+.ti -1c
+.RI "\fBgetLevel\fP ()"
+.br
+.ti -1c
+.RI "\fBgetCallback\fP ()"
+.br
+.ti -1c
+.RI "\fBgetMessage\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBERROR\fP = 256"
+.br
+.ti -1c
+.RI "const \fBWARNING\fP = 512"
+.br
+.ti -1c
+.RI "const \fBNOTICE\fP = 1024"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$level\fP"
+.br
+.ti -1c
+.RI "\fB$callback\fP"
+.br
+.ti -1c
+.RI "\fB$message\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file Error.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MAIN_Error::__construct ($ level, $ callback, $ message, &$ log)"Stores error information and logs the error.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP $level One of the classes local constants defining error severity 
+.br
+\fIstring\fP $callback Name of the function creating the error 
+.br
+\fIstring\fP $message Message describing the error 
+.br
+\fIobject\fP &$log Valid \fBMAIN_Logger\fP instance 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file Error.php.
+.PP
+References $callback, $level, and $message.
+.SH "Member Function Documentation"
+.PP 
+.SS "MAIN_Error::getCallback ()"Get the callback for the error.
+.PP
+\fBReturns:\fP
+.RS 4
+string Callback for the error 
+.RE
+.PP
+
+.PP
+Definition at line 119 of file Error.php.
+.SS "MAIN_Error::getLevel ()"Get the level severity.
+.PP
+\fBReturns:\fP
+.RS 4
+int Code referring to the level severity 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file Error.php.
+.SS "MAIN_Error::getMessage ()"Get the error message.
+.PP
+\fBReturns:\fP
+.RS 4
+string Error message 
+.RE
+.PP
+
+.PP
+Definition at line 128 of file Error.php.
+.SH "Member Data Documentation"
+.PP 
+.SS "MAIN_Error::$callback\fC [private]\fP"Callback for the error. 
+.PP
+Definition at line 67 of file Error.php.
+.PP
+Referenced by __construct().
+.SS "MAIN_Error::$level\fC [private]\fP"Level of the error. 
+.PP
+Definition at line 61 of file Error.php.
+.PP
+Referenced by __construct().
+.SS "MAIN_Error::$message\fC [private]\fP"Error message. 
+.PP
+Definition at line 73 of file Error.php.
+.PP
+Referenced by __construct().
+.SS "const \fBMAIN_Error::ERROR\fP = 256"Signal for extremely dangerous errors, usually resulting in termination of the script. 
+.PP
+Definition at line 43 of file Error.php.
+.PP
+Referenced by DB_Table::__construct(), DB_Database::__construct(), DB_Database::close(), DB_Database::connect(), DB_Database::escape(), MAIN_Logger::export(), DB_Object::getTable(), DB_Database::query(), and DB_Database::result().
+.SS "const \fBMAIN_Error::NOTICE\fP = 1024"Signal for standard errors that may have an effect on the outcome of the script in certain situations. 
+.PP
+Definition at line 55 of file Error.php.
+.PP
+Referenced by DB_Database::close().
+.SS "const \fBMAIN_Error::WARNING\fP = 512"Signal for critical errors, creating unwanted results, though not necessarily requiring the script to be terminated. 
+.PP
+Definition at line 49 of file Error.php.
+.PP
+Referenced by OUT_Template::__construct(), DB_Object::__construct(), DB_Database::connect(), DB_Database::escape(), DB_Object::getInfo(), DB_Database::getTable(), DB_Table::insert(), DB_Object::putInfo(), DB_Database::query(), DB_Database::result(), and DB_Table::update().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

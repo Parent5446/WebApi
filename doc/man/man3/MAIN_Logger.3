@@ -1,0 +1,121 @@
+.TH "MAIN_Logger" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MAIN_Logger \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBlog\fP ($level, $callback, $message)"
+.br
+.ti -1c
+.RI "\fBexport\fP ($filename)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBERROR\fP = 256"
+.br
+.ti -1c
+.RI "const \fBWARNING\fP = 512"
+.br
+.ti -1c
+.RI "const \fBNOTICE\fP = 1024"
+.br
+.ti -1c
+.RI "const \fBINFO\fP = -1"
+.br
+.ti -1c
+.RI "const \fBDEBUG\fP = -2"
+.br
+.ti -1c
+.RI "const \fBUSER\fP = -3"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$log\fP = array()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 42 of file Logger.php.
+.SH "Member Function Documentation"
+.PP 
+.SS "MAIN_Logger::export ($ filename)"Takes the current internal log and exports it to a file before emptying it.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $filename Name of the file to export the log to
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+int|bool Returns the number of bytes written, or false on error 
+.RE
+.PP
+
+.PP
+Definition at line 140 of file Logger.php.
+.PP
+References MAIN_Error::ERROR, and log().
+.SS "MAIN_Logger::log ($ level, $ callback, $ message)"Creates a logging message from the given parameters and adds it to the log.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP $level Level of the message (see the class's constants) 
+.br
+\fIstring\fP $callback Some identifier of what function caused the message to be logged 
+.br
+\fIstring\fP $message The actual message to be logged
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool Returns true on success, false on failure 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file Logger.php.
+.PP
+Referenced by export().
+.SH "Member Data Documentation"
+.PP 
+.SS "MAIN_Logger::$log = array()\fC [private]\fP"Stores the log itself, with a line for each array key. 
+.PP
+Definition at line 85 of file Logger.php.
+.SS "const \fBMAIN_Logger::DEBUG\fP = -2"Signal for possibly important logging messages that will only be needed as a source for developers to debug if there is a problem. 
+.PP
+Definition at line 73 of file Logger.php.
+.SS "const \fBMAIN_Logger::ERROR\fP = 256"Signal for extremely dangerous errors, usually resulting in termination of the script. 
+.PP
+Definition at line 49 of file Logger.php.
+.SS "const \fBMAIN_Logger::INFO\fP = -1"Signal for important logging messages that are not errors, but denote important points in the script's execution. 
+.PP
+Definition at line 67 of file Logger.php.
+.PP
+Referenced by DB_Database::close(), DB_Database::connect(), DB_Database::getTable(), and DB_Database::query().
+.SS "const \fBMAIN_Logger::NOTICE\fP = 1024"Signal for standard errors that may have an effect on the outcome of the script in certain situations. 
+.PP
+Definition at line 61 of file Logger.php.
+.PP
+Referenced by DB_Object::__construct().
+.SS "const \fBMAIN_Logger::USER\fP = -3"Signal for any expected errors or messages caused by the user, such as keyboard interrupts, etc. 
+.PP
+Definition at line 79 of file Logger.php.
+.SS "const \fBMAIN_Logger::WARNING\fP = 512"Signal for critical errors, creating unwanted results, though not necessarily requiring the script to be terminated. 
+.PP
+Definition at line 55 of file Logger.php.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

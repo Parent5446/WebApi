@@ -1,0 +1,393 @@
+\hypertarget{classDB__Object}{
+\section{DB\_\-Object Class Reference}
+\label{dc/d6d/classDB__Object}\index{DB\_\-Object@{DB\_\-Object}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDB__Object_a9e72ad4e667d0de2f3d2df0cc37c6463}{getName} ()
+\item 
+\hyperlink{classDB__Object_ae09675ff1d492c3571766142196556df}{getId} ()
+\item 
+\hyperlink{classDB__Object_a45d1bd94aa7a815efa455c79742a3aff}{getInfo} (\$obj, \$name)
+\item 
+\hyperlink{classDB__Object_a96ce58f2dd8e64902dbd72a072083a0c}{putInfo} (\$obj, \$property, \$value)
+\item 
+\hyperlink{classDB__Object_aee226b738dafa7018cd39cc66a0d8665}{addChild} (\$child)
+\item 
+\hyperlink{classDB__Object_aab1bdf6fa7b550f96f21292aa53bb052}{addChildren} (\$children)
+\item 
+\hyperlink{classDB__Object_a2c2b7b97b2c73bee8d6d616fb51e297e}{getPassKey} ()
+\item 
+\hyperlink{classDB__Object_a8bd5723454893098af658c007c93a7c5}{checkPassword} (\$new, \$original=false)
+\item 
+\hyperlink{classDB__Object_a07519cd100d61b0985073f410f6456dd}{changePassword} (\$new)
+\item 
+\hyperlink{classDB__Object_ad323cdf42e524a6dccb1460c26d1a682}{isAllowed} (\$classname, \$action, \$property)
+\item 
+\hyperlink{classDB__Object_acde3675787ca522413a21203a3957148}{updateFromDatabase} (\$column, \$value)
+\item 
+\hyperlink{classDB__Object_afd22a626921cf089ccf1977a652d6fc1}{updateToDatabase} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classDB__Object_a8438909f696e1bb56d19eb617ef3f648}{hashPassword} (\$password, \$iterations=1)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDB__Object_a7e3792ecc489d4039ecef05574005aae}{\_\-\_\-construct} (\&\$db, \&\$config, \$column, \$value, \$profile=array(), \$new=false)
+\item 
+\hyperlink{classDB__Object_a3f370bd811dc4f984150f220a5a7fd1c}{changePasshash} (\$new)
+\item 
+\hyperlink{classDB__Object_a9924a8fa716e352e9528bf99f51a90fd}{getTable} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDB__Object_adec88cd7f52f2cbe98d4568c86d1e172}{\$info} = array()
+\item 
+\hyperlink{classDB__Object_ae7ffc7d66d72066f8333048851ef6926}{\$protect} = true
+\item 
+\hyperlink{classDB__Object_a5ba1c6aa344fb0a4f91da7095105ee72}{\$clienthashing} = false
+\item 
+\hyperlink{classDB__Object_a0d08820dae7ab434119115781b369714}{\$table}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classDB__Object_a4b05c22c55cb43234cc80dd35b1d542b}{\$enableprotect} = true
+\item 
+static \hyperlink{classDB__Object_abc24dbdab0d6a65f2f775ae46d0c4a59}{\$parent} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 38 of file Object.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDB__Object_a7e3792ecc489d4039ecef05574005aae}{
+\index{DB\_\-Object@{DB\_\-Object}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!DB_Object@{DB\_\-Object}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::\_\-\_\-construct (\&\$ {\em db}, \/  \&\$ {\em config}, \/  \$ {\em column}, \/  \$ {\em value}, \/  \$ {\em profile} = {\ttfamily array()}, \/  \$ {\em new} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_a7e3792ecc489d4039ecef05574005aae}
+Store the database and given information within the object. If an empty password is given then password protection is disabled. If the \$curpass variable is empty then client hashing will be disabled.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\&\$db A \hyperlink{classDB__Database}{DB\_\-Database} object used for database queries \item[{\em int}]\$id The ID of the object \item[{\em string}]\$name The name of the object (e.g. username for users) \item[{\em string}]\$origpass A SHA512 hash of the original password protecting the object \item[{\em string}]\$curpass The current one-\/time key produced by hash chaining \item[{\em int}]\$curpassnum The number of hash iterations for the \$curpass \item[{\em array}]\$profile Any information specific to the object from the database \end{DoxyParams}
+
+
+Definition at line 96 of file Object.php.
+
+References \$config, \$info, getTable(), hashPassword(), MAIN\_\-Logger::NOTICE, updateFromDatabase(), updateToDatabase(), and MAIN\_\-Error::WARNING.
+
+\subsection{Member Function Documentation}
+\hypertarget{classDB__Object_aee226b738dafa7018cd39cc66a0d8665}{
+\index{DB\_\-Object@{DB\_\-Object}!addChild@{addChild}}
+\index{addChild@{addChild}!DB_Object@{DB\_\-Object}}
+\subsubsection[{addChild}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::addChild (\$ {\em child})}}
+\label{dc/d6d/classDB__Object_aee226b738dafa7018cd39cc66a0d8665}
+Merges a child database object with the current object.
+
+Adds an array with the child object's ID, name, profile, and the object itself into the current object's profile. It is stored in: \$$<$currentObject$>$-\/$>$profile\mbox{[}$<$nameOfChildObject$>$\mbox{]}\mbox{[}\mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\$child Child object to store\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 218 of file Object.php.
+
+Referenced by addChildren().\hypertarget{classDB__Object_aab1bdf6fa7b550f96f21292aa53bb052}{
+\index{DB\_\-Object@{DB\_\-Object}!addChildren@{addChildren}}
+\index{addChildren@{addChildren}!DB_Object@{DB\_\-Object}}
+\subsubsection[{addChildren}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::addChildren (\$ {\em children})}}
+\label{dc/d6d/classDB__Object_aab1bdf6fa7b550f96f21292aa53bb052}
+Merges multiple child database objects with the current object. Calls the addChild function for each child given.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$child Child objects to add\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file Object.php.
+
+References addChild().\hypertarget{classDB__Object_a3f370bd811dc4f984150f220a5a7fd1c}{
+\index{DB\_\-Object@{DB\_\-Object}!changePasshash@{changePasshash}}
+\index{changePasshash@{changePasshash}!DB_Object@{DB\_\-Object}}
+\subsubsection[{changePasshash}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::changePasshash (\$ {\em new})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_a3f370bd811dc4f984150f220a5a7fd1c}
+Used for one time keys when hash chaining and client-\/side hashing is enabled. Decreases the hash chain count by one and uses the given hash as the new current hash.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$new The next hash in the hash chain (as supplied by the user)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line 329 of file Object.php.
+
+References \$info.
+
+Referenced by checkPassword().\hypertarget{classDB__Object_a07519cd100d61b0985073f410f6456dd}{
+\index{DB\_\-Object@{DB\_\-Object}!changePassword@{changePassword}}
+\index{changePassword@{changePassword}!DB_Object@{DB\_\-Object}}
+\subsubsection[{changePassword}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::changePassword (\$ {\em new})}}
+\label{dc/d6d/classDB__Object_a07519cd100d61b0985073f410f6456dd}
+Change the password for the object.
+
+Store a new password hash in the database as well as the password hashed 1000 times for client side hashing.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$new The new plaintext password\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file Object.php.
+
+References hashPassword(), and updateToDatabase().\hypertarget{classDB__Object_a8bd5723454893098af658c007c93a7c5}{
+\index{DB\_\-Object@{DB\_\-Object}!checkPassword@{checkPassword}}
+\index{checkPassword@{checkPassword}!DB_Object@{DB\_\-Object}}
+\subsubsection[{checkPassword}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::checkPassword (\$ {\em new}, \/  \$ {\em original} = {\ttfamily false})}}
+\label{dc/d6d/classDB__Object_a8bd5723454893098af658c007c93a7c5}
+Compare a given password to the stored password hash.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$new The password to check \item[{\em bool}]\$original Whether the given password is the actual plaintext password or a one time key on the hash chain\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if the password is correct, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file Object.php.
+
+References changePasshash(), and hashPassword().\hypertarget{classDB__Object_ae09675ff1d492c3571766142196556df}{
+\index{DB\_\-Object@{DB\_\-Object}!getId@{getId}}
+\index{getId@{getId}!DB_Object@{DB\_\-Object}}
+\subsubsection[{getId}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::getId ()}}
+\label{dc/d6d/classDB__Object_ae09675ff1d492c3571766142196556df}
+Get the ID of the object.
+
+\begin{DoxyReturn}{Returns}
+int The ID of the object 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file Object.php.\hypertarget{classDB__Object_a45d1bd94aa7a815efa455c79742a3aff}{
+\index{DB\_\-Object@{DB\_\-Object}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!DB_Object@{DB\_\-Object}}
+\subsubsection[{getInfo}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::getInfo (\$ {\em obj}, \/  \$ {\em name})}}
+\label{dc/d6d/classDB__Object_a45d1bd94aa7a815efa455c79742a3aff}
+Get any property of an object, checking if the object is allowed to access the property first.
+
+The permission to get the value of any property is in the form of \char`\"{}\$classname-\/get-\/\$name\char`\"{}, where \$classname is the name of this object, and \$name is the property being accessed. However, if the object has: $\ast$ \char`\"{}$\ast$-\/get-\/\$name\char`\"{} (get \$name from any object), $\ast$ \char`\"{}\$classname-\/$\ast$-\/\$name\char`\"{} (do anything to \$name for this class), $\ast$ \char`\"{}\$classname-\/get-\/$\ast$\char`\"{} (get anything from the object) or any combination of those, the request will also be allowed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\$obj A copy of the calling object (just give \$this) \item[{\em string}]\$name Name of the property to access\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed The requested property if allowed, \hyperlink{classMAIN__Error}{MAIN\_\-Error} if not allowed 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file Object.php.
+
+References MAIN\_\-Error::WARNING.\hypertarget{classDB__Object_a9e72ad4e667d0de2f3d2df0cc37c6463}{
+\index{DB\_\-Object@{DB\_\-Object}!getName@{getName}}
+\index{getName@{getName}!DB_Object@{DB\_\-Object}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::getName ()}}
+\label{dc/d6d/classDB__Object_a9e72ad4e667d0de2f3d2df0cc37c6463}
+Get the name of the object.
+
+\begin{DoxyReturn}{Returns}
+string The name of the object 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file Object.php.\hypertarget{classDB__Object_a2c2b7b97b2c73bee8d6d616fb51e297e}{
+\index{DB\_\-Object@{DB\_\-Object}!getPassKey@{getPassKey}}
+\index{getPassKey@{getPassKey}!DB_Object@{DB\_\-Object}}
+\subsubsection[{getPassKey}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::getPassKey ()}}
+\label{dc/d6d/classDB__Object_a2c2b7b97b2c73bee8d6d616fb51e297e}
+Get the current iteration on the hash chain.
+
+\begin{DoxyReturn}{Returns}
+array The current iteration on the hash chain 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file Object.php.\hypertarget{classDB__Object_a9924a8fa716e352e9528bf99f51a90fd}{
+\index{DB\_\-Object@{DB\_\-Object}!getTable@{getTable}}
+\index{getTable@{getTable}!DB_Object@{DB\_\-Object}}
+\subsubsection[{getTable}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::getTable ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_a9924a8fa716e352e9528bf99f51a90fd}
+Gets the table associated with this object, and sets it up if it does not exist.
+
+First checks if the table already exists, and returns it if it does. If not, constructs SQL to create a new table using definitions in the configuration file, then submits the query, reloads the database, and tries to get the table again.
+
+\begin{DoxyReturn}{Returns}
+object \hyperlink{classDB__Table}{DB\_\-Table} on success, \hyperlink{classMAIN__Error}{MAIN\_\-Error} on error 
+\end{DoxyReturn}
+
+
+Definition at line 431 of file Object.php.
+
+References \$table, and MAIN\_\-Error::ERROR.
+
+Referenced by \_\-\_\-construct(), updateFromDatabase(), and updateToDatabase().\hypertarget{classDB__Object_a8438909f696e1bb56d19eb617ef3f648}{
+\index{DB\_\-Object@{DB\_\-Object}!hashPassword@{hashPassword}}
+\index{hashPassword@{hashPassword}!DB_Object@{DB\_\-Object}}
+\subsubsection[{hashPassword}]{\setlength{\rightskip}{0pt plus 5cm}static DB\_\-Object::hashPassword (\$ {\em password}, \/  \$ {\em iterations} = {\ttfamily 1})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{dc/d6d/classDB__Object_a8438909f696e1bb56d19eb617ef3f648}
+Hash a given plaintext password a given number of times (1 hash is the default).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$password The password to hash \item[{\em int}]\$iterations Number of times to hash the password\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Hash of the password 
+\end{DoxyReturn}
+
+
+Definition at line 495 of file Object.php.
+
+Referenced by \_\-\_\-construct(), changePassword(), and checkPassword().\hypertarget{classDB__Object_ad323cdf42e524a6dccb1460c26d1a682}{
+\index{DB\_\-Object@{DB\_\-Object}!isAllowed@{isAllowed}}
+\index{isAllowed@{isAllowed}!DB_Object@{DB\_\-Object}}
+\subsubsection[{isAllowed}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::isAllowed (\$ {\em classname}, \/  \$ {\em action}, \/  \$ {\em property})}}
+\label{dc/d6d/classDB__Object_ad323cdf42e524a6dccb1460c26d1a682}
+Check if the object is allowed to do a certain action.
+
+Checks the groups of the object, and uses \hyperlink{classMAIN__Config}{MAIN\_\-Config} to compile an array of permissions from those groups. Then checks if the \$action is in the array.
+
+The format of a permission is \char`\"{}\$classname-\/\$action-\/\$property\char`\"{}, where \$classname is the object being accessed, \$action is either 'get' or 'set', and \$property is the name of the property. By having that permission, the action is allowed. In addition, the asterisk wildcard can be used in any field to give permission for any class, any action, any property, or a combination of the three.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$action Requested action\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if allowed, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 359 of file Object.php.\hypertarget{classDB__Object_a96ce58f2dd8e64902dbd72a072083a0c}{
+\index{DB\_\-Object@{DB\_\-Object}!putInfo@{putInfo}}
+\index{putInfo@{putInfo}!DB_Object@{DB\_\-Object}}
+\subsubsection[{putInfo}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::putInfo (\$ {\em obj}, \/  \$ {\em property}, \/  \$ {\em value})}}
+\label{dc/d6d/classDB__Object_a96ce58f2dd8e64902dbd72a072083a0c}
+Set any property of an object, checking if the object is allowed to access the property first.
+
+The permission to set the value of any property is in the form of \char`\"{}\$classname-\/set-\/\$name\char`\"{}, where \$classname is the name of this object, and \$name is the property being accessed. However, if the object has: $\ast$ \char`\"{}$\ast$-\/set-\/\$name\char`\"{} (get \$name from any object), $\ast$ \char`\"{}\$classname-\/$\ast$-\/\$name\char`\"{} (do anything to \$name for this class), $\ast$ \char`\"{}\$classname-\/set-\/$\ast$\char`\"{} (get anything from the object) or any combination of those, the request will also be allowed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\$obj A copy of the calling object (just give \$this) \item[{\em string}]\$name Name of the property to give a new value \item[{\em string}]\$value Value to give the property\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed The requested property if allowed, \hyperlink{classMAIN__Error}{MAIN\_\-Error} if not allowed 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file Object.php.
+
+References MAIN\_\-Error::WARNING.\hypertarget{classDB__Object_acde3675787ca522413a21203a3957148}{
+\index{DB\_\-Object@{DB\_\-Object}!updateFromDatabase@{updateFromDatabase}}
+\index{updateFromDatabase@{updateFromDatabase}!DB_Object@{DB\_\-Object}}
+\subsubsection[{updateFromDatabase}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::updateFromDatabase (\$ {\em column}, \/  \$ {\em value})}}
+\label{dc/d6d/classDB__Object_acde3675787ca522413a21203a3957148}
+Get properties about the object from the database.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$column Column to search for info from. \item[{\em string}]\$value Value in the column to match the object to. \end{DoxyParams}
+
+
+Definition at line 396 of file Object.php.
+
+References \$table, and getTable().
+
+Referenced by \_\-\_\-construct().\hypertarget{classDB__Object_afd22a626921cf089ccf1977a652d6fc1}{
+\index{DB\_\-Object@{DB\_\-Object}!updateToDatabase@{updateToDatabase}}
+\index{updateToDatabase@{updateToDatabase}!DB_Object@{DB\_\-Object}}
+\subsubsection[{updateToDatabase}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::updateToDatabase ()}}
+\label{dc/d6d/classDB__Object_afd22a626921cf089ccf1977a652d6fc1}
+Update properties about the object to the database.
+
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure. 
+\end{DoxyReturn}
+
+
+Definition at line 411 of file Object.php.
+
+References \$table, and getTable().
+
+Referenced by \_\-\_\-construct(), and changePassword().
+
+\subsection{Member Data Documentation}
+\hypertarget{classDB__Object_a5ba1c6aa344fb0a4f91da7095105ee72}{
+\index{DB\_\-Object@{DB\_\-Object}!\$clienthashing@{\$clienthashing}}
+\index{\$clienthashing@{\$clienthashing}!DB_Object@{DB\_\-Object}}
+\subsubsection[{\$clienthashing}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::\$clienthashing = false\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_a5ba1c6aa344fb0a4f91da7095105ee72}
+Whether to enable client hashing, when a password is entered by a user, hash chaining is used on the client side to prevent man-\/in-\/the-\/middle attacks. Requires the proper client-\/side scripts to be in place. 
+
+Definition at line 75 of file Object.php.\hypertarget{classDB__Object_a4b05c22c55cb43234cc80dd35b1d542b}{
+\index{DB\_\-Object@{DB\_\-Object}!\$enableprotect@{\$enableprotect}}
+\index{\$enableprotect@{\$enableprotect}!DB_Object@{DB\_\-Object}}
+\subsubsection[{\$enableprotect}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::\$enableprotect = true\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_a4b05c22c55cb43234cc80dd35b1d542b}
+Determines whether to enable password protection on a global scope. Should be customized in the child class definition. 
+
+Definition at line 46 of file Object.php.\hypertarget{classDB__Object_adec88cd7f52f2cbe98d4568c86d1e172}{
+\index{DB\_\-Object@{DB\_\-Object}!\$info@{\$info}}
+\index{\$info@{\$info}!DB_Object@{DB\_\-Object}}
+\subsubsection[{\$info}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::\$info = array()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_adec88cd7f52f2cbe98d4568c86d1e172}
+Stores information about the object that has been retrieved from the database. 
+
+Definition at line 61 of file Object.php.
+
+Referenced by \_\-\_\-construct(), and changePasshash().\hypertarget{classDB__Object_abc24dbdab0d6a65f2f775ae46d0c4a59}{
+\index{DB\_\-Object@{DB\_\-Object}!\$parent@{\$parent}}
+\index{\$parent@{\$parent}!DB_Object@{DB\_\-Object}}
+\subsubsection[{\$parent}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::\$parent = true\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_abc24dbdab0d6a65f2f775ae46d0c4a59}
+Determines whether the object can take in other objects as its children. When taking in a child object, the profiles of the two are merged. 
+
+Definition at line 54 of file Object.php.\hypertarget{classDB__Object_ae7ffc7d66d72066f8333048851ef6926}{
+\index{DB\_\-Object@{DB\_\-Object}!\$protect@{\$protect}}
+\index{\$protect@{\$protect}!DB_Object@{DB\_\-Object}}
+\subsubsection[{\$protect}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::\$protect = true\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_ae7ffc7d66d72066f8333048851ef6926}
+Determines whether to enable password protection on a per-\/object basis. 
+
+Definition at line 67 of file Object.php.\hypertarget{classDB__Object_a0d08820dae7ab434119115781b369714}{
+\index{DB\_\-Object@{DB\_\-Object}!\$table@{\$table}}
+\index{\$table@{\$table}!DB_Object@{DB\_\-Object}}
+\subsubsection[{\$table}]{\setlength{\rightskip}{0pt plus 5cm}DB\_\-Object::\$table\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{dc/d6d/classDB__Object_a0d08820dae7ab434119115781b369714}
+A \hyperlink{classDB__Table}{DB\_\-Table} object to be used for all database queries. 
+
+Definition at line 81 of file Object.php.
+
+Referenced by getTable(), updateFromDatabase(), and updateToDatabase().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/db/\hyperlink{Object_8php}{Object.php}\end{DoxyCompactItemize}

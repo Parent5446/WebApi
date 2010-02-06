@@ -1,0 +1,545 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="d6/d90/classDB__Table" kind="class" prot="public">
+    <compoundname>DB_Table</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/d90/classDB__Table_1a41dba64f7c42ebc3a036f391b2efad71" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>DB_Table::$database</definition>
+        <argsstring></argsstring>
+        <name>$database</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The parent <ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref> object </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="46" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="46" bodyend="-1"/>
+        <referencedby refid="d6/d90/classDB__Table_1ae1cbbd01f9100d98db4de61e11ccfab2" compoundref="d7/de9/Table_8php" startline="60" endline="69">__construct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d90/classDB__Table_1a3ac5f49ea8620ff9f514d767e745f14f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>DB_Table::$tablename</definition>
+        <argsstring></argsstring>
+        <name>$tablename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The name of the table in use </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="52" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="52" bodyend="-1"/>
+        <referencedby refid="d6/d90/classDB__Table_1ae1cbbd01f9100d98db4de61e11ccfab2" compoundref="d7/de9/Table_8php" startline="60" endline="69">__construct</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d90/classDB__Table_1ae1cbbd01f9100d98db4de61e11ccfab2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::__construct</definition>
+        <argsstring>(&amp;$database, $tablename)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>&amp;$</type>
+          <declname>database</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>tablename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the database and table information.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp;$database Parent <ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref> object to use </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$tablename Name of the table to use </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="60" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="60" bodyend="69"/>
+        <references refid="d6/d90/classDB__Table_1a41dba64f7c42ebc3a036f391b2efad71" compoundref="d7/de9/Table_8php" startline="46">$database</references>
+        <references refid="d6/d90/classDB__Table_1a3ac5f49ea8620ff9f514d767e745f14f" compoundref="d7/de9/Table_8php" startline="52">$tablename</references>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a3c86c1069485a5bdff2e4152b8485443" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>&amp;</type>
+        <definition>&amp; DB_Table::getLog</definition>
+        <argsstring>()</argsstring>
+        <name>getLog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the log object for the database.</para><para><simplesect kind="return"><para>object <ref refid="d3/dff/classMAIN__Logger" kindref="compound">MAIN_Logger</ref> instance </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="76" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a88064818e52f2002d18849600e077239" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::query</definition>
+        <argsstring>($sql)</argsstring>
+        <name>query</name>
+        <param>
+          <type>$</type>
+          <declname>sql</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Queries the database by using the parent object&apos;s function.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$sql Query to be submitted</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool|resource Returns true or false for INSERT, DELETE, and other related queries. Returns a result resource for SELECT queries. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="89" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="89" bodyend="92"/>
+        <referencedby refid="d6/d90/classDB__Table_1a480182430c70002f3b780a9d76be91b9" compoundref="d7/de9/Table_8php" startline="257" endline="260">columns</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a2374e86114f0af3132e4df6d55301628" compoundref="d7/de9/Table_8php" startline="242" endline="250">delete</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a843dcb7cc2f8eac5865d05de68d9c0bf" compoundref="d7/de9/Table_8php" startline="177" endline="194">insert</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a9d3c4b24a4c0d7218dd6b4f376a1aa9b" compoundref="d7/de9/Table_8php" startline="150" endline="164">select</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a96ba2b025ea8882eb171eff83749d6be" compoundref="d7/de9/Table_8php" startline="209" endline="228">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a041e54ac21aac399fb9ba2f6227554b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::result</definition>
+        <argsstring>($res, $type=&quot;array&quot;)</argsstring>
+        <name>result</name>
+        <param>
+          <type>$</type>
+          <declname>res</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>type</declname>
+          <defval>&quot;array&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtains a result set from a result resource by using the parent object&apos;s function.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>resource</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$res Result resource to get data from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$type The function to use to get the data</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>By default returns an array, but may change depending on the $type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="104" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="104" bodyend="106"/>
+        <referencedby refid="d6/d90/classDB__Table_1a480182430c70002f3b780a9d76be91b9" compoundref="d7/de9/Table_8php" startline="257" endline="260">columns</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a32f3e1b7ac33c40432f6204cc0af8b66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::escape</definition>
+        <argsstring>($var)</argsstring>
+        <name>escape</name>
+        <param>
+          <type>$</type>
+          <declname>var</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Escapes strings and arrays for use in a database query.</para><para>If a string is given, it is escaped using the parent object&apos;s function. If an array is given, all keys and values are escaped using the same method.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$var The variable to escape</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The escaped variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="119" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="119" bodyend="135"/>
+        <referencedby refid="d6/d90/classDB__Table_1a843dcb7cc2f8eac5865d05de68d9c0bf" compoundref="d7/de9/Table_8php" startline="177" endline="194">insert</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a56bde02ad43e915898c7709e4d2ec75e" compoundref="d7/de9/Table_8php" startline="298" endline="304">optionsStatement</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a9d3c4b24a4c0d7218dd6b4f376a1aa9b" compoundref="d7/de9/Table_8php" startline="150" endline="164">select</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a96ba2b025ea8882eb171eff83749d6be" compoundref="d7/de9/Table_8php" startline="209" endline="228">update</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1aee8ad81369c558bcf29a9b4cf0961b41" compoundref="d7/de9/Table_8php" startline="270" endline="288">whereStatement</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a9d3c4b24a4c0d7218dd6b4f376a1aa9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::select</definition>
+        <argsstring>($fields= &apos;*&apos;, $where= &apos;&apos;, $conditional= &apos;AND&apos;, $options=array())</argsstring>
+        <name>select</name>
+        <param>
+          <type>$</type>
+          <declname>fields</declname>
+          <defval>&apos;*&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>where</declname>
+          <defval>&apos;&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>conditional</declname>
+          <defval>&apos;AND&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>options</declname>
+          <defval>array()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Selects information from a table.</para><para>The equivalent of a SELECT query, which is created from the parameters and submitted to the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string|array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$fields The fields to select as an array or string </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$where Where to select information from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$conditional The conditional to put in between the WHERE statements </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$options Other options to add to the query</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>resource Returns a result resource to get query information </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="150" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="150" bodyend="164"/>
+        <references refid="d6/d90/classDB__Table_1a32f3e1b7ac33c40432f6204cc0af8b66" compoundref="d7/de9/Table_8php" startline="119" endline="135">escape</references>
+        <references refid="d6/d90/classDB__Table_1a56bde02ad43e915898c7709e4d2ec75e" compoundref="d7/de9/Table_8php" startline="298" endline="304">optionsStatement</references>
+        <references refid="d6/d90/classDB__Table_1a88064818e52f2002d18849600e077239" compoundref="d7/de9/Table_8php" startline="89" endline="92">query</references>
+        <references refid="d6/d90/classDB__Table_1aee8ad81369c558bcf29a9b4cf0961b41" compoundref="d7/de9/Table_8php" startline="270" endline="288">whereStatement</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a843dcb7cc2f8eac5865d05de68d9c0bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::insert</definition>
+        <argsstring>($row, $options=array())</argsstring>
+        <name>insert</name>
+        <param>
+          <type>$</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>options</declname>
+          <defval>array()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inserts a row into the database.</para><para>The equivalent of an INSERT query, which is created from the parameters and submitted to the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$row The columns and values to add </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$options Other options to add to the query</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool Returns true on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="177" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="177" bodyend="194"/>
+        <references refid="d6/d90/classDB__Table_1a32f3e1b7ac33c40432f6204cc0af8b66" compoundref="d7/de9/Table_8php" startline="119" endline="135">escape</references>
+        <references refid="d6/d90/classDB__Table_1a56bde02ad43e915898c7709e4d2ec75e" compoundref="d7/de9/Table_8php" startline="298" endline="304">optionsStatement</references>
+        <references refid="d6/d90/classDB__Table_1a88064818e52f2002d18849600e077239" compoundref="d7/de9/Table_8php" startline="89" endline="92">query</references>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a96ba2b025ea8882eb171eff83749d6be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::update</definition>
+        <argsstring>($row, $where= &apos;&apos;, $conditional= &apos;AND&apos;, $options=array())</argsstring>
+        <name>update</name>
+        <param>
+          <type>$</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>where</declname>
+          <defval>&apos;&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>conditional</declname>
+          <defval>&apos;AND&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>options</declname>
+          <defval>array()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates information in a table.</para><para>The equivalent of an UPDATE query, which is created from the parameters and submitted to the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$row The columns and values to be updated </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$where Where to select information from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$conditional The conditional to put in between the WHERE statements </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$options Other options to add to the query</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool Returns true on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="209" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="209" bodyend="228"/>
+        <references refid="d6/d90/classDB__Table_1a32f3e1b7ac33c40432f6204cc0af8b66" compoundref="d7/de9/Table_8php" startline="119" endline="135">escape</references>
+        <references refid="d6/d90/classDB__Table_1a56bde02ad43e915898c7709e4d2ec75e" compoundref="d7/de9/Table_8php" startline="298" endline="304">optionsStatement</references>
+        <references refid="d6/d90/classDB__Table_1a88064818e52f2002d18849600e077239" compoundref="d7/de9/Table_8php" startline="89" endline="92">query</references>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
+        <references refid="d6/d90/classDB__Table_1aee8ad81369c558bcf29a9b4cf0961b41" compoundref="d7/de9/Table_8php" startline="270" endline="288">whereStatement</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a2374e86114f0af3132e4df6d55301628" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::delete</definition>
+        <argsstring>($where=array(), $conditional= &apos;AND&apos;, $options=array())</argsstring>
+        <name>delete</name>
+        <param>
+          <type>$</type>
+          <declname>where</declname>
+          <defval>array()</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>conditional</declname>
+          <defval>&apos;AND&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>options</declname>
+          <defval>array()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deletes information from a table.</para><para>The equivalent of a DELETE query, which is created from the parameters and submitted to the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$where Where to select information from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$conditional The conditional to put in between the WHERE statements </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$options Other options to add to the query</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool Returns true on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="242" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="242" bodyend="250"/>
+        <references refid="d6/d90/classDB__Table_1a56bde02ad43e915898c7709e4d2ec75e" compoundref="d7/de9/Table_8php" startline="298" endline="304">optionsStatement</references>
+        <references refid="d6/d90/classDB__Table_1a88064818e52f2002d18849600e077239" compoundref="d7/de9/Table_8php" startline="89" endline="92">query</references>
+        <references refid="d6/d90/classDB__Table_1aee8ad81369c558bcf29a9b4cf0961b41" compoundref="d7/de9/Table_8php" startline="270" endline="288">whereStatement</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a480182430c70002f3b780a9d76be91b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::columns</definition>
+        <argsstring>()</argsstring>
+        <name>columns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an associative array of the columns for the table.</para><para><simplesect kind="return"><para>array Columns and their descriptions </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="257" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="257" bodyend="260"/>
+        <references refid="d6/d90/classDB__Table_1a88064818e52f2002d18849600e077239" compoundref="d7/de9/Table_8php" startline="89" endline="92">query</references>
+        <references refid="d6/d90/classDB__Table_1a041e54ac21aac399fb9ba2f6227554b1" compoundref="d7/de9/Table_8php" startline="104" endline="106">result</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d6/d90/classDB__Table_1aee8ad81369c558bcf29a9b4cf0961b41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::whereStatement</definition>
+        <argsstring>($where, $conditional)</argsstring>
+        <name>whereStatement</name>
+        <param>
+          <type>$</type>
+          <declname>where</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>conditional</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Takes a user-given array of information and makes a SQL WHERE statement.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$where Where to select information from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$conditional The conditional to put in between the WHERE statements</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string Returns a valid WHERE statement </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="270" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="270" bodyend="288"/>
+        <references refid="d6/d90/classDB__Table_1a32f3e1b7ac33c40432f6204cc0af8b66" compoundref="d7/de9/Table_8php" startline="119" endline="135">escape</references>
+        <referencedby refid="d6/d90/classDB__Table_1a2374e86114f0af3132e4df6d55301628" compoundref="d7/de9/Table_8php" startline="242" endline="250">delete</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a9d3c4b24a4c0d7218dd6b4f376a1aa9b" compoundref="d7/de9/Table_8php" startline="150" endline="164">select</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a96ba2b025ea8882eb171eff83749d6be" compoundref="d7/de9/Table_8php" startline="209" endline="228">update</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d90/classDB__Table_1a56bde02ad43e915898c7709e4d2ec75e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Table::optionsStatement</definition>
+        <argsstring>($options)</argsstring>
+        <name>optionsStatement</name>
+        <param>
+          <type>$</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Takes a user-given array of extra query options and sticks them together for use in a query.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$options The database options</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string Returns a valid list of options </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="298" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="298" bodyend="304"/>
+        <references refid="d6/d90/classDB__Table_1a32f3e1b7ac33c40432f6204cc0af8b66" compoundref="d7/de9/Table_8php" startline="119" endline="135">escape</references>
+        <referencedby refid="d6/d90/classDB__Table_1a2374e86114f0af3132e4df6d55301628" compoundref="d7/de9/Table_8php" startline="242" endline="250">delete</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a843dcb7cc2f8eac5865d05de68d9c0bf" compoundref="d7/de9/Table_8php" startline="177" endline="194">insert</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a9d3c4b24a4c0d7218dd6b4f376a1aa9b" compoundref="d7/de9/Table_8php" startline="150" endline="164">select</referencedby>
+        <referencedby refid="d6/d90/classDB__Table_1a96ba2b025ea8882eb171eff83749d6be" compoundref="d7/de9/Table_8php" startline="209" endline="228">update</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/db/Table.php" line="41" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Table.php" bodystart="40" bodyend="305"/>
+    <listofallmembers>
+      <member refid="d6/d90/classDB__Table_1a41dba64f7c42ebc3a036f391b2efad71" prot="private" virt="non-virtual"><scope>DB_Table</scope><name>$database</name></member>
+      <member refid="d6/d90/classDB__Table_1a3ac5f49ea8620ff9f514d767e745f14f" prot="private" virt="non-virtual"><scope>DB_Table</scope><name>$tablename</name></member>
+      <member refid="d6/d90/classDB__Table_1ae1cbbd01f9100d98db4de61e11ccfab2" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>__construct</name></member>
+      <member refid="d6/d90/classDB__Table_1a480182430c70002f3b780a9d76be91b9" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>columns</name></member>
+      <member refid="d6/d90/classDB__Table_1a2374e86114f0af3132e4df6d55301628" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>delete</name></member>
+      <member refid="d6/d90/classDB__Table_1a32f3e1b7ac33c40432f6204cc0af8b66" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>escape</name></member>
+      <member refid="d6/d90/classDB__Table_1a3c86c1069485a5bdff2e4152b8485443" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>getLog</name></member>
+      <member refid="d6/d90/classDB__Table_1a843dcb7cc2f8eac5865d05de68d9c0bf" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>insert</name></member>
+      <member refid="d6/d90/classDB__Table_1a56bde02ad43e915898c7709e4d2ec75e" prot="private" virt="non-virtual"><scope>DB_Table</scope><name>optionsStatement</name></member>
+      <member refid="d6/d90/classDB__Table_1a88064818e52f2002d18849600e077239" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>query</name></member>
+      <member refid="d6/d90/classDB__Table_1a041e54ac21aac399fb9ba2f6227554b1" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>result</name></member>
+      <member refid="d6/d90/classDB__Table_1a9d3c4b24a4c0d7218dd6b4f376a1aa9b" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>select</name></member>
+      <member refid="d6/d90/classDB__Table_1a96ba2b025ea8882eb171eff83749d6be" prot="public" virt="non-virtual"><scope>DB_Table</scope><name>update</name></member>
+      <member refid="d6/d90/classDB__Table_1aee8ad81369c558bcf29a9b4cf0961b41" prot="private" virt="non-virtual"><scope>DB_Table</scope><name>whereStatement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

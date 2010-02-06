@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="d0/d45/config_8php" kind="file">
+    <compoundname>config.php</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">;<sp/>&lt;?php<sp/>exit();<sp/>?&gt;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">;;<sp/>Enable<sp/>debug<sp/>messages</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">;debug<sp/>=<sp/>true</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">;;<sp/>Database<sp/>information,<sp/>including<sp/>server,</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">;;<sp/>username,<sp/>password,<sp/>and<sp/>database.</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">[database]</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">server<sp/>=<sp/>localhost:3390</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">username<sp/>=<sp/>root</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">password<sp/>=<sp/>test123</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">database<sp/>=<sp/>my_db</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">;;<sp/>Map<sp/>of<sp/>different<sp/>actions<sp/>(give<sp/>to<sp/>the<sp/>script</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">;;<sp/>by<sp/>the<sp/>user<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>GET)<sp/>to<sp/>different<sp/>controllers</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">;;<sp/>to<sp/>handle<sp/>those<sp/>actions.</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">[actions]</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">action1<sp/>=<sp/>StaticPage</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">action2<sp/>=<sp/>Login</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">action3<sp/>=<sp/>Register</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordflow">default</highlight><highlight class="normal"><sp/>=<sp/>action1</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">;;<sp/>List<sp/>of<sp/>custom<sp/>models.<sp/>Each<sp/>model<sp/>is<sp/>defined<sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>a<sp/>number<sp/>of<sp/>lines.<sp/>The</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">;;<sp/>first<sp/>line<sp/>is<sp/>the<sp/>options<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>the<sp/>model,<sp/>i.e.<sp/>whether<sp/>it<sp/>is<sp/>a<sp/>parent<sp/>for</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">;;<sp/>other<sp/>models,<sp/>and<sp/>whether<sp/>it<sp/>can<sp/>be<sp/>password-</highlight><highlight class="keyword">protected</highlight><highlight class="normal">.<sp/>Every<sp/>line<sp/>after</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">;;<sp/>that<sp/>is<sp/>a<sp/>column<sp/>in<sp/>the<sp/>database.</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">;;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">;;<sp/>The<sp/>columns<sp/>lines<sp/>determines<sp/>the<sp/>format<sp/>of<sp/>the<sp/>database<sp/>table.<sp/>Each</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">;;<sp/>column<sp/>is<sp/>its<sp/>line<sp/>with<sp/>a<sp/>number<sp/>of<sp/>comma-seprated<sp/>values.<sp/>The<sp/>first<sp/>value</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">;;<sp/>must<sp/>be<sp/>the<sp/>name<sp/>of<sp/>the<sp/>column,<sp/>and<sp/>the<sp/>second<sp/>value<sp/>must<sp/>be<sp/>the<sp/>type.<sp/>After</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">;;<sp/>that,<sp/>everything<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>is<sp/>option.</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">;;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">;;<sp/>Optional<sp/>value:<sp/>key<sp/>(whether<sp/>the<sp/>column<sp/>is<sp/>a<sp/>key),<sp/>null<sp/>(</highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>the</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">;;<sp/>column<sp/>can<sp/>be<sp/>NULL),<sp/>auto_increment<sp/>(does<sp/>the<sp/>column<sp/>automatically<sp/>increment),</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">;;<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordflow">default</highlight><highlight class="normal"><sp/>value<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>the<sp/>column),<sp/>and<sp/>comment<sp/>(comment<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>the<sp/>column).</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">[models]</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">User[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;protect,parent&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">User[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;id,int,key=primary,auto_increment=true&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">User[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;name,varchar(11),key=unique&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">User[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;password,blob&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">User[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;email,varchar(50),null&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">Page[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;parent&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">Page[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;id,int,key=primary,auto_increment=1&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">Page[]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;name,varchar(11),key=unique&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal">;;<sp/>List<sp/>of<sp/>possible<sp/>groups.<sp/>Each<sp/>group<sp/>is<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal"><sp/>to<sp/>a<sp/>comma-separated</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">;;<sp/>list<sp/>of<sp/>permissions.<sp/>See<sp/>db/Object.php<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>more<sp/>information<sp/>on</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">;;<sp/>how<sp/>to<sp/>format<sp/>permissions.</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">[auth]</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">admin<sp/>=<sp/>*-*-*</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">regular<sp/>=<sp/>Page-</highlight><highlight class="keyword">get</highlight><highlight class="normal">-*</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">;;<sp/>Cache<sp/>options.<sp/>Use<sp/></highlight><highlight class="stringliteral">&quot;action.actionname&quot;</highlight><highlight class="normal"><sp/>replacing<sp/>actionnname</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">;;<sp/>with<sp/>one<sp/>of<sp/>the<sp/>actions<sp/>above<sp/>to<sp/>enable<sp/>to<sp/>disable<sp/>caching<sp/>for</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">;;<sp/>that<sp/>action.<sp/>The<sp/>expires<sp/>option<sp/>is<sp/>how<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>until<sp/>a</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">;;<sp/>cache<sp/>expires<sp/>in<sp/>seconds.</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">[cache]</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">action.action1<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">action.action2<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">action.action3<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">expires<sp/>=<sp/>3600</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal">;;<sp/>Custom<sp/>paths<sp/>to<sp/>the<sp/>cache,<sp/>templates,<sp/>log,<sp/>and<sp/>uploads.</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">[paths]</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">cache<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/cache</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">templates<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/templates</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">log<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/log</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">uploads<sp/>=<sp/>ROOTDOR/uploads</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/parent5446/Repositories/WebApi/config.php"/>
+  </compounddef>
+</doxygen>

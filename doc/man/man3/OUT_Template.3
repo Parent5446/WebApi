@@ -1,0 +1,143 @@
+.TH "OUT_Template" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OUT_Template \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ($filename)"
+.br
+.ti -1c
+.RI "\fBgetOption\fP ($option)"
+.br
+.ti -1c
+.RI "\fBputOption\fP ($option, $value)"
+.br
+.ti -1c
+.RI "\fBexecute\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBreplaceTag\fP ($matches)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$filename\fP"
+.br
+.ti -1c
+.RI "\fB$template\fP"
+.br
+.ti -1c
+.RI "\fB$values\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 57 of file Template.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OUT_Template::__construct ($ filename)"Reads an HTML template from the given filename and stores it in in the object. See class description for instructions on creating templates.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $filename Filename of template 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file Template.php.
+.PP
+References $filename, $template, and MAIN_Error::WARNING.
+.SH "Member Function Documentation"
+.PP 
+.SS "OUT_Template::execute ()"Scan the template and replace the tags with the given options.
+.PP
+\fBReturns:\fP
+.RS 4
+string Template with substituted tags 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file Template.php.
+.SS "OUT_Template::getOption ($ option)"Gets a option from the option list.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $option Name of the option to retrieve
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+string The option value 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file Template.php.
+.SS "OUT_Template::putOption ($ option, $ value)"Stores a given value as an option in the template. Tags in the template with the same tag name as the option will be replaced with the value.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $option Name of the option 
+.br
+\fIstring\fP $value Value of the option
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file Template.php.
+.SS "OUT_Template::replaceTag ($ matches)\fC [private]\fP"Takes a tag that was matched in the template and replaces the entire tag with the stored value.
+.PP
+Acts as the callback function for regular expression replacement in the \fBexecute()\fP function. How the function replaces the tag varies depending on what options are placed in the tag in the template.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarray\fP $matches Array with the matched tag and each parenthetical subpattern (given to function by preg_replace_callback)
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+string Replacement string 
+.RE
+.PP
+
+.PP
+Definition at line 151 of file Template.php.
+.PP
+References $filename, and $template.
+.SH "Member Data Documentation"
+.PP 
+.SS "OUT_Template::$filename\fC [private]\fP"Filename for the template. 
+.PP
+Definition at line 63 of file Template.php.
+.PP
+Referenced by __construct(), and replaceTag().
+.SS "OUT_Template::$template\fC [private]\fP"The actual HTML template with tags. 
+.PP
+Definition at line 69 of file Template.php.
+.PP
+Referenced by __construct(), and replaceTag().
+.SS "OUT_Template::$values\fC [private]\fP"The values to replace tags within the template with. 
+.PP
+Definition at line 75 of file Template.php.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

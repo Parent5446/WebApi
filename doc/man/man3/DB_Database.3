@@ -1,0 +1,270 @@
+.TH "DB_Database" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DB_Database \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ($server, $username, $password, $database, &$log, $type= 'mysql')"
+.br
+.ti -1c
+.RI "\fBconnect\fP ()"
+.br
+.ti -1c
+.RI "\fBclose\fP ()"
+.br
+.ti -1c
+.RI "\fBquery\fP ($sql)"
+.br
+.ti -1c
+.RI "\fBresult\fP ($res, $type='array')"
+.br
+.ti -1c
+.RI "\fBescape\fP ($string)"
+.br
+.ti -1c
+.RI "\fBgetTable\fP ($tablename)"
+.br
+.ti -1c
+.RI "& \fBgetLog\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fB$globalfunctions\fP"
+.br
+.ti -1c
+.RI "static \fB$instance\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$conn\fP = false"
+.br
+.ti -1c
+.RI "\fB$conndata\fP"
+.br
+.ti -1c
+.RI "\fB$dbname\fP"
+.br
+.ti -1c
+.RI "\fB$functions\fP"
+.br
+.ti -1c
+.RI "\fB$tables\fP"
+.br
+.ti -1c
+.RI "\fB$log\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file Database.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DB_Database::__construct ($ server, $ username, $ password, $ database, &$ log, $ type = \fC'mysql'\fP)"Stores connection data and attempts to connect.
+.PP
+The database type is given in the parameters. For MySQL and extensions with similar function calls can be built into the class. Otherwise, child classes will be automatically created if they exist.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $server Server address to connect to 
+.br
+\fIstring\fP $username Username for the server 
+.br
+\fIstring\fP $password Password for the server 
+.br
+\fIstring\fP $database Database name to connect to 
+.br
+\fIobject\fP &$log \fBMAIN_Logger\fP object 
+.br
+\fIstring\fP $type Name of database type
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool|object Returns false if connection fails, returns object otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 125 of file Database.php.
+.PP
+References $log, connect(), and MAIN_Error::ERROR.
+.SH "Member Function Documentation"
+.PP 
+.SS "DB_Database::close ()"Checks if a database connection is open, and if so shuts the connection.
+.PP
+\fBReturns:\fP
+.RS 4
+bool Returns true for success, false for failure 
+.RE
+.PP
+
+.PP
+Definition at line 213 of file Database.php.
+.PP
+References MAIN_Error::ERROR, MAIN_Logger::INFO, and MAIN_Error::NOTICE.
+.PP
+Referenced by connect().
+.SS "DB_Database::connect ()"Connects to a database server, e.g. MySQL, and stores the connection.
+.PP
+\fBReturns:\fP
+.RS 4
+bool Returns true for success, false for failure 
+.RE
+.PP
+
+.PP
+Definition at line 156 of file Database.php.
+.PP
+References close(), MAIN_Error::ERROR, MAIN_Logger::INFO, query(), result(), and MAIN_Error::WARNING.
+.PP
+Referenced by __construct().
+.SS "DB_Database::escape ($ string)"Escapes a string for use in a database query.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $string The string to escape
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool|string Returns the escaped string, or false on failure. 
+.RE
+.PP
+
+.PP
+Definition at line 295 of file Database.php.
+.PP
+References MAIN_Error::ERROR, and MAIN_Error::WARNING.
+.SS "& DB_Database::getLog ()"Get the log object for the database.
+.PP
+\fBReturns:\fP
+.RS 4
+object \fBMAIN_Logger\fP instance 
+.RE
+.PP
+
+.PP
+Definition at line 337 of file Database.php.
+.SS "DB_Database::getTable ($ tablename)"Get a table object for query usage.
+.PP
+Retrive an object for a specific table, rather than using the general query function.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $tablename Name of the table
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+object|bool Returns Table object, or false if table does not exist 
+.RE
+.PP
+
+.PP
+Definition at line 319 of file Database.php.
+.PP
+References MAIN_Logger::INFO, and MAIN_Error::WARNING.
+.SS "DB_Database::query ($ sql)"Submits a query to the database server, then returns the result of the query function.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $sql A SQL query to submit
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool|resource Returns true or false for INSERT, DELETE, and other related queries. Returns a result resource for SELECT queries. 
+.RE
+.PP
+
+.PP
+Definition at line 241 of file Database.php.
+.PP
+References MAIN_Error::ERROR, MAIN_Logger::INFO, and MAIN_Error::WARNING.
+.PP
+Referenced by connect().
+.SS "DB_Database::result ($ res, $ type = \fC'array'\fP)"Obtains a result set from a result resource.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIresource\fP $res Result resource to get data from 
+.br
+\fIstring\fP $type The function to use to get the data
+.br
+\fIarray\fP Array of all the rows retrieved 
+.RE
+.PP
+
+.PP
+Definition at line 270 of file Database.php.
+.PP
+References MAIN_Error::ERROR, and MAIN_Error::WARNING.
+.PP
+Referenced by connect().
+.SH "Member Data Documentation"
+.PP 
+.SS "DB_Database::$conn = false\fC [private]\fP"Stores resource for database connection. 
+.PP
+Definition at line 74 of file Database.php.
+.SS "DB_Database::$conndata\fC [private]\fP"Stores connection data for database, i.e. server, username, and password. 
+.PP
+Definition at line 81 of file Database.php.
+.SS "DB_Database::$dbname\fC [private]\fP"Stores the database name to connect to. 
+.PP
+Definition at line 87 of file Database.php.
+.SS "DB_Database::$functions\fC [private]\fP"Stores the functions to interact with the database. Usually loaded from one of the static variables. 
+.PP
+Definition at line 95 of file Database.php.
+.SS "DB_Database::$globalfunctions\fC [static]\fP"\fBInitial value:\fP
+.PP
+.nf
+ array( 'mysql' => array(
+                                                'connect' => 'mysql_connect',
+                                                'close'   => 'mysql_close',
+                                                'db'      => 'mysql_select_db',
+                                                'query'   => 'mysql_query',
+                                                'result'  => 'mysql_result',
+                                                'array'   => 'mysql_fetch_array',
+                                                'assoc'   => 'mysql_fetch_assoc',
+                                                'escape'  => 'mysql_real_escape_string',
+                                                'numrows' => 'mysql_num_rows' ),
+                                         'mssql' => array(
+                                                'connect' => 'mssql_connect',
+                                                'close'   => 'mssql_close',
+                                                'db'      => 'mssql_select_db',
+                                                'query'   => 'mssql_query',
+                                                'result'  => 'mssql_result',
+                                                'array'   => 'mssql_fetch_array',
+                                                'escape'  => 'addslashes' )
+                                 )
+.fi
+Array of database functions to be used in object. 
+.PP
+Definition at line 44 of file Database.php.
+.SS "DB_Database::$instance\fC [static]\fP"Stores singleton instance of object. 
+.PP
+Definition at line 68 of file Database.php.
+.SS "DB_Database::$log\fC [private]\fP"Stores a \fBMAIN_Logger\fP object. 
+.PP
+Definition at line 107 of file Database.php.
+.PP
+Referenced by __construct().
+.SS "DB_Database::$tables\fC [private]\fP"Stores table objects. 
+.PP
+Definition at line 101 of file Database.php.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

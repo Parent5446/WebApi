@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="d0/dcf/classOUT__Template" kind="class" prot="public">
+    <compoundname>OUT_Template</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/dcf/classOUT__Template_1a296bfcd3d6b713859bd81c827d87aa3e" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Template::$filename</definition>
+        <argsstring></argsstring>
+        <name>$filename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Filename for the template. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="63" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="63" bodyend="-1"/>
+        <referencedby refid="d0/dcf/classOUT__Template_1ad750e5ccf638adee8a6bcb8794c1eb3f" compoundref="df/d4d/Template_8php" startline="84" endline="96">__construct</referencedby>
+        <referencedby refid="d0/dcf/classOUT__Template_1a851f1584ccf3a08203c13b89b9b18c95" compoundref="df/d4d/Template_8php" startline="151" endline="235">replaceTag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/dcf/classOUT__Template_1a1c04c575b35949f8146c1a5eef5c2ed7" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Template::$template</definition>
+        <argsstring></argsstring>
+        <name>$template</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The actual HTML template with tags. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="69" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="69" bodyend="-1"/>
+        <referencedby refid="d0/dcf/classOUT__Template_1ad750e5ccf638adee8a6bcb8794c1eb3f" compoundref="df/d4d/Template_8php" startline="84" endline="96">__construct</referencedby>
+        <referencedby refid="d0/dcf/classOUT__Template_1a851f1584ccf3a08203c13b89b9b18c95" compoundref="df/d4d/Template_8php" startline="151" endline="235">replaceTag</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/dcf/classOUT__Template_1a60c326b6e906fce16b17436540625a66" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Template::$values</definition>
+        <argsstring></argsstring>
+        <name>$values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The values to replace tags within the template with. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="75" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/dcf/classOUT__Template_1ad750e5ccf638adee8a6bcb8794c1eb3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Template::__construct</definition>
+        <argsstring>($filename)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>$</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads an HTML template from the given filename and stores it in in the object. See class description for instructions on creating templates.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$filename Filename of template </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="84" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="84" bodyend="96"/>
+        <references refid="d0/dcf/classOUT__Template_1a296bfcd3d6b713859bd81c827d87aa3e" compoundref="df/d4d/Template_8php" startline="63">$filename</references>
+        <references refid="d0/dcf/classOUT__Template_1a1c04c575b35949f8146c1a5eef5c2ed7" compoundref="df/d4d/Template_8php" startline="69">$template</references>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/dcf/classOUT__Template_1a2f0cd6dd6fe55fbc4926cfa10bf48abb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Template::getOption</definition>
+        <argsstring>($option)</argsstring>
+        <name>getOption</name>
+        <param>
+          <type>$</type>
+          <declname>option</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a option from the option list.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$option Name of the option to retrieve</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string The option value </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="105" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="105" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/dcf/classOUT__Template_1a068a09ea40b27447cbf3cd4540939a8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Template::putOption</definition>
+        <argsstring>($option, $value)</argsstring>
+        <name>putOption</name>
+        <param>
+          <type>$</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores a given value as an option in the template. Tags in the template with the same tag name as the option will be replaced with the value.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$option Name of the option </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$value Value of the option</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="118" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/dcf/classOUT__Template_1a87d9c155f0467841a0ce3a61c6131f5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Template::execute</definition>
+        <argsstring>()</argsstring>
+        <name>execute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Scan the template and replace the tags with the given options.</para><para><simplesect kind="return"><para>string Template with substituted tags </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="131" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="131" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/dcf/classOUT__Template_1a851f1584ccf3a08203c13b89b9b18c95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Template::replaceTag</definition>
+        <argsstring>($matches)</argsstring>
+        <name>replaceTag</name>
+        <param>
+          <type>$</type>
+          <declname>matches</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Takes a tag that was matched in the template and replaces the entire tag with the stored value.</para><para>Acts as the callback function for regular expression replacement in the <ref refid="d0/dcf/classOUT__Template_1a87d9c155f0467841a0ce3a61c6131f5e" kindref="member">execute()</ref> function. How the function replaces the tag varies depending on what options are placed in the tag in the template.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$matches Array with the matched tag and each parenthetical subpattern (given to function by preg_replace_callback)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string Replacement string </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="151" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="151" bodyend="235"/>
+        <references refid="d0/dcf/classOUT__Template_1a296bfcd3d6b713859bd81c827d87aa3e" compoundref="df/d4d/Template_8php" startline="63">$filename</references>
+        <references refid="d0/dcf/classOUT__Template_1a1c04c575b35949f8146c1a5eef5c2ed7" compoundref="df/d4d/Template_8php" startline="69">$template</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/out/Template.php" line="58" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Template.php" bodystart="57" bodyend="236"/>
+    <listofallmembers>
+      <member refid="d0/dcf/classOUT__Template_1a296bfcd3d6b713859bd81c827d87aa3e" prot="private" virt="non-virtual"><scope>OUT_Template</scope><name>$filename</name></member>
+      <member refid="d0/dcf/classOUT__Template_1a1c04c575b35949f8146c1a5eef5c2ed7" prot="private" virt="non-virtual"><scope>OUT_Template</scope><name>$template</name></member>
+      <member refid="d0/dcf/classOUT__Template_1a60c326b6e906fce16b17436540625a66" prot="private" virt="non-virtual"><scope>OUT_Template</scope><name>$values</name></member>
+      <member refid="d0/dcf/classOUT__Template_1ad750e5ccf638adee8a6bcb8794c1eb3f" prot="public" virt="non-virtual"><scope>OUT_Template</scope><name>__construct</name></member>
+      <member refid="d0/dcf/classOUT__Template_1a87d9c155f0467841a0ce3a61c6131f5e" prot="public" virt="non-virtual"><scope>OUT_Template</scope><name>execute</name></member>
+      <member refid="d0/dcf/classOUT__Template_1a2f0cd6dd6fe55fbc4926cfa10bf48abb" prot="public" virt="non-virtual"><scope>OUT_Template</scope><name>getOption</name></member>
+      <member refid="d0/dcf/classOUT__Template_1a068a09ea40b27447cbf3cd4540939a8e" prot="public" virt="non-virtual"><scope>OUT_Template</scope><name>putOption</name></member>
+      <member refid="d0/dcf/classOUT__Template_1a851f1584ccf3a08203c13b89b9b18c95" prot="private" virt="non-virtual"><scope>OUT_Template</scope><name>replaceTag</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

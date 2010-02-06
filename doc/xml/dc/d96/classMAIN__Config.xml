@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="dc/d96/classMAIN__Config" kind="class" prot="public">
+    <compoundname>MAIN_Config</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dc/d96/classMAIN__Config_1a25b93ec03bb1cffdfaf33b9f9b60e853" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Config::$options</definition>
+        <argsstring></argsstring>
+        <name>$options</name>
+        <initializer> array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Configuration options </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="42" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="42" bodyend="-1"/>
+        <referencedby refid="dc/d96/classMAIN__Config_1a636818348ea40ca509c190c004c89119" compoundref="d7/d8c/Config_8php" startline="93" endline="109">updateFromFile</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dc/d96/classMAIN__Config_1ada84d4395bba0bac555477b54f34088d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Config::getOption</definition>
+        <argsstring>($option)</argsstring>
+        <name>getOption</name>
+        <param>
+          <type>$</type>
+          <declname>option</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a configuration option.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$option Name of the option</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed Option value, false if non-existent </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="51" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d96/classMAIN__Config_1a8de584a5144c39504341867b7aabcd78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Config::putOption</definition>
+        <argsstring>($option, $value)</argsstring>
+        <name>putOption</name>
+        <param>
+          <type>$</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores a configuration option.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$option Name of the option </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$value Value of the option</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="63" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="63" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d96/classMAIN__Config_1abc9328fbcaa9bdad08924c639722dac1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Config::insertPlugin</definition>
+        <argsstring>($name, $filename)</argsstring>
+        <name>insertPlugin</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper function to insert plugins. Inserts the options of the given plugin configuration filename under the plugin_$name key in the global configuration.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Base name for the plugin </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$filename Full filename for the config file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="80" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="80" bodyend="82"/>
+        <references refid="dc/d96/classMAIN__Config_1a636818348ea40ca509c190c004c89119" compoundref="d7/d8c/Config_8php" startline="93" endline="109">updateFromFile</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d96/classMAIN__Config_1a636818348ea40ca509c190c004c89119" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Config::updateFromFile</definition>
+        <argsstring>($filename, $name= &apos;&apos;)</argsstring>
+        <name>updateFromFile</name>
+        <param>
+          <type>$</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+          <defval>&apos;&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Load configuration options from a file, where each option has its own new line, and the option name is separated from the value with an &apos;=&apos;.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$filename Path to the configuration file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="93" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="93" bodyend="109"/>
+        <references refid="dc/d96/classMAIN__Config_1a25b93ec03bb1cffdfaf33b9f9b60e853" compoundref="d7/d8c/Config_8php" startline="42">$options</references>
+        <referencedby refid="dc/d96/classMAIN__Config_1abc9328fbcaa9bdad08924c639722dac1" compoundref="d7/d8c/Config_8php" startline="80" endline="82">insertPlugin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d96/classMAIN__Config_1a9316b105c92355638b38a37d61eb0021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Config::updateToFile</definition>
+        <argsstring>($filename)</argsstring>
+        <name>updateToFile</name>
+        <param>
+          <type>$</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update a configuration file with the local configuration options.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$filename Path to the configuration file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="118" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="118" bodyend="155"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="37" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="36" bodyend="156"/>
+    <listofallmembers>
+      <member refid="dc/d96/classMAIN__Config_1a25b93ec03bb1cffdfaf33b9f9b60e853" prot="private" virt="non-virtual"><scope>MAIN_Config</scope><name>$options</name></member>
+      <member refid="dc/d96/classMAIN__Config_1ada84d4395bba0bac555477b54f34088d" prot="public" virt="non-virtual"><scope>MAIN_Config</scope><name>getOption</name></member>
+      <member refid="dc/d96/classMAIN__Config_1abc9328fbcaa9bdad08924c639722dac1" prot="public" virt="non-virtual"><scope>MAIN_Config</scope><name>insertPlugin</name></member>
+      <member refid="dc/d96/classMAIN__Config_1a8de584a5144c39504341867b7aabcd78" prot="public" virt="non-virtual"><scope>MAIN_Config</scope><name>putOption</name></member>
+      <member refid="dc/d96/classMAIN__Config_1a636818348ea40ca509c190c004c89119" prot="public" virt="non-virtual"><scope>MAIN_Config</scope><name>updateFromFile</name></member>
+      <member refid="dc/d96/classMAIN__Config_1a9316b105c92355638b38a37d61eb0021" prot="public" virt="non-virtual"><scope>MAIN_Config</scope><name>updateToFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

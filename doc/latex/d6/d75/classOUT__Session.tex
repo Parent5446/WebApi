@@ -1,0 +1,229 @@
+\hypertarget{classOUT__Session}{
+\section{OUT\_\-Session Class Reference}
+\label{d6/d75/classOUT__Session}\index{OUT\_\-Session@{OUT\_\-Session}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Session_a838ed9477ab542064af677e5cf97f276}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classOUT__Session_ae753f4f970b7ef5701ca06eb8319755e}{startSession} ()
+\item 
+\hyperlink{classOUT__Session_a249eb4ce8b2f736a2282f9edf48c57fd}{endSession} ()
+\item 
+\hyperlink{classOUT__Session_a7dc75b2f274e8e8ecc0a43ebb94f8d7b}{getIpAddress} ()
+\item 
+\hyperlink{classOUT__Session_ae4af903f5997118f6036a4104ea20c3b}{putSessionVal} (\$name, \$value)
+\item 
+\hyperlink{classOUT__Session_af2c29620bc267a3613ec1f15ead5c519}{getVal} (\$name, \$from= 'GET', \$default=false)
+\item 
+\hyperlink{classOUT__Session_a455e243a97243d5585156a47fae04b27}{getText} (\$name, \$from= 'GET', \$default= '')
+\item 
+\hyperlink{classOUT__Session_a8df372b0cc4128399e6367f04c2219ab}{getInt} (\$name, \$from= 'GET', \$default=0)
+\item 
+\hyperlink{classOUT__Session_ada05962a25467070b6ca9ffa6692d4c3}{getFloat} (\$name, \$from= 'GET', \$default=0.0)
+\item 
+\hyperlink{classOUT__Session_a2000b816710ab8938ff33c21c05ff23e}{getBool} (\$name, \$from= 'GET', \$default=false)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Session_a8a776002946743f759a9cd110aca0c43}{\$SessionID}
+\item 
+\hyperlink{classOUT__Session_ac04cf3c45479efcb55cc6310846dd77a}{\$VerifyID}
+\item 
+\hyperlink{classOUT__Session_abb034dc0d8a6fd5242974685313742cc}{\$POST}
+\item 
+\hyperlink{classOUT__Session_a34c08d712763261ab4a2efe76db27919}{\$GET}
+\item 
+\hyperlink{classOUT__Session_a257c5b20188e45a080a024ecba899883}{\$SERVER}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file Session.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOUT__Session_a838ed9477ab542064af677e5cf97f276}{
+\index{OUT\_\-Session@{OUT\_\-Session}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::\_\-\_\-construct ()}}
+\label{d6/d75/classOUT__Session_a838ed9477ab542064af677e5cf97f276}
+Stores local copies of the POST, GET, and SERVER superglobals. 
+
+Definition at line 72 of file Session.php.
+
+\subsection{Member Function Documentation}
+\hypertarget{classOUT__Session_a249eb4ce8b2f736a2282f9edf48c57fd}{
+\index{OUT\_\-Session@{OUT\_\-Session}!endSession@{endSession}}
+\index{endSession@{endSession}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{endSession}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::endSession ()}}
+\label{d6/d75/classOUT__Session_a249eb4ce8b2f736a2282f9edf48c57fd}
+Ends a session by deleting the session cookie, destroying the session, and resetting the \$\_\-SESSION superglobal. 
+
+Definition at line 110 of file Session.php.\hypertarget{classOUT__Session_a2000b816710ab8938ff33c21c05ff23e}{
+\index{OUT\_\-Session@{OUT\_\-Session}!getBool@{getBool}}
+\index{getBool@{getBool}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{getBool}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::getBool (\$ {\em name}, \/  \$ {\em from} = {\ttfamily 'GET'}, \/  \$ {\em default} = {\ttfamily false})}}
+\label{d6/d75/classOUT__Session_a2000b816710ab8938ff33c21c05ff23e}
+Gets a boolean from either the \$\_\-GET, \$\_\-POST, \$\_\-SERVER, or \$\_\-SESSION superglobal. If \$\_\-GET is specified, the function will automatically search \$\_\-POST as well. Variables will automatically be cast as true or false.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Name of the variable to retrieve \item[{\em mixed}]\$default What to return if the variable does not exist \item[{\em string}]\$from Superglobal to look from\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Variable if it exists, \$default otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file Session.php.
+
+References getVal().\hypertarget{classOUT__Session_ada05962a25467070b6ca9ffa6692d4c3}{
+\index{OUT\_\-Session@{OUT\_\-Session}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{getFloat}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::getFloat (\$ {\em name}, \/  \$ {\em from} = {\ttfamily 'GET'}, \/  \$ {\em default} = {\ttfamily 0.0})}}
+\label{d6/d75/classOUT__Session_ada05962a25467070b6ca9ffa6692d4c3}
+Gets a float from either the \$\_\-GET, \$\_\-POST, \$\_\-SERVER, or \$\_\-SESSION superglobal. If \$\_\-GET is specified, the function will automatically search \$\_\-POST as well. Variables will automatically be cast as floats.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Name of the variable to retrieve \item[{\em mixed}]\$default What to return if the variable does not exist \item[{\em string}]\$from Superglobal to look from\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Variable if it exists, \$default otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 204 of file Session.php.
+
+References getVal().\hypertarget{classOUT__Session_a8df372b0cc4128399e6367f04c2219ab}{
+\index{OUT\_\-Session@{OUT\_\-Session}!getInt@{getInt}}
+\index{getInt@{getInt}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{getInt}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::getInt (\$ {\em name}, \/  \$ {\em from} = {\ttfamily 'GET'}, \/  \$ {\em default} = {\ttfamily 0})}}
+\label{d6/d75/classOUT__Session_a8df372b0cc4128399e6367f04c2219ab}
+Gets a integer from either the \$\_\-GET, \$\_\-POST, \$\_\-SERVER, or \$\_\-SESSION superglobal. If \$\_\-GET is specified, the function will automatically search \$\_\-POST as well. Variables will automatically be cast as integers.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Name of the variable to retrieve \item[{\em mixed}]\$default What to return if the variable does not exist \item[{\em string}]\$from Superglobal to look from\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Variable if it exists, \$default otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 189 of file Session.php.
+
+References getVal().\hypertarget{classOUT__Session_a7dc75b2f274e8e8ecc0a43ebb94f8d7b}{
+\index{OUT\_\-Session@{OUT\_\-Session}!getIpAddress@{getIpAddress}}
+\index{getIpAddress@{getIpAddress}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{getIpAddress}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::getIpAddress ()}}
+\label{d6/d75/classOUT__Session_a7dc75b2f274e8e8ecc0a43ebb94f8d7b}
+
+
+Definition at line 118 of file Session.php.
+
+References getText().
+
+Referenced by startSession().\hypertarget{classOUT__Session_a455e243a97243d5585156a47fae04b27}{
+\index{OUT\_\-Session@{OUT\_\-Session}!getText@{getText}}
+\index{getText@{getText}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{getText}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::getText (\$ {\em name}, \/  \$ {\em from} = {\ttfamily 'GET'}, \/  \$ {\em default} = {\ttfamily ''})}}
+\label{d6/d75/classOUT__Session_a455e243a97243d5585156a47fae04b27}
+Gets a string from either the \$\_\-GET, \$\_\-POST, \$\_\-SERVER, or \$\_\-SESSION superglobal. If \$\_\-GET is specified, the function will automatically search \$\_\-POST as well. Variables will automatically be cast as strings.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Name of the variable to retrieve \item[{\em mixed}]\$default What to return if the variable does not exist \item[{\em string}]\$from Superglobal to look from\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Variable if it exists, \$default otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file Session.php.
+
+References getVal().
+
+Referenced by getIpAddress(), and startSession().\hypertarget{classOUT__Session_af2c29620bc267a3613ec1f15ead5c519}{
+\index{OUT\_\-Session@{OUT\_\-Session}!getVal@{getVal}}
+\index{getVal@{getVal}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{getVal}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::getVal (\$ {\em name}, \/  \$ {\em from} = {\ttfamily 'GET'}, \/  \$ {\em default} = {\ttfamily false})}}
+\label{d6/d75/classOUT__Session_af2c29620bc267a3613ec1f15ead5c519}
+Gets a variable from either the \$\_\-GET, \$\_\-POST, \$\_\-SERVER, or \$\_\-SESSION superglobal. If \$\_\-GET is specified, the function will automatically search \$\_\-POST as well.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Name of the variable to retrieve \item[{\em string}]\$from Superglobal to look from \item[{\em mixed}]\$default What to return if the variable does not exist\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Variable if it exists, \$default otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file Session.php.
+
+Referenced by getBool(), getFloat(), getInt(), and getText().\hypertarget{classOUT__Session_ae4af903f5997118f6036a4104ea20c3b}{
+\index{OUT\_\-Session@{OUT\_\-Session}!putSessionVal@{putSessionVal}}
+\index{putSessionVal@{putSessionVal}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{putSessionVal}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::putSessionVal (\$ {\em name}, \/  \$ {\em value})}}
+\label{d6/d75/classOUT__Session_ae4af903f5997118f6036a4104ea20c3b}
+Stores a session variable.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Name of the variable \item[{\em string}]\$value Value of the variable \end{DoxyParams}
+
+
+Definition at line 134 of file Session.php.
+
+Referenced by startSession().\hypertarget{classOUT__Session_ae753f4f970b7ef5701ca06eb8319755e}{
+\index{OUT\_\-Session@{OUT\_\-Session}!startSession@{startSession}}
+\index{startSession@{startSession}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{startSession}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::startSession ()}}
+\label{d6/d75/classOUT__Session_ae753f4f970b7ef5701ca06eb8319755e}
+Starts a PHP session, stores the session id, and generates an unique hash using the IP address and the User Agent. 
+
+Definition at line 83 of file Session.php.
+
+References getIpAddress(), getText(), and putSessionVal().
+
+\subsection{Member Data Documentation}
+\hypertarget{classOUT__Session_a34c08d712763261ab4a2efe76db27919}{
+\index{OUT\_\-Session@{OUT\_\-Session}!\$GET@{\$GET}}
+\index{\$GET@{\$GET}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{\$GET}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::\$GET\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d6/d75/classOUT__Session_a34c08d712763261ab4a2efe76db27919}
+The \$\_\-GET superglobal. 
+
+Definition at line 61 of file Session.php.\hypertarget{classOUT__Session_abb034dc0d8a6fd5242974685313742cc}{
+\index{OUT\_\-Session@{OUT\_\-Session}!\$POST@{\$POST}}
+\index{\$POST@{\$POST}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{\$POST}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::\$POST\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d6/d75/classOUT__Session_abb034dc0d8a6fd5242974685313742cc}
+The \$\_\-POST superglobal. 
+
+Definition at line 55 of file Session.php.\hypertarget{classOUT__Session_a257c5b20188e45a080a024ecba899883}{
+\index{OUT\_\-Session@{OUT\_\-Session}!\$SERVER@{\$SERVER}}
+\index{\$SERVER@{\$SERVER}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{\$SERVER}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::\$SERVER\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d6/d75/classOUT__Session_a257c5b20188e45a080a024ecba899883}
+The \$\_\-SERVER superglobal. 
+
+Definition at line 67 of file Session.php.\hypertarget{classOUT__Session_a8a776002946743f759a9cd110aca0c43}{
+\index{OUT\_\-Session@{OUT\_\-Session}!\$SessionID@{\$SessionID}}
+\index{\$SessionID@{\$SessionID}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{\$SessionID}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::\$SessionID\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d6/d75/classOUT__Session_a8a776002946743f759a9cd110aca0c43}
+Session ID for the request. 
+
+Definition at line 43 of file Session.php.\hypertarget{classOUT__Session_ac04cf3c45479efcb55cc6310846dd77a}{
+\index{OUT\_\-Session@{OUT\_\-Session}!\$VerifyID@{\$VerifyID}}
+\index{\$VerifyID@{\$VerifyID}!OUT_Session@{OUT\_\-Session}}
+\subsubsection[{\$VerifyID}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Session::\$VerifyID\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d6/d75/classOUT__Session_ac04cf3c45479efcb55cc6310846dd77a}
+Verification hash to prevent session hijacking. 
+
+Definition at line 49 of file Session.php.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/out/\hyperlink{Session_8php}{Session.php}\end{DoxyCompactItemize}

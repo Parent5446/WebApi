@@ -50,6 +50,7 @@ Page[] = "name,varchar(11),key=unique"
 ;; how to format permissions.
 [auth]
 admin = *-*-*
+editor = Page-*-*
 regular = Page-get-*
 
 
@@ -65,11 +66,9 @@ expires = 3600
 
 
 ;; Custom paths to the cache, templates, log, and uploads.
-;; The section MUST exist, but all of the entries can be
-;; left out, because they have default values.
 [paths]
-cache = /path/to/cache
-templates = /path/to/templates
-log = /path/to/log
-uploads = /path/to/uploads
+cache = ROOTDIR/cache
+templates = ROOTDIR/templates
+log = ROOTDIR/log
+uploads = ROOTDOR/uploads
 

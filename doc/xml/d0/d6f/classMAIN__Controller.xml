@@ -1,0 +1,340 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="d0/d6f/classMAIN__Controller" kind="class" prot="public">
+    <compoundname>MAIN_Controller</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1a340814c812daea328ea667392bf3dbac" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$POST</definition>
+        <argsstring></argsstring>
+        <name>$POST</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the $_POST variable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="43" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1aa072e0fbed2a55683b79b6051898b405" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$GET</definition>
+        <argsstring></argsstring>
+        <name>$GET</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the $_GET variable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="49" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1a95325660c51e8672302c6ddfe8df58c2" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$SERVER</definition>
+        <argsstring></argsstring>
+        <name>$SERVER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the $_SERVER variable. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="55" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1a586f25bf8bda47c77b6a66a5f2d0d68f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$action</definition>
+        <argsstring></argsstring>
+        <name>$action</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The given action for this request. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="61" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="61" bodyend="-1"/>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" compoundref="da/d82/Controller_8php" startline="168" endline="193">initiate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1acc4c62c1bdc82257bfab216245c3ba98" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$cached</definition>
+        <argsstring></argsstring>
+        <name>$cached</name>
+        <initializer> &apos;&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The cached request if available. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="67" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1a2aca1668ade4cd033ab1376fe5ce3641" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$config</definition>
+        <argsstring></argsstring>
+        <name>$config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref> object for this request </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="73" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="73" bodyend="-1"/>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="157">boot</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1aeb53199b16ee35291df91c7cc97148a7" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$request</definition>
+        <argsstring></argsstring>
+        <name>$request</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A subclass of <ref refid="de/d53/classOUT__Request" kindref="compound">OUT_Request</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="79" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1ace18fc24f51944c19682bffe09603f97" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$database</definition>
+        <argsstring></argsstring>
+        <name>$database</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref> object for this request </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="85" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="85" bodyend="-1"/>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="157">boot</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1a7fa8fc6630663c9024016edbba1f9fa5" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$logger</definition>
+        <argsstring></argsstring>
+        <name>$logger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="d3/dff/classMAIN__Logger" kindref="compound">MAIN_Logger</ref> object for this request </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="91" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1ad9dbd5184b193cbea96bd88eadd88059" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$cache</definition>
+        <argsstring></argsstring>
+        <name>$cache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="d2/d41/classMAIN__Cache" kindref="compound">MAIN_Cache</ref> object for this request </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="97" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="97" bodyend="-1"/>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a940555212e44afb717f9c11e9b6424d8" compoundref="da/d82/Controller_8php" startline="199" endline="218">send</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1ac0e517c6f06f9cefa0c6e52ce0a6247a" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$session</definition>
+        <argsstring></argsstring>
+        <name>$session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="d6/d75/classOUT__Session" kindref="compound">OUT_Session</ref> object for this request </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="103" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1afc211a153cde6633f13d1797ceab6adb" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Controller::$error</definition>
+        <argsstring></argsstring>
+        <name>$error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref> object for this request should an error be encountered during the script. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="110" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1af1465bb574b9238d78d1b0172fb5249e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores local copies of the POST, GET, and SERVER superglobals. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="115" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="115" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::boot</definition>
+        <argsstring>(&amp;$config)</argsstring>
+        <name>boot</name>
+        <param>
+          <type>&amp;$</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts basic bootstrapping procedures before the request can be handled. Starts up the Logger and Database, and creates a Request object to handle the request.</para><para><simplesect kind="return"><para>bool True on success, false on critical error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="128" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="128" bodyend="157"/>
+        <references refid="d0/d6f/classMAIN__Controller_1a2aca1668ade4cd033ab1376fe5ce3641" compoundref="da/d82/Controller_8php" startline="73">$config</references>
+        <references refid="d0/d6f/classMAIN__Controller_1ace18fc24f51944c19682bffe09603f97" compoundref="da/d82/Controller_8php" startline="85">$database</references>
+        <references refid="d0/d6f/classMAIN__Controller_1abdf41ec9c3425b16d70236e0fe497b9f" compoundref="da/d82/Controller_8php" startline="284" endline="291">newDatabaseObject</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::initiate</definition>
+        <argsstring>()</argsstring>
+        <name>initiate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Calls the initialize function for the request class.</para><para>This function should start setting up the request, retrieving information from the database, getting templates from their respective files, etc.</para><para><simplesect kind="return"><para>mixed Return value of <ref refid="de/d53/classOUT__Request_1a825f77601714b2cb7510ab65d2d71483" kindref="member">OUT_Request::initiate</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="168" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="168" bodyend="193"/>
+        <references refid="d0/d6f/classMAIN__Controller_1a586f25bf8bda47c77b6a66a5f2d0d68f" compoundref="da/d82/Controller_8php" startline="61">$action</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a940555212e44afb717f9c11e9b6424d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::send</definition>
+        <argsstring>()</argsstring>
+        <name>send</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Triggers the send function for the request. HTML will be loaded into the output buffer, but not sent until cleanup, in case of error. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="199" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="199" bodyend="218"/>
+        <references refid="d0/d6f/classMAIN__Controller_1ad9dbd5184b193cbea96bd88eadd88059" compoundref="da/d82/Controller_8php" startline="97">$cache</references>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a6400bbd98dfe782c6c54b46e035a92c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shuts down the database, logger, and configuration. If no error occurs, sends the output buffer to the client.</para><para><simplesect kind="return"><para>bool True on success, false on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="226" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="226" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a8d9ca0c2bdd69d2d18fa90de23acc2de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::getError</definition>
+        <argsstring>()</argsstring>
+        <name>getError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the error that occurred during the request.</para><para><simplesect kind="return"><para>object|bool <ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref> object if there was an error, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="273" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="273" bodyend="275"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1abdf41ec9c3425b16d70236e0fe497b9f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::newDatabaseObject</definition>
+        <argsstring>($name, $protect=false, $parent=false)</argsstring>
+        <name>newDatabaseObject</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>protect</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>parent</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new database class definition with the given options.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the class to create </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$protect Whether to allow password protection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$parent Whether to allow child objects </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="284" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="284" bodyend="291"/>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="157">boot</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="37" bodyend="292"/>
+    <listofallmembers>
+      <member refid="d0/d6f/classMAIN__Controller_1a586f25bf8bda47c77b6a66a5f2d0d68f" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$action</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1ad9dbd5184b193cbea96bd88eadd88059" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$cache</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1acc4c62c1bdc82257bfab216245c3ba98" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$cached</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a2aca1668ade4cd033ab1376fe5ce3641" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$config</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1ace18fc24f51944c19682bffe09603f97" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$database</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1afc211a153cde6633f13d1797ceab6adb" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$error</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1aa072e0fbed2a55683b79b6051898b405" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$GET</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a7fa8fc6630663c9024016edbba1f9fa5" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$logger</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a340814c812daea328ea667392bf3dbac" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$POST</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1aeb53199b16ee35291df91c7cc97148a7" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$request</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a95325660c51e8672302c6ddfe8df58c2" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$SERVER</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1ac0e517c6f06f9cefa0c6e52ce0a6247a" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$session</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1af1465bb574b9238d78d1b0172fb5249e" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>__construct</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>boot</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a6400bbd98dfe782c6c54b46e035a92c1" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>cleanup</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a8d9ca0c2bdd69d2d18fa90de23acc2de" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>getError</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>initiate</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1abdf41ec9c3425b16d70236e0fe497b9f" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>newDatabaseObject</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a940555212e44afb717f9c11e9b6424d8" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>send</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

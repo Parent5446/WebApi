@@ -1,0 +1,246 @@
+\hypertarget{classMAIN__Controller}{
+\section{MAIN\_\-Controller Class Reference}
+\label{d0/d6f/classMAIN__Controller}\index{MAIN\_\-Controller@{MAIN\_\-Controller}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Controller_af1465bb574b9238d78d1b0172fb5249e}{\_\-\_\-construct} ()
+\item 
+\hyperlink{classMAIN__Controller_a5c77de67c4b47bcda0c997a5db3f32fa}{boot} (\&\$config)
+\item 
+\hyperlink{classMAIN__Controller_a63a01965c1673fbdbe5eb374ddf5c8d6}{initiate} ()
+\item 
+\hyperlink{classMAIN__Controller_a940555212e44afb717f9c11e9b6424d8}{send} ()
+\item 
+\hyperlink{classMAIN__Controller_a6400bbd98dfe782c6c54b46e035a92c1}{cleanup} ()
+\item 
+\hyperlink{classMAIN__Controller_a8d9ca0c2bdd69d2d18fa90de23acc2de}{getError} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Controller_abdf41ec9c3425b16d70236e0fe497b9f}{newDatabaseObject} (\$name, \$protect=false, \$parent=false)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Controller_a340814c812daea328ea667392bf3dbac}{\$POST}
+\item 
+\hyperlink{classMAIN__Controller_aa072e0fbed2a55683b79b6051898b405}{\$GET}
+\item 
+\hyperlink{classMAIN__Controller_a95325660c51e8672302c6ddfe8df58c2}{\$SERVER}
+\item 
+\hyperlink{classMAIN__Controller_a586f25bf8bda47c77b6a66a5f2d0d68f}{\$action}
+\item 
+\hyperlink{classMAIN__Controller_acc4c62c1bdc82257bfab216245c3ba98}{\$cached} = ''
+\item 
+\hyperlink{classMAIN__Controller_a2aca1668ade4cd033ab1376fe5ce3641}{\$config}
+\item 
+\hyperlink{classMAIN__Controller_aeb53199b16ee35291df91c7cc97148a7}{\$request}
+\item 
+\hyperlink{classMAIN__Controller_ace18fc24f51944c19682bffe09603f97}{\$database}
+\item 
+\hyperlink{classMAIN__Controller_a7fa8fc6630663c9024016edbba1f9fa5}{\$logger}
+\item 
+\hyperlink{classMAIN__Controller_ad9dbd5184b193cbea96bd88eadd88059}{\$cache}
+\item 
+\hyperlink{classMAIN__Controller_ac0e517c6f06f9cefa0c6e52ce0a6247a}{\$session}
+\item 
+\hyperlink{classMAIN__Controller_afc211a153cde6633f13d1797ceab6adb}{\$error}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file Controller.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMAIN__Controller_af1465bb574b9238d78d1b0172fb5249e}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\_\-\_\-construct ()}}
+\label{d0/d6f/classMAIN__Controller_af1465bb574b9238d78d1b0172fb5249e}
+Stores local copies of the POST, GET, and SERVER superglobals. 
+
+Definition at line 115 of file Controller.php.
+
+\subsection{Member Function Documentation}
+\hypertarget{classMAIN__Controller_a5c77de67c4b47bcda0c997a5db3f32fa}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!boot@{boot}}
+\index{boot@{boot}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{boot}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::boot (\&\$ {\em config})}}
+\label{d0/d6f/classMAIN__Controller_a5c77de67c4b47bcda0c997a5db3f32fa}
+Starts basic bootstrapping procedures before the request can be handled. Starts up the Logger and Database, and creates a Request object to handle the request.
+
+\begin{DoxyReturn}{Returns}
+bool True on success, false on critical error 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file Controller.php.
+
+References \$config, \$database, and newDatabaseObject().\hypertarget{classMAIN__Controller_a6400bbd98dfe782c6c54b46e035a92c1}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!cleanup@{cleanup}}
+\index{cleanup@{cleanup}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::cleanup ()}}
+\label{d0/d6f/classMAIN__Controller_a6400bbd98dfe782c6c54b46e035a92c1}
+Shuts down the database, logger, and configuration. If no error occurs, sends the output buffer to the client.
+
+\begin{DoxyReturn}{Returns}
+bool True on success, false on error 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file Controller.php.\hypertarget{classMAIN__Controller_a8d9ca0c2bdd69d2d18fa90de23acc2de}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!getError@{getError}}
+\index{getError@{getError}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{getError}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::getError ()}}
+\label{d0/d6f/classMAIN__Controller_a8d9ca0c2bdd69d2d18fa90de23acc2de}
+Get the error that occurred during the request.
+
+\begin{DoxyReturn}{Returns}
+object$|$bool \hyperlink{classMAIN__Error}{MAIN\_\-Error} object if there was an error, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file Controller.php.\hypertarget{classMAIN__Controller_a63a01965c1673fbdbe5eb374ddf5c8d6}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!initiate@{initiate}}
+\index{initiate@{initiate}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{initiate}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::initiate ()}}
+\label{d0/d6f/classMAIN__Controller_a63a01965c1673fbdbe5eb374ddf5c8d6}
+Calls the initialize function for the request class.
+
+This function should start setting up the request, retrieving information from the database, getting templates from their respective files, etc.
+
+\begin{DoxyReturn}{Returns}
+mixed Return value of \hyperlink{classOUT__Request_a825f77601714b2cb7510ab65d2d71483}{OUT\_\-Request::initiate} 
+\end{DoxyReturn}
+
+
+Definition at line 168 of file Controller.php.
+
+References \$action.\hypertarget{classMAIN__Controller_abdf41ec9c3425b16d70236e0fe497b9f}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!newDatabaseObject@{newDatabaseObject}}
+\index{newDatabaseObject@{newDatabaseObject}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{newDatabaseObject}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::newDatabaseObject (\$ {\em name}, \/  \$ {\em protect} = {\ttfamily false}, \/  \$ {\em parent} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_abdf41ec9c3425b16d70236e0fe497b9f}
+Create a new database class definition with the given options.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Name of the class to create \item[{\em bool}]\$protect Whether to allow password protection \item[{\em bool}]\$parent Whether to allow child objects \end{DoxyParams}
+
+
+Definition at line 284 of file Controller.php.
+
+Referenced by boot().\hypertarget{classMAIN__Controller_a940555212e44afb717f9c11e9b6424d8}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!send@{send}}
+\index{send@{send}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::send ()}}
+\label{d0/d6f/classMAIN__Controller_a940555212e44afb717f9c11e9b6424d8}
+Triggers the send function for the request. HTML will be loaded into the output buffer, but not sent until cleanup, in case of error. 
+
+Definition at line 199 of file Controller.php.
+
+References \$cache.
+
+\subsection{Member Data Documentation}
+\hypertarget{classMAIN__Controller_a586f25bf8bda47c77b6a66a5f2d0d68f}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$action@{\$action}}
+\index{\$action@{\$action}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$action}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$action\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_a586f25bf8bda47c77b6a66a5f2d0d68f}
+The given action for this request. 
+
+Definition at line 61 of file Controller.php.
+
+Referenced by initiate().\hypertarget{classMAIN__Controller_ad9dbd5184b193cbea96bd88eadd88059}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$cache@{\$cache}}
+\index{\$cache@{\$cache}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$cache}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$cache\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_ad9dbd5184b193cbea96bd88eadd88059}
+The \hyperlink{classMAIN__Cache}{MAIN\_\-Cache} object for this request 
+
+Definition at line 97 of file Controller.php.
+
+Referenced by send().\hypertarget{classMAIN__Controller_acc4c62c1bdc82257bfab216245c3ba98}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$cached@{\$cached}}
+\index{\$cached@{\$cached}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$cached}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$cached = ''\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_acc4c62c1bdc82257bfab216245c3ba98}
+The cached request if available. 
+
+Definition at line 67 of file Controller.php.\hypertarget{classMAIN__Controller_a2aca1668ade4cd033ab1376fe5ce3641}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$config@{\$config}}
+\index{\$config@{\$config}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$config\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_a2aca1668ade4cd033ab1376fe5ce3641}
+The \hyperlink{classMAIN__Config}{MAIN\_\-Config} object for this request 
+
+Definition at line 73 of file Controller.php.
+
+Referenced by boot().\hypertarget{classMAIN__Controller_ace18fc24f51944c19682bffe09603f97}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$database@{\$database}}
+\index{\$database@{\$database}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$database}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$database\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_ace18fc24f51944c19682bffe09603f97}
+The \hyperlink{classDB__Database}{DB\_\-Database} object for this request 
+
+Definition at line 85 of file Controller.php.
+
+Referenced by boot().\hypertarget{classMAIN__Controller_afc211a153cde6633f13d1797ceab6adb}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$error@{\$error}}
+\index{\$error@{\$error}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$error}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$error\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_afc211a153cde6633f13d1797ceab6adb}
+The \hyperlink{classMAIN__Error}{MAIN\_\-Error} object for this request should an error be encountered during the script. 
+
+Definition at line 110 of file Controller.php.\hypertarget{classMAIN__Controller_aa072e0fbed2a55683b79b6051898b405}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$GET@{\$GET}}
+\index{\$GET@{\$GET}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$GET}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$GET\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_aa072e0fbed2a55683b79b6051898b405}
+Stores the \$\_\-GET variable. 
+
+Definition at line 49 of file Controller.php.\hypertarget{classMAIN__Controller_a7fa8fc6630663c9024016edbba1f9fa5}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$logger@{\$logger}}
+\index{\$logger@{\$logger}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$logger}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$logger\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_a7fa8fc6630663c9024016edbba1f9fa5}
+The \hyperlink{classMAIN__Logger}{MAIN\_\-Logger} object for this request 
+
+Definition at line 91 of file Controller.php.\hypertarget{classMAIN__Controller_a340814c812daea328ea667392bf3dbac}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$POST@{\$POST}}
+\index{\$POST@{\$POST}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$POST}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$POST\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_a340814c812daea328ea667392bf3dbac}
+Stores the \$\_\-POST variable. 
+
+Definition at line 43 of file Controller.php.\hypertarget{classMAIN__Controller_aeb53199b16ee35291df91c7cc97148a7}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$request@{\$request}}
+\index{\$request@{\$request}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$request}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$request\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_aeb53199b16ee35291df91c7cc97148a7}
+A subclass of \hyperlink{classOUT__Request}{OUT\_\-Request}. 
+
+Definition at line 79 of file Controller.php.\hypertarget{classMAIN__Controller_a95325660c51e8672302c6ddfe8df58c2}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$SERVER@{\$SERVER}}
+\index{\$SERVER@{\$SERVER}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$SERVER}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$SERVER\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_a95325660c51e8672302c6ddfe8df58c2}
+Stores the \$\_\-SERVER variable. 
+
+Definition at line 55 of file Controller.php.\hypertarget{classMAIN__Controller_ac0e517c6f06f9cefa0c6e52ce0a6247a}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$session@{\$session}}
+\index{\$session@{\$session}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{\$session}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$session\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/d6f/classMAIN__Controller_ac0e517c6f06f9cefa0c6e52ce0a6247a}
+The \hyperlink{classOUT__Session}{OUT\_\-Session} object for this request 
+
+Definition at line 103 of file Controller.php.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{Controller_8php}{Controller.php}\end{DoxyCompactItemize}

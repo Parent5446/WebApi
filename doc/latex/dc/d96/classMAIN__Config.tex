@@ -1,0 +1,128 @@
+\hypertarget{classMAIN__Config}{
+\section{MAIN\_\-Config Class Reference}
+\label{dc/d96/classMAIN__Config}\index{MAIN\_\-Config@{MAIN\_\-Config}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Config_ada84d4395bba0bac555477b54f34088d}{getOption} (\$option)
+\item 
+\hyperlink{classMAIN__Config_a8de584a5144c39504341867b7aabcd78}{putOption} (\$option, \$value)
+\item 
+\hyperlink{classMAIN__Config_abc9328fbcaa9bdad08924c639722dac1}{insertPlugin} (\$name, \$filename)
+\item 
+\hyperlink{classMAIN__Config_a636818348ea40ca509c190c004c89119}{updateFromFile} (\$filename, \$name= '')
+\item 
+\hyperlink{classMAIN__Config_a9316b105c92355638b38a37d61eb0021}{updateToFile} (\$filename)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Config_a25b93ec03bb1cffdfaf33b9f9b60e853}{\$options} = array()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 36 of file Config.php.
+
+\subsection{Member Function Documentation}
+\hypertarget{classMAIN__Config_ada84d4395bba0bac555477b54f34088d}{
+\index{MAIN\_\-Config@{MAIN\_\-Config}!getOption@{getOption}}
+\index{getOption@{getOption}!MAIN_Config@{MAIN\_\-Config}}
+\subsubsection[{getOption}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Config::getOption (\$ {\em option})}}
+\label{dc/d96/classMAIN__Config_ada84d4395bba0bac555477b54f34088d}
+Get a configuration option.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$option Name of the option\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Option value, false if non-\/existent 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file Config.php.\hypertarget{classMAIN__Config_abc9328fbcaa9bdad08924c639722dac1}{
+\index{MAIN\_\-Config@{MAIN\_\-Config}!insertPlugin@{insertPlugin}}
+\index{insertPlugin@{insertPlugin}!MAIN_Config@{MAIN\_\-Config}}
+\subsubsection[{insertPlugin}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Config::insertPlugin (\$ {\em name}, \/  \$ {\em filename})}}
+\label{dc/d96/classMAIN__Config_abc9328fbcaa9bdad08924c639722dac1}
+Helper function to insert plugins. Inserts the options of the given plugin configuration filename under the plugin\_\-\$name key in the global configuration.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$name Base name for the plugin \item[{\em string}]\$filename Full filename for the config file\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file Config.php.
+
+References updateFromFile().\hypertarget{classMAIN__Config_a8de584a5144c39504341867b7aabcd78}{
+\index{MAIN\_\-Config@{MAIN\_\-Config}!putOption@{putOption}}
+\index{putOption@{putOption}!MAIN_Config@{MAIN\_\-Config}}
+\subsubsection[{putOption}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Config::putOption (\$ {\em option}, \/  \$ {\em value})}}
+\label{dc/d96/classMAIN__Config_a8de584a5144c39504341867b7aabcd78}
+Stores a configuration option.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$option Name of the option \item[{\em string}]\$value Value of the option\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Config.php.\hypertarget{classMAIN__Config_a636818348ea40ca509c190c004c89119}{
+\index{MAIN\_\-Config@{MAIN\_\-Config}!updateFromFile@{updateFromFile}}
+\index{updateFromFile@{updateFromFile}!MAIN_Config@{MAIN\_\-Config}}
+\subsubsection[{updateFromFile}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Config::updateFromFile (\$ {\em filename}, \/  \$ {\em name} = {\ttfamily ''})}}
+\label{dc/d96/classMAIN__Config_a636818348ea40ca509c190c004c89119}
+Load configuration options from a file, where each option has its own new line, and the option name is separated from the value with an '='.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$filename Path to the configuration file\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Config.php.
+
+References \$options.
+
+Referenced by insertPlugin().\hypertarget{classMAIN__Config_a9316b105c92355638b38a37d61eb0021}{
+\index{MAIN\_\-Config@{MAIN\_\-Config}!updateToFile@{updateToFile}}
+\index{updateToFile@{updateToFile}!MAIN_Config@{MAIN\_\-Config}}
+\subsubsection[{updateToFile}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Config::updateToFile (\$ {\em filename})}}
+\label{dc/d96/classMAIN__Config_a9316b105c92355638b38a37d61eb0021}
+Update a configuration file with the local configuration options.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$filename Path to the configuration file\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file Config.php.
+
+\subsection{Member Data Documentation}
+\hypertarget{classMAIN__Config_a25b93ec03bb1cffdfaf33b9f9b60e853}{
+\index{MAIN\_\-Config@{MAIN\_\-Config}!\$options@{\$options}}
+\index{\$options@{\$options}!MAIN_Config@{MAIN\_\-Config}}
+\subsubsection[{\$options}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Config::\$options = array()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{dc/d96/classMAIN__Config_a25b93ec03bb1cffdfaf33b9f9b60e853}
+Configuration options 
+
+Definition at line 42 of file Config.php.
+
+Referenced by updateFromFile().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{Config_8php}{Config.php}\end{DoxyCompactItemize}

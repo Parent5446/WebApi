@@ -1,0 +1,128 @@
+.TH "MAIN_Autoloader" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MAIN_Autoloader \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBloadClass\fP ($classname)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBloadFile\fP ($filename)"
+.br
+.ti -1c
+.RI "static \fBgetInstance\fP ($rootdir= '')"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ($rootdir)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$rootdir\fP"
+.br
+.ti -1c
+.RI "\fB$loaded\fP = array()"
+.br
+.ti -1c
+.RI "\fB$classlist\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fB$instance\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This program was created to make a set of classes to be used for easy website creation. Usage: simply extend the \fBDB_Object\fP class to make models and the \fBOUT_Request\fP class to make controllers. HTML is stored in templates with special tags. See the \fBOUT_Template\fP class for more details. Made by Tyler Romeo <tylerromeo@gmail.com>
+.PP
+Copyright (C) 2009 Tyler Romeo
+.PP
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+.PP
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+.PP
+You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>. 
+.PP
+Definition at line 28 of file Autoloader.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MAIN_Autoloader::__construct ($ rootdir)\fC [private]\fP"
+.PP
+Definition at line 49 of file Autoloader.php.
+.PP
+References $rootdir.
+.SH "Member Function Documentation"
+.PP 
+.SS "static MAIN_Autoloader::getInstance ($ rootdir = \fC''\fP)\fC [static]\fP"
+.PP
+Definition at line 74 of file Autoloader.php.
+.PP
+References $rootdir.
+.PP
+Referenced by __autoload().
+.SS "MAIN_Autoloader::loadClass ($ classname)"
+.PP
+Definition at line 55 of file Autoloader.php.
+.PP
+References loadFile().
+.SS "static MAIN_Autoloader::loadFile ($ filename)\fC [static]\fP"
+.PP
+Definition at line 65 of file Autoloader.php.
+.PP
+Referenced by loadClass().
+.SH "Member Data Documentation"
+.PP 
+.SS "MAIN_Autoloader::$classlist\fC [private]\fP"\fBInitial value:\fP
+.PP
+.nf
+ array(
+                        'MAIN_Controller' => '/app/main/Controller.php',
+                        'MAIN_Cache'      => 'app/main/Cache.php',
+                        'MAIN_Config'     => 'app/main/Config.php',
+                        'MAIN_Error'      => 'app/main/Error.php',
+                        'MAIN_Logger'     => 'app/main/Logger.php',
+
+                        'DB_Database'     => 'app/db/Database.php',
+                        'DB_Object'       => 'app/db/Object.php',
+                        'DB_Table'        => 'app/db/Table.php',
+
+                        'OUT_Request'     => 'app/out/Request.php',
+                        'OUT_Session'     => 'app/out/Session.php',
+                        'OUT_Template'    => 'app/out/Template.php' )
+.fi
+.PP
+Definition at line 34 of file Autoloader.php.
+.SS "MAIN_Autoloader::$instance\fC [static, private]\fP"
+.PP
+Definition at line 30 of file Autoloader.php.
+.SS "MAIN_Autoloader::$loaded = array()\fC [private]\fP"
+.PP
+Definition at line 33 of file Autoloader.php.
+.SS "MAIN_Autoloader::$rootdir\fC [private]\fP"
+.PP
+Definition at line 32 of file Autoloader.php.
+.PP
+Referenced by __construct(), and getInstance().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="de/d53/classOUT__Request" kind="class" prot="public">
+    <compoundname>OUT_Request</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="de/d53/classOUT__Request_1a628de0ecf0318ef0459d1b1986bf2586" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Request::$config</definition>
+        <argsstring></argsstring>
+        <name>$config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A valid <ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="43" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="43" bodyend="-1"/>
+        <referencedby refid="de/d53/classOUT__Request_1a749906f7ca9aeb506814d71f0215e380" compoundref="db/d81/Request_8php" startline="56" endline="63">__construct</referencedby>
+        <referencedby refid="de/d53/classOUT__Request_1a7106b7d90946eacf1688d089c12722f0" compoundref="db/d81/Request_8php" startline="157" endline="172">tidy</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="de/d53/classOUT__Request_1ae2aa3cf43543978530ee50af4433f954" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Request::$db</definition>
+        <argsstring></argsstring>
+        <name>$db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A valid <ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref> object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="49" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="49" bodyend="-1"/>
+        <referencedby refid="de/d53/classOUT__Request_1a749906f7ca9aeb506814d71f0215e380" compoundref="db/d81/Request_8php" startline="56" endline="63">__construct</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/d53/classOUT__Request_1a749906f7ca9aeb506814d71f0215e380" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Request::__construct</definition>
+        <argsstring>(&amp;$config, &amp;$db, &amp;$session)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>&amp;$</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>db</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Store the configuration and database objects.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp;$config <ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref> object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="56" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="56" bodyend="63"/>
+        <references refid="de/d53/classOUT__Request_1a628de0ecf0318ef0459d1b1986bf2586" compoundref="db/d81/Request_8php" startline="43">$config</references>
+        <references refid="de/d53/classOUT__Request_1ae2aa3cf43543978530ee50af4433f954" compoundref="db/d81/Request_8php" startline="49">$db</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d53/classOUT__Request_1a825f77601714b2cb7510ab65d2d71483" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Request::initiate</definition>
+        <argsstring>(&amp;$session)</argsstring>
+        <name>initiate</name>
+        <param>
+          <type>&amp;$</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Definition for a function to initialize the request, get database information, and load it into the template. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="69" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="69" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d53/classOUT__Request_1acc60e320923329be1aa103406a4a3ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Request::send</definition>
+        <argsstring>()</argsstring>
+        <name>send</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Print the resulting HTML to the screen. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="74" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="74" bodyend="77"/>
+        <references refid="de/d53/classOUT__Request_1a7106b7d90946eacf1688d089c12722f0" compoundref="db/d81/Request_8php" startline="157" endline="172">tidy</references>
+      </memberdef>
+      <memberdef kind="function" id="de/d53/classOUT__Request_1aaa4a74668b18665c9408f57dd0556f98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Request::getOption</definition>
+        <argsstring>($option)</argsstring>
+        <name>getOption</name>
+        <param>
+          <type>$</type>
+          <declname>option</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get an option that has been passed to the template.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$option Name of the option</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed Option value, false if non-existant or if template is missing </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="86" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="de/d53/classOUT__Request_1ad1b829ea37ed35c67115e0886089d92d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Request::putOption</definition>
+        <argsstring>($option, $value)</argsstring>
+        <name>putOption</name>
+        <param>
+          <type>$</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores an option in the template for the request.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$option Name of the option </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$value Value of the option</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false if template is missing </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="100" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="100" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="de/d53/classOUT__Request_1a2b3032d9a81143c98702d8b9344e6ba2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Request::getTemplate</definition>
+        <argsstring>()</argsstring>
+        <name>getTemplate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the template for the request, using the name of the request subclass as the template name, and stored configuration options to get the directory (filename for template should be &quot;Name.template&quot;).</para><para><simplesect kind="return"><para>object Template for the request </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="113" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="113" bodyend="125"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="de/d53/classOUT__Request_1a9b012befff9ae7c85396d42989067d83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Request::storeUploadedFile</definition>
+        <argsstring>($source, $name)</argsstring>
+        <name>storeUploadedFile</name>
+        <param>
+          <type>$</type>
+          <declname>source</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Helper function to store uploaded files. Uses configuration object to find uploads directory.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$source Name given to the file input tag in the HTML </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Filename to give to the uploaded file</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="136" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="136" bodyend="147"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="de/d53/classOUT__Request_1a7106b7d90946eacf1688d089c12722f0" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static OUT_Request::tidy</definition>
+        <argsstring>($html)</argsstring>
+        <name>tidy</name>
+        <param>
+          <type>$</type>
+          <declname>html</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parses a given HTML string, then formats and repairs it using the Tidy extension in PHP.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$html HTML to tidy up</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>object Tidy object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="157" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="157" bodyend="172"/>
+        <references refid="de/d53/classOUT__Request_1a628de0ecf0318ef0459d1b1986bf2586" compoundref="db/d81/Request_8php" startline="43">$config</references>
+        <referencedby refid="de/d53/classOUT__Request_1acc60e320923329be1aa103406a4a3ee9" compoundref="db/d81/Request_8php" startline="74" endline="77">send</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/out/Request.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Request.php" bodystart="37" bodyend="173"/>
+    <listofallmembers>
+      <member refid="de/d53/classOUT__Request_1a628de0ecf0318ef0459d1b1986bf2586" prot="protected" virt="non-virtual"><scope>OUT_Request</scope><name>$config</name></member>
+      <member refid="de/d53/classOUT__Request_1ae2aa3cf43543978530ee50af4433f954" prot="protected" virt="non-virtual"><scope>OUT_Request</scope><name>$db</name></member>
+      <member refid="de/d53/classOUT__Request_1a749906f7ca9aeb506814d71f0215e380" prot="public" virt="non-virtual"><scope>OUT_Request</scope><name>__construct</name></member>
+      <member refid="de/d53/classOUT__Request_1aaa4a74668b18665c9408f57dd0556f98" prot="public" virt="non-virtual"><scope>OUT_Request</scope><name>getOption</name></member>
+      <member refid="de/d53/classOUT__Request_1a2b3032d9a81143c98702d8b9344e6ba2" prot="protected" virt="non-virtual"><scope>OUT_Request</scope><name>getTemplate</name></member>
+      <member refid="de/d53/classOUT__Request_1a825f77601714b2cb7510ab65d2d71483" prot="public" virt="non-virtual"><scope>OUT_Request</scope><name>initiate</name></member>
+      <member refid="de/d53/classOUT__Request_1ad1b829ea37ed35c67115e0886089d92d" prot="public" virt="non-virtual"><scope>OUT_Request</scope><name>putOption</name></member>
+      <member refid="de/d53/classOUT__Request_1acc60e320923329be1aa103406a4a3ee9" prot="public" virt="non-virtual"><scope>OUT_Request</scope><name>send</name></member>
+      <member refid="de/d53/classOUT__Request_1a9b012befff9ae7c85396d42989067d83" prot="private" virt="non-virtual"><scope>OUT_Request</scope><name>storeUploadedFile</name></member>
+      <member refid="de/d53/classOUT__Request_1a7106b7d90946eacf1688d089c12722f0" prot="private" virt="non-virtual"><scope>OUT_Request</scope><name>tidy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

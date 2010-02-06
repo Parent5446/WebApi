@@ -1,0 +1,148 @@
+\hypertarget{classOUT__Template}{
+\section{OUT\_\-Template Class Reference}
+\label{d0/dcf/classOUT__Template}\index{OUT\_\-Template@{OUT\_\-Template}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Template_ad750e5ccf638adee8a6bcb8794c1eb3f}{\_\-\_\-construct} (\$filename)
+\item 
+\hyperlink{classOUT__Template_a2f0cd6dd6fe55fbc4926cfa10bf48abb}{getOption} (\$option)
+\item 
+\hyperlink{classOUT__Template_a068a09ea40b27447cbf3cd4540939a8e}{putOption} (\$option, \$value)
+\item 
+\hyperlink{classOUT__Template_a87d9c155f0467841a0ce3a61c6131f5e}{execute} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Template_a851f1584ccf3a08203c13b89b9b18c95}{replaceTag} (\$matches)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Template_a296bfcd3d6b713859bd81c827d87aa3e}{\$filename}
+\item 
+\hyperlink{classOUT__Template_a1c04c575b35949f8146c1a5eef5c2ed7}{\$template}
+\item 
+\hyperlink{classOUT__Template_a60c326b6e906fce16b17436540625a66}{\$values}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 57 of file Template.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOUT__Template_ad750e5ccf638adee8a6bcb8794c1eb3f}{
+\index{OUT\_\-Template@{OUT\_\-Template}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::\_\-\_\-construct (\$ {\em filename})}}
+\label{d0/dcf/classOUT__Template_ad750e5ccf638adee8a6bcb8794c1eb3f}
+Reads an HTML template from the given filename and stores it in in the object. See class description for instructions on creating templates.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$filename Filename of template \end{DoxyParams}
+
+
+Definition at line 84 of file Template.php.
+
+References \$filename, \$template, and MAIN\_\-Error::WARNING.
+
+\subsection{Member Function Documentation}
+\hypertarget{classOUT__Template_a87d9c155f0467841a0ce3a61c6131f5e}{
+\index{OUT\_\-Template@{OUT\_\-Template}!execute@{execute}}
+\index{execute@{execute}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::execute ()}}
+\label{d0/dcf/classOUT__Template_a87d9c155f0467841a0ce3a61c6131f5e}
+Scan the template and replace the tags with the given options.
+
+\begin{DoxyReturn}{Returns}
+string Template with substituted tags 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file Template.php.\hypertarget{classOUT__Template_a2f0cd6dd6fe55fbc4926cfa10bf48abb}{
+\index{OUT\_\-Template@{OUT\_\-Template}!getOption@{getOption}}
+\index{getOption@{getOption}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{getOption}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::getOption (\$ {\em option})}}
+\label{d0/dcf/classOUT__Template_a2f0cd6dd6fe55fbc4926cfa10bf48abb}
+Gets a option from the option list.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$option Name of the option to retrieve\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string The option value 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file Template.php.\hypertarget{classOUT__Template_a068a09ea40b27447cbf3cd4540939a8e}{
+\index{OUT\_\-Template@{OUT\_\-Template}!putOption@{putOption}}
+\index{putOption@{putOption}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{putOption}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::putOption (\$ {\em option}, \/  \$ {\em value})}}
+\label{d0/dcf/classOUT__Template_a068a09ea40b27447cbf3cd4540939a8e}
+Stores a given value as an option in the template. Tags in the template with the same tag name as the option will be replaced with the value.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$option Name of the option \item[{\em string}]\$value Value of the option\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file Template.php.\hypertarget{classOUT__Template_a851f1584ccf3a08203c13b89b9b18c95}{
+\index{OUT\_\-Template@{OUT\_\-Template}!replaceTag@{replaceTag}}
+\index{replaceTag@{replaceTag}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{replaceTag}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::replaceTag (\$ {\em matches})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/dcf/classOUT__Template_a851f1584ccf3a08203c13b89b9b18c95}
+Takes a tag that was matched in the template and replaces the entire tag with the stored value.
+
+Acts as the callback function for regular expression replacement in the \hyperlink{classOUT__Template_a87d9c155f0467841a0ce3a61c6131f5e}{execute()} function. How the function replaces the tag varies depending on what options are placed in the tag in the template.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em array}]\$matches Array with the matched tag and each parenthetical subpattern (given to function by preg\_\-replace\_\-callback)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string Replacement string 
+\end{DoxyReturn}
+
+
+Definition at line 151 of file Template.php.
+
+References \$filename, and \$template.
+
+\subsection{Member Data Documentation}
+\hypertarget{classOUT__Template_a296bfcd3d6b713859bd81c827d87aa3e}{
+\index{OUT\_\-Template@{OUT\_\-Template}!\$filename@{\$filename}}
+\index{\$filename@{\$filename}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{\$filename}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::\$filename\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/dcf/classOUT__Template_a296bfcd3d6b713859bd81c827d87aa3e}
+Filename for the template. 
+
+Definition at line 63 of file Template.php.
+
+Referenced by \_\-\_\-construct(), and replaceTag().\hypertarget{classOUT__Template_a1c04c575b35949f8146c1a5eef5c2ed7}{
+\index{OUT\_\-Template@{OUT\_\-Template}!\$template@{\$template}}
+\index{\$template@{\$template}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{\$template}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::\$template\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/dcf/classOUT__Template_a1c04c575b35949f8146c1a5eef5c2ed7}
+The actual HTML template with tags. 
+
+Definition at line 69 of file Template.php.
+
+Referenced by \_\-\_\-construct(), and replaceTag().\hypertarget{classOUT__Template_a60c326b6e906fce16b17436540625a66}{
+\index{OUT\_\-Template@{OUT\_\-Template}!\$values@{\$values}}
+\index{\$values@{\$values}!OUT_Template@{OUT\_\-Template}}
+\subsubsection[{\$values}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Template::\$values\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d0/dcf/classOUT__Template_a60c326b6e906fce16b17436540625a66}
+The values to replace tags within the template with. 
+
+Definition at line 75 of file Template.php.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/out/\hyperlink{Template_8php}{Template.php}\end{DoxyCompactItemize}

@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="de/d20/index_8php" kind="file">
+    <compoundname>index.php</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="de/d20/index_8php_1ab2d7ab3465c4ea6c2054e6307dde8255" prot="public" static="no">
+        <name>API</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/index.php" line="4" bodyfile="/home/parent5446/Repositories/WebApi/index.php" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="enum" id="de/d20/index_8php_1a094c367727273b4da2b960ca3b3edc06" prot="public" static="no">
+        <name>ID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/index.php" line="5" bodyfile="/home/parent5446/Repositories/WebApi/index.php" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="enum" id="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" prot="public" static="no">
+        <name>ROOTDIR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/index.php" line="6" bodyfile="/home/parent5446/Repositories/WebApi/index.php" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>$config</definition>
+        <argsstring></argsstring>
+        <name>$config</name>
+        <initializer> new <ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/index.php" line="13" bodyfile="/home/parent5446/Repositories/WebApi/index.php" bodystart="13" bodyend="-1"/>
+        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">DB_Object::__construct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" prot="public" static="no" mutable="no">
+        <type>foreach(scandir(ROOTDIR. &apos;/plugins&apos;) as $filename)</type>
+        <definition>foreach (scandir(ROOTDIR. &apos;/plugins&apos;) as $filename) $controller</definition>
+        <argsstring></argsstring>
+        <name>$controller</name>
+        <initializer> new <ref refid="d0/d6f/classMAIN__Controller" kindref="compound">MAIN_Controller</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/index.php" line="27" bodyfile="/home/parent5446/Repositories/WebApi/index.php" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">&lt;?php</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Entry<sp/>point<sp/>for<sp/>script.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="de/d20/index_8php_1ab2d7ab3465c4ea6c2054e6307dde8255" refkind="member"><highlight class="normal">define(</highlight><highlight class="stringliteral">&quot;API&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="5" refid="de/d20/index_8php_1a094c367727273b4da2b960ca3b3edc06" refkind="member"><highlight class="normal">define(</highlight><highlight class="stringliteral">&quot;ID&quot;</highlight><highlight class="normal">,<sp/>uniqid(</highlight><highlight class="stringliteral">&quot;webapi_&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="6" refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" refkind="member"><highlight class="normal">define(</highlight><highlight class="stringliteral">&quot;ROOTDIR&quot;</highlight><highlight class="normal">,<sp/>dirname(__FILE__));</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Startup<sp/>the<sp/>autoloader</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">require<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/app/main/Autoloader.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><ref refid="dd/d71/classMAIN__Autoloader_1aa3acf8b51f564e1d79d622b6e5fcf1a4" kindref="member">MAIN_Autoloader::getInstance</ref>(<ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Get<sp/>the<sp/>controller<sp/>and<sp/>load<sp/>the<sp/>configuration.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" refkind="member"><highlight class="normal"><ref refid="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" kindref="member">$config</ref><sp/><sp/><sp/><sp/><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" kindref="member">$config</ref>-&gt;updateFromFile(<ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/config.php&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Load<sp/>the<sp/>custom<sp/>classes<sp/>and<sp/>plugins</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="dd/d71/classMAIN__Autoloader_1a458b2d4ca327f7e614a9f99e7df23ba7" kindref="member">MAIN_Autoloader::loadFile</ref>(<ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/custom.php&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keywordflow">foreach</highlight><highlight class="normal">(scandir(<ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/plugins&apos;</highlight><highlight class="normal">)<sp/>as<sp/>$filename)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(substr($filename,<sp/>-5)<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;.conf&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" kindref="member">$config</ref>-&gt;insertPlugin(substr($filename,<sp/>0,<sp/>-5),</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/plugins/$filename&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$plugin<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref><sp/>.<sp/></highlight><highlight class="stringliteral">&apos;/plugins/&apos;</highlight><highlight class="normal"><sp/>.<sp/>substr($filename,<sp/>0,<sp/>-5)<sp/>.<sp/></highlight><highlight class="stringliteral">&apos;.php&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dd/d71/classMAIN__Autoloader_1a458b2d4ca327f7e614a9f99e7df23ba7" kindref="member">MAIN_Autoloader::loadFile</ref>($plugin);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27" refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" refkind="member"><highlight class="normal"><ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d0/d6f/classMAIN__Controller" kindref="compound">MAIN_Controller</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Perform<sp/>the<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref>-&gt;boot(<ref refid="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" kindref="member">$config</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref>-&gt;initiate();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref>-&gt;send();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Check<sp/>for<sp/>error.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref>-&gt;cleanup())<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>ERROR:<sp/>Create<sp/>error<sp/>page<sp/>and<sp/>exit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref>-&gt;initiate();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref>-&gt;send();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kindref="member">$controller</ref>-&gt;cleanup();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(1);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NO<sp/>ERROR:<sp/>Exit.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(0);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/parent5446/Repositories/WebApi/index.php"/>
+  </compounddef>
+</doxygen>

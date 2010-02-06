@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="d2/d41/classMAIN__Cache" kind="class" prot="public">
+    <compoundname>MAIN_Cache</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d41/classMAIN__Cache_1a9e10bcda14432aaed68c259151ec2070" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Cache::$config</definition>
+        <argsstring></argsstring>
+        <name>$config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores a valid <ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref> class. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="43" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="43" bodyend="-1"/>
+        <referencedby refid="d2/d41/classMAIN__Cache_1acf1b5cb6aadded08ca6e99c026ccb002" compoundref="d5/d6c/Cache_8php" startline="57" endline="65">__construct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d2/d41/classMAIN__Cache_1ad1ffa30f8ad4128b1a1fdaec2d60d7df" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Cache::$session</definition>
+        <argsstring></argsstring>
+        <name>$session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores a valid <ref refid="d6/d75/classOUT__Session" kindref="compound">OUT_Session</ref> class. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="49" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="49" bodyend="-1"/>
+        <referencedby refid="d2/d41/classMAIN__Cache_1acf1b5cb6aadded08ca6e99c026ccb002" compoundref="d5/d6c/Cache_8php" startline="57" endline="65">__construct</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d41/classMAIN__Cache_1acf1b5cb6aadded08ca6e99c026ccb002" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Cache::__construct</definition>
+        <argsstring>(&amp;$config, &amp;$session)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>&amp;$</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the controller and configuration objects.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp;$config <ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref> object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp;$controller <ref refid="d0/d6f/classMAIN__Controller" kindref="compound">MAIN_Controller</ref> object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="57" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="57" bodyend="65"/>
+        <references refid="d2/d41/classMAIN__Cache_1a9e10bcda14432aaed68c259151ec2070" compoundref="d5/d6c/Cache_8php" startline="43">$config</references>
+        <references refid="d2/d41/classMAIN__Cache_1ad1ffa30f8ad4128b1a1fdaec2d60d7df" compoundref="d5/d6c/Cache_8php" startline="49">$session</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a18001a7118a190476c4ad391f09bc7c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Cache::canBeCached</definition>
+        <argsstring>($action)</argsstring>
+        <name>canBeCached</name>
+        <param>
+          <type>$</type>
+          <declname>action</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines whether a given action can be locally cached.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$action The action of the request</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if it can, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="75" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="75" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a217d6d4359eeb584a532364b9edbba87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Cache::cacheExpired</definition>
+        <argsstring>()</argsstring>
+        <name>cacheExpired</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines whether the cache for this specific request has expired or not.</para><para><simplesect kind="return"><para>True if it has or if it has never been cached </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="87" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="87" bodyend="95"/>
+        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="137" endline="142">getCacheFilename</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a146320476b10d9bd545fb492ec929276" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Cache::storeCache</definition>
+        <argsstring>($output)</argsstring>
+        <name>storeCache</name>
+        <param>
+          <type>$</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the current request in a cache file. Writes the given HTML to a local filename for fast access later.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$output HTML to be cached</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="106" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="106" bodyend="114"/>
+        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="137" endline="142">getCacheFilename</references>
+      </memberdef>
+      <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a3e92222db37430da9ee40d4ec7263e21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Cache::getCache</definition>
+        <argsstring>()</argsstring>
+        <name>getCache</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the cache for the current request, and returns it with a special footer.</para><para><simplesect kind="return"><para>string|bool False on error, the cache otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="122" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="122" bodyend="128"/>
+        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="137" endline="142">getCacheFilename</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Cache::getCacheFilename</definition>
+        <argsstring>()</argsstring>
+        <name>getCacheFilename</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determine the filename for the local cache of a specific request. Filename is simply the full URI including GET variables.</para><para><simplesect kind="return"><para>string Valid filename </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="137" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="137" bodyend="142"/>
+        <referencedby refid="d2/d41/classMAIN__Cache_1a217d6d4359eeb584a532364b9edbba87" compoundref="d5/d6c/Cache_8php" startline="87" endline="95">cacheExpired</referencedby>
+        <referencedby refid="d2/d41/classMAIN__Cache_1a3e92222db37430da9ee40d4ec7263e21" compoundref="d5/d6c/Cache_8php" startline="122" endline="128">getCache</referencedby>
+        <referencedby refid="d2/d41/classMAIN__Cache_1a146320476b10d9bd545fb492ec929276" compoundref="d5/d6c/Cache_8php" startline="106" endline="114">storeCache</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="37" bodyend="143"/>
+    <listofallmembers>
+      <member refid="d2/d41/classMAIN__Cache_1a9e10bcda14432aaed68c259151ec2070" prot="private" virt="non-virtual"><scope>MAIN_Cache</scope><name>$config</name></member>
+      <member refid="d2/d41/classMAIN__Cache_1ad1ffa30f8ad4128b1a1fdaec2d60d7df" prot="private" virt="non-virtual"><scope>MAIN_Cache</scope><name>$session</name></member>
+      <member refid="d2/d41/classMAIN__Cache_1acf1b5cb6aadded08ca6e99c026ccb002" prot="public" virt="non-virtual"><scope>MAIN_Cache</scope><name>__construct</name></member>
+      <member refid="d2/d41/classMAIN__Cache_1a217d6d4359eeb584a532364b9edbba87" prot="public" virt="non-virtual"><scope>MAIN_Cache</scope><name>cacheExpired</name></member>
+      <member refid="d2/d41/classMAIN__Cache_1a18001a7118a190476c4ad391f09bc7c1" prot="public" virt="non-virtual"><scope>MAIN_Cache</scope><name>canBeCached</name></member>
+      <member refid="d2/d41/classMAIN__Cache_1a3e92222db37430da9ee40d4ec7263e21" prot="public" virt="non-virtual"><scope>MAIN_Cache</scope><name>getCache</name></member>
+      <member refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" prot="private" virt="non-virtual"><scope>MAIN_Cache</scope><name>getCacheFilename</name></member>
+      <member refid="d2/d41/classMAIN__Cache_1a146320476b10d9bd545fb492ec929276" prot="public" virt="non-virtual"><scope>MAIN_Cache</scope><name>storeCache</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

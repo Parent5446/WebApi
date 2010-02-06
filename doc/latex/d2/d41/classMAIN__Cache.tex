@@ -1,0 +1,154 @@
+\hypertarget{classMAIN__Cache}{
+\section{MAIN\_\-Cache Class Reference}
+\label{d2/d41/classMAIN__Cache}\index{MAIN\_\-Cache@{MAIN\_\-Cache}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Cache_acf1b5cb6aadded08ca6e99c026ccb002}{\_\-\_\-construct} (\&\$config, \&\$session)
+\item 
+\hyperlink{classMAIN__Cache_a18001a7118a190476c4ad391f09bc7c1}{canBeCached} (\$action)
+\item 
+\hyperlink{classMAIN__Cache_a217d6d4359eeb584a532364b9edbba87}{cacheExpired} ()
+\item 
+\hyperlink{classMAIN__Cache_a146320476b10d9bd545fb492ec929276}{storeCache} (\$output)
+\item 
+\hyperlink{classMAIN__Cache_a3e92222db37430da9ee40d4ec7263e21}{getCache} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Cache_a033ba2adab9e0fed859f88368506c9a1}{getCacheFilename} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Cache_a9e10bcda14432aaed68c259151ec2070}{\$config}
+\item 
+\hyperlink{classMAIN__Cache_ad1ffa30f8ad4128b1a1fdaec2d60d7df}{\$session}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file Cache.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMAIN__Cache_acf1b5cb6aadded08ca6e99c026ccb002}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::\_\-\_\-construct (\&\$ {\em config}, \/  \&\$ {\em session})}}
+\label{d2/d41/classMAIN__Cache_acf1b5cb6aadded08ca6e99c026ccb002}
+Stores the controller and configuration objects.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\&\$config \hyperlink{classMAIN__Config}{MAIN\_\-Config} object \item[{\em object}]\&\$controller \hyperlink{classMAIN__Controller}{MAIN\_\-Controller} object \end{DoxyParams}
+
+
+Definition at line 57 of file Cache.php.
+
+References \$config, and \$session.
+
+\subsection{Member Function Documentation}
+\hypertarget{classMAIN__Cache_a217d6d4359eeb584a532364b9edbba87}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!cacheExpired@{cacheExpired}}
+\index{cacheExpired@{cacheExpired}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{cacheExpired}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::cacheExpired ()}}
+\label{d2/d41/classMAIN__Cache_a217d6d4359eeb584a532364b9edbba87}
+Determines whether the cache for this specific request has expired or not.
+
+\begin{DoxyReturn}{Returns}
+True if it has or if it has never been cached 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file Cache.php.
+
+References getCacheFilename().\hypertarget{classMAIN__Cache_a18001a7118a190476c4ad391f09bc7c1}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!canBeCached@{canBeCached}}
+\index{canBeCached@{canBeCached}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{canBeCached}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::canBeCached (\$ {\em action})}}
+\label{d2/d41/classMAIN__Cache_a18001a7118a190476c4ad391f09bc7c1}
+Determines whether a given action can be locally cached.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$action The action of the request\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True if it can, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file Cache.php.\hypertarget{classMAIN__Cache_a3e92222db37430da9ee40d4ec7263e21}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!getCache@{getCache}}
+\index{getCache@{getCache}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{getCache}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::getCache ()}}
+\label{d2/d41/classMAIN__Cache_a3e92222db37430da9ee40d4ec7263e21}
+Retrieves the cache for the current request, and returns it with a special footer.
+
+\begin{DoxyReturn}{Returns}
+string$|$bool False on error, the cache otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file Cache.php.
+
+References getCacheFilename().\hypertarget{classMAIN__Cache_a033ba2adab9e0fed859f88368506c9a1}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!getCacheFilename@{getCacheFilename}}
+\index{getCacheFilename@{getCacheFilename}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{getCacheFilename}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::getCacheFilename ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d2/d41/classMAIN__Cache_a033ba2adab9e0fed859f88368506c9a1}
+Determine the filename for the local cache of a specific request. Filename is simply the full URI including GET variables.
+
+\begin{DoxyReturn}{Returns}
+string Valid filename 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file Cache.php.
+
+Referenced by cacheExpired(), getCache(), and storeCache().\hypertarget{classMAIN__Cache_a146320476b10d9bd545fb492ec929276}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!storeCache@{storeCache}}
+\index{storeCache@{storeCache}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{storeCache}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::storeCache (\$ {\em output})}}
+\label{d2/d41/classMAIN__Cache_a146320476b10d9bd545fb492ec929276}
+Stores the current request in a cache file. Writes the given HTML to a local filename for fast access later.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$output HTML to be cached\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on error 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file Cache.php.
+
+References getCacheFilename().
+
+\subsection{Member Data Documentation}
+\hypertarget{classMAIN__Cache_a9e10bcda14432aaed68c259151ec2070}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!\$config@{\$config}}
+\index{\$config@{\$config}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::\$config\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d2/d41/classMAIN__Cache_a9e10bcda14432aaed68c259151ec2070}
+Stores a valid \hyperlink{classMAIN__Config}{MAIN\_\-Config} class. 
+
+Definition at line 43 of file Cache.php.
+
+Referenced by \_\-\_\-construct().\hypertarget{classMAIN__Cache_ad1ffa30f8ad4128b1a1fdaec2d60d7df}{
+\index{MAIN\_\-Cache@{MAIN\_\-Cache}!\$session@{\$session}}
+\index{\$session@{\$session}!MAIN_Cache@{MAIN\_\-Cache}}
+\subsubsection[{\$session}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Cache::\$session\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d2/d41/classMAIN__Cache_ad1ffa30f8ad4128b1a1fdaec2d60d7df}
+Stores a valid \hyperlink{classOUT__Session}{OUT\_\-Session} class. 
+
+Definition at line 49 of file Cache.php.
+
+Referenced by \_\-\_\-construct().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{Cache_8php}{Cache.php}\end{DoxyCompactItemize}

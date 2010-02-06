@@ -1,0 +1,135 @@
+.TH "MAIN_Config" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MAIN_Config \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgetOption\fP ($option)"
+.br
+.ti -1c
+.RI "\fBputOption\fP ($option, $value)"
+.br
+.ti -1c
+.RI "\fBinsertPlugin\fP ($name, $filename)"
+.br
+.ti -1c
+.RI "\fBupdateFromFile\fP ($filename, $name= '')"
+.br
+.ti -1c
+.RI "\fBupdateToFile\fP ($filename)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$options\fP = array()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 36 of file Config.php.
+.SH "Member Function Documentation"
+.PP 
+.SS "MAIN_Config::getOption ($ option)"Get a configuration option.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $option Name of the option
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+mixed Option value, false if non-existent 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file Config.php.
+.SS "MAIN_Config::insertPlugin ($ name, $ filename)"Helper function to insert plugins. Inserts the options of the given plugin configuration filename under the plugin_$name key in the global configuration.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $name Base name for the plugin 
+.br
+\fIstring\fP $filename Full filename for the config file
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on failure 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file Config.php.
+.PP
+References updateFromFile().
+.SS "MAIN_Config::putOption ($ option, $ value)"Stores a configuration option.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $option Name of the option 
+.br
+\fIstring\fP $value Value of the option
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file Config.php.
+.SS "MAIN_Config::updateFromFile ($ filename, $ name = \fC''\fP)"Load configuration options from a file, where each option has its own new line, and the option name is separated from the value with an '='.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $filename Path to the configuration file
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on failure 
+.RE
+.PP
+
+.PP
+Definition at line 93 of file Config.php.
+.PP
+References $options.
+.PP
+Referenced by insertPlugin().
+.SS "MAIN_Config::updateToFile ($ filename)"Update a configuration file with the local configuration options.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $filename Path to the configuration file
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on failure 
+.RE
+.PP
+
+.PP
+Definition at line 118 of file Config.php.
+.SH "Member Data Documentation"
+.PP 
+.SS "MAIN_Config::$options = array()\fC [private]\fP"Configuration options 
+.PP
+Definition at line 42 of file Config.php.
+.PP
+Referenced by updateFromFile().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

@@ -1,0 +1,228 @@
+.TH "OUT_Session" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OUT_Session \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP ()"
+.br
+.ti -1c
+.RI "\fBstartSession\fP ()"
+.br
+.ti -1c
+.RI "\fBendSession\fP ()"
+.br
+.ti -1c
+.RI "\fBgetIpAddress\fP ()"
+.br
+.ti -1c
+.RI "\fBputSessionVal\fP ($name, $value)"
+.br
+.ti -1c
+.RI "\fBgetVal\fP ($name, $from= 'GET', $default=false)"
+.br
+.ti -1c
+.RI "\fBgetText\fP ($name, $from= 'GET', $default= '')"
+.br
+.ti -1c
+.RI "\fBgetInt\fP ($name, $from= 'GET', $default=0)"
+.br
+.ti -1c
+.RI "\fBgetFloat\fP ($name, $from= 'GET', $default=0.0)"
+.br
+.ti -1c
+.RI "\fBgetBool\fP ($name, $from= 'GET', $default=false)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$SessionID\fP"
+.br
+.ti -1c
+.RI "\fB$VerifyID\fP"
+.br
+.ti -1c
+.RI "\fB$POST\fP"
+.br
+.ti -1c
+.RI "\fB$GET\fP"
+.br
+.ti -1c
+.RI "\fB$SERVER\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file Session.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OUT_Session::__construct ()"Stores local copies of the POST, GET, and SERVER superglobals. 
+.PP
+Definition at line 72 of file Session.php.
+.SH "Member Function Documentation"
+.PP 
+.SS "OUT_Session::endSession ()"Ends a session by deleting the session cookie, destroying the session, and resetting the $_SESSION superglobal. 
+.PP
+Definition at line 110 of file Session.php.
+.SS "OUT_Session::getBool ($ name, $ from = \fC'GET'\fP, $ default = \fCfalse\fP)"Gets a boolean from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as true or false.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $name Name of the variable to retrieve 
+.br
+\fImixed\fP $default What to return if the variable does not exist 
+.br
+\fIstring\fP $from Superglobal to look from
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool Variable if it exists, $default otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 219 of file Session.php.
+.PP
+References getVal().
+.SS "OUT_Session::getFloat ($ name, $ from = \fC'GET'\fP, $ default = \fC0.0\fP)"Gets a float from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as floats.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $name Name of the variable to retrieve 
+.br
+\fImixed\fP $default What to return if the variable does not exist 
+.br
+\fIstring\fP $from Superglobal to look from
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+float Variable if it exists, $default otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 204 of file Session.php.
+.PP
+References getVal().
+.SS "OUT_Session::getInt ($ name, $ from = \fC'GET'\fP, $ default = \fC0\fP)"Gets a integer from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as integers.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $name Name of the variable to retrieve 
+.br
+\fImixed\fP $default What to return if the variable does not exist 
+.br
+\fIstring\fP $from Superglobal to look from
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+int Variable if it exists, $default otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 189 of file Session.php.
+.PP
+References getVal().
+.SS "OUT_Session::getIpAddress ()"
+.PP
+Definition at line 118 of file Session.php.
+.PP
+References getText().
+.PP
+Referenced by startSession().
+.SS "OUT_Session::getText ($ name, $ from = \fC'GET'\fP, $ default = \fC''\fP)"Gets a string from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as strings.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $name Name of the variable to retrieve 
+.br
+\fImixed\fP $default What to return if the variable does not exist 
+.br
+\fIstring\fP $from Superglobal to look from
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+string Variable if it exists, $default otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 174 of file Session.php.
+.PP
+References getVal().
+.PP
+Referenced by getIpAddress(), and startSession().
+.SS "OUT_Session::getVal ($ name, $ from = \fC'GET'\fP, $ default = \fCfalse\fP)"Gets a variable from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $name Name of the variable to retrieve 
+.br
+\fIstring\fP $from Superglobal to look from 
+.br
+\fImixed\fP $default What to return if the variable does not exist
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+mixed Variable if it exists, $default otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file Session.php.
+.PP
+Referenced by getBool(), getFloat(), getInt(), and getText().
+.SS "OUT_Session::putSessionVal ($ name, $ value)"Stores a session variable.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $name Name of the variable 
+.br
+\fIstring\fP $value Value of the variable 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file Session.php.
+.PP
+Referenced by startSession().
+.SS "OUT_Session::startSession ()"Starts a PHP session, stores the session id, and generates an unique hash using the IP address and the User Agent. 
+.PP
+Definition at line 83 of file Session.php.
+.PP
+References getIpAddress(), getText(), and putSessionVal().
+.SH "Member Data Documentation"
+.PP 
+.SS "OUT_Session::$GET\fC [private]\fP"The $_GET superglobal. 
+.PP
+Definition at line 61 of file Session.php.
+.SS "OUT_Session::$POST\fC [private]\fP"The $_POST superglobal. 
+.PP
+Definition at line 55 of file Session.php.
+.SS "OUT_Session::$SERVER\fC [private]\fP"The $_SERVER superglobal. 
+.PP
+Definition at line 67 of file Session.php.
+.SS "OUT_Session::$SessionID\fC [private]\fP"Session ID for the request. 
+.PP
+Definition at line 43 of file Session.php.
+.SS "OUT_Session::$VerifyID\fC [private]\fP"Verification hash to prevent session hijacking. 
+.PP
+Definition at line 49 of file Session.php.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

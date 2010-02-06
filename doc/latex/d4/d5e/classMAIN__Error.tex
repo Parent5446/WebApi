@@ -1,0 +1,156 @@
+\hypertarget{classMAIN__Error}{
+\section{MAIN\_\-Error Class Reference}
+\label{d4/d5e/classMAIN__Error}\index{MAIN\_\-Error@{MAIN\_\-Error}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Error_a9cc959e84c15f51a4a843cbe43f24dfc}{\_\-\_\-construct} (\$level, \$callback, \$message, \&\$log)
+\item 
+\hyperlink{classMAIN__Error_a8bc58c66c7de8909650c8da9c13cf49d}{getLevel} ()
+\item 
+\hyperlink{classMAIN__Error_a1c55316aa04e3a3b938466aa65579849}{getCallback} ()
+\item 
+\hyperlink{classMAIN__Error_a9ba9f938e081a5f3cc077f2ff1d29962}{getMessage} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classMAIN__Error_a8dd94ca1db9a48b21bad30ed114e7fbe}{ERROR} = 256
+\item 
+const \hyperlink{classMAIN__Error_af47cc28f788d73c277a78761621fd711}{WARNING} = 512
+\item 
+const \hyperlink{classMAIN__Error_a6566891abdf29792892d9cf42fcc496d}{NOTICE} = 1024
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Error_acddcbb7c1ce7ac137b542542282ec4bc}{\$level}
+\item 
+\hyperlink{classMAIN__Error_a3febaeaa4f0bfe2df03c8ce837b22acb}{\$callback}
+\item 
+\hyperlink{classMAIN__Error_a7210e16c421fd1a44fa947273bff58b5}{\$message}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file Error.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMAIN__Error_a9cc959e84c15f51a4a843cbe43f24dfc}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Error::\_\-\_\-construct (\$ {\em level}, \/  \$ {\em callback}, \/  \$ {\em message}, \/  \&\$ {\em log})}}
+\label{d4/d5e/classMAIN__Error_a9cc959e84c15f51a4a843cbe43f24dfc}
+Stores error information and logs the error.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em const}]\$level One of the classes local constants defining error severity \item[{\em string}]\$callback Name of the function creating the error \item[{\em string}]\$message Message describing the error \item[{\em object}]\&\$log Valid \hyperlink{classMAIN__Logger}{MAIN\_\-Logger} instance \end{DoxyParams}
+
+
+Definition at line 83 of file Error.php.
+
+References \$callback, \$level, and \$message.
+
+\subsection{Member Function Documentation}
+\hypertarget{classMAIN__Error_a1c55316aa04e3a3b938466aa65579849}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!getCallback@{getCallback}}
+\index{getCallback@{getCallback}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{getCallback}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Error::getCallback ()}}
+\label{d4/d5e/classMAIN__Error_a1c55316aa04e3a3b938466aa65579849}
+Get the callback for the error.
+
+\begin{DoxyReturn}{Returns}
+string Callback for the error 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file Error.php.\hypertarget{classMAIN__Error_a8bc58c66c7de8909650c8da9c13cf49d}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!getLevel@{getLevel}}
+\index{getLevel@{getLevel}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{getLevel}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Error::getLevel ()}}
+\label{d4/d5e/classMAIN__Error_a8bc58c66c7de8909650c8da9c13cf49d}
+Get the level severity.
+
+\begin{DoxyReturn}{Returns}
+int Code referring to the level severity 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file Error.php.\hypertarget{classMAIN__Error_a9ba9f938e081a5f3cc077f2ff1d29962}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!getMessage@{getMessage}}
+\index{getMessage@{getMessage}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{getMessage}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Error::getMessage ()}}
+\label{d4/d5e/classMAIN__Error_a9ba9f938e081a5f3cc077f2ff1d29962}
+Get the error message.
+
+\begin{DoxyReturn}{Returns}
+string Error message 
+\end{DoxyReturn}
+
+
+Definition at line 128 of file Error.php.
+
+\subsection{Member Data Documentation}
+\hypertarget{classMAIN__Error_a3febaeaa4f0bfe2df03c8ce837b22acb}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!\$callback@{\$callback}}
+\index{\$callback@{\$callback}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{\$callback}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Error::\$callback\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d4/d5e/classMAIN__Error_a3febaeaa4f0bfe2df03c8ce837b22acb}
+Callback for the error. 
+
+Definition at line 67 of file Error.php.
+
+Referenced by \_\-\_\-construct().\hypertarget{classMAIN__Error_acddcbb7c1ce7ac137b542542282ec4bc}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!\$level@{\$level}}
+\index{\$level@{\$level}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{\$level}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Error::\$level\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d4/d5e/classMAIN__Error_acddcbb7c1ce7ac137b542542282ec4bc}
+Level of the error. 
+
+Definition at line 61 of file Error.php.
+
+Referenced by \_\-\_\-construct().\hypertarget{classMAIN__Error_a7210e16c421fd1a44fa947273bff58b5}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!\$message@{\$message}}
+\index{\$message@{\$message}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{\$message}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Error::\$message\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d4/d5e/classMAIN__Error_a7210e16c421fd1a44fa947273bff58b5}
+Error message. 
+
+Definition at line 73 of file Error.php.
+
+Referenced by \_\-\_\-construct().\hypertarget{classMAIN__Error_a8dd94ca1db9a48b21bad30ed114e7fbe}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!ERROR@{ERROR}}
+\index{ERROR@{ERROR}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{ERROR}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Error::ERROR} = 256}}
+\label{d4/d5e/classMAIN__Error_a8dd94ca1db9a48b21bad30ed114e7fbe}
+Signal for extremely dangerous errors, usually resulting in termination of the script. 
+
+Definition at line 43 of file Error.php.
+
+Referenced by DB\_\-Table::\_\-\_\-construct(), DB\_\-Database::\_\-\_\-construct(), DB\_\-Database::close(), DB\_\-Database::connect(), DB\_\-Database::escape(), MAIN\_\-Logger::export(), DB\_\-Object::getTable(), DB\_\-Database::query(), and DB\_\-Database::result().\hypertarget{classMAIN__Error_a6566891abdf29792892d9cf42fcc496d}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!NOTICE@{NOTICE}}
+\index{NOTICE@{NOTICE}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{NOTICE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Error::NOTICE} = 1024}}
+\label{d4/d5e/classMAIN__Error_a6566891abdf29792892d9cf42fcc496d}
+Signal for standard errors that may have an effect on the outcome of the script in certain situations. 
+
+Definition at line 55 of file Error.php.
+
+Referenced by DB\_\-Database::close().\hypertarget{classMAIN__Error_af47cc28f788d73c277a78761621fd711}{
+\index{MAIN\_\-Error@{MAIN\_\-Error}!WARNING@{WARNING}}
+\index{WARNING@{WARNING}!MAIN_Error@{MAIN\_\-Error}}
+\subsubsection[{WARNING}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Error::WARNING} = 512}}
+\label{d4/d5e/classMAIN__Error_af47cc28f788d73c277a78761621fd711}
+Signal for critical errors, creating unwanted results, though not necessarily requiring the script to be terminated. 
+
+Definition at line 49 of file Error.php.
+
+Referenced by OUT\_\-Template::\_\-\_\-construct(), DB\_\-Object::\_\-\_\-construct(), DB\_\-Database::connect(), DB\_\-Database::escape(), DB\_\-Object::getInfo(), DB\_\-Database::getTable(), DB\_\-Table::insert(), DB\_\-Object::putInfo(), DB\_\-Database::query(), DB\_\-Database::result(), and DB\_\-Table::update().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{Error_8php}{Error.php}\end{DoxyCompactItemize}

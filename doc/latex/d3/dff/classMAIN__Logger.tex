@@ -1,0 +1,134 @@
+\hypertarget{classMAIN__Logger}{
+\section{MAIN\_\-Logger Class Reference}
+\label{d3/dff/classMAIN__Logger}\index{MAIN\_\-Logger@{MAIN\_\-Logger}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Logger_a06d6ccbf1df65ec1bbdc88d88453fbd2}{log} (\$level, \$callback, \$message)
+\item 
+\hyperlink{classMAIN__Logger_aeb44a3f5e4ce98ab2380743b28c9ac44}{export} (\$filename)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classMAIN__Logger_a2af8dfdb8d9e1b23122783c5d85e2da0}{ERROR} = 256
+\item 
+const \hyperlink{classMAIN__Logger_a9d79bb27ec1dfe5b64f8a78f2f6ceb9b}{WARNING} = 512
+\item 
+const \hyperlink{classMAIN__Logger_a104a24882667b4b8f4452abb03c8266c}{NOTICE} = 1024
+\item 
+const \hyperlink{classMAIN__Logger_a7583fcdf96a9dba7c0ec52637e1d11d7}{INFO} = -\/1
+\item 
+const \hyperlink{classMAIN__Logger_ac7a1e837542ce1762a63d2713060c4ae}{DEBUG} = -\/2
+\item 
+const \hyperlink{classMAIN__Logger_a75824ecd65029652b81460f69b83b779}{USER} = -\/3
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMAIN__Logger_afa86bba01c2165e0cb2aaa9faaae372b}{\$log} = array()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 42 of file Logger.php.
+
+\subsection{Member Function Documentation}
+\hypertarget{classMAIN__Logger_aeb44a3f5e4ce98ab2380743b28c9ac44}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!export@{export}}
+\index{export@{export}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{export}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Logger::export (\$ {\em filename})}}
+\label{d3/dff/classMAIN__Logger_aeb44a3f5e4ce98ab2380743b28c9ac44}
+Takes the current internal log and exports it to a file before emptying it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$filename Name of the file to export the log to\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int$|$bool Returns the number of bytes written, or false on error 
+\end{DoxyReturn}
+
+
+Definition at line 140 of file Logger.php.
+
+References MAIN\_\-Error::ERROR, and log().\hypertarget{classMAIN__Logger_a06d6ccbf1df65ec1bbdc88d88453fbd2}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!log@{log}}
+\index{log@{log}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Logger::log (\$ {\em level}, \/  \$ {\em callback}, \/  \$ {\em message})}}
+\label{d3/dff/classMAIN__Logger_a06d6ccbf1df65ec1bbdc88d88453fbd2}
+Creates a logging message from the given parameters and adds it to the log.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em int}]\$level Level of the message (see the class's constants) \item[{\em string}]\$callback Some identifier of what function caused the message to be logged \item[{\em string}]\$message The actual message to be logged\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns true on success, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file Logger.php.
+
+Referenced by export().
+
+\subsection{Member Data Documentation}
+\hypertarget{classMAIN__Logger_afa86bba01c2165e0cb2aaa9faaae372b}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!\$log@{\$log}}
+\index{\$log@{\$log}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{\$log}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Logger::\$log = array()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{d3/dff/classMAIN__Logger_afa86bba01c2165e0cb2aaa9faaae372b}
+Stores the log itself, with a line for each array key. 
+
+Definition at line 85 of file Logger.php.\hypertarget{classMAIN__Logger_ac7a1e837542ce1762a63d2713060c4ae}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{DEBUG}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Logger::DEBUG} = -\/2}}
+\label{d3/dff/classMAIN__Logger_ac7a1e837542ce1762a63d2713060c4ae}
+Signal for possibly important logging messages that will only be needed as a source for developers to debug if there is a problem. 
+
+Definition at line 73 of file Logger.php.\hypertarget{classMAIN__Logger_a2af8dfdb8d9e1b23122783c5d85e2da0}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!ERROR@{ERROR}}
+\index{ERROR@{ERROR}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{ERROR}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Logger::ERROR} = 256}}
+\label{d3/dff/classMAIN__Logger_a2af8dfdb8d9e1b23122783c5d85e2da0}
+Signal for extremely dangerous errors, usually resulting in termination of the script. 
+
+Definition at line 49 of file Logger.php.\hypertarget{classMAIN__Logger_a7583fcdf96a9dba7c0ec52637e1d11d7}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!INFO@{INFO}}
+\index{INFO@{INFO}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{INFO}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Logger::INFO} = -\/1}}
+\label{d3/dff/classMAIN__Logger_a7583fcdf96a9dba7c0ec52637e1d11d7}
+Signal for important logging messages that are not errors, but denote important points in the script's execution. 
+
+Definition at line 67 of file Logger.php.
+
+Referenced by DB\_\-Database::close(), DB\_\-Database::connect(), DB\_\-Database::getTable(), and DB\_\-Database::query().\hypertarget{classMAIN__Logger_a104a24882667b4b8f4452abb03c8266c}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!NOTICE@{NOTICE}}
+\index{NOTICE@{NOTICE}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{NOTICE}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Logger::NOTICE} = 1024}}
+\label{d3/dff/classMAIN__Logger_a104a24882667b4b8f4452abb03c8266c}
+Signal for standard errors that may have an effect on the outcome of the script in certain situations. 
+
+Definition at line 61 of file Logger.php.
+
+Referenced by DB\_\-Object::\_\-\_\-construct().\hypertarget{classMAIN__Logger_a75824ecd65029652b81460f69b83b779}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!USER@{USER}}
+\index{USER@{USER}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{USER}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Logger::USER} = -\/3}}
+\label{d3/dff/classMAIN__Logger_a75824ecd65029652b81460f69b83b779}
+Signal for any expected errors or messages caused by the user, such as keyboard interrupts, etc. 
+
+Definition at line 79 of file Logger.php.\hypertarget{classMAIN__Logger_a9d79bb27ec1dfe5b64f8a78f2f6ceb9b}{
+\index{MAIN\_\-Logger@{MAIN\_\-Logger}!WARNING@{WARNING}}
+\index{WARNING@{WARNING}!MAIN_Logger@{MAIN\_\-Logger}}
+\subsubsection[{WARNING}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf MAIN\_\-Logger::WARNING} = 512}}
+\label{d3/dff/classMAIN__Logger_a9d79bb27ec1dfe5b64f8a78f2f6ceb9b}
+Signal for critical errors, creating unwanted results, though not necessarily requiring the script to be terminated. 
+
+Definition at line 55 of file Logger.php.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/main/\hyperlink{Logger_8php}{Logger.php}\end{DoxyCompactItemize}

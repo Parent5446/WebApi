@@ -1,0 +1,149 @@
+.TH "MAIN_Cache" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MAIN_Cache \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (&$config, &$session)"
+.br
+.ti -1c
+.RI "\fBcanBeCached\fP ($action)"
+.br
+.ti -1c
+.RI "\fBcacheExpired\fP ()"
+.br
+.ti -1c
+.RI "\fBstoreCache\fP ($output)"
+.br
+.ti -1c
+.RI "\fBgetCache\fP ()"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgetCacheFilename\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$config\fP"
+.br
+.ti -1c
+.RI "\fB$session\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file Cache.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MAIN_Cache::__construct (&$ config, &$ session)"Stores the controller and configuration objects.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP &$config \fBMAIN_Config\fP object 
+.br
+\fIobject\fP &$controller \fBMAIN_Controller\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file Cache.php.
+.PP
+References $config, and $session.
+.SH "Member Function Documentation"
+.PP 
+.SS "MAIN_Cache::cacheExpired ()"Determines whether the cache for this specific request has expired or not.
+.PP
+\fBReturns:\fP
+.RS 4
+True if it has or if it has never been cached 
+.RE
+.PP
+
+.PP
+Definition at line 87 of file Cache.php.
+.PP
+References getCacheFilename().
+.SS "MAIN_Cache::canBeCached ($ action)"Determines whether a given action can be locally cached.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $action The action of the request
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True if it can, false otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file Cache.php.
+.SS "MAIN_Cache::getCache ()"Retrieves the cache for the current request, and returns it with a special footer.
+.PP
+\fBReturns:\fP
+.RS 4
+string|bool False on error, the cache otherwise 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file Cache.php.
+.PP
+References getCacheFilename().
+.SS "MAIN_Cache::getCacheFilename ()\fC [private]\fP"Determine the filename for the local cache of a specific request. Filename is simply the full URI including GET variables.
+.PP
+\fBReturns:\fP
+.RS 4
+string Valid filename 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file Cache.php.
+.PP
+Referenced by cacheExpired(), getCache(), and storeCache().
+.SS "MAIN_Cache::storeCache ($ output)"Stores the current request in a cache file. Writes the given HTML to a local filename for fast access later.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $output HTML to be cached
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on error 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file Cache.php.
+.PP
+References getCacheFilename().
+.SH "Member Data Documentation"
+.PP 
+.SS "MAIN_Cache::$config\fC [private]\fP"Stores a valid \fBMAIN_Config\fP class. 
+.PP
+Definition at line 43 of file Cache.php.
+.PP
+Referenced by __construct().
+.SS "MAIN_Cache::$session\fC [private]\fP"Stores a valid \fBOUT_Session\fP class. 
+.PP
+Definition at line 49 of file Cache.php.
+.PP
+Referenced by __construct().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.

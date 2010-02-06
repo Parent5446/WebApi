@@ -1,0 +1,182 @@
+\hypertarget{classOUT__Request}{
+\section{OUT\_\-Request Class Reference}
+\label{de/d53/classOUT__Request}\index{OUT\_\-Request@{OUT\_\-Request}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Request_a749906f7ca9aeb506814d71f0215e380}{\_\-\_\-construct} (\&\$config, \&\$db, \&\$session)
+\item 
+\hyperlink{classOUT__Request_a825f77601714b2cb7510ab65d2d71483}{initiate} (\&\$session)
+\item 
+\hyperlink{classOUT__Request_acc60e320923329be1aa103406a4a3ee9}{send} ()
+\item 
+\hyperlink{classOUT__Request_aaa4a74668b18665c9408f57dd0556f98}{getOption} (\$option)
+\item 
+\hyperlink{classOUT__Request_ad1b829ea37ed35c67115e0886089d92d}{putOption} (\$option, \$value)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Request_a2b3032d9a81143c98702d8b9344e6ba2}{getTemplate} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Request_a628de0ecf0318ef0459d1b1986bf2586}{\$config}
+\item 
+\hyperlink{classOUT__Request_ae2aa3cf43543978530ee50af4433f954}{\$db}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOUT__Request_a9b012befff9ae7c85396d42989067d83}{storeUploadedFile} (\$source, \$name)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classOUT__Request_a7106b7d90946eacf1688d089c12722f0}{tidy} (\$html)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 37 of file Request.php.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOUT__Request_a749906f7ca9aeb506814d71f0215e380}{
+\index{OUT\_\-Request@{OUT\_\-Request}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::\_\-\_\-construct (\&\$ {\em config}, \/  \&\$ {\em db}, \/  \&\$ {\em session})}}
+\label{de/d53/classOUT__Request_a749906f7ca9aeb506814d71f0215e380}
+Store the configuration and database objects.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]\&\$config \hyperlink{classMAIN__Config}{MAIN\_\-Config} object \end{DoxyParams}
+
+
+Definition at line 56 of file Request.php.
+
+References \$config, and \$db.
+
+\subsection{Member Function Documentation}
+\hypertarget{classOUT__Request_aaa4a74668b18665c9408f57dd0556f98}{
+\index{OUT\_\-Request@{OUT\_\-Request}!getOption@{getOption}}
+\index{getOption@{getOption}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{getOption}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::getOption (\$ {\em option})}}
+\label{de/d53/classOUT__Request_aaa4a74668b18665c9408f57dd0556f98}
+Get an option that has been passed to the template.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$option Name of the option\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Option value, false if non-\/existant or if template is missing 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Request.php.\hypertarget{classOUT__Request_a2b3032d9a81143c98702d8b9344e6ba2}{
+\index{OUT\_\-Request@{OUT\_\-Request}!getTemplate@{getTemplate}}
+\index{getTemplate@{getTemplate}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{getTemplate}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::getTemplate ()\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{de/d53/classOUT__Request_a2b3032d9a81143c98702d8b9344e6ba2}
+Gets the template for the request, using the name of the request subclass as the template name, and stored configuration options to get the directory (filename for template should be \char`\"{}Name.template\char`\"{}).
+
+\begin{DoxyReturn}{Returns}
+object Template for the request 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Request.php.\hypertarget{classOUT__Request_a825f77601714b2cb7510ab65d2d71483}{
+\index{OUT\_\-Request@{OUT\_\-Request}!initiate@{initiate}}
+\index{initiate@{initiate}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{initiate}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::initiate (\&\$ {\em session})}}
+\label{de/d53/classOUT__Request_a825f77601714b2cb7510ab65d2d71483}
+Definition for a function to initialize the request, get database information, and load it into the template. 
+
+Definition at line 69 of file Request.php.\hypertarget{classOUT__Request_ad1b829ea37ed35c67115e0886089d92d}{
+\index{OUT\_\-Request@{OUT\_\-Request}!putOption@{putOption}}
+\index{putOption@{putOption}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{putOption}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::putOption (\$ {\em option}, \/  \$ {\em value})}}
+\label{de/d53/classOUT__Request_ad1b829ea37ed35c67115e0886089d92d}
+Stores an option in the template for the request.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$option Name of the option \item[{\em string}]\$value Value of the option\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false if template is missing 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file Request.php.\hypertarget{classOUT__Request_acc60e320923329be1aa103406a4a3ee9}{
+\index{OUT\_\-Request@{OUT\_\-Request}!send@{send}}
+\index{send@{send}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::send ()}}
+\label{de/d53/classOUT__Request_acc60e320923329be1aa103406a4a3ee9}
+Print the resulting HTML to the screen. 
+
+Definition at line 74 of file Request.php.
+
+References tidy().\hypertarget{classOUT__Request_a9b012befff9ae7c85396d42989067d83}{
+\index{OUT\_\-Request@{OUT\_\-Request}!storeUploadedFile@{storeUploadedFile}}
+\index{storeUploadedFile@{storeUploadedFile}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{storeUploadedFile}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::storeUploadedFile (\$ {\em source}, \/  \$ {\em name})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{de/d53/classOUT__Request_a9b012befff9ae7c85396d42989067d83}
+Helper function to store uploaded files. Uses configuration object to find uploads directory.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$source Name given to the file input tag in the HTML \item[{\em string}]\$name Filename to give to the uploaded file\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool True on success, false on failure 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file Request.php.\hypertarget{classOUT__Request_a7106b7d90946eacf1688d089c12722f0}{
+\index{OUT\_\-Request@{OUT\_\-Request}!tidy@{tidy}}
+\index{tidy@{tidy}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{tidy}]{\setlength{\rightskip}{0pt plus 5cm}static OUT\_\-Request::tidy (\$ {\em html})\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{de/d53/classOUT__Request_a7106b7d90946eacf1688d089c12722f0}
+Parses a given HTML string, then formats and repairs it using the Tidy extension in PHP.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]\$html HTML to tidy up\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object Tidy object 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file Request.php.
+
+References \$config.
+
+Referenced by send().
+
+\subsection{Member Data Documentation}
+\hypertarget{classOUT__Request_a628de0ecf0318ef0459d1b1986bf2586}{
+\index{OUT\_\-Request@{OUT\_\-Request}!\$config@{\$config}}
+\index{\$config@{\$config}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{\$config}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::\$config\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{de/d53/classOUT__Request_a628de0ecf0318ef0459d1b1986bf2586}
+A valid \hyperlink{classMAIN__Config}{MAIN\_\-Config} object. 
+
+Definition at line 43 of file Request.php.
+
+Referenced by \_\-\_\-construct(), and tidy().\hypertarget{classOUT__Request_ae2aa3cf43543978530ee50af4433f954}{
+\index{OUT\_\-Request@{OUT\_\-Request}!\$db@{\$db}}
+\index{\$db@{\$db}!OUT_Request@{OUT\_\-Request}}
+\subsubsection[{\$db}]{\setlength{\rightskip}{0pt plus 5cm}OUT\_\-Request::\$db\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{de/d53/classOUT__Request_ae2aa3cf43543978530ee50af4433f954}
+A valid \hyperlink{classDB__Database}{DB\_\-Database} object. 
+
+Definition at line 49 of file Request.php.
+
+Referenced by \_\-\_\-construct().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+app/out/\hyperlink{Request_8php}{Request.php}\end{DoxyCompactItemize}

@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="dd/d71/classMAIN__Autoloader" kind="class" prot="public">
+    <compoundname>MAIN_Autoloader</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="dd/d71/classMAIN__Autoloader_1a00cdc353ce3e2665f86e87e3abb8bf0a" prot="private" static="yes" mutable="no">
+        <type>static</type>
+        <definition>MAIN_Autoloader::$instance</definition>
+        <argsstring></argsstring>
+        <name>$instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="30" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d71/classMAIN__Autoloader_1ab05969a6f2b5904a8de5e2f530441be7" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Autoloader::$rootdir</definition>
+        <argsstring></argsstring>
+        <name>$rootdir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="32" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="32" bodyend="-1"/>
+        <referencedby refid="dd/d71/classMAIN__Autoloader_1a201bd218d1efdce335722cd1e60ef599" compoundref="dc/df3/Autoloader_8php" startline="49" endline="53">__construct</referencedby>
+        <referencedby refid="dd/d71/classMAIN__Autoloader_1aa3acf8b51f564e1d79d622b6e5fcf1a4" compoundref="dc/df3/Autoloader_8php" startline="74" endline="78">getInstance</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d71/classMAIN__Autoloader_1a93fa8cea8b9c2e30d179521ab8c3edab" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Autoloader::$loaded</definition>
+        <argsstring></argsstring>
+        <name>$loaded</name>
+        <initializer> array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="33" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dd/d71/classMAIN__Autoloader_1a1ba4327fb805ecd48589610463c3a8c4" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Autoloader::$classlist</definition>
+        <argsstring></argsstring>
+        <name>$classlist</name>
+        <initializer> array(
+			&apos;<ref refid="d0/d6f/classMAIN__Controller" kindref="compound">MAIN_Controller</ref>&apos; =&gt; &apos;/app/main/Controller.php&apos;,
+			&apos;<ref refid="d2/d41/classMAIN__Cache" kindref="compound">MAIN_Cache</ref>&apos;      =&gt; &apos;app/main/Cache.php&apos;,
+			&apos;<ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref>&apos;     =&gt; &apos;app/main/Config.php&apos;,
+			&apos;<ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref>&apos;      =&gt; &apos;app/main/Error.php&apos;,
+			&apos;<ref refid="d3/dff/classMAIN__Logger" kindref="compound">MAIN_Logger</ref>&apos;     =&gt; &apos;app/main/Logger.php&apos;,
+
+			&apos;<ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref>&apos;     =&gt; &apos;app/db/Database.php&apos;,
+			&apos;<ref refid="dc/d6d/classDB__Object" kindref="compound">DB_Object</ref>&apos;       =&gt; &apos;app/db/Object.php&apos;,
+			&apos;<ref refid="d6/d90/classDB__Table" kindref="compound">DB_Table</ref>&apos;        =&gt; &apos;app/db/Table.php&apos;,
+
+			&apos;<ref refid="de/d53/classOUT__Request" kindref="compound">OUT_Request</ref>&apos;     =&gt; &apos;app/out/Request.php&apos;,
+			&apos;<ref refid="d6/d75/classOUT__Session" kindref="compound">OUT_Session</ref>&apos;     =&gt; &apos;app/out/Session.php&apos;,
+			&apos;<ref refid="d0/dcf/classOUT__Template" kindref="compound">OUT_Template</ref>&apos;    =&gt; &apos;app/out/Template.php&apos; )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="47" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="dd/d71/classMAIN__Autoloader_1a201bd218d1efdce335722cd1e60ef599" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Autoloader::__construct</definition>
+        <argsstring>($rootdir)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>$</type>
+          <declname>rootdir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="49" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="49" bodyend="53"/>
+        <references refid="dd/d71/classMAIN__Autoloader_1ab05969a6f2b5904a8de5e2f530441be7" compoundref="dc/df3/Autoloader_8php" startline="32">$rootdir</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d71/classMAIN__Autoloader_1a58a2d3299366e703eebd60192d927ed9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Autoloader::loadClass</definition>
+        <argsstring>($classname)</argsstring>
+        <name>loadClass</name>
+        <param>
+          <type>$</type>
+          <declname>classname</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="55" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="55" bodyend="63"/>
+        <references refid="dd/d71/classMAIN__Autoloader_1a458b2d4ca327f7e614a9f99e7df23ba7" compoundref="dc/df3/Autoloader_8php" startline="65" endline="72">loadFile</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="dd/d71/classMAIN__Autoloader_1a458b2d4ca327f7e614a9f99e7df23ba7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static MAIN_Autoloader::loadFile</definition>
+        <argsstring>($filename)</argsstring>
+        <name>loadFile</name>
+        <param>
+          <type>$</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="65" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="65" bodyend="72"/>
+        <referencedby refid="dd/d71/classMAIN__Autoloader_1a58a2d3299366e703eebd60192d927ed9" compoundref="dc/df3/Autoloader_8php" startline="55" endline="63">loadClass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dd/d71/classMAIN__Autoloader_1aa3acf8b51f564e1d79d622b6e5fcf1a4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static MAIN_Autoloader::getInstance</definition>
+        <argsstring>($rootdir= &apos;&apos;)</argsstring>
+        <name>getInstance</name>
+        <param>
+          <type>$</type>
+          <declname>rootdir</declname>
+          <defval>&apos;&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="74" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="74" bodyend="78"/>
+        <references refid="dd/d71/classMAIN__Autoloader_1ab05969a6f2b5904a8de5e2f530441be7" compoundref="dc/df3/Autoloader_8php" startline="32">$rootdir</references>
+        <referencedby refid="dc/df3/Autoloader_8php_1a0be872cd5a9e883ce56599451b1e5e25" compoundref="dc/df3/Autoloader_8php" startline="81" endline="83">__autoload</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>This program was created to make a set of classes to be used for easy website creation. Usage: simply extend the <ref refid="dc/d6d/classDB__Object" kindref="compound">DB_Object</ref> class to make models and the <ref refid="de/d53/classOUT__Request" kindref="compound">OUT_Request</ref> class to make controllers. HTML is stored in templates with special tags. See the <ref refid="d0/dcf/classOUT__Template" kindref="compound">OUT_Template</ref> class for more details. Made by Tyler Romeo &lt;<ulink url="mailto:tylerromeo@gmail.com">tylerromeo@gmail.com</ulink>&gt;</para><para>Copyright (C) 2009 Tyler Romeo</para><para>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</para><para>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</para><para>You should have received a copy of the GNU General Public License along with this program. If not, see &lt;<ulink url="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</ulink>&gt;. </para>    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="29" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="28" bodyend="79"/>
+    <listofallmembers>
+      <member refid="dd/d71/classMAIN__Autoloader_1a1ba4327fb805ecd48589610463c3a8c4" prot="private" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>$classlist</name></member>
+      <member refid="dd/d71/classMAIN__Autoloader_1a00cdc353ce3e2665f86e87e3abb8bf0a" prot="private" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>$instance</name></member>
+      <member refid="dd/d71/classMAIN__Autoloader_1a93fa8cea8b9c2e30d179521ab8c3edab" prot="private" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>$loaded</name></member>
+      <member refid="dd/d71/classMAIN__Autoloader_1ab05969a6f2b5904a8de5e2f530441be7" prot="private" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>$rootdir</name></member>
+      <member refid="dd/d71/classMAIN__Autoloader_1a201bd218d1efdce335722cd1e60ef599" prot="private" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>__construct</name></member>
+      <member refid="dd/d71/classMAIN__Autoloader_1aa3acf8b51f564e1d79d622b6e5fcf1a4" prot="public" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>getInstance</name></member>
+      <member refid="dd/d71/classMAIN__Autoloader_1a58a2d3299366e703eebd60192d927ed9" prot="public" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>loadClass</name></member>
+      <member refid="dd/d71/classMAIN__Autoloader_1a458b2d4ca327f7e614a9f99e7df23ba7" prot="public" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>loadFile</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

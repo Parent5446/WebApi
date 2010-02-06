@@ -1,0 +1,660 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="dc/d6d/classDB__Object" kind="class" prot="public">
+    <compoundname>DB_Object</compoundname>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="dc/d6d/classDB__Object_1a4b05c22c55cb43234cc80dd35b1d542b" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>DB_Object::$enableprotect</definition>
+        <argsstring></argsstring>
+        <name>$enableprotect</name>
+        <initializer> true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines whether to enable password protection on a global scope. Should be customized in the child class definition. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="46" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d6d/classDB__Object_1abc24dbdab0d6a65f2f775ae46d0c4a59" prot="protected" static="yes" mutable="no">
+        <type>static</type>
+        <definition>DB_Object::$parent</definition>
+        <argsstring></argsstring>
+        <name>$parent</name>
+        <initializer> true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines whether the object can take in other objects as its children. When taking in a child object, the profiles of the two are merged. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="54" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="dc/d6d/classDB__Object_1adec88cd7f52f2cbe98d4568c86d1e172" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>DB_Object::$info</definition>
+        <argsstring></argsstring>
+        <name>$info</name>
+        <initializer> array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores information about the object that has been retrieved from the database. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="61" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="61" bodyend="-1"/>
+        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">__construct</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1a3f370bd811dc4f984150f220a5a7fd1c" compoundref="d7/da1/Object_8php" startline="329" endline="339">changePasshash</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d6d/classDB__Object_1ae7ffc7d66d72066f8333048851ef6926" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>DB_Object::$protect</definition>
+        <argsstring></argsstring>
+        <name>$protect</name>
+        <initializer> true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Determines whether to enable password protection on a per-object basis. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="67" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d6d/classDB__Object_1a5ba1c6aa344fb0a4f91da7095105ee72" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>DB_Object::$clienthashing</definition>
+        <argsstring></argsstring>
+        <name>$clienthashing</name>
+        <initializer> false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether to enable client hashing, when a password is entered by a user, hash chaining is used on the client side to prevent man-in-the-middle attacks. Requires the proper client-side scripts to be in place. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="75" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dc/d6d/classDB__Object_1a0d08820dae7ab434119115781b369714" prot="protected" static="no" mutable="no">
+        <type></type>
+        <definition>DB_Object::$table</definition>
+        <argsstring></argsstring>
+        <name>$table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="d6/d90/classDB__Table" kindref="compound">DB_Table</ref> object to be used for all database queries. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="81" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="81" bodyend="-1"/>
+        <referencedby refid="dc/d6d/classDB__Object_1a9924a8fa716e352e9528bf99f51a90fd" compoundref="d7/da1/Object_8php" startline="431" endline="485">getTable</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1acde3675787ca522413a21203a3957148" compoundref="d7/da1/Object_8php" startline="396" endline="404">updateFromDatabase</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1afd22a626921cf089ccf1977a652d6fc1" compoundref="d7/da1/Object_8php" startline="411" endline="418">updateToDatabase</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::__construct</definition>
+        <argsstring>(&amp;$db, &amp;$config, $column, $value, $profile=array(), $new=false)</argsstring>
+        <name>__construct</name>
+        <param>
+          <type>&amp;$</type>
+          <declname>db</declname>
+        </param>
+        <param>
+          <type>&amp;$</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>profile</declname>
+          <defval>array()</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>new</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Store the database and given information within the object. If an empty password is given then password protection is disabled. If the $curpass variable is empty then client hashing will be disabled.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp;$db A <ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref> object used for database queries </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$id The ID of the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name The name of the object (e.g. username for users) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$origpass A SHA512 hash of the original password protecting the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$curpass The current one-time key produced by hash chaining </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$curpassnum The number of hash iterations for the $curpass </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$profile Any information specific to the object from the database </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="96" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="96" bodyend="129"/>
+        <references refid="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" compoundref="de/d20/index_8php" startline="13">$config</references>
+        <references refid="dc/d6d/classDB__Object_1adec88cd7f52f2cbe98d4568c86d1e172" compoundref="d7/da1/Object_8php" startline="61">$info</references>
+        <references refid="dc/d6d/classDB__Object_1a9924a8fa716e352e9528bf99f51a90fd" compoundref="d7/da1/Object_8php" startline="431" endline="485">getTable</references>
+        <references refid="dc/d6d/classDB__Object_1a8438909f696e1bb56d19eb617ef3f648" compoundref="d7/da1/Object_8php" startline="495" endline="499">hashPassword</references>
+        <references refid="d3/dff/classMAIN__Logger_1a104a24882667b4b8f4452abb03c8266c" compoundref="d3/d5e/Logger_8php" startline="61">MAIN_Logger::NOTICE</references>
+        <references refid="dc/d6d/classDB__Object_1acde3675787ca522413a21203a3957148" compoundref="d7/da1/Object_8php" startline="396" endline="404">updateFromDatabase</references>
+        <references refid="dc/d6d/classDB__Object_1afd22a626921cf089ccf1977a652d6fc1" compoundref="d7/da1/Object_8php" startline="411" endline="418">updateToDatabase</references>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a3f370bd811dc4f984150f220a5a7fd1c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::changePasshash</definition>
+        <argsstring>($new)</argsstring>
+        <name>changePasshash</name>
+        <param>
+          <type>$</type>
+          <declname>new</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Used for one time keys when hash chaining and client-side hashing is enabled. Decreases the hash chain count by one and uses the given hash as the new current hash.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$new The next hash in the hash chain (as supplied by the user)</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="329" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="329" bodyend="339"/>
+        <references refid="dc/d6d/classDB__Object_1adec88cd7f52f2cbe98d4568c86d1e172" compoundref="d7/da1/Object_8php" startline="61">$info</references>
+        <referencedby refid="dc/d6d/classDB__Object_1a8bd5723454893098af658c007c93a7c5" compoundref="d7/da1/Object_8php" startline="273" endline="292">checkPassword</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a9924a8fa716e352e9528bf99f51a90fd" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::getTable</definition>
+        <argsstring>()</argsstring>
+        <name>getTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the table associated with this object, and sets it up if it does not exist.</para><para>First checks if the table already exists, and returns it if it does. If not, constructs SQL to create a new table using definitions in the configuration file, then submits the query, reloads the database, and tries to get the table again.</para><para><simplesect kind="return"><para>object <ref refid="d6/d90/classDB__Table" kindref="compound">DB_Table</ref> on success, <ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref> on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="431" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="431" bodyend="485"/>
+        <references refid="dc/d6d/classDB__Object_1a0d08820dae7ab434119115781b369714" compoundref="d7/da1/Object_8php" startline="81">$table</references>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
+        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">__construct</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1acde3675787ca522413a21203a3957148" compoundref="d7/da1/Object_8php" startline="396" endline="404">updateFromDatabase</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1afd22a626921cf089ccf1977a652d6fc1" compoundref="d7/da1/Object_8php" startline="411" endline="418">updateToDatabase</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a9e72ad4e667d0de2f3d2df0cc37c6463" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the name of the object.</para><para><simplesect kind="return"><para>string The name of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="136" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="136" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1ae09675ff1d492c3571766142196556df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::getId</definition>
+        <argsstring>()</argsstring>
+        <name>getId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the ID of the object.</para><para><simplesect kind="return"><para>int The ID of the object </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="145" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="145" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a45d1bd94aa7a815efa455c79742a3aff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::getInfo</definition>
+        <argsstring>($obj, $name)</argsstring>
+        <name>getInfo</name>
+        <param>
+          <type>$</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get any property of an object, checking if the object is allowed to access the property first.</para><para>The permission to get the value of any property is in the form of &quot;$classname-get-$name&quot;, where $classname is the name of this object, and $name is the property being accessed. However, if the object has: * &quot;*-get-$name&quot; (get $name from any object), * &quot;$classname-*-$name&quot; (do anything to $name for this class), * &quot;$classname-get-*&quot; (get anything from the object) or any combination of those, the request will also be allowed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$obj A copy of the calling object (just give $this) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the property to access</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed The requested property if allowed, <ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref> if not allowed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="166" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="166" bodyend="175"/>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a96ce58f2dd8e64902dbd72a072083a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::putInfo</definition>
+        <argsstring>($obj, $property, $value)</argsstring>
+        <name>putInfo</name>
+        <param>
+          <type>$</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>property</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set any property of an object, checking if the object is allowed to access the property first.</para><para>The permission to set the value of any property is in the form of &quot;$classname-set-$name&quot;, where $classname is the name of this object, and $name is the property being accessed. However, if the object has: * &quot;*-set-$name&quot; (get $name from any object), * &quot;$classname-*-$name&quot; (do anything to $name for this class), * &quot;$classname-set-*&quot; (get anything from the object) or any combination of those, the request will also be allowed.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$obj A copy of the calling object (just give $this) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the property to give a new value </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$value Value to give the property</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed The requested property if allowed, <ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref> if not allowed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="195" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="195" bodyend="205"/>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1aee226b738dafa7018cd39cc66a0d8665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::addChild</definition>
+        <argsstring>($child)</argsstring>
+        <name>addChild</name>
+        <param>
+          <type>$</type>
+          <declname>child</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Merges a child database object with the current object.</para><para>Adds an array with the child object&apos;s ID, name, profile, and the object itself into the current object&apos;s profile. It is stored in: $&lt;currentObject&gt;-&gt;profile[&lt;nameOfChildObject&gt;][]</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$child Child object to store</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="218" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="218" bodyend="233"/>
+        <referencedby refid="dc/d6d/classDB__Object_1aab1bdf6fa7b550f96f21292aa53bb052" compoundref="d7/da1/Object_8php" startline="243" endline="250">addChildren</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1aab1bdf6fa7b550f96f21292aa53bb052" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::addChildren</definition>
+        <argsstring>($children)</argsstring>
+        <name>addChildren</name>
+        <param>
+          <type>$</type>
+          <declname>children</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Merges multiple child database objects with the current object. Calls the addChild function for each child given.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$child Child objects to add</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="243" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="243" bodyend="250"/>
+        <references refid="dc/d6d/classDB__Object_1aee226b738dafa7018cd39cc66a0d8665" compoundref="d7/da1/Object_8php" startline="218" endline="233">addChild</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a2c2b7b97b2c73bee8d6d616fb51e297e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::getPassKey</definition>
+        <argsstring>()</argsstring>
+        <name>getPassKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the current iteration on the hash chain.</para><para><simplesect kind="return"><para>array The current iteration on the hash chain </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="257" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="257" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a8bd5723454893098af658c007c93a7c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::checkPassword</definition>
+        <argsstring>($new, $original=false)</argsstring>
+        <name>checkPassword</name>
+        <param>
+          <type>$</type>
+          <declname>new</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>original</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compare a given password to the stored password hash.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$new The password to check </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$original Whether the given password is the actual plaintext password or a one time key on the hash chain</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if the password is correct, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="273" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="273" bodyend="292"/>
+        <references refid="dc/d6d/classDB__Object_1a3f370bd811dc4f984150f220a5a7fd1c" compoundref="d7/da1/Object_8php" startline="329" endline="339">changePasshash</references>
+        <references refid="dc/d6d/classDB__Object_1a8438909f696e1bb56d19eb617ef3f648" compoundref="d7/da1/Object_8php" startline="495" endline="499">hashPassword</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a07519cd100d61b0985073f410f6456dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::changePassword</definition>
+        <argsstring>($new)</argsstring>
+        <name>changePassword</name>
+        <param>
+          <type>$</type>
+          <declname>new</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Change the password for the object.</para><para>Store a new password hash in the database as well as the password hashed 1000 times for client side hashing.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$new The new plaintext password</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True on success, false on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="304" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="304" bodyend="319"/>
+        <references refid="dc/d6d/classDB__Object_1a8438909f696e1bb56d19eb617ef3f648" compoundref="d7/da1/Object_8php" startline="495" endline="499">hashPassword</references>
+        <references refid="dc/d6d/classDB__Object_1afd22a626921cf089ccf1977a652d6fc1" compoundref="d7/da1/Object_8php" startline="411" endline="418">updateToDatabase</references>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1ad323cdf42e524a6dccb1460c26d1a682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::isAllowed</definition>
+        <argsstring>($classname, $action, $property)</argsstring>
+        <name>isAllowed</name>
+        <param>
+          <type>$</type>
+          <declname>classname</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>property</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if the object is allowed to do a certain action.</para><para>Checks the groups of the object, and uses <ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref> to compile an array of permissions from those groups. Then checks if the $action is in the array.</para><para>The format of a permission is &quot;$classname-$action-$property&quot;, where $classname is the object being accessed, $action is either &apos;get&apos; or &apos;set&apos;, and $property is the name of the property. By having that permission, the action is allowed. In addition, the asterisk wildcard can be used in any field to give permission for any class, any action, any property, or a combination of the three.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$action Requested action</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool True if allowed, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="359" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="359" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1acde3675787ca522413a21203a3957148" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::updateFromDatabase</definition>
+        <argsstring>($column, $value)</argsstring>
+        <name>updateFromDatabase</name>
+        <param>
+          <type>$</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get properties about the object from the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$column Column to search for info from. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$value Value in the column to match the object to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="396" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="396" bodyend="404"/>
+        <references refid="dc/d6d/classDB__Object_1a0d08820dae7ab434119115781b369714" compoundref="d7/da1/Object_8php" startline="81">$table</references>
+        <references refid="dc/d6d/classDB__Object_1a9924a8fa716e352e9528bf99f51a90fd" compoundref="d7/da1/Object_8php" startline="431" endline="485">getTable</references>
+        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">__construct</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1afd22a626921cf089ccf1977a652d6fc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DB_Object::updateToDatabase</definition>
+        <argsstring>()</argsstring>
+        <name>updateToDatabase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update properties about the object to the database.</para><para><simplesect kind="return"><para>bool True on success, false on failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="411" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="411" bodyend="418"/>
+        <references refid="dc/d6d/classDB__Object_1a0d08820dae7ab434119115781b369714" compoundref="d7/da1/Object_8php" startline="81">$table</references>
+        <references refid="dc/d6d/classDB__Object_1a9924a8fa716e352e9528bf99f51a90fd" compoundref="d7/da1/Object_8php" startline="431" endline="485">getTable</references>
+        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">__construct</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1a07519cd100d61b0985073f410f6456dd" compoundref="d7/da1/Object_8php" startline="304" endline="319">changePassword</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="dc/d6d/classDB__Object_1a8438909f696e1bb56d19eb617ef3f648" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>static</type>
+        <definition>static DB_Object::hashPassword</definition>
+        <argsstring>($password, $iterations=1)</argsstring>
+        <name>hashPassword</name>
+        <param>
+          <type>$</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>iterations</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Hash a given plaintext password a given number of times (1 hash is the default).</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$password The password to hash </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$iterations Number of times to hash the password</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string Hash of the password </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="495" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="495" bodyend="499"/>
+        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">__construct</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1a07519cd100d61b0985073f410f6456dd" compoundref="d7/da1/Object_8php" startline="304" endline="319">changePassword</referencedby>
+        <referencedby refid="dc/d6d/classDB__Object_1a8bd5723454893098af658c007c93a7c5" compoundref="d7/da1/Object_8php" startline="273" endline="292">checkPassword</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/db/Object.php" line="39" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Object.php" bodystart="38" bodyend="500"/>
+    <listofallmembers>
+      <member refid="dc/d6d/classDB__Object_1a5ba1c6aa344fb0a4f91da7095105ee72" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>$clienthashing</name></member>
+      <member refid="dc/d6d/classDB__Object_1a4b05c22c55cb43234cc80dd35b1d542b" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>$enableprotect</name></member>
+      <member refid="dc/d6d/classDB__Object_1adec88cd7f52f2cbe98d4568c86d1e172" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>$info</name></member>
+      <member refid="dc/d6d/classDB__Object_1abc24dbdab0d6a65f2f775ae46d0c4a59" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>$parent</name></member>
+      <member refid="dc/d6d/classDB__Object_1ae7ffc7d66d72066f8333048851ef6926" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>$protect</name></member>
+      <member refid="dc/d6d/classDB__Object_1a0d08820dae7ab434119115781b369714" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>$table</name></member>
+      <member refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>__construct</name></member>
+      <member refid="dc/d6d/classDB__Object_1aee226b738dafa7018cd39cc66a0d8665" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>addChild</name></member>
+      <member refid="dc/d6d/classDB__Object_1aab1bdf6fa7b550f96f21292aa53bb052" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>addChildren</name></member>
+      <member refid="dc/d6d/classDB__Object_1a3f370bd811dc4f984150f220a5a7fd1c" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>changePasshash</name></member>
+      <member refid="dc/d6d/classDB__Object_1a07519cd100d61b0985073f410f6456dd" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>changePassword</name></member>
+      <member refid="dc/d6d/classDB__Object_1a8bd5723454893098af658c007c93a7c5" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>checkPassword</name></member>
+      <member refid="dc/d6d/classDB__Object_1ae09675ff1d492c3571766142196556df" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>getId</name></member>
+      <member refid="dc/d6d/classDB__Object_1a45d1bd94aa7a815efa455c79742a3aff" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>getInfo</name></member>
+      <member refid="dc/d6d/classDB__Object_1a9e72ad4e667d0de2f3d2df0cc37c6463" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>getName</name></member>
+      <member refid="dc/d6d/classDB__Object_1a2c2b7b97b2c73bee8d6d616fb51e297e" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>getPassKey</name></member>
+      <member refid="dc/d6d/classDB__Object_1a9924a8fa716e352e9528bf99f51a90fd" prot="protected" virt="non-virtual"><scope>DB_Object</scope><name>getTable</name></member>
+      <member refid="dc/d6d/classDB__Object_1a8438909f696e1bb56d19eb617ef3f648" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>hashPassword</name></member>
+      <member refid="dc/d6d/classDB__Object_1ad323cdf42e524a6dccb1460c26d1a682" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>isAllowed</name></member>
+      <member refid="dc/d6d/classDB__Object_1a96ce58f2dd8e64902dbd72a072083a0c" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>putInfo</name></member>
+      <member refid="dc/d6d/classDB__Object_1acde3675787ca522413a21203a3957148" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>updateFromDatabase</name></member>
+      <member refid="dc/d6d/classDB__Object_1afd22a626921cf089ccf1977a652d6fc1" prot="public" virt="non-virtual"><scope>DB_Object</scope><name>updateToDatabase</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

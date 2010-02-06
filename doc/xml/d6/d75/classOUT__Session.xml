@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="d6/d75/classOUT__Session" kind="class" prot="public">
+    <compoundname>OUT_Session</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/d75/classOUT__Session_1a8a776002946743f759a9cd110aca0c43" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Session::$SessionID</definition>
+        <argsstring></argsstring>
+        <name>$SessionID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Session ID for the request. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="43" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d75/classOUT__Session_1ac04cf3c45479efcb55cc6310846dd77a" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Session::$VerifyID</definition>
+        <argsstring></argsstring>
+        <name>$VerifyID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Verification hash to prevent session hijacking. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="49" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d75/classOUT__Session_1abb034dc0d8a6fd5242974685313742cc" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Session::$POST</definition>
+        <argsstring></argsstring>
+        <name>$POST</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The $_POST superglobal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="55" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d75/classOUT__Session_1a34c08d712763261ab4a2efe76db27919" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Session::$GET</definition>
+        <argsstring></argsstring>
+        <name>$GET</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The $_GET superglobal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="61" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d75/classOUT__Session_1a257c5b20188e45a080a024ecba899883" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>OUT_Session::$SERVER</definition>
+        <argsstring></argsstring>
+        <name>$SERVER</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The $_SERVER superglobal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="67" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1a838ed9477ab542064af677e5cf97f276" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::__construct</definition>
+        <argsstring>()</argsstring>
+        <name>__construct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores local copies of the POST, GET, and SERVER superglobals. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="72" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1ae753f4f970b7ef5701ca06eb8319755e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::startSession</definition>
+        <argsstring>()</argsstring>
+        <name>startSession</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts a PHP session, stores the session id, and generates an unique hash using the IP address and the User Agent. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="83" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="83" bodyend="104"/>
+        <references refid="d6/d75/classOUT__Session_1a7dc75b2f274e8e8ecc0a43ebb94f8d7b" compoundref="d4/db7/Session_8php" startline="118" endline="126">getIpAddress</references>
+        <references refid="d6/d75/classOUT__Session_1a455e243a97243d5585156a47fae04b27" compoundref="d4/db7/Session_8php" startline="174" endline="176">getText</references>
+        <references refid="d6/d75/classOUT__Session_1ae4af903f5997118f6036a4104ea20c3b" compoundref="d4/db7/Session_8php" startline="134" endline="136">putSessionVal</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1a249eb4ce8b2f736a2282f9edf48c57fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::endSession</definition>
+        <argsstring>()</argsstring>
+        <name>endSession</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Ends a session by deleting the session cookie, destroying the session, and resetting the $_SESSION superglobal. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="110" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="110" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1a7dc75b2f274e8e8ecc0a43ebb94f8d7b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::getIpAddress</definition>
+        <argsstring>()</argsstring>
+        <name>getIpAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="118" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="118" bodyend="126"/>
+        <references refid="d6/d75/classOUT__Session_1a455e243a97243d5585156a47fae04b27" compoundref="d4/db7/Session_8php" startline="174" endline="176">getText</references>
+        <referencedby refid="d6/d75/classOUT__Session_1ae753f4f970b7ef5701ca06eb8319755e" compoundref="d4/db7/Session_8php" startline="83" endline="104">startSession</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1ae4af903f5997118f6036a4104ea20c3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::putSessionVal</definition>
+        <argsstring>($name, $value)</argsstring>
+        <name>putSessionVal</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores a session variable.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the variable </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$value Value of the variable </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="134" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="134" bodyend="136"/>
+        <referencedby refid="d6/d75/classOUT__Session_1ae753f4f970b7ef5701ca06eb8319755e" compoundref="d4/db7/Session_8php" startline="83" endline="104">startSession</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1af2c29620bc267a3613ec1f15ead5c519" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::getVal</definition>
+        <argsstring>($name, $from= &apos;GET&apos;, $default=false)</argsstring>
+        <name>getVal</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>from</declname>
+          <defval>&apos;GET&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>default</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a variable from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the variable to retrieve </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$from Superglobal to look from </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$default What to return if the variable does not exist</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mixed Variable if it exists, $default otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="149" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="149" bodyend="161"/>
+        <referencedby refid="d6/d75/classOUT__Session_1a2000b816710ab8938ff33c21c05ff23e" compoundref="d4/db7/Session_8php" startline="219" endline="221">getBool</referencedby>
+        <referencedby refid="d6/d75/classOUT__Session_1ada05962a25467070b6ca9ffa6692d4c3" compoundref="d4/db7/Session_8php" startline="204" endline="206">getFloat</referencedby>
+        <referencedby refid="d6/d75/classOUT__Session_1a8df372b0cc4128399e6367f04c2219ab" compoundref="d4/db7/Session_8php" startline="189" endline="191">getInt</referencedby>
+        <referencedby refid="d6/d75/classOUT__Session_1a455e243a97243d5585156a47fae04b27" compoundref="d4/db7/Session_8php" startline="174" endline="176">getText</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1a455e243a97243d5585156a47fae04b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::getText</definition>
+        <argsstring>($name, $from= &apos;GET&apos;, $default= &apos;&apos;)</argsstring>
+        <name>getText</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>from</declname>
+          <defval>&apos;GET&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>default</declname>
+          <defval>&apos;&apos;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a string from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as strings.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the variable to retrieve </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$default What to return if the variable does not exist </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$from Superglobal to look from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>string Variable if it exists, $default otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="174" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="174" bodyend="176"/>
+        <references refid="d6/d75/classOUT__Session_1af2c29620bc267a3613ec1f15ead5c519" compoundref="d4/db7/Session_8php" startline="149" endline="161">getVal</references>
+        <referencedby refid="d6/d75/classOUT__Session_1a7dc75b2f274e8e8ecc0a43ebb94f8d7b" compoundref="d4/db7/Session_8php" startline="118" endline="126">getIpAddress</referencedby>
+        <referencedby refid="d6/d75/classOUT__Session_1ae753f4f970b7ef5701ca06eb8319755e" compoundref="d4/db7/Session_8php" startline="83" endline="104">startSession</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1a8df372b0cc4128399e6367f04c2219ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::getInt</definition>
+        <argsstring>($name, $from= &apos;GET&apos;, $default=0)</argsstring>
+        <name>getInt</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>from</declname>
+          <defval>&apos;GET&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>default</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a integer from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as integers.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the variable to retrieve </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$default What to return if the variable does not exist </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$from Superglobal to look from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int Variable if it exists, $default otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="189" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="189" bodyend="191"/>
+        <references refid="d6/d75/classOUT__Session_1af2c29620bc267a3613ec1f15ead5c519" compoundref="d4/db7/Session_8php" startline="149" endline="161">getVal</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1ada05962a25467070b6ca9ffa6692d4c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::getFloat</definition>
+        <argsstring>($name, $from= &apos;GET&apos;, $default=0.0)</argsstring>
+        <name>getFloat</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>from</declname>
+          <defval>&apos;GET&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>default</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a float from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as floats.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the variable to retrieve </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$default What to return if the variable does not exist </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$from Superglobal to look from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>float Variable if it exists, $default otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="204" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="204" bodyend="206"/>
+        <references refid="d6/d75/classOUT__Session_1af2c29620bc267a3613ec1f15ead5c519" compoundref="d4/db7/Session_8php" startline="149" endline="161">getVal</references>
+      </memberdef>
+      <memberdef kind="function" id="d6/d75/classOUT__Session_1a2000b816710ab8938ff33c21c05ff23e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>OUT_Session::getBool</definition>
+        <argsstring>($name, $from= &apos;GET&apos;, $default=false)</argsstring>
+        <name>getBool</name>
+        <param>
+          <type>$</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>from</declname>
+          <defval>&apos;GET&apos;</defval>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>default</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a boolean from either the $_GET, $_POST, $_SERVER, or $_SESSION superglobal. If $_GET is specified, the function will automatically search $_POST as well. Variables will automatically be cast as true or false.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$name Name of the variable to retrieve </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mixed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$default What to return if the variable does not exist </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$from Superglobal to look from</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool Variable if it exists, $default otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="219" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="219" bodyend="221"/>
+        <references refid="d6/d75/classOUT__Session_1af2c29620bc267a3613ec1f15ead5c519" compoundref="d4/db7/Session_8php" startline="149" endline="161">getVal</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/out/Session.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/out/Session.php" bodystart="37" bodyend="222"/>
+    <listofallmembers>
+      <member refid="d6/d75/classOUT__Session_1a34c08d712763261ab4a2efe76db27919" prot="private" virt="non-virtual"><scope>OUT_Session</scope><name>$GET</name></member>
+      <member refid="d6/d75/classOUT__Session_1abb034dc0d8a6fd5242974685313742cc" prot="private" virt="non-virtual"><scope>OUT_Session</scope><name>$POST</name></member>
+      <member refid="d6/d75/classOUT__Session_1a257c5b20188e45a080a024ecba899883" prot="private" virt="non-virtual"><scope>OUT_Session</scope><name>$SERVER</name></member>
+      <member refid="d6/d75/classOUT__Session_1a8a776002946743f759a9cd110aca0c43" prot="private" virt="non-virtual"><scope>OUT_Session</scope><name>$SessionID</name></member>
+      <member refid="d6/d75/classOUT__Session_1ac04cf3c45479efcb55cc6310846dd77a" prot="private" virt="non-virtual"><scope>OUT_Session</scope><name>$VerifyID</name></member>
+      <member refid="d6/d75/classOUT__Session_1a838ed9477ab542064af677e5cf97f276" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>__construct</name></member>
+      <member refid="d6/d75/classOUT__Session_1a249eb4ce8b2f736a2282f9edf48c57fd" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>endSession</name></member>
+      <member refid="d6/d75/classOUT__Session_1a2000b816710ab8938ff33c21c05ff23e" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>getBool</name></member>
+      <member refid="d6/d75/classOUT__Session_1ada05962a25467070b6ca9ffa6692d4c3" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>getFloat</name></member>
+      <member refid="d6/d75/classOUT__Session_1a8df372b0cc4128399e6367f04c2219ab" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>getInt</name></member>
+      <member refid="d6/d75/classOUT__Session_1a7dc75b2f274e8e8ecc0a43ebb94f8d7b" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>getIpAddress</name></member>
+      <member refid="d6/d75/classOUT__Session_1a455e243a97243d5585156a47fae04b27" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>getText</name></member>
+      <member refid="d6/d75/classOUT__Session_1af2c29620bc267a3613ec1f15ead5c519" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>getVal</name></member>
+      <member refid="d6/d75/classOUT__Session_1ae4af903f5997118f6036a4104ea20c3b" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>putSessionVal</name></member>
+      <member refid="d6/d75/classOUT__Session_1ae753f4f970b7ef5701ca06eb8319755e" prot="public" virt="non-virtual"><scope>OUT_Session</scope><name>startSession</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

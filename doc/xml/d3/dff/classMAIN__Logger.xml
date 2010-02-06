@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.6.1">
+  <compounddef id="d3/dff/classMAIN__Logger" kind="class" prot="public">
+    <compoundname>MAIN_Logger</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1a2af8dfdb8d9e1b23122783c5d85e2da0" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const MAIN_Logger::ERROR</definition>
+        <argsstring></argsstring>
+        <name>ERROR</name>
+        <initializer> 256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal for extremely dangerous errors, usually resulting in termination of the script. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="49" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1a9d79bb27ec1dfe5b64f8a78f2f6ceb9b" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const MAIN_Logger::WARNING</definition>
+        <argsstring></argsstring>
+        <name>WARNING</name>
+        <initializer> 512</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal for critical errors, creating unwanted results, though not necessarily requiring the script to be terminated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="55" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1a104a24882667b4b8f4452abb03c8266c" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const MAIN_Logger::NOTICE</definition>
+        <argsstring></argsstring>
+        <name>NOTICE</name>
+        <initializer> 1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal for standard errors that may have an effect on the outcome of the script in certain situations. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="61" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="61" bodyend="-1"/>
+        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">DB_Object::__construct</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1a7583fcdf96a9dba7c0ec52637e1d11d7" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const MAIN_Logger::INFO</definition>
+        <argsstring></argsstring>
+        <name>INFO</name>
+        <initializer> -1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal for important logging messages that are not errors, but denote important points in the script&apos;s execution. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="67" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="67" bodyend="-1"/>
+        <referencedby refid="d3/d63/classDB__Database_1ad8f40ab058e072bc074a9447eb8a7762" compoundref="d2/d89/Database_8php" startline="213" endline="229">DB_Database::close</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="156" endline="205">DB_Database::connect</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a3c1f6f79bdf1a2f2d019fd4fbf156819" compoundref="d2/d89/Database_8php" startline="319" endline="330">DB_Database::getTable</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a67786f5c272e27980edf76a57fc16902" compoundref="d2/d89/Database_8php" startline="241" endline="260">DB_Database::query</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1ac7a1e837542ce1762a63d2713060c4ae" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const MAIN_Logger::DEBUG</definition>
+        <argsstring></argsstring>
+        <name>DEBUG</name>
+        <initializer> -2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal for possibly important logging messages that will only be needed as a source for developers to debug if there is a problem. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="73" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1a75824ecd65029652b81460f69b83b779" prot="public" static="no" mutable="no">
+        <type>const</type>
+        <definition>const MAIN_Logger::USER</definition>
+        <argsstring></argsstring>
+        <name>USER</name>
+        <initializer> -3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Signal for any expected errors or messages caused by the user, such as keyboard interrupts, etc. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="79" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1afa86bba01c2165e0cb2aaa9faaae372b" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>MAIN_Logger::$log</definition>
+        <argsstring></argsstring>
+        <name>$log</name>
+        <initializer> array()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the log itself, with a line for each array key. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="85" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d3/dff/classMAIN__Logger_1a06d6ccbf1df65ec1bbdc88d88453fbd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Logger::log</definition>
+        <argsstring>($level, $callback, $message)</argsstring>
+        <name>log</name>
+        <param>
+          <type>$</type>
+          <declname>level</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>$</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a logging message from the given parameters and adds it to the log.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$level Level of the message (see the class&apos;s constants) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$callback Some identifier of what function caused the message to be logged </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$message The actual message to be logged</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool Returns true on success, false on failure </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="97" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="97" bodyend="130"/>
+        <referencedby refid="d3/dff/classMAIN__Logger_1aeb44a3f5e4ce98ab2380743b28c9ac44" compoundref="d3/d5e/Logger_8php" startline="140" endline="170">export</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="d3/dff/classMAIN__Logger_1aeb44a3f5e4ce98ab2380743b28c9ac44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Logger::export</definition>
+        <argsstring>($filename)</argsstring>
+        <name>export</name>
+        <param>
+          <type>$</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Takes the current internal log and exports it to a file before emptying it.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>$filename Name of the file to export the log to</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>int|bool Returns the number of bytes written, or false on error </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="140" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="140" bodyend="170"/>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
+        <references refid="d3/dff/classMAIN__Logger_1a06d6ccbf1df65ec1bbdc88d88453fbd2" compoundref="d3/d5e/Logger_8php" startline="97" endline="130">log</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="43" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="42" bodyend="171"/>
+    <listofallmembers>
+      <member refid="d3/dff/classMAIN__Logger_1afa86bba01c2165e0cb2aaa9faaae372b" prot="private" virt="non-virtual"><scope>MAIN_Logger</scope><name>$log</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1ac7a1e837542ce1762a63d2713060c4ae" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>DEBUG</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1a2af8dfdb8d9e1b23122783c5d85e2da0" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>ERROR</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1aeb44a3f5e4ce98ab2380743b28c9ac44" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>export</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1a7583fcdf96a9dba7c0ec52637e1d11d7" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>INFO</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1a06d6ccbf1df65ec1bbdc88d88453fbd2" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>log</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1a104a24882667b4b8f4452abb03c8266c" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>NOTICE</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1a75824ecd65029652b81460f69b83b779" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>USER</name></member>
+      <member refid="d3/dff/classMAIN__Logger_1a9d79bb27ec1dfe5b64f8a78f2f6ceb9b" prot="public" virt="non-virtual"><scope>MAIN_Logger</scope><name>WARNING</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

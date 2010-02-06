@@ -1,0 +1,179 @@
+.TH "OUT_Request" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+OUT_Request \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB__construct\fP (&$config, &$db, &$session)"
+.br
+.ti -1c
+.RI "\fBinitiate\fP (&$session)"
+.br
+.ti -1c
+.RI "\fBsend\fP ()"
+.br
+.ti -1c
+.RI "\fBgetOption\fP ($option)"
+.br
+.ti -1c
+.RI "\fBputOption\fP ($option, $value)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBgetTemplate\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fB$config\fP"
+.br
+.ti -1c
+.RI "\fB$db\fP"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstoreUploadedFile\fP ($source, $name)"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBtidy\fP ($html)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 37 of file Request.php.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OUT_Request::__construct (&$ config, &$ db, &$ session)"Store the configuration and database objects.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobject\fP &$config \fBMAIN_Config\fP object 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file Request.php.
+.PP
+References $config, and $db.
+.SH "Member Function Documentation"
+.PP 
+.SS "OUT_Request::getOption ($ option)"Get an option that has been passed to the template.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $option Name of the option
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+mixed Option value, false if non-existant or if template is missing 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file Request.php.
+.SS "OUT_Request::getTemplate ()\fC [protected]\fP"Gets the template for the request, using the name of the request subclass as the template name, and stored configuration options to get the directory (filename for template should be 'Name.template').
+.PP
+\fBReturns:\fP
+.RS 4
+object Template for the request 
+.RE
+.PP
+
+.PP
+Definition at line 113 of file Request.php.
+.SS "OUT_Request::initiate (&$ session)"Definition for a function to initialize the request, get database information, and load it into the template. 
+.PP
+Definition at line 69 of file Request.php.
+.SS "OUT_Request::putOption ($ option, $ value)"Stores an option in the template for the request.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $option Name of the option 
+.br
+\fIstring\fP $value Value of the option
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false if template is missing 
+.RE
+.PP
+
+.PP
+Definition at line 100 of file Request.php.
+.SS "OUT_Request::send ()"Print the resulting HTML to the screen. 
+.PP
+Definition at line 74 of file Request.php.
+.PP
+References tidy().
+.SS "OUT_Request::storeUploadedFile ($ source, $ name)\fC [private]\fP"Helper function to store uploaded files. Uses configuration object to find uploads directory.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $source Name given to the file input tag in the HTML 
+.br
+\fIstring\fP $name Filename to give to the uploaded file
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+bool True on success, false on failure 
+.RE
+.PP
+
+.PP
+Definition at line 136 of file Request.php.
+.SS "static OUT_Request::tidy ($ html)\fC [static, private]\fP"Parses a given HTML string, then formats and repairs it using the Tidy extension in PHP.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstring\fP $html HTML to tidy up
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+object Tidy object 
+.RE
+.PP
+
+.PP
+Definition at line 157 of file Request.php.
+.PP
+References $config.
+.PP
+Referenced by send().
+.SH "Member Data Documentation"
+.PP 
+.SS "OUT_Request::$config\fC [protected]\fP"A valid \fBMAIN_Config\fP object. 
+.PP
+Definition at line 43 of file Request.php.
+.PP
+Referenced by __construct(), and tidy().
+.SS "OUT_Request::$db\fC [protected]\fP"A valid \fBDB_Database\fP object. 
+.PP
+Definition at line 49 of file Request.php.
+.PP
+Referenced by __construct().
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WebApi from the source code.
