@@ -88,7 +88,7 @@ class MAIN_Cache
 		$cacheopts = $this->config->getOption('cache');
 		$filename  = $this->getCacheFilename();
 
-		if( !file_exists($filename) || 
+		if( !file_exists($filename) ||
 		    time() - $cacheopts['expires'] > filemtime($filename)) {
 			return true;
 		} return false;
@@ -121,6 +121,7 @@ class MAIN_Cache
 	 */
 	public function getCache() {
 		$filename  = $this->getCacheFilename();
+		date_default_timezone_set('America/New_York');
 		if(!file_exists($filename) || !is_readable($filename)) {
 			return false;
 		} return file_get_contents($filename) .
@@ -136,8 +137,8 @@ class MAIN_Cache
 	 */
 	private function getCacheFilename() {
 		$paths = $this->config->getOption('paths');
-		$path  = isset($paths['cache']) ? $paths['cache'] : "$rootdir/cache";
+		$path  = isset($paths['cache']) ? $paths['cache'] : ROOTDIR . '/cache';
 		$uri   = $this->session->getText('REQUEST_URI', 'SERVER');
-		return $paths['cache'] . '/' . $uri;
+		return $path . $uri;
 	}
 }

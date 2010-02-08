@@ -93,7 +93,7 @@ class DB_Object
 	 * @param int     $curpassnum The number of hash iterations for the $curpass
 	 * @param array   $profile    Any information specific to the object from the database
 	 */
-	protected function __construct(&$db, &$config, $column, $value, $profile = array(), $new = false) {
+	public function __construct(&$db, &$config, $column, $value, $profile = array(), $new = false) {
 		// Check the parmeters.
 		if(!is_string($column) ||
 		   !is_string($value) ||

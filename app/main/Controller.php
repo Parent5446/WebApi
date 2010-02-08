@@ -224,7 +224,6 @@ class MAIN_Controller
 	 * @return bool True on success, false on error
 	 */
 	public function cleanup() {
-		global $rootdir;
 		$debug = $this->config->getOption('debug');
 		if(($res = $this->database->close()) instanceof MAIN_Error) {
 			if($debug) {
@@ -238,8 +237,9 @@ class MAIN_Controller
 		}
 
 		$paths = $this->config->getOption('paths');
-		$logpath = isset($paths['log']) ? $paths['log'] : "$rootdir/log";
+		$logpath = isset($paths['log']) ? $paths['log'] : ROOTDIR . '/log';
 		if(($res = $this->logger->export($logpath)) instanceof MAIN_Error) {
+			var_dump($res);
 			if($debug) {
 				@ob_end_flush();
 			} else {

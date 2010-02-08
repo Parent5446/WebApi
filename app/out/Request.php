@@ -113,7 +113,7 @@ class OUT_Request
 	protected function getTemplate() {
 		global $rootdir;
 		$paths        = $this->config->getOption('paths');
-		$dirname      = isset($paths['templates']) ? $paths['templates'] : "$rootdir/templates";
+		$dirname      = isset($paths['templates']) ? $paths['templates'] : ROOTDIR . '/templates';
 		$templatename = strtolower(get_class($this));
 		$template     = new OUT_Template("$dirname/$templatename.template");
 
