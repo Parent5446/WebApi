@@ -1,4 +1,4 @@
-.TH "MAIN_Autoloader" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.TH "MAIN_Autoloader" 3 "9 Feb 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -52,7 +52,7 @@ MAIN_Autoloader \-
 .in -1c
 .SH "Detailed Description"
 .PP 
-This program was created to make a set of classes to be used for easy website creation. Usage: simply extend the \fBDB_Object\fP class to make models and the \fBOUT_Request\fP class to make controllers. HTML is stored in templates with special tags. See the \fBOUT_Template\fP class for more details. Made by Tyler Romeo <tylerromeo@gmail.com>
+This program was created to make a set of classes to be used for easy website creation. Usage: simply extend the DB_Object class to make models and the \fBOUT_Request\fP class to make controllers. HTML is stored in templates with special tags. See the \fBOUT_Template\fP class for more details. Made by Tyler Romeo <tylerromeo@gmail.com>
 .PP
 Copyright (C) 2009 Tyler Romeo
 .PP
@@ -96,18 +96,18 @@ Referenced by loadClass().
 .nf
  array(
                         'MAIN_Controller' => '/app/main/Controller.php',
-                        'MAIN_Cache'      => 'app/main/Cache.php',
-                        'MAIN_Config'     => 'app/main/Config.php',
-                        'MAIN_Error'      => 'app/main/Error.php',
-                        'MAIN_Logger'     => 'app/main/Logger.php',
+                        'MAIN_Cache'      => '/app/main/Cache.php',
+                        'MAIN_Config'     => '/app/main/Config.php',
+                        'MAIN_Error'      => '/app/main/Error.php',
+                        'MAIN_Logger'     => '/app/main/Logger.php',
 
-                        'DB_Database'     => 'app/db/Database.php',
-                        'DB_Object'       => 'app/db/Object.php',
-                        'DB_Table'        => 'app/db/Table.php',
+                        'DB_Database'     => '/app/db/Database.php',
+                        'DB_Object'       => '/app/db/Object.php',
+                        'DB_Table'        => '/app/db/Table.php',
 
-                        'OUT_Request'     => 'app/out/Request.php',
-                        'OUT_Session'     => 'app/out/Session.php',
-                        'OUT_Template'    => 'app/out/Template.php' )
+                        'OUT_Request'     => '/app/out/Request.php',
+                        'OUT_Session'     => '/app/out/Session.php',
+                        'OUT_Template'    => '/app/out/Template.php' )
 .fi
 .PP
 Definition at line 34 of file Autoloader.php.

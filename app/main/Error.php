@@ -81,9 +81,7 @@ class MAIN_Error
 	 * @param object &$log      Valid MAIN_Logger instance
 	 */
 	public function __construct($level, $callback, $message, &$log) {
-		if(!$log instanceof MAIN_Logger) {
-			return false;
-		}
+		$message = strtr($message, "\n", ' ');
 
 		$this->level    =  $level;
 		$this->callback =  $callback;
@@ -99,7 +97,9 @@ class MAIN_Error
 				return false;
 		}
 
-		$log->log($level, $callback, $message);
+		if($log instanceof MAIN_Logger) {
+			$log->log($level, $callback, $message);
+		}
 	}
 
 	/**

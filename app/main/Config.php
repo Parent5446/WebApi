@@ -78,7 +78,7 @@ class MAIN_Config
 	 * @return bool True on success, false on failure
 	 */
 	public function insertPlugin($name, $filename) {
-		$this->updateFromFile($filename, "plugin_$name");
+		return $this->updateFromFile($filename, "plugin_$name");
 	}
 
 	/**
@@ -94,13 +94,13 @@ class MAIN_Config
 		// Check the filename and return if already exists AND
 		// is not a normal file.
 		if(file_exists($filename) && !is_file($filename)) {
-			return false;
+			return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Config::updateFromFile', "$filename does not exist.");
 		} $options = parse_ini_file($filename, true);
 
 		// Check if the file failed to open,
 		// then check if it is writable.
 		if($options === false) {
-			return false;
+			return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Config::updateFromFile', "$filename failed to open.");
 		} elseif($name == '') {
 			$this->options = $options;
 		} else {
@@ -120,16 +120,16 @@ class MAIN_Config
 		// is not a normal file.
 		$filename = realpath($filename);
 		if(file_exists($filename) && !is_file($filename)) {
-			return false;
+			return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Config::updateToFile', "$filename does not exist.");
 		} $file = fopen($filename, 'w');
 
 		// Check if the file failed to open,
 		// then check if it is writable.
 		if($file === false) {
-			return false;
+			return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Config::updateToFile', "$filename failed to open.");
 		} elseif(!is_writable($filename)) {
 			fclose($file);
-			return false;
+			return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Config::updateToFile', "$filename is not writeable.");
 		}
 
 		$lines = array();

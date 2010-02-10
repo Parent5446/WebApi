@@ -1,4 +1,4 @@
-.TH "MAIN_Error" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.TH "MAIN_Error" 3 "9 Feb 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -124,7 +124,7 @@ Referenced by __construct().
 .PP
 Definition at line 43 of file Error.php.
 .PP
-Referenced by DB_Table::__construct(), DB_Database::__construct(), DB_Database::close(), DB_Database::connect(), DB_Database::escape(), MAIN_Logger::export(), DB_Object::getTable(), DB_Database::query(), and DB_Database::result().
+Referenced by MAIN_Cache::__construct(), DB_Table::__construct(), DB_Database::__construct(), MAIN_Controller::boot(), DB_Database::close(), DB_Database::connect(), DB_Database::escape(), MAIN_Logger::export(), MAIN_Logger::log(), DB_Database::query(), DB_Database::result(), MAIN_Config::updateFromFile(), and MAIN_Config::updateToFile().
 .SS "const \fBMAIN_Error::NOTICE\fP = 1024"Signal for standard errors that may have an effect on the outcome of the script in certain situations. 
 .PP
 Definition at line 55 of file Error.php.
@@ -134,7 +134,7 @@ Referenced by DB_Database::close().
 .PP
 Definition at line 49 of file Error.php.
 .PP
-Referenced by OUT_Template::__construct(), DB_Object::__construct(), DB_Database::connect(), DB_Database::escape(), DB_Object::getInfo(), DB_Database::getTable(), DB_Table::insert(), DB_Object::putInfo(), DB_Database::query(), DB_Database::result(), and DB_Table::update().
+Referenced by OUT_Template::__construct(), DB_Database::connect(), DB_Database::escape(), DB_Database::getTable(), MAIN_Controller::initiate(), DB_Table::insert(), DB_Database::query(), DB_Database::result(), MAIN_Controller::send(), and DB_Table::update().
 
 .SH "Author"
 .PP 

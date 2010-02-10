@@ -126,21 +126,30 @@ class MAIN_Controller
 	 * @return bool True on success, false on critical error
 	 */
 	public function boot(&$config) {
+		if(!$config instanceof MAIN_Config) {
+			throw MAIN_Error(MAIN_Error::ERROR, 'MAIN_Controller::boot', 'Invalid config.');
+		}
 		$this->config =& $config;
 		$this->logger = new MAIN_Logger();
 
-		// Startup database
+		// Get database options.
 		$dbopts   = $this->config->getOption('database');
+		if($dbopts === false) throw new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Controller::boot', "No database options.");
 		$server   = $dbopts['server'  ];
 		$username = $dbopts['username'];
 		$password = $dbopts['password'];
 		$database = $dbopts['database'];
-		$this->database = new DB_Database($server, $username, $password, $database, $this->logger);
 
-		// Startup cache and session.
-		$this->session = new OUT_Session();
-		$this->session->startSession();
-		$this->cache   = new MAIN_Cache($this->config, $this->session);
+		// Start database, session, and cache while catching errors.
+		try {
+			$this->database = new DB_Database($server, $username, $password, $database, $this->logger);
+			$this->session = new OUT_Session();
+			$this->session->startSession();
+			$this->cache   = new MAIN_Cache($this->config, $this->session);
+		} catch(MAIN_Error $error) {
+			throw $error;
+		}
+
 
 		// Load models.
 		$models = $config->getOption('models');
@@ -181,10 +190,8 @@ class MAIN_Controller
 			// Get classname for action and make new request.
 			if(isset($actions[$action])) {
 				$classname = $actions[$action];
-			} elseif(isset($actions['error'])) {
-				$classname = $actions['error'];
 			} else {
-				return false;
+				throw new MAIN_Error(MAIN_Error::WARNING, 'MAIN_Controller::initiate', "Invalid request $action.");
 			} $this->request = new $classname($this->config, $this->database, $this->session);
 
 			// Initiate request.
@@ -198,7 +205,7 @@ class MAIN_Controller
 	 */
 	public function send() {
 		if(!isset($this->request)) {
-			return false;
+			throw new MAIN_Error(MAIN_Error::WARNING, 'MAIN_Controller::send', "Request no set up.");
 		}
 
 		$cacheable = $this->cache->canBeCached($this->action);
@@ -230,10 +237,7 @@ class MAIN_Controller
 				@ob_end_flush();
 			} else {
 				@ob_end_clean();
-			}
-			$this->action = 'error';
-			$this->error  = $res;
-			return false;
+			} throw $res;
 		}
 
 		$paths = $this->config->getOption('paths');
@@ -244,10 +248,7 @@ class MAIN_Controller
 				@ob_end_flush();
 			} else {
 				@ob_end_clean();
-			}
-			$this->action = 'error';
-			$this->error  = $res;
-			return false;
+			} throw $res;
 		}
 
 		if(($res = $this->config->updateToFile($this->configfile)) instanceof MAIN_Error) {
@@ -255,15 +256,20 @@ class MAIN_Controller
 				@ob_end_flush();
 			} else {
 				@ob_end_clean();
-			}
-			$this->action = 'error';
-			$this->error  = $res;
-			return false;
+			} throw $res;
 		}
 
 		@ob_end_flush();
 		return true;
 	}
+
+	public function error($error) {
+		if(!$error instanceof MAIN_Error)
+			return false;
+		$this->action = 'error';
+		$this->error  = $error;
+	}
+		
 
 	/**
 	 * Get the error that occurred during the request.

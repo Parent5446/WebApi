@@ -116,7 +116,7 @@ class MAIN_Logger
 				$level = 'USER ERROR';
 				break;
 			default:
-				return false;
+				return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Logger::log', "Invalid level $level.");
 		}
 
 		// Retrieve any other variables necessary.

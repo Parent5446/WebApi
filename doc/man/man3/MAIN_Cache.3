@@ -1,4 +1,4 @@
-.TH "MAIN_Cache" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.TH "MAIN_Cache" 3 "9 Feb 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -60,7 +60,7 @@ Definition at line 37 of file Cache.php.
 .PP
 Definition at line 57 of file Cache.php.
 .PP
-References $config, and $session.
+References $config, $session, and MAIN_Error::ERROR.
 .SH "Member Function Documentation"
 .PP 
 .SS "MAIN_Cache::cacheExpired ()"Determines whether the cache for this specific request has expired or not.
@@ -111,7 +111,7 @@ string Valid filename
 .PP
 
 .PP
-Definition at line 137 of file Cache.php.
+Definition at line 138 of file Cache.php.
 .PP
 Referenced by cacheExpired(), getCache(), and storeCache().
 .SS "MAIN_Cache::storeCache ($ output)"Stores the current request in a cache file. Writes the given HTML to a local filename for fast access later.

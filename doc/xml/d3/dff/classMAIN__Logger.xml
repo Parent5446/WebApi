@@ -44,7 +44,6 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="61" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="61" bodyend="-1"/>
-        <referencedby refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" compoundref="d7/da1/Object_8php" startline="96" endline="129">DB_Object::__construct</referencedby>
       </memberdef>
       <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1a7583fcdf96a9dba7c0ec52637e1d11d7" prot="public" static="no" mutable="no">
         <type>const</type>
@@ -59,10 +58,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="67" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="67" bodyend="-1"/>
-        <referencedby refid="d3/d63/classDB__Database_1ad8f40ab058e072bc074a9447eb8a7762" compoundref="d2/d89/Database_8php" startline="213" endline="229">DB_Database::close</referencedby>
-        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="156" endline="205">DB_Database::connect</referencedby>
-        <referencedby refid="d3/d63/classDB__Database_1a3c1f6f79bdf1a2f2d019fd4fbf156819" compoundref="d2/d89/Database_8php" startline="319" endline="330">DB_Database::getTable</referencedby>
-        <referencedby refid="d3/d63/classDB__Database_1a67786f5c272e27980edf76a57fc16902" compoundref="d2/d89/Database_8php" startline="241" endline="260">DB_Database::query</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1ad8f40ab058e072bc074a9447eb8a7762" compoundref="d2/d89/Database_8php" startline="215" endline="231">DB_Database::close</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="158" endline="207">DB_Database::connect</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a3c1f6f79bdf1a2f2d019fd4fbf156819" compoundref="d2/d89/Database_8php" startline="321" endline="332">DB_Database::getTable</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a67786f5c272e27980edf76a57fc16902" compoundref="d2/d89/Database_8php" startline="243" endline="262">DB_Database::query</referencedby>
       </memberdef>
       <memberdef kind="variable" id="d3/dff/classMAIN__Logger_1ac7a1e837542ce1762a63d2713060c4ae" prot="public" static="no" mutable="no">
         <type>const</type>
@@ -157,6 +156,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Logger.php" line="97" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Logger.php" bodystart="97" bodyend="130"/>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
         <referencedby refid="d3/dff/classMAIN__Logger_1aeb44a3f5e4ce98ab2380743b28c9ac44" compoundref="d3/d5e/Logger_8php" startline="140" endline="170">export</referencedby>
       </memberdef>
       <memberdef kind="function" id="d3/dff/classMAIN__Logger_1aeb44a3f5e4ce98ab2380743b28c9ac44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">

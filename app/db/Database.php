@@ -123,8 +123,10 @@ class DB_Database
 	 * @return bool|object Returns false if connection fails, returns object otherwise
 	 */
 	public function __construct($server, $username, $password, $database, &$log, $type = 'mysql') {
-		if(!$log instanceof MAIN_Logger) {
-			return false;
+		if(!$log instanceof MAIN_Logger ||
+		   !is_string($server)   || !is_string($username) ||
+		   !is_string($password) || !is_string($database)) {
+			throw new MAIN_Error(MAIN_Error::ERROR, 'DB_Database::__construct', 'Incorrect parameter type.', $log);
 		}
 
 		if(isset(self::$globalfunctions[$type])) {

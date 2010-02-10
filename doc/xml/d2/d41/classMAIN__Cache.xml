@@ -70,6 +70,7 @@
         <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="57" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="57" bodyend="65"/>
         <references refid="d2/d41/classMAIN__Cache_1a9e10bcda14432aaed68c259151ec2070" compoundref="d5/d6c/Cache_8php" startline="43">$config</references>
         <references refid="d2/d41/classMAIN__Cache_1ad1ffa30f8ad4128b1a1fdaec2d60d7df" compoundref="d5/d6c/Cache_8php" startline="49">$session</references>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
       </memberdef>
       <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a18001a7118a190476c4ad391f09bc7c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -110,7 +111,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="87" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="87" bodyend="95"/>
-        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="137" endline="142">getCacheFilename</references>
+        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="138" endline="143">getCacheFilename</references>
       </memberdef>
       <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a146320476b10d9bd545fb492ec929276" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -137,7 +138,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="106" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="106" bodyend="114"/>
-        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="137" endline="142">getCacheFilename</references>
+        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="138" endline="143">getCacheFilename</references>
       </memberdef>
       <memberdef kind="function" id="d2/d41/classMAIN__Cache_1a3e92222db37430da9ee40d4ec7263e21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -151,8 +152,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="122" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="122" bodyend="128"/>
-        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="137" endline="142">getCacheFilename</references>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="122" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="122" bodyend="129"/>
+        <references refid="d2/d41/classMAIN__Cache_1a033ba2adab9e0fed859f88368506c9a1" compoundref="d5/d6c/Cache_8php" startline="138" endline="143">getCacheFilename</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -168,9 +169,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="137" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="137" bodyend="142"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="138" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="138" bodyend="143"/>
         <referencedby refid="d2/d41/classMAIN__Cache_1a217d6d4359eeb584a532364b9edbba87" compoundref="d5/d6c/Cache_8php" startline="87" endline="95">cacheExpired</referencedby>
-        <referencedby refid="d2/d41/classMAIN__Cache_1a3e92222db37430da9ee40d4ec7263e21" compoundref="d5/d6c/Cache_8php" startline="122" endline="128">getCache</referencedby>
+        <referencedby refid="d2/d41/classMAIN__Cache_1a3e92222db37430da9ee40d4ec7263e21" compoundref="d5/d6c/Cache_8php" startline="122" endline="129">getCache</referencedby>
         <referencedby refid="d2/d41/classMAIN__Cache_1a146320476b10d9bd545fb492ec929276" compoundref="d5/d6c/Cache_8php" startline="106" endline="114">storeCache</referencedby>
       </memberdef>
       </sectiondef>
@@ -178,7 +179,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="37" bodyend="143"/>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/Cache.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Cache.php" bodystart="37" bodyend="144"/>
     <listofallmembers>
       <member refid="d2/d41/classMAIN__Cache_1a9e10bcda14432aaed68c259151ec2070" prot="private" virt="non-virtual"><scope>MAIN_Cache</scope><name>$config</name></member>
       <member refid="d2/d41/classMAIN__Cache_1ad1ffa30f8ad4128b1a1fdaec2d60d7df" prot="private" virt="non-virtual"><scope>MAIN_Cache</scope><name>$session</name></member>

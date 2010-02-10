@@ -57,7 +57,7 @@ class MAIN_Cache
 	public function __construct(&$config, &$session) {
 		if(!($config instanceof MAIN_Config &&
 		   $session instanceof OUT_Session)) {
-			return false;
+			throw new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Cache::__construct', 'Invalid parameters.');
 		}
 
 		$this->config     =& $config;

@@ -1,4 +1,4 @@
-.TH "MAIN_Logger" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.TH "MAIN_Logger" 3 "9 Feb 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -87,6 +87,8 @@ bool Returns true on success, false on failure
 .PP
 Definition at line 97 of file Logger.php.
 .PP
+References MAIN_Error::ERROR.
+.PP
 Referenced by export().
 .SH "Member Data Documentation"
 .PP 
@@ -107,8 +109,6 @@ Referenced by DB_Database::close(), DB_Database::connect(), DB_Database::getTabl
 .SS "const \fBMAIN_Logger::NOTICE\fP = 1024"Signal for standard errors that may have an effect on the outcome of the script in certain situations. 
 .PP
 Definition at line 61 of file Logger.php.
-.PP
-Referenced by DB_Object::__construct().
 .SS "const \fBMAIN_Logger::USER\fP = -3"Signal for any expected errors or messages caused by the user, such as keyboard interrupts, etc. 
 .PP
 Definition at line 79 of file Logger.php.

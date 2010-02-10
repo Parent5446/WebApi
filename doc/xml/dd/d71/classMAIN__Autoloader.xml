@@ -54,18 +54,18 @@
         <name>$classlist</name>
         <initializer> array(
 			&apos;<ref refid="d0/d6f/classMAIN__Controller" kindref="compound">MAIN_Controller</ref>&apos; =&gt; &apos;/app/main/Controller.php&apos;,
-			&apos;<ref refid="d2/d41/classMAIN__Cache" kindref="compound">MAIN_Cache</ref>&apos;      =&gt; &apos;app/main/Cache.php&apos;,
-			&apos;<ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref>&apos;     =&gt; &apos;app/main/Config.php&apos;,
-			&apos;<ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref>&apos;      =&gt; &apos;app/main/Error.php&apos;,
-			&apos;<ref refid="d3/dff/classMAIN__Logger" kindref="compound">MAIN_Logger</ref>&apos;     =&gt; &apos;app/main/Logger.php&apos;,
+			&apos;<ref refid="d2/d41/classMAIN__Cache" kindref="compound">MAIN_Cache</ref>&apos;      =&gt; &apos;/app/main/Cache.php&apos;,
+			&apos;<ref refid="dc/d96/classMAIN__Config" kindref="compound">MAIN_Config</ref>&apos;     =&gt; &apos;/app/main/Config.php&apos;,
+			&apos;<ref refid="d4/d5e/classMAIN__Error" kindref="compound">MAIN_Error</ref>&apos;      =&gt; &apos;/app/main/Error.php&apos;,
+			&apos;<ref refid="d3/dff/classMAIN__Logger" kindref="compound">MAIN_Logger</ref>&apos;     =&gt; &apos;/app/main/Logger.php&apos;,
 
-			&apos;<ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref>&apos;     =&gt; &apos;app/db/Database.php&apos;,
-			&apos;<ref refid="dc/d6d/classDB__Object" kindref="compound">DB_Object</ref>&apos;       =&gt; &apos;app/db/Object.php&apos;,
-			&apos;<ref refid="d6/d90/classDB__Table" kindref="compound">DB_Table</ref>&apos;        =&gt; &apos;app/db/Table.php&apos;,
+			&apos;<ref refid="d3/d63/classDB__Database" kindref="compound">DB_Database</ref>&apos;     =&gt; &apos;/app/db/Database.php&apos;,
+			&apos;DB_Object&apos;       =&gt; &apos;/app/db/Object.php&apos;,
+			&apos;<ref refid="d6/d90/classDB__Table" kindref="compound">DB_Table</ref>&apos;        =&gt; &apos;/app/db/Table.php&apos;,
 
-			&apos;<ref refid="de/d53/classOUT__Request" kindref="compound">OUT_Request</ref>&apos;     =&gt; &apos;app/out/Request.php&apos;,
-			&apos;<ref refid="d6/d75/classOUT__Session" kindref="compound">OUT_Session</ref>&apos;     =&gt; &apos;app/out/Session.php&apos;,
-			&apos;<ref refid="d0/dcf/classOUT__Template" kindref="compound">OUT_Template</ref>&apos;    =&gt; &apos;app/out/Template.php&apos; )</initializer>
+			&apos;<ref refid="de/d53/classOUT__Request" kindref="compound">OUT_Request</ref>&apos;     =&gt; &apos;/app/out/Request.php&apos;,
+			&apos;<ref refid="d6/d75/classOUT__Session" kindref="compound">OUT_Session</ref>&apos;     =&gt; &apos;/app/out/Session.php&apos;,
+			&apos;<ref refid="d0/dcf/classOUT__Template" kindref="compound">OUT_Template</ref>&apos;    =&gt; &apos;/app/out/Template.php&apos; )</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -158,7 +158,7 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>This program was created to make a set of classes to be used for easy website creation. Usage: simply extend the <ref refid="dc/d6d/classDB__Object" kindref="compound">DB_Object</ref> class to make models and the <ref refid="de/d53/classOUT__Request" kindref="compound">OUT_Request</ref> class to make controllers. HTML is stored in templates with special tags. See the <ref refid="d0/dcf/classOUT__Template" kindref="compound">OUT_Template</ref> class for more details. Made by Tyler Romeo &lt;<ulink url="mailto:tylerromeo@gmail.com">tylerromeo@gmail.com</ulink>&gt;</para><para>Copyright (C) 2009 Tyler Romeo</para><para>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</para><para>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</para><para>You should have received a copy of the GNU General Public License along with this program. If not, see &lt;<ulink url="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</ulink>&gt;. </para>    </detaileddescription>
+<para>This program was created to make a set of classes to be used for easy website creation. Usage: simply extend the DB_Object class to make models and the <ref refid="de/d53/classOUT__Request" kindref="compound">OUT_Request</ref> class to make controllers. HTML is stored in templates with special tags. See the <ref refid="d0/dcf/classOUT__Template" kindref="compound">OUT_Template</ref> class for more details. Made by Tyler Romeo &lt;<ulink url="mailto:tylerromeo@gmail.com">tylerromeo@gmail.com</ulink>&gt;</para><para>Copyright (C) 2009 Tyler Romeo</para><para>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</para><para>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</para><para>You should have received a copy of the GNU General Public License along with this program. If not, see &lt;<ulink url="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</ulink>&gt;. </para>    </detaileddescription>
     <location file="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" line="29" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Autoloader.php" bodystart="28" bodyend="79"/>
     <listofallmembers>
       <member refid="dd/d71/classMAIN__Autoloader_1a1ba4327fb805ecd48589610463c3a8c4" prot="private" virt="non-virtual"><scope>MAIN_Autoloader</scope><name>$classlist</name></member>

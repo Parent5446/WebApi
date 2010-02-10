@@ -47,25 +47,25 @@
 <a name="l00073"></a><a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">00073</a>         <span class="keyword">private</span> <a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a>;
 <a name="l00074"></a>00074 
 <a name="l00083"></a><a class="code" href="../../d4/d5e/classMAIN__Error.html#a9cc959e84c15f51a4a843cbe43f24dfc">00083</a>         <span class="keyword">public</span> function <a class="code" href="../../d4/d5e/classMAIN__Error.html#a9cc959e84c15f51a4a843cbe43f24dfc">__construct</a>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#acddcbb7c1ce7ac137b542542282ec4bc">$level</a>, <a class="code" href="../../d4/d5e/classMAIN__Error.html#a3febaeaa4f0bfe2df03c8ce837b22acb">$callback</a>, <a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a>, &amp;$log) {
-<a name="l00084"></a>00084                 <span class="keywordflow">if</span>(!$log instanceof <a class="code" href="../../d3/dff/classMAIN__Logger.html">MAIN_Logger</a>) {
-<a name="l00085"></a>00085                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00086"></a>00086                 }
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088                 $this-&gt;level    =  <a class="code" href="../../d4/d5e/classMAIN__Error.html#acddcbb7c1ce7ac137b542542282ec4bc">$level</a>;
-<a name="l00089"></a>00089                 $this-&gt;callback =  <a class="code" href="../../d4/d5e/classMAIN__Error.html#a3febaeaa4f0bfe2df03c8ce837b22acb">$callback</a>;
-<a name="l00090"></a>00090                 $this-&gt;message  =  <a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a>;
-<a name="l00091"></a>00091                 $this-&gt;log      =&amp; $log;
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093                 <span class="keywordflow">switch</span>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#acddcbb7c1ce7ac137b542542282ec4bc">$level</a>) {
-<a name="l00094"></a>00094                         <span class="keywordflow">case</span> self::ERROR:
-<a name="l00095"></a>00095                         <span class="keywordflow">case</span> self::WARNING:
-<a name="l00096"></a>00096                         <span class="keywordflow">case</span> self::NOTICE:
-<a name="l00097"></a>00097                                 <span class="keywordflow">break</span>;
-<a name="l00098"></a>00098                         <span class="keywordflow">default</span>:
-<a name="l00099"></a>00099                                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00100"></a>00100                 }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102                 $log-&gt;log(<a class="code" href="../../d4/d5e/classMAIN__Error.html#acddcbb7c1ce7ac137b542542282ec4bc">$level</a>, <a class="code" href="../../d4/d5e/classMAIN__Error.html#a3febaeaa4f0bfe2df03c8ce837b22acb">$callback</a>, <a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a>);
+<a name="l00084"></a>00084                 <a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a> = strtr(<a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a>, <span class="stringliteral">&quot;\n&quot;</span>, <span class="charliteral">&apos; &apos;</span>);
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086                 $this-&gt;level    =  <a class="code" href="../../d4/d5e/classMAIN__Error.html#acddcbb7c1ce7ac137b542542282ec4bc">$level</a>;
+<a name="l00087"></a>00087                 $this-&gt;callback =  <a class="code" href="../../d4/d5e/classMAIN__Error.html#a3febaeaa4f0bfe2df03c8ce837b22acb">$callback</a>;
+<a name="l00088"></a>00088                 $this-&gt;message  =  <a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a>;
+<a name="l00089"></a>00089                 $this-&gt;log      =&amp; $log;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091                 <span class="keywordflow">switch</span>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#acddcbb7c1ce7ac137b542542282ec4bc">$level</a>) {
+<a name="l00092"></a>00092                         <span class="keywordflow">case</span> self::ERROR:
+<a name="l00093"></a>00093                         <span class="keywordflow">case</span> self::WARNING:
+<a name="l00094"></a>00094                         <span class="keywordflow">case</span> self::NOTICE:
+<a name="l00095"></a>00095                                 <span class="keywordflow">break</span>;
+<a name="l00096"></a>00096                         <span class="keywordflow">default</span>:
+<a name="l00097"></a>00097                                 <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00098"></a>00098                 }
+<a name="l00099"></a>00099 
+<a name="l00100"></a>00100                 <span class="keywordflow">if</span>($log instanceof <a class="code" href="../../d3/dff/classMAIN__Logger.html">MAIN_Logger</a>) {
+<a name="l00101"></a>00101                         $log-&gt;log(<a class="code" href="../../d4/d5e/classMAIN__Error.html#acddcbb7c1ce7ac137b542542282ec4bc">$level</a>, <a class="code" href="../../d4/d5e/classMAIN__Error.html#a3febaeaa4f0bfe2df03c8ce837b22acb">$callback</a>, <a class="code" href="../../d4/d5e/classMAIN__Error.html#a7210e16c421fd1a44fa947273bff58b5">$message</a>);
+<a name="l00102"></a>00102                 }
 <a name="l00103"></a>00103         }
 <a name="l00104"></a>00104 
 <a name="l00110"></a><a class="code" href="../../d4/d5e/classMAIN__Error.html#a8bc58c66c7de8909650c8da9c13cf49d">00110</a>         <span class="keyword">public</span> function <a class="code" href="../../d4/d5e/classMAIN__Error.html#a8bc58c66c7de8909650c8da9c13cf49d">getLevel</a>() {
@@ -81,7 +81,7 @@
 <a name="l00130"></a>00130         }
 <a name="l00131"></a>00131 }
 </pre></div></div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Jan 28 21:25:45 2010 for WebApi by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Feb 9 23:28:14 2010 for WebApi by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

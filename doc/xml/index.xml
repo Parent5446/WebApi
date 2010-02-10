@@ -18,30 +18,6 @@
     <member refid="d3/d63/classDB__Database_1a3c1f6f79bdf1a2f2d019fd4fbf156819" kind="function"><name>getTable</name></member>
     <member refid="d3/d63/classDB__Database_1a98b8b2e954b888100ca2b6c00be811be" kind="function"><name>getLog</name></member>
   </compound>
-  <compound refid="dc/d6d/classDB__Object" kind="class"><name>DB_Object</name>
-    <member refid="dc/d6d/classDB__Object_1a4b05c22c55cb43234cc80dd35b1d542b" kind="variable"><name>$enableprotect</name></member>
-    <member refid="dc/d6d/classDB__Object_1abc24dbdab0d6a65f2f775ae46d0c4a59" kind="variable"><name>$parent</name></member>
-    <member refid="dc/d6d/classDB__Object_1adec88cd7f52f2cbe98d4568c86d1e172" kind="variable"><name>$info</name></member>
-    <member refid="dc/d6d/classDB__Object_1ae7ffc7d66d72066f8333048851ef6926" kind="variable"><name>$protect</name></member>
-    <member refid="dc/d6d/classDB__Object_1a5ba1c6aa344fb0a4f91da7095105ee72" kind="variable"><name>$clienthashing</name></member>
-    <member refid="dc/d6d/classDB__Object_1a0d08820dae7ab434119115781b369714" kind="variable"><name>$table</name></member>
-    <member refid="dc/d6d/classDB__Object_1a7e3792ecc489d4039ecef05574005aae" kind="function"><name>__construct</name></member>
-    <member refid="dc/d6d/classDB__Object_1a3f370bd811dc4f984150f220a5a7fd1c" kind="function"><name>changePasshash</name></member>
-    <member refid="dc/d6d/classDB__Object_1a9924a8fa716e352e9528bf99f51a90fd" kind="function"><name>getTable</name></member>
-    <member refid="dc/d6d/classDB__Object_1a9e72ad4e667d0de2f3d2df0cc37c6463" kind="function"><name>getName</name></member>
-    <member refid="dc/d6d/classDB__Object_1ae09675ff1d492c3571766142196556df" kind="function"><name>getId</name></member>
-    <member refid="dc/d6d/classDB__Object_1a45d1bd94aa7a815efa455c79742a3aff" kind="function"><name>getInfo</name></member>
-    <member refid="dc/d6d/classDB__Object_1a96ce58f2dd8e64902dbd72a072083a0c" kind="function"><name>putInfo</name></member>
-    <member refid="dc/d6d/classDB__Object_1aee226b738dafa7018cd39cc66a0d8665" kind="function"><name>addChild</name></member>
-    <member refid="dc/d6d/classDB__Object_1aab1bdf6fa7b550f96f21292aa53bb052" kind="function"><name>addChildren</name></member>
-    <member refid="dc/d6d/classDB__Object_1a2c2b7b97b2c73bee8d6d616fb51e297e" kind="function"><name>getPassKey</name></member>
-    <member refid="dc/d6d/classDB__Object_1a8bd5723454893098af658c007c93a7c5" kind="function"><name>checkPassword</name></member>
-    <member refid="dc/d6d/classDB__Object_1a07519cd100d61b0985073f410f6456dd" kind="function"><name>changePassword</name></member>
-    <member refid="dc/d6d/classDB__Object_1ad323cdf42e524a6dccb1460c26d1a682" kind="function"><name>isAllowed</name></member>
-    <member refid="dc/d6d/classDB__Object_1acde3675787ca522413a21203a3957148" kind="function"><name>updateFromDatabase</name></member>
-    <member refid="dc/d6d/classDB__Object_1afd22a626921cf089ccf1977a652d6fc1" kind="function"><name>updateToDatabase</name></member>
-    <member refid="dc/d6d/classDB__Object_1a8438909f696e1bb56d19eb617ef3f648" kind="function"><name>hashPassword</name></member>
-  </compound>
   <compound refid="d6/d90/classDB__Table" kind="class"><name>DB_Table</name>
     <member refid="d6/d90/classDB__Table_1a41dba64f7c42ebc3a036f391b2efad71" kind="variable"><name>$database</name></member>
     <member refid="d6/d90/classDB__Table_1a3ac5f49ea8620ff9f514d767e745f14f" kind="variable"><name>$tablename</name></member>
@@ -104,6 +80,7 @@
     <member refid="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" kind="function"><name>initiate</name></member>
     <member refid="d0/d6f/classMAIN__Controller_1a940555212e44afb717f9c11e9b6424d8" kind="function"><name>send</name></member>
     <member refid="d0/d6f/classMAIN__Controller_1a6400bbd98dfe782c6c54b46e035a92c1" kind="function"><name>cleanup</name></member>
+    <member refid="d0/d6f/classMAIN__Controller_1a252a95de7cc347b94614c5ae4fbf3d06" kind="function"><name>error</name></member>
     <member refid="d0/d6f/classMAIN__Controller_1a8d9ca0c2bdd69d2d18fa90de23acc2de" kind="function"><name>getError</name></member>
     <member refid="d0/d6f/classMAIN__Controller_1abdf41ec9c3425b16d70236e0fe497b9f" kind="function"><name>newDatabaseObject</name></member>
   </compound>
@@ -190,8 +167,6 @@
   </compound>
   <compound refid="d3/d5e/Logger_8php" kind="file"><name>Logger.php</name>
   </compound>
-  <compound refid="de/dbf/Html_8php" kind="file"><name>Html.php</name>
-  </compound>
   <compound refid="db/d81/Request_8php" kind="file"><name>Request.php</name>
   </compound>
   <compound refid="d4/db7/Session_8php" kind="file"><name>Session.php</name>
@@ -204,8 +179,6 @@
     <member refid="de/d20/index_8php_1ab2d7ab3465c4ea6c2054e6307dde8255" kind="enum"><name>API</name></member>
     <member refid="de/d20/index_8php_1a094c367727273b4da2b960ca3b3edc06" kind="enum"><name>ID</name></member>
     <member refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kind="enum"><name>ROOTDIR</name></member>
-    <member refid="de/d20/index_8php_1a49c7011be9c979d9174c52a8b83e5d8e" kind="variable"><name>$config</name></member>
-    <member refid="de/d20/index_8php_1a75aab33cb166ec47d76ab7d7d2d61450" kind="variable"><name>$controller</name></member>
   </compound>
   <compound refid="dir_a261379d24894f08009c147cca3fa917" kind="dir"><name>app/</name>
   </compound>

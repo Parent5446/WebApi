@@ -152,6 +152,7 @@
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="93" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="93" bodyend="109"/>
         <references refid="dc/d96/classMAIN__Config_1a25b93ec03bb1cffdfaf33b9f9b60e853" compoundref="d7/d8c/Config_8php" startline="42">$options</references>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
         <referencedby refid="dc/d96/classMAIN__Config_1abc9328fbcaa9bdad08924c639722dac1" compoundref="d7/d8c/Config_8php" startline="80" endline="82">insertPlugin</referencedby>
       </memberdef>
       <memberdef kind="function" id="dc/d96/classMAIN__Config_1a9316b105c92355638b38a37d61eb0021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -179,6 +180,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Config.php" line="118" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Config.php" bodystart="118" bodyend="155"/>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
       </memberdef>
       </sectiondef>
     <briefdescription>

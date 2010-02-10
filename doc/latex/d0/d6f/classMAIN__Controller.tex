@@ -15,6 +15,8 @@
 \item 
 \hyperlink{classMAIN__Controller_a6400bbd98dfe782c6c54b46e035a92c1}{cleanup} ()
 \item 
+\hyperlink{classMAIN__Controller_a252a95de7cc347b94614c5ae4fbf3d06}{error} (\$error)
+\item 
 \hyperlink{classMAIN__Controller_a8d9ca0c2bdd69d2d18fa90de23acc2de}{getError} ()
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
@@ -81,7 +83,7 @@ bool True on success, false on critical error
 
 Definition at line 128 of file Controller.php.
 
-References \$config, \$database, and newDatabaseObject().\hypertarget{classMAIN__Controller_a6400bbd98dfe782c6c54b46e035a92c1}{
+References \$config, \$database, \$error, MAIN\_\-Error::ERROR, and newDatabaseObject().\hypertarget{classMAIN__Controller_a6400bbd98dfe782c6c54b46e035a92c1}{
 \index{MAIN\_\-Controller@{MAIN\_\-Controller}!cleanup@{cleanup}}
 \index{cleanup@{cleanup}!MAIN_Controller@{MAIN\_\-Controller}}
 \subsubsection[{cleanup}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::cleanup ()}}
@@ -93,7 +95,18 @@ bool True on success, false on error
 \end{DoxyReturn}
 
 
-Definition at line 226 of file Controller.php.\hypertarget{classMAIN__Controller_a8d9ca0c2bdd69d2d18fa90de23acc2de}{
+Definition at line 233 of file Controller.php.\hypertarget{classMAIN__Controller_a252a95de7cc347b94614c5ae4fbf3d06}{
+\index{MAIN\_\-Controller@{MAIN\_\-Controller}!error@{error}}
+\index{error@{error}!MAIN_Controller@{MAIN\_\-Controller}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::error (\$ {\em error})}}
+\label{d0/d6f/classMAIN__Controller_a252a95de7cc347b94614c5ae4fbf3d06}
+
+
+Definition at line 266 of file Controller.php.
+
+References \$error.
+
+Referenced by getError().\hypertarget{classMAIN__Controller_a8d9ca0c2bdd69d2d18fa90de23acc2de}{
 \index{MAIN\_\-Controller@{MAIN\_\-Controller}!getError@{getError}}
 \index{getError@{getError}!MAIN_Controller@{MAIN\_\-Controller}}
 \subsubsection[{getError}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::getError ()}}
@@ -105,7 +118,9 @@ object$|$bool \hyperlink{classMAIN__Error}{MAIN\_\-Error} object if there was an
 \end{DoxyReturn}
 
 
-Definition at line 273 of file Controller.php.\hypertarget{classMAIN__Controller_a63a01965c1673fbdbe5eb374ddf5c8d6}{
+Definition at line 279 of file Controller.php.
+
+References error().\hypertarget{classMAIN__Controller_a63a01965c1673fbdbe5eb374ddf5c8d6}{
 \index{MAIN\_\-Controller@{MAIN\_\-Controller}!initiate@{initiate}}
 \index{initiate@{initiate}!MAIN_Controller@{MAIN\_\-Controller}}
 \subsubsection[{initiate}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::initiate ()}}
@@ -119,9 +134,9 @@ mixed Return value of \hyperlink{classOUT__Request_a825f77601714b2cb7510ab65d2d7
 \end{DoxyReturn}
 
 
-Definition at line 168 of file Controller.php.
+Definition at line 177 of file Controller.php.
 
-References \$action.\hypertarget{classMAIN__Controller_abdf41ec9c3425b16d70236e0fe497b9f}{
+References \$action, and MAIN\_\-Error::WARNING.\hypertarget{classMAIN__Controller_abdf41ec9c3425b16d70236e0fe497b9f}{
 \index{MAIN\_\-Controller@{MAIN\_\-Controller}!newDatabaseObject@{newDatabaseObject}}
 \index{newDatabaseObject@{newDatabaseObject}!MAIN_Controller@{MAIN\_\-Controller}}
 \subsubsection[{newDatabaseObject}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::newDatabaseObject (\$ {\em name}, \/  \$ {\em protect} = {\ttfamily false}, \/  \$ {\em parent} = {\ttfamily false})\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
@@ -133,7 +148,7 @@ Create a new database class definition with the given options.
 \item[{\em string}]\$name Name of the class to create \item[{\em bool}]\$protect Whether to allow password protection \item[{\em bool}]\$parent Whether to allow child objects \end{DoxyParams}
 
 
-Definition at line 284 of file Controller.php.
+Definition at line 290 of file Controller.php.
 
 Referenced by boot().\hypertarget{classMAIN__Controller_a940555212e44afb717f9c11e9b6424d8}{
 \index{MAIN\_\-Controller@{MAIN\_\-Controller}!send@{send}}
@@ -142,9 +157,9 @@ Referenced by boot().\hypertarget{classMAIN__Controller_a940555212e44afb717f9c11
 \label{d0/d6f/classMAIN__Controller_a940555212e44afb717f9c11e9b6424d8}
 Triggers the send function for the request. HTML will be loaded into the output buffer, but not sent until cleanup, in case of error. 
 
-Definition at line 199 of file Controller.php.
+Definition at line 206 of file Controller.php.
 
-References \$cache.
+References \$cache, and MAIN\_\-Error::WARNING.
 
 \subsection{Member Data Documentation}
 \hypertarget{classMAIN__Controller_a586f25bf8bda47c77b6a66a5f2d0d68f}{
@@ -197,7 +212,9 @@ Referenced by boot().\hypertarget{classMAIN__Controller_afc211a153cde6633f13d179
 \label{d0/d6f/classMAIN__Controller_afc211a153cde6633f13d1797ceab6adb}
 The \hyperlink{classMAIN__Error}{MAIN\_\-Error} object for this request should an error be encountered during the script. 
 
-Definition at line 110 of file Controller.php.\hypertarget{classMAIN__Controller_aa072e0fbed2a55683b79b6051898b405}{
+Definition at line 110 of file Controller.php.
+
+Referenced by boot(), and error().\hypertarget{classMAIN__Controller_aa072e0fbed2a55683b79b6051898b405}{
 \index{MAIN\_\-Controller@{MAIN\_\-Controller}!\$GET@{\$GET}}
 \index{\$GET@{\$GET}!MAIN_Controller@{MAIN\_\-Controller}}
 \subsubsection[{\$GET}]{\setlength{\rightskip}{0pt plus 5cm}MAIN\_\-Controller::\$GET\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}

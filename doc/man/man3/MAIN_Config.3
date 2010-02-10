@@ -1,4 +1,4 @@
-.TH "MAIN_Config" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.TH "MAIN_Config" 3 "9 Feb 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -104,7 +104,7 @@ bool True on success, false on failure
 .PP
 Definition at line 93 of file Config.php.
 .PP
-References $options.
+References $options, and MAIN_Error::ERROR.
 .PP
 Referenced by insertPlugin().
 .SS "MAIN_Config::updateToFile ($ filename)"Update a configuration file with the local configuration options.
@@ -122,6 +122,8 @@ bool True on success, false on failure
 
 .PP
 Definition at line 118 of file Config.php.
+.PP
+References MAIN_Error::ERROR.
 .SH "Member Data Documentation"
 .PP 
 .SS "MAIN_Config::$options = array()\fC [private]\fP"Configuration options 

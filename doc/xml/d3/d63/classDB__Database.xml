@@ -128,7 +128,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="107" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="107" bodyend="-1"/>
-        <referencedby refid="d3/d63/classDB__Database_1aa7b0b5a7fa10d3928e1b95664662a9a2" compoundref="d2/d89/Database_8php" startline="125" endline="148">__construct</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1aa7b0b5a7fa10d3928e1b95664662a9a2" compoundref="d2/d89/Database_8php" startline="125" endline="150">__construct</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -212,9 +212,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="125" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="125" bodyend="148"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="125" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="125" bodyend="150"/>
         <references refid="d3/d63/classDB__Database_1a707cb0823a2ad42054c4ab650b2dd01b" compoundref="d2/d89/Database_8php" startline="107">$log</references>
-        <references refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="156" endline="205">connect</references>
+        <references refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="158" endline="207">connect</references>
         <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
       </memberdef>
       <memberdef kind="function" id="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -229,14 +229,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="156" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="156" bodyend="205"/>
-        <references refid="d3/d63/classDB__Database_1ad8f40ab058e072bc074a9447eb8a7762" compoundref="d2/d89/Database_8php" startline="213" endline="229">close</references>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="158" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="158" bodyend="207"/>
+        <references refid="d3/d63/classDB__Database_1ad8f40ab058e072bc074a9447eb8a7762" compoundref="d2/d89/Database_8php" startline="215" endline="231">close</references>
         <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
         <references refid="d3/dff/classMAIN__Logger_1a7583fcdf96a9dba7c0ec52637e1d11d7" compoundref="d3/d5e/Logger_8php" startline="67">MAIN_Logger::INFO</references>
-        <references refid="d3/d63/classDB__Database_1a67786f5c272e27980edf76a57fc16902" compoundref="d2/d89/Database_8php" startline="241" endline="260">query</references>
-        <references refid="d3/d63/classDB__Database_1a2739adb306d170f19c0e87a61a2bfc05" compoundref="d2/d89/Database_8php" startline="270" endline="286">result</references>
+        <references refid="d3/d63/classDB__Database_1a67786f5c272e27980edf76a57fc16902" compoundref="d2/d89/Database_8php" startline="243" endline="262">query</references>
+        <references refid="d3/d63/classDB__Database_1a2739adb306d170f19c0e87a61a2bfc05" compoundref="d2/d89/Database_8php" startline="272" endline="288">result</references>
         <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
-        <referencedby refid="d3/d63/classDB__Database_1aa7b0b5a7fa10d3928e1b95664662a9a2" compoundref="d2/d89/Database_8php" startline="125" endline="148">__construct</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1aa7b0b5a7fa10d3928e1b95664662a9a2" compoundref="d2/d89/Database_8php" startline="125" endline="150">__construct</referencedby>
       </memberdef>
       <memberdef kind="function" id="d3/d63/classDB__Database_1ad8f40ab058e072bc074a9447eb8a7762" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -250,11 +250,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="213" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="213" bodyend="229"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="215" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="215" bodyend="231"/>
         <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
         <references refid="d3/dff/classMAIN__Logger_1a7583fcdf96a9dba7c0ec52637e1d11d7" compoundref="d3/d5e/Logger_8php" startline="67">MAIN_Logger::INFO</references>
         <references refid="d4/d5e/classMAIN__Error_1a6566891abdf29792892d9cf42fcc496d" compoundref="da/d79/Error_8php" startline="55">MAIN_Error::NOTICE</references>
-        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="156" endline="205">connect</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="158" endline="207">connect</referencedby>
       </memberdef>
       <memberdef kind="function" id="d3/d63/classDB__Database_1a67786f5c272e27980edf76a57fc16902" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -280,11 +280,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="241" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="241" bodyend="260"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="243" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="243" bodyend="262"/>
         <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
         <references refid="d3/dff/classMAIN__Logger_1a7583fcdf96a9dba7c0ec52637e1d11d7" compoundref="d3/d5e/Logger_8php" startline="67">MAIN_Logger::INFO</references>
         <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
-        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="156" endline="205">connect</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="158" endline="207">connect</referencedby>
       </memberdef>
       <memberdef kind="function" id="d3/d63/classDB__Database_1a2739adb306d170f19c0e87a61a2bfc05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -328,10 +328,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="270" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="270" bodyend="286"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="272" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="272" bodyend="288"/>
         <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
         <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
-        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="156" endline="205">connect</referencedby>
+        <referencedby refid="d3/d63/classDB__Database_1a3312e7903885b871d21a18efbe558580" compoundref="d2/d89/Database_8php" startline="158" endline="207">connect</referencedby>
       </memberdef>
       <memberdef kind="function" id="d3/d63/classDB__Database_1af8c352a06f1cff03f2c782b9aa431b44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -357,7 +357,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="295" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="295" bodyend="307"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="297" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="297" bodyend="309"/>
         <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
         <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
       </memberdef>
@@ -385,7 +385,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="319" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="319" bodyend="330"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="321" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="321" bodyend="332"/>
         <references refid="d3/dff/classMAIN__Logger_1a7583fcdf96a9dba7c0ec52637e1d11d7" compoundref="d3/d5e/Logger_8php" startline="67">MAIN_Logger::INFO</references>
         <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
       </memberdef>
@@ -401,14 +401,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="337" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="337" bodyend="339"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="339" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="339" bodyend="341"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="37" bodyend="340"/>
+    <location file="/home/parent5446/Repositories/WebApi/app/db/Database.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/db/Database.php" bodystart="37" bodyend="342"/>
     <listofallmembers>
       <member refid="d3/d63/classDB__Database_1a8cc2ee198b44ecef38ffaaef255bee93" prot="private" virt="non-virtual"><scope>DB_Database</scope><name>$conn</name></member>
       <member refid="d3/d63/classDB__Database_1a052600d78f57d7af178e13ab7992949a" prot="private" virt="non-virtual"><scope>DB_Database</scope><name>$conndata</name></member>

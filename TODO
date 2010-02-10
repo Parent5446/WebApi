@@ -1,3 +1,2 @@
-* Check for columns in database for DB_Object to check for valid profile data.
 * Put in commands to use the Logger in appropriate places.
 * Create easy-to-use functions that might be helpful in writing controllers.

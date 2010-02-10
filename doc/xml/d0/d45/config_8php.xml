@@ -59,27 +59,28 @@
 <codeline lineno="50"><highlight class="normal">;;<sp/>how<sp/>to<sp/>format<sp/>permissions.</highlight></codeline>
 <codeline lineno="51"><highlight class="normal">[auth]</highlight></codeline>
 <codeline lineno="52"><highlight class="normal">admin<sp/>=<sp/>*-*-*</highlight></codeline>
-<codeline lineno="53"><highlight class="normal">regular<sp/>=<sp/>Page-</highlight><highlight class="keyword">get</highlight><highlight class="normal">-*</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">editor<sp/>=<sp/>Page-*-*</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">regular<sp/>=<sp/>Page-</highlight><highlight class="keyword">get</highlight><highlight class="normal">-*</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal">;;<sp/>Cache<sp/>options.<sp/>Use<sp/></highlight><highlight class="stringliteral">&quot;action.actionname&quot;</highlight><highlight class="normal"><sp/>replacing<sp/>actionnname</highlight></codeline>
-<codeline lineno="57"><highlight class="normal">;;<sp/>with<sp/>one<sp/>of<sp/>the<sp/>actions<sp/>above<sp/>to<sp/>enable<sp/>to<sp/>disable<sp/>caching<sp/>for</highlight></codeline>
-<codeline lineno="58"><highlight class="normal">;;<sp/>that<sp/>action.<sp/>The<sp/>expires<sp/>option<sp/>is<sp/>how<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>until<sp/>a</highlight></codeline>
-<codeline lineno="59"><highlight class="normal">;;<sp/>cache<sp/>expires<sp/>in<sp/>seconds.</highlight></codeline>
-<codeline lineno="60"><highlight class="normal">[cache]</highlight></codeline>
-<codeline lineno="61"><highlight class="normal">action.action1<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal">action.action2<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal">action.action3<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal">expires<sp/>=<sp/>3600</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">;;<sp/>Cache<sp/>options.<sp/>Use<sp/></highlight><highlight class="stringliteral">&quot;action.actionname&quot;</highlight><highlight class="normal"><sp/>replacing<sp/>actionnname</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">;;<sp/>with<sp/>one<sp/>of<sp/>the<sp/>actions<sp/>above<sp/>to<sp/>enable<sp/>to<sp/>disable<sp/>caching<sp/>for</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">;;<sp/>that<sp/>action.<sp/>The<sp/>expires<sp/>option<sp/>is<sp/>how<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>until<sp/>a</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">;;<sp/>cache<sp/>expires<sp/>in<sp/>seconds.</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">[cache]</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">action.action1<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">action.action2<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">action.action3<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">expires<sp/>=<sp/>3600</highlight></codeline>
 <codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal">;;<sp/>Custom<sp/>paths<sp/>to<sp/>the<sp/>cache,<sp/>templates,<sp/>log,<sp/>and<sp/>uploads.</highlight></codeline>
-<codeline lineno="68"><highlight class="normal">[paths]</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">cache<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/cache</highlight></codeline>
-<codeline lineno="70"><highlight class="normal">templates<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/templates</highlight></codeline>
-<codeline lineno="71"><highlight class="normal">log<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/log</highlight></codeline>
-<codeline lineno="72"><highlight class="normal">uploads<sp/>=<sp/>ROOTDOR/uploads</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">;;<sp/>Custom<sp/>paths<sp/>to<sp/>the<sp/>cache,<sp/>templates,<sp/>log,<sp/>and<sp/>uploads.</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">[paths]</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">cache<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/cache</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">templates<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/templates</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">log<sp/>=<sp/><ref refid="de/d20/index_8php_1a97c0f936c01d480557c8694b263f3d5e" kindref="member">ROOTDIR</ref>/log</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">uploads<sp/>=<sp/>ROOTDOR/uploads</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/parent5446/Repositories/WebApi/config.php"/>
   </compounddef>

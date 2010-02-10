@@ -54,7 +54,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="61" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="61" bodyend="-1"/>
-        <referencedby refid="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" compoundref="da/d82/Controller_8php" startline="168" endline="193">initiate</referencedby>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" compoundref="da/d82/Controller_8php" startline="177" endline="200">initiate</referencedby>
       </memberdef>
       <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1acc4c62c1bdc82257bfab216245c3ba98" prot="private" static="no" mutable="no">
         <type></type>
@@ -82,7 +82,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="73" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="73" bodyend="-1"/>
-        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="157">boot</referencedby>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="166">boot</referencedby>
       </memberdef>
       <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1aeb53199b16ee35291df91c7cc97148a7" prot="private" static="no" mutable="no">
         <type></type>
@@ -109,7 +109,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="85" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="85" bodyend="-1"/>
-        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="157">boot</referencedby>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="166">boot</referencedby>
       </memberdef>
       <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1a7fa8fc6630663c9024016edbba1f9fa5" prot="private" static="no" mutable="no">
         <type></type>
@@ -136,7 +136,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="97" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="97" bodyend="-1"/>
-        <referencedby refid="d0/d6f/classMAIN__Controller_1a940555212e44afb717f9c11e9b6424d8" compoundref="da/d82/Controller_8php" startline="199" endline="218">send</referencedby>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a940555212e44afb717f9c11e9b6424d8" compoundref="da/d82/Controller_8php" startline="206" endline="225">send</referencedby>
       </memberdef>
       <memberdef kind="variable" id="d0/d6f/classMAIN__Controller_1ac0e517c6f06f9cefa0c6e52ce0a6247a" prot="private" static="no" mutable="no">
         <type></type>
@@ -163,6 +163,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="110" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="110" bodyend="-1"/>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="166">boot</referencedby>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a252a95de7cc347b94614c5ae4fbf3d06" compoundref="da/d82/Controller_8php" startline="266" endline="271">error</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -195,10 +197,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="128" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="128" bodyend="157"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="128" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="128" bodyend="166"/>
         <references refid="d0/d6f/classMAIN__Controller_1a2aca1668ade4cd033ab1376fe5ce3641" compoundref="da/d82/Controller_8php" startline="73">$config</references>
         <references refid="d0/d6f/classMAIN__Controller_1ace18fc24f51944c19682bffe09603f97" compoundref="da/d82/Controller_8php" startline="85">$database</references>
-        <references refid="d0/d6f/classMAIN__Controller_1abdf41ec9c3425b16d70236e0fe497b9f" compoundref="da/d82/Controller_8php" startline="284" endline="291">newDatabaseObject</references>
+        <references refid="d0/d6f/classMAIN__Controller_1afc211a153cde6633f13d1797ceab6adb" compoundref="da/d82/Controller_8php" startline="110">$error</references>
+        <references refid="d4/d5e/classMAIN__Error_1a8dd94ca1db9a48b21bad30ed114e7fbe" compoundref="da/d79/Error_8php" startline="43">MAIN_Error::ERROR</references>
+        <references refid="d0/d6f/classMAIN__Controller_1abdf41ec9c3425b16d70236e0fe497b9f" compoundref="da/d82/Controller_8php" startline="290" endline="297">newDatabaseObject</references>
       </memberdef>
       <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -212,8 +216,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="168" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="168" bodyend="193"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="177" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="177" bodyend="200"/>
         <references refid="d0/d6f/classMAIN__Controller_1a586f25bf8bda47c77b6a66a5f2d0d68f" compoundref="da/d82/Controller_8php" startline="61">$action</references>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
       </memberdef>
       <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a940555212e44afb717f9c11e9b6424d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -226,8 +231,9 @@
 <para>Triggers the send function for the request. HTML will be loaded into the output buffer, but not sent until cleanup, in case of error. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="199" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="199" bodyend="218"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="206" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="206" bodyend="225"/>
         <references refid="d0/d6f/classMAIN__Controller_1ad9dbd5184b193cbea96bd88eadd88059" compoundref="da/d82/Controller_8php" startline="97">$cache</references>
+        <references refid="d4/d5e/classMAIN__Error_1af47cc28f788d73c277a78761621fd711" compoundref="da/d79/Error_8php" startline="49">MAIN_Error::WARNING</references>
       </memberdef>
       <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a6400bbd98dfe782c6c54b46e035a92c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -241,7 +247,26 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="226" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="226" bodyend="266"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="233" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="233" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a252a95de7cc347b94614c5ae4fbf3d06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MAIN_Controller::error</definition>
+        <argsstring>($error)</argsstring>
+        <name>error</name>
+        <param>
+          <type>$</type>
+          <declname>error</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="266" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="266" bodyend="271"/>
+        <references refid="d0/d6f/classMAIN__Controller_1afc211a153cde6633f13d1797ceab6adb" compoundref="da/d82/Controller_8php" startline="110">$error</references>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a8d9ca0c2bdd69d2d18fa90de23acc2de" compoundref="da/d82/Controller_8php" startline="279" endline="281">getError</referencedby>
       </memberdef>
       <memberdef kind="function" id="d0/d6f/classMAIN__Controller_1a8d9ca0c2bdd69d2d18fa90de23acc2de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -255,7 +280,8 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="273" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="273" bodyend="275"/>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="279" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="279" bodyend="281"/>
+        <references refid="d0/d6f/classMAIN__Controller_1a252a95de7cc347b94614c5ae4fbf3d06" compoundref="da/d82/Controller_8php" startline="266" endline="271">error</references>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -306,15 +332,15 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="284" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="284" bodyend="291"/>
-        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="157">boot</referencedby>
+        <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="290" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="290" bodyend="297"/>
+        <referencedby refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" compoundref="da/d82/Controller_8php" startline="128" endline="166">boot</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="37" bodyend="292"/>
+    <location file="/home/parent5446/Repositories/WebApi/app/main/Controller.php" line="38" bodyfile="/home/parent5446/Repositories/WebApi/app/main/Controller.php" bodystart="37" bodyend="298"/>
     <listofallmembers>
       <member refid="d0/d6f/classMAIN__Controller_1a586f25bf8bda47c77b6a66a5f2d0d68f" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$action</name></member>
       <member refid="d0/d6f/classMAIN__Controller_1ad9dbd5184b193cbea96bd88eadd88059" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>$cache</name></member>
@@ -331,6 +357,7 @@
       <member refid="d0/d6f/classMAIN__Controller_1af1465bb574b9238d78d1b0172fb5249e" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>__construct</name></member>
       <member refid="d0/d6f/classMAIN__Controller_1a5c77de67c4b47bcda0c997a5db3f32fa" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>boot</name></member>
       <member refid="d0/d6f/classMAIN__Controller_1a6400bbd98dfe782c6c54b46e035a92c1" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>cleanup</name></member>
+      <member refid="d0/d6f/classMAIN__Controller_1a252a95de7cc347b94614c5ae4fbf3d06" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>error</name></member>
       <member refid="d0/d6f/classMAIN__Controller_1a8d9ca0c2bdd69d2d18fa90de23acc2de" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>getError</name></member>
       <member refid="d0/d6f/classMAIN__Controller_1a63a01965c1673fbdbe5eb374ddf5c8d6" prot="public" virt="non-virtual"><scope>MAIN_Controller</scope><name>initiate</name></member>
       <member refid="d0/d6f/classMAIN__Controller_1abdf41ec9c3425b16d70236e0fe497b9f" prot="private" virt="non-virtual"><scope>MAIN_Controller</scope><name>newDatabaseObject</name></member>

@@ -120,6 +120,7 @@ class DB_Object
 			$this->info = array();
 			$info[$column] = $value;
 			$info = array_merge($info, $profile);
+			$info = verifyProfile($info);
 			if($this->clienthashing) {
 				$info['hash'  ] = self::hashPassword($info['password'], 1000);
 				$info['hasnum'] = 1000;
@@ -278,7 +279,12 @@ class DB_Object
 		if($original || !$this->clienthashing) {
 			// Compare the password to the original hash
 			// check if: h(original) == h(given)
-			return $this->info['password'] == self::hashPassword($new, $salt);
+			if($this->info['password'] == self::hashPassword($new, $salt)) {
+				return true;
+			} else {
+				$this->log->log(MAIN_Logger::NOTICE, get_class() . '::checkPassword',
+				                "Invalid password attempt on object with the name {$this->info['name']}." );
+				return false;
 		} else {
 			// Compare the password to the a hash chain
 			// check if: h^n(original) == h(h^(n-1)given) where n is the hash chain iteration
@@ -286,6 +292,8 @@ class DB_Object
 				$this->changePasshash($new);
 				return true;
 			} else {
+				$this->log->log(MAIN_Logger::NOTICE, get_class() . '::checkPassword',
+				                "Invalid password attempt on object with the name {$this->info['name']}." );
 				return false;
 			}
 		}
@@ -315,6 +323,8 @@ class DB_Object
 
 		$this->info['password'] = $password;
 		$this->info['passhash'] = array(1000, $hash);
+		$this->log->log(MAIN_Logger::NOTICE, get_class() . '::changePassword',
+		                "Changing password on object with the name {$this->info['name']}." );
 		return $this->updateToDatabase();
 	}
 
@@ -395,7 +405,8 @@ class DB_Object
 	 */
 	public function updateFromDatabase($column, $value) {
 		if(!$this->db instanceof DB_Database) {
-			return false;
+			return new MAIN_Error(MAIN_Error::WARNING, get_class() . '::updateFromDatabase',
+			                      'Invalid database connection');
 		}
 
 		$table = $this->getTable();
@@ -410,11 +421,35 @@ class DB_Object
 	 */
 	public function updateToDatabase() {
 		if(!$this->db instanceof DB_Database) {
-			return false;
+			return new MAIN_Error(MAIN_Error::WARNING, get_class() . '::updateToDatabase',
+			                      'Invalid database connection');
 		}
 
 		$table  = $this->getTable();
 		return $table->insert($this->info);
+	}
+
+	/**
+	 * Gets the columns of the object's database table, and matches a given
+	 * profile against those columns, removing invalid profile entires that
+	 * will cause an error when updating to the database.
+	 *
+	 * @param array $info Profile to verify
+	 *
+	 * @return array Validated profile
+	 */
+	protected function verifyProfile($info) {
+		if(!is_array($info)) {
+			return array();
+		} $columns = $this->table->columns();
+
+		foreach($columns as &$column) {
+			$column = $column["Field"];
+		} foreach($info as $key => $field) {
+			if(!in_array($key, $columns)) {
+				unset($info[$key]);
+			}
+		} return $info;
 	}
 
 	/**
@@ -431,7 +466,8 @@ class DB_Object
 	protected function getTable() {
 		if(!$this->db     instanceof DB_Database ||
 		   !$this->config instanceof MAIN_Config   ) {
-			return false;
+			return new MAIN_Error(MAIN_Error::WARNING, get_class() . '::getTable',
+			                      'Invalid parameters.');
 		} $table = false;
 
 		// First check if the table exists.
@@ -441,6 +477,7 @@ class DB_Object
 		}
 
 		// Table is not set up, prepare to make new table.
+		$this->log->log(MAIN_Logger::INFO, get_class() . '::getTable', 'Table does not exist, creating.');
 		$models = $this->config->getOption('models');
 		$columns = array_pop($models[get_class()]);
 		$tablename = strtolower(get_class());
@@ -479,8 +516,8 @@ class DB_Object
 		   $table = $this->db->getTable(strtolower(get_class()))) {
 			return $table;
 		} else {
-			return new MAIN_Error(MAIN_Error::ERROR, get_class . '::getTable',
-			                      'Error setting up tabel in database.');
+			return new MAIN_Error(MAIN_Error::ERROR, get_class() . '::getTable',
+			                      'Error setting up table in database.');
 		}
 	}
 

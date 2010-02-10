@@ -69,7 +69,7 @@
 <a name="l00113"></a><a class="code" href="../../de/d53/classOUT__Request.html#a2b3032d9a81143c98702d8b9344e6ba2">00113</a>         <span class="keyword">protected</span> function <a class="code" href="../../de/d53/classOUT__Request.html#a2b3032d9a81143c98702d8b9344e6ba2">getTemplate</a>() {
 <a name="l00114"></a>00114                 global $rootdir;
 <a name="l00115"></a>00115                 $paths        = $this-&gt;config-&gt;getOption(<span class="stringliteral">&apos;paths&apos;</span>);
-<a name="l00116"></a>00116                 $dirname      = isset($paths[<span class="stringliteral">&apos;templates&apos;</span>]) ? $paths[<span class="stringliteral">&apos;templates&apos;</span>] : <span class="stringliteral">&quot;$rootdir/templates&quot;</span>;
+<a name="l00116"></a>00116                 $dirname      = isset($paths[<span class="stringliteral">&apos;templates&apos;</span>]) ? $paths[<span class="stringliteral">&apos;templates&apos;</span>] : <a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/templates&apos;</span>;
 <a name="l00117"></a>00117                 $templatename = strtolower(get_class($this));
 <a name="l00118"></a>00118                 $template     = <span class="keyword">new</span> <a class="code" href="../../d0/dcf/classOUT__Template.html">OUT_Template</a>(<span class="stringliteral">&quot;$dirname/$templatename.template&quot;</span>);
 <a name="l00119"></a>00119 
@@ -111,7 +111,7 @@
 <a name="l00172"></a>00172         }
 <a name="l00173"></a>00173 }
 </pre></div></div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Jan 28 21:25:45 2010 for WebApi by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Feb 9 23:28:14 2010 for WebApi by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

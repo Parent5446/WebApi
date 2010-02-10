@@ -9,36 +9,34 @@ define("ROOTDIR", dirname(__FILE__));
 require ROOTDIR . '/app/main/Autoloader.php';
 MAIN_Autoloader::getInstance(ROOTDIR);
 
-// Get the controller and load the configuration.
-$config     = new MAIN_Config();
-$config->updateFromFile(ROOTDIR . '/config.php');
+try {
+	// Get the controller and load the configuration.
+	$config     = new MAIN_Config();
+	$config->updateFromFile(ROOTDIR . '/config.php');
 
-// Load the custom classes and plugins
-MAIN_Autoloader::loadFile(ROOTDIR . '/custom.php');
-foreach(scandir(ROOTDIR . '/plugins') as $filename) {
-	if(substr($filename, -5) == '.conf') {
-		$config->insertPlugin(substr($filename, 0, -5),
-		                      ROOTDIR . '/plugins/$filename');
-		$plugin = ROOTDIR . '/plugins/' . substr($filename, 0, -5) . '.php';
-		MAIN_Autoloader::loadFile($plugin);
+	// Load the custom classes and plugins
+	MAIN_Autoloader::loadFile(ROOTDIR . '/custom.php');
+	foreach(scandir(ROOTDIR . '/plugins') as $filename) {
+		if(substr($filename, -5) == '.conf') {
+			$config->insertPlugin(substr($filename, 0, -5),
+			                      ROOTDIR . '/plugins/$filename');
+			$plugin = ROOTDIR . '/plugins/' . substr($filename, 0, -5) . '.php';
+			MAIN_Autoloader::loadFile($plugin);
+		}
 	}
-}
 		
-$controller = new MAIN_Controller();
+	$controller = new MAIN_Controller();
 
-// Perform the request.
-$controller->boot($config);
-$controller->initiate();
-$controller->send();
-
-// Check for error.
-if(!$controller->cleanup()) {
-	// ERROR: Create error page and exit.
+	// Perform the request.
+	$controller->boot($config);
+	$controller->initiate();
+	$controller->send();
+	$controller->cleanup();
+	exit(0);
+} catch(MAIN_Error $error) {
+	$controller->error($error);
 	$controller->initiate();
 	$controller->send();
 	$controller->cleanup();
 	exit(1);
-} else {
-	// NO ERROR: Exit.
-	exit(0);
 }

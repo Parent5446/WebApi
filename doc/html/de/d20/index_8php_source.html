@@ -35,41 +35,39 @@
 <a name="l00009"></a>00009 require <a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/app/main/Autoloader.php&apos;</span>;
 <a name="l00010"></a>00010 <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#aa3acf8b51f564e1d79d622b6e5fcf1a4">MAIN_Autoloader::getInstance</a>(<a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a>);
 <a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="comment">// Get the controller and load the configuration.</span>
-<a name="l00013"></a><a class="code" href="../../de/d20/index_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">00013</a> <a class="code" href="../../de/d20/index_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>     = <span class="keyword">new</span> <a class="code" href="../../dc/d96/classMAIN__Config.html">MAIN_Config</a>();
-<a name="l00014"></a>00014 <a class="code" href="../../de/d20/index_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>-&gt;updateFromFile(<a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/config.php&apos;</span>);
-<a name="l00015"></a>00015 
-<a name="l00016"></a>00016 <span class="comment">// Load the custom classes and plugins</span>
-<a name="l00017"></a>00017 <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a458b2d4ca327f7e614a9f99e7df23ba7">MAIN_Autoloader::loadFile</a>(<a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/custom.php&apos;</span>);
-<a name="l00018"></a>00018 <span class="keywordflow">foreach</span>(scandir(<a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/plugins&apos;</span>) as $filename) {
-<a name="l00019"></a>00019         <span class="keywordflow">if</span>(substr($filename, -5) == <span class="stringliteral">&apos;.conf&apos;</span>) {
-<a name="l00020"></a>00020                 <a class="code" href="../../de/d20/index_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>-&gt;insertPlugin(substr($filename, 0, -5),
-<a name="l00021"></a>00021                                       <a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/plugins/$filename&apos;</span>);
-<a name="l00022"></a>00022                 $plugin = <a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/plugins/&apos;</span> . substr($filename, 0, -5) . <span class="stringliteral">&apos;.php&apos;</span>;
-<a name="l00023"></a>00023                 <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a458b2d4ca327f7e614a9f99e7df23ba7">MAIN_Autoloader::loadFile</a>($plugin);
-<a name="l00024"></a>00024         }
-<a name="l00025"></a>00025 }
-<a name="l00026"></a>00026                 
-<a name="l00027"></a><a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">00027</a> <a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a> = <span class="keyword">new</span> <a class="code" href="../../d0/d6f/classMAIN__Controller.html">MAIN_Controller</a>();
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029 <span class="comment">// Perform the request.</span>
-<a name="l00030"></a>00030 <a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a>-&gt;boot(<a class="code" href="../../de/d20/index_8php.html#a49c7011be9c979d9174c52a8b83e5d8e">$config</a>);
-<a name="l00031"></a>00031 <a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a>-&gt;initiate();
-<a name="l00032"></a>00032 <a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a>-&gt;send();
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034 <span class="comment">// Check for error.</span>
-<a name="l00035"></a>00035 <span class="keywordflow">if</span>(!<a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a>-&gt;cleanup()) {
-<a name="l00036"></a>00036         <span class="comment">// ERROR: Create error page and exit.</span>
-<a name="l00037"></a>00037         <a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a>-&gt;initiate();
-<a name="l00038"></a>00038         <a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a>-&gt;send();
-<a name="l00039"></a>00039         <a class="code" href="../../de/d20/index_8php.html#a75aab33cb166ec47d76ab7d7d2d61450">$controller</a>-&gt;cleanup();
-<a name="l00040"></a>00040         exit(1);
-<a name="l00041"></a>00041 } <span class="keywordflow">else</span> {
-<a name="l00042"></a>00042         <span class="comment">// NO ERROR: Exit.</span>
-<a name="l00043"></a>00043         exit(0);
-<a name="l00044"></a>00044 }
+<a name="l00012"></a>00012 <span class="keywordflow">try</span> {
+<a name="l00013"></a>00013         <span class="comment">// Get the controller and load the configuration.</span>
+<a name="l00014"></a>00014         $config     = <span class="keyword">new</span> <a class="code" href="../../dc/d96/classMAIN__Config.html">MAIN_Config</a>();
+<a name="l00015"></a>00015         $config-&gt;updateFromFile(<a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/config.php&apos;</span>);
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017         <span class="comment">// Load the custom classes and plugins</span>
+<a name="l00018"></a>00018         <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a458b2d4ca327f7e614a9f99e7df23ba7">MAIN_Autoloader::loadFile</a>(<a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/custom.php&apos;</span>);
+<a name="l00019"></a>00019         <span class="keywordflow">foreach</span>(scandir(<a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/plugins&apos;</span>) as $filename) {
+<a name="l00020"></a>00020                 <span class="keywordflow">if</span>(substr($filename, -5) == <span class="stringliteral">&apos;.conf&apos;</span>) {
+<a name="l00021"></a>00021                         $config-&gt;insertPlugin(substr($filename, 0, -5),
+<a name="l00022"></a>00022                                               <a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/plugins/$filename&apos;</span>);
+<a name="l00023"></a>00023                         $plugin = <a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/plugins/&apos;</span> . substr($filename, 0, -5) . <span class="stringliteral">&apos;.php&apos;</span>;
+<a name="l00024"></a>00024                         <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a458b2d4ca327f7e614a9f99e7df23ba7">MAIN_Autoloader::loadFile</a>($plugin);
+<a name="l00025"></a>00025                 }
+<a name="l00026"></a>00026         }
+<a name="l00027"></a>00027                 
+<a name="l00028"></a>00028         $controller = <span class="keyword">new</span> <a class="code" href="../../d0/d6f/classMAIN__Controller.html">MAIN_Controller</a>();
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030         <span class="comment">// Perform the request.</span>
+<a name="l00031"></a>00031         $controller-&gt;boot($config);
+<a name="l00032"></a>00032         $controller-&gt;initiate();
+<a name="l00033"></a>00033         $controller-&gt;send();
+<a name="l00034"></a>00034         $controller-&gt;cleanup();
+<a name="l00035"></a>00035         exit(0);
+<a name="l00036"></a>00036 } <span class="keywordflow">catch</span>(<a class="code" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a> $error) {
+<a name="l00037"></a>00037         $controller-&gt;error($error);
+<a name="l00038"></a>00038         $controller-&gt;initiate();
+<a name="l00039"></a>00039         $controller-&gt;send();
+<a name="l00040"></a>00040         $controller-&gt;cleanup();
+<a name="l00041"></a>00041         exit(1);
+<a name="l00042"></a>00042 }
 </pre></div></div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Jan 28 21:25:45 2010 for WebApi by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Feb 9 23:28:14 2010 for WebApi by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

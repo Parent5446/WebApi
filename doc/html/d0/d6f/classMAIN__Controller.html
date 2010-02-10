@@ -36,6 +36,7 @@
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6f/classMAIN__Controller.html#a63a01965c1673fbdbe5eb374ddf5c8d6">initiate</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6f/classMAIN__Controller.html#a940555212e44afb717f9c11e9b6424d8">send</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6f/classMAIN__Controller.html#a6400bbd98dfe782c6c54b46e035a92c1">cleanup</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6f/classMAIN__Controller.html#a252a95de7cc347b94614c5ae4fbf3d06">error</a> ($error)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6f/classMAIN__Controller.html#a8d9ca0c2bdd69d2d18fa90de23acc2de">getError</a> ()</td></tr>
 <tr><td colspan="2"><h2>Private Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6f/classMAIN__Controller.html#abdf41ec9c3425b16d70236e0fe497b9f">newDatabaseObject</a> ($name, $protect=false, $parent=false)</td></tr>
@@ -98,7 +99,7 @@
 
 <p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00128">128</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
 
-<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00073">$config</a>, <a class="el" href="../../da/d82/Controller_8php_source.html#l00085">$database</a>, and <a class="el" href="../../da/d82/Controller_8php_source.html#l00284">newDatabaseObject()</a>.</p>
+<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00073">$config</a>, <a class="el" href="../../da/d82/Controller_8php_source.html#l00085">$database</a>, <a class="el" href="../../da/d82/Controller_8php_source.html#l00110">$error</a>, <a class="el" href="../../da/d79/Error_8php_source.html#l00043">MAIN_Error::ERROR</a>, and <a class="el" href="../../da/d82/Controller_8php_source.html#l00290">newDatabaseObject()</a>.</p>
 
 </div>
 </div>
@@ -119,7 +120,31 @@
 <p>Shuts down the database, logger, and configuration. If no error occurs, sends the output buffer to the client.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>bool True on success, false on error </dd></dl>
 
-<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00226">226</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00233">233</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a252a95de7cc347b94614c5ae4fbf3d06"></a><!-- doxytag: member="MAIN_Controller::error" ref="a252a95de7cc347b94614c5ae4fbf3d06" args="($error)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MAIN_Controller::error </td>
+          <td>(</td>
+          <td class="paramtype">$&nbsp;</td>
+          <td class="paramname"> <em>error</em></td>
+          <td>&nbsp;)&nbsp;</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00266">266</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+
+<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00110">$error</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/d82/Controller_8php_source.html#l00279">getError()</a>.</p>
 
 </div>
 </div>
@@ -140,7 +165,9 @@
 <p>Get the error that occurred during the request.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>object|bool <a class="el" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a> object if there was an error, false otherwise </dd></dl>
 
-<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00273">273</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00279">279</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+
+<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00266">error()</a>.</p>
 
 </div>
 </div>
@@ -162,9 +189,9 @@
 <p>This function should start setting up the request, retrieving information from the database, getting templates from their respective files, etc.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>mixed Return value of <a class="el" href="../../de/d53/classOUT__Request.html#a825f77601714b2cb7510ab65d2d71483">OUT_Request::initiate</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00168">168</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00177">177</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
 
-<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00061">$action</a>.</p>
+<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00061">$action</a>, and <a class="el" href="../../da/d79/Error_8php_source.html#l00049">MAIN_Error::WARNING</a>.</p>
 
 </div>
 </div>
@@ -208,7 +235,7 @@
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00284">284</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00290">290</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
 
 <p>Referenced by <a class="el" href="../../da/d82/Controller_8php_source.html#l00128">boot()</a>.</p>
 
@@ -230,9 +257,9 @@
 <div class="memdoc">
 <p>Triggers the send function for the request. HTML will be loaded into the output buffer, but not sent until cleanup, in case of error. </p>
 
-<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00199">199</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+<p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00206">206</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
 
-<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00097">$cache</a>.</p>
+<p>References <a class="el" href="../../da/d82/Controller_8php_source.html#l00097">$cache</a>, and <a class="el" href="../../da/d79/Error_8php_source.html#l00049">MAIN_Error::WARNING</a>.</p>
 
 </div>
 </div>
@@ -251,7 +278,7 @@
 
 <p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00061">61</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
 
-<p>Referenced by <a class="el" href="../../da/d82/Controller_8php_source.html#l00168">initiate()</a>.</p>
+<p>Referenced by <a class="el" href="../../da/d82/Controller_8php_source.html#l00177">initiate()</a>.</p>
 
 </div>
 </div>
@@ -269,7 +296,7 @@
 
 <p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00097">97</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
 
-<p>Referenced by <a class="el" href="../../da/d82/Controller_8php_source.html#l00199">send()</a>.</p>
+<p>Referenced by <a class="el" href="../../da/d82/Controller_8php_source.html#l00206">send()</a>.</p>
 
 </div>
 </div>
@@ -338,6 +365,8 @@
 <p>The <a class="el" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a> object for this request should an error be encountered during the script. </p>
 
 <p>Definition at line <a class="el" href="../../da/d82/Controller_8php_source.html#l00110">110</a> of file <a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a>.</p>
+
+<p>Referenced by <a class="el" href="../../da/d82/Controller_8php_source.html#l00128">boot()</a>, and <a class="el" href="../../da/d82/Controller_8php_source.html#l00266">error()</a>.</p>
 
 </div>
 </div>
@@ -441,7 +470,7 @@
 <li>app/main/<a class="el" href="../../da/d82/Controller_8php_source.html">Controller.php</a></li>
 </ul>
 </div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Jan 28 21:25:46 2010 for WebApi by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Feb 9 23:28:14 2010 for WebApi by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

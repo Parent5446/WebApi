@@ -40,18 +40,18 @@
 <a name="l00033"></a><a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a93fa8cea8b9c2e30d179521ab8c3edab">00033</a>         <span class="keyword">private</span> <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a93fa8cea8b9c2e30d179521ab8c3edab">$loaded</a> = array();
 <a name="l00034"></a><a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a1ba4327fb805ecd48589610463c3a8c4">00034</a>         <span class="keyword">private</span> <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a1ba4327fb805ecd48589610463c3a8c4">$classlist</a> = array(
 <a name="l00035"></a>00035                         <span class="stringliteral">&apos;MAIN_Controller&apos;</span> =&gt; <span class="stringliteral">&apos;/app/main/Controller.php&apos;</span>,
-<a name="l00036"></a>00036                         <span class="stringliteral">&apos;MAIN_Cache&apos;</span>      =&gt; <span class="stringliteral">&apos;app/main/Cache.php&apos;</span>,
-<a name="l00037"></a>00037                         <span class="stringliteral">&apos;MAIN_Config&apos;</span>     =&gt; <span class="stringliteral">&apos;app/main/Config.php&apos;</span>,
-<a name="l00038"></a>00038                         <span class="stringliteral">&apos;MAIN_Error&apos;</span>      =&gt; <span class="stringliteral">&apos;app/main/Error.php&apos;</span>,
-<a name="l00039"></a>00039                         <span class="stringliteral">&apos;MAIN_Logger&apos;</span>     =&gt; <span class="stringliteral">&apos;app/main/Logger.php&apos;</span>,
+<a name="l00036"></a>00036                         <span class="stringliteral">&apos;MAIN_Cache&apos;</span>      =&gt; <span class="stringliteral">&apos;/app/main/Cache.php&apos;</span>,
+<a name="l00037"></a>00037                         <span class="stringliteral">&apos;MAIN_Config&apos;</span>     =&gt; <span class="stringliteral">&apos;/app/main/Config.php&apos;</span>,
+<a name="l00038"></a>00038                         <span class="stringliteral">&apos;MAIN_Error&apos;</span>      =&gt; <span class="stringliteral">&apos;/app/main/Error.php&apos;</span>,
+<a name="l00039"></a>00039                         <span class="stringliteral">&apos;MAIN_Logger&apos;</span>     =&gt; <span class="stringliteral">&apos;/app/main/Logger.php&apos;</span>,
 <a name="l00040"></a>00040 
-<a name="l00041"></a>00041                         <span class="stringliteral">&apos;DB_Database&apos;</span>     =&gt; <span class="stringliteral">&apos;app/db/Database.php&apos;</span>,
-<a name="l00042"></a>00042                         <span class="stringliteral">&apos;DB_Object&apos;</span>       =&gt; <span class="stringliteral">&apos;app/db/Object.php&apos;</span>,
-<a name="l00043"></a>00043                         <span class="stringliteral">&apos;DB_Table&apos;</span>        =&gt; <span class="stringliteral">&apos;app/db/Table.php&apos;</span>,
+<a name="l00041"></a>00041                         <span class="stringliteral">&apos;DB_Database&apos;</span>     =&gt; <span class="stringliteral">&apos;/app/db/Database.php&apos;</span>,
+<a name="l00042"></a>00042                         <span class="stringliteral">&apos;DB_Object&apos;</span>       =&gt; <span class="stringliteral">&apos;/app/db/Object.php&apos;</span>,
+<a name="l00043"></a>00043                         <span class="stringliteral">&apos;DB_Table&apos;</span>        =&gt; <span class="stringliteral">&apos;/app/db/Table.php&apos;</span>,
 <a name="l00044"></a>00044 
-<a name="l00045"></a>00045                         <span class="stringliteral">&apos;OUT_Request&apos;</span>     =&gt; <span class="stringliteral">&apos;app/out/Request.php&apos;</span>,
-<a name="l00046"></a>00046                         <span class="stringliteral">&apos;OUT_Session&apos;</span>     =&gt; <span class="stringliteral">&apos;app/out/Session.php&apos;</span>,
-<a name="l00047"></a>00047                         <span class="stringliteral">&apos;OUT_Template&apos;</span>    =&gt; <span class="stringliteral">&apos;app/out/Template.php&apos;</span> );
+<a name="l00045"></a>00045                         <span class="stringliteral">&apos;OUT_Request&apos;</span>     =&gt; <span class="stringliteral">&apos;/app/out/Request.php&apos;</span>,
+<a name="l00046"></a>00046                         <span class="stringliteral">&apos;OUT_Session&apos;</span>     =&gt; <span class="stringliteral">&apos;/app/out/Session.php&apos;</span>,
+<a name="l00047"></a>00047                         <span class="stringliteral">&apos;OUT_Template&apos;</span>    =&gt; <span class="stringliteral">&apos;/app/out/Template.php&apos;</span> );
 <a name="l00048"></a>00048 
 <a name="l00049"></a><a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a201bd218d1efdce335722cd1e60ef599">00049</a>         <span class="keyword">private</span> function <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#a201bd218d1efdce335722cd1e60ef599">__construct</a>(<a class="code" href="../../dd/d71/classMAIN__Autoloader.html#ab05969a6f2b5904a8de5e2f530441be7">$rootdir</a>) {
 <a name="l00050"></a>00050                 <span class="keywordflow">if</span>(!is_dir(<a class="code" href="../../dd/d71/classMAIN__Autoloader.html#ab05969a6f2b5904a8de5e2f530441be7">$rootdir</a>)) {
@@ -89,7 +89,7 @@
 <a name="l00082"></a>00082         <a class="code" href="../../dd/d71/classMAIN__Autoloader.html#aa3acf8b51f564e1d79d622b6e5fcf1a4">MAIN_Autoloader::getInstance</a>()-&gt;loadClass($classname);
 <a name="l00083"></a>00083 }
 </pre></div></div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Jan 28 21:25:45 2010 for WebApi by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Feb 9 23:28:14 2010 for WebApi by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

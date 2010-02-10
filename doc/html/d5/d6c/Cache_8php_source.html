@@ -41,7 +41,7 @@
 <a name="l00057"></a><a class="code" href="../../d2/d41/classMAIN__Cache.html#acf1b5cb6aadded08ca6e99c026ccb002">00057</a>         <span class="keyword">public</span> function <a class="code" href="../../d2/d41/classMAIN__Cache.html#acf1b5cb6aadded08ca6e99c026ccb002">__construct</a>(&amp;<a class="code" href="../../d2/d41/classMAIN__Cache.html#a9e10bcda14432aaed68c259151ec2070">$config</a>, &amp;<a class="code" href="../../d2/d41/classMAIN__Cache.html#ad1ffa30f8ad4128b1a1fdaec2d60d7df">$session</a>) {
 <a name="l00058"></a>00058                 <span class="keywordflow">if</span>(!(<a class="code" href="../../d2/d41/classMAIN__Cache.html#a9e10bcda14432aaed68c259151ec2070">$config</a> instanceof <a class="code" href="../../dc/d96/classMAIN__Config.html">MAIN_Config</a> &amp;&amp;
 <a name="l00059"></a>00059                    <a class="code" href="../../d2/d41/classMAIN__Cache.html#ad1ffa30f8ad4128b1a1fdaec2d60d7df">$session</a> instanceof <a class="code" href="../../d6/d75/classOUT__Session.html">OUT_Session</a>)) {
-<a name="l00060"></a>00060                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00060"></a>00060                         <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#a8dd94ca1db9a48b21bad30ed114e7fbe">MAIN_Error::ERROR</a>, <span class="stringliteral">&apos;MAIN_Cache::__construct&apos;</span>, <span class="stringliteral">&apos;Invalid parameters.&apos;</span>);
 <a name="l00061"></a>00061                 }
 <a name="l00062"></a>00062 
 <a name="l00063"></a>00063                 $this-&gt;config     =&amp; <a class="code" href="../../d2/d41/classMAIN__Cache.html#a9e10bcda14432aaed68c259151ec2070">$config</a>;
@@ -58,7 +58,7 @@
 <a name="l00088"></a>00088                 $cacheopts = $this-&gt;config-&gt;getOption(<span class="stringliteral">&apos;cache&apos;</span>);
 <a name="l00089"></a>00089                 $filename  = $this-&gt;<a class="code" href="../../d2/d41/classMAIN__Cache.html#a033ba2adab9e0fed859f88368506c9a1">getCacheFilename</a>();
 <a name="l00090"></a>00090 
-<a name="l00091"></a>00091                 <span class="keywordflow">if</span>( !file_exists($filename) || 
+<a name="l00091"></a>00091                 <span class="keywordflow">if</span>( !file_exists($filename) ||
 <a name="l00092"></a>00092                     time() - $cacheopts[<span class="stringliteral">&apos;expires&apos;</span>] &gt; filemtime($filename)) {
 <a name="l00093"></a>00093                         <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00094"></a>00094                 } <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -76,21 +76,22 @@
 <a name="l00115"></a>00115 
 <a name="l00122"></a><a class="code" href="../../d2/d41/classMAIN__Cache.html#a3e92222db37430da9ee40d4ec7263e21">00122</a>         <span class="keyword">public</span> function <a class="code" href="../../d2/d41/classMAIN__Cache.html#a3e92222db37430da9ee40d4ec7263e21">getCache</a>() {
 <a name="l00123"></a>00123                 $filename  = $this-&gt;<a class="code" href="../../d2/d41/classMAIN__Cache.html#a033ba2adab9e0fed859f88368506c9a1">getCacheFilename</a>();
-<a name="l00124"></a>00124                 <span class="keywordflow">if</span>(!file_exists($filename) || !is_readable($filename)) {
-<a name="l00125"></a>00125                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00126"></a>00126                 } <span class="keywordflow">return</span> file_get_contents($filename) .
-<a name="l00127"></a>00127                           <span class="stringliteral">&apos;\n&lt;!-- Cached &apos;</span> . date(<span class="stringliteral">&apos;jS F Y H:i&apos;</span>, filemtime($filename)) . <span class="stringliteral">&apos; --&gt;&apos;</span>;
-<a name="l00128"></a>00128         }
-<a name="l00129"></a>00129 
-<a name="l00137"></a><a class="code" href="../../d2/d41/classMAIN__Cache.html#a033ba2adab9e0fed859f88368506c9a1">00137</a>         <span class="keyword">private</span> function <a class="code" href="../../d2/d41/classMAIN__Cache.html#a033ba2adab9e0fed859f88368506c9a1">getCacheFilename</a>() {
-<a name="l00138"></a>00138                 $paths = $this-&gt;config-&gt;getOption(<span class="stringliteral">&apos;paths&apos;</span>);
-<a name="l00139"></a>00139                 $path  = isset($paths[<span class="stringliteral">&apos;cache&apos;</span>]) ? $paths[<span class="stringliteral">&apos;cache&apos;</span>] : <span class="stringliteral">&quot;$rootdir/cache&quot;</span>;
-<a name="l00140"></a>00140                 $uri   = $this-&gt;session-&gt;getText(<span class="stringliteral">&apos;REQUEST_URI&apos;</span>, <span class="stringliteral">&apos;SERVER&apos;</span>);
-<a name="l00141"></a>00141                 <span class="keywordflow">return</span> $paths[<span class="stringliteral">&apos;cache&apos;</span>] . <span class="charliteral">&apos;/&apos;</span> . $uri;
-<a name="l00142"></a>00142         }
-<a name="l00143"></a>00143 }
+<a name="l00124"></a>00124                 date_default_timezone_set(<span class="stringliteral">&apos;America/New_York&apos;</span>);
+<a name="l00125"></a>00125                 <span class="keywordflow">if</span>(!file_exists($filename) || !is_readable($filename)) {
+<a name="l00126"></a>00126                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00127"></a>00127                 } <span class="keywordflow">return</span> file_get_contents($filename) .
+<a name="l00128"></a>00128                           <span class="stringliteral">&apos;\n&lt;!-- Cached &apos;</span> . date(<span class="stringliteral">&apos;jS F Y H:i&apos;</span>, filemtime($filename)) . <span class="stringliteral">&apos; --&gt;&apos;</span>;
+<a name="l00129"></a>00129         }
+<a name="l00130"></a>00130 
+<a name="l00138"></a><a class="code" href="../../d2/d41/classMAIN__Cache.html#a033ba2adab9e0fed859f88368506c9a1">00138</a>         <span class="keyword">private</span> function <a class="code" href="../../d2/d41/classMAIN__Cache.html#a033ba2adab9e0fed859f88368506c9a1">getCacheFilename</a>() {
+<a name="l00139"></a>00139                 $paths = $this-&gt;config-&gt;getOption(<span class="stringliteral">&apos;paths&apos;</span>);
+<a name="l00140"></a>00140                 $path  = isset($paths[<span class="stringliteral">&apos;cache&apos;</span>]) ? $paths[<span class="stringliteral">&apos;cache&apos;</span>] : <a class="code" href="../../de/d20/index_8php.html#a97c0f936c01d480557c8694b263f3d5e">ROOTDIR</a> . <span class="stringliteral">&apos;/cache&apos;</span>;
+<a name="l00141"></a>00141                 $uri   = $this-&gt;session-&gt;getText(<span class="stringliteral">&apos;REQUEST_URI&apos;</span>, <span class="stringliteral">&apos;SERVER&apos;</span>);
+<a name="l00142"></a>00142                 <span class="keywordflow">return</span> $path . $uri;
+<a name="l00143"></a>00143         }
+<a name="l00144"></a>00144 }
 </pre></div></div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Jan 28 21:25:45 2010 for WebApi by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Feb 9 23:28:14 2010 for WebApi by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

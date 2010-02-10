@@ -1,4 +1,4 @@
-.TH "MAIN_Controller" 3 "28 Jan 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
+.TH "MAIN_Controller" 3 "9 Feb 2010" "Version 0.2" "WebApi" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,6 +23,9 @@ MAIN_Controller \-
 .br
 .ti -1c
 .RI "\fBcleanup\fP ()"
+.br
+.ti -1c
+.RI "\fBerror\fP ($error)"
 .br
 .ti -1c
 .RI "\fBgetError\fP ()"
@@ -96,7 +99,7 @@ bool True on success, false on critical error
 .PP
 Definition at line 128 of file Controller.php.
 .PP
-References $config, $database, and newDatabaseObject().
+References $config, $database, $error, MAIN_Error::ERROR, and newDatabaseObject().
 .SS "MAIN_Controller::cleanup ()"Shuts down the database, logger, and configuration. If no error occurs, sends the output buffer to the client.
 .PP
 \fBReturns:\fP
@@ -106,7 +109,14 @@ bool True on success, false on error
 .PP
 
 .PP
-Definition at line 226 of file Controller.php.
+Definition at line 233 of file Controller.php.
+.SS "MAIN_Controller::error ($ error)"
+.PP
+Definition at line 266 of file Controller.php.
+.PP
+References $error.
+.PP
+Referenced by getError().
 .SS "MAIN_Controller::getError ()"Get the error that occurred during the request.
 .PP
 \fBReturns:\fP
@@ -116,7 +126,9 @@ object|bool \fBMAIN_Error\fP object if there was an error, false otherwise
 .PP
 
 .PP
-Definition at line 273 of file Controller.php.
+Definition at line 279 of file Controller.php.
+.PP
+References error().
 .SS "MAIN_Controller::initiate ()"Calls the initialize function for the request class.
 .PP
 This function should start setting up the request, retrieving information from the database, getting templates from their respective files, etc.
@@ -128,9 +140,9 @@ mixed Return value of \fBOUT_Request::initiate\fP
 .PP
 
 .PP
-Definition at line 168 of file Controller.php.
+Definition at line 177 of file Controller.php.
 .PP
-References $action.
+References $action, and MAIN_Error::WARNING.
 .SS "MAIN_Controller::newDatabaseObject ($ name, $ protect = \fCfalse\fP, $ parent = \fCfalse\fP)\fC [private]\fP"Create a new database class definition with the given options.
 .PP
 \fBParameters:\fP
@@ -144,14 +156,14 @@ References $action.
 .PP
 
 .PP
-Definition at line 284 of file Controller.php.
+Definition at line 290 of file Controller.php.
 .PP
 Referenced by boot().
 .SS "MAIN_Controller::send ()"Triggers the send function for the request. HTML will be loaded into the output buffer, but not sent until cleanup, in case of error. 
 .PP
-Definition at line 199 of file Controller.php.
+Definition at line 206 of file Controller.php.
 .PP
-References $cache.
+References $cache, and MAIN_Error::WARNING.
 .SH "Member Data Documentation"
 .PP 
 .SS "MAIN_Controller::$action\fC [private]\fP"The given action for this request. 
@@ -180,6 +192,8 @@ Referenced by boot().
 .SS "MAIN_Controller::$error\fC [private]\fP"The \fBMAIN_Error\fP object for this request should an error be encountered during the script. 
 .PP
 Definition at line 110 of file Controller.php.
+.PP
+Referenced by boot(), and error().
 .SS "MAIN_Controller::$GET\fC [private]\fP"Stores the $_GET variable. 
 .PP
 Definition at line 49 of file Controller.php.

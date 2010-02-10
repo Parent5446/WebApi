@@ -48,20 +48,20 @@
 <a name="l00068"></a>00068         }
 <a name="l00069"></a>00069 
 <a name="l00080"></a><a class="code" href="../../dc/d96/classMAIN__Config.html#abc9328fbcaa9bdad08924c639722dac1">00080</a>         <span class="keyword">public</span> function <a class="code" href="../../dc/d96/classMAIN__Config.html#abc9328fbcaa9bdad08924c639722dac1">insertPlugin</a>($name, $filename) {
-<a name="l00081"></a>00081                 $this-&gt;<a class="code" href="../../dc/d96/classMAIN__Config.html#a636818348ea40ca509c190c004c89119">updateFromFile</a>($filename, <span class="stringliteral">&quot;plugin_$name&quot;</span>);
+<a name="l00081"></a>00081                 <span class="keywordflow">return</span> $this-&gt;<a class="code" href="../../dc/d96/classMAIN__Config.html#a636818348ea40ca509c190c004c89119">updateFromFile</a>($filename, <span class="stringliteral">&quot;plugin_$name&quot;</span>);
 <a name="l00082"></a>00082         }
 <a name="l00083"></a>00083 
 <a name="l00093"></a><a class="code" href="../../dc/d96/classMAIN__Config.html#a636818348ea40ca509c190c004c89119">00093</a>         <span class="keyword">public</span> function <a class="code" href="../../dc/d96/classMAIN__Config.html#a636818348ea40ca509c190c004c89119">updateFromFile</a>($filename, $name = <span class="stringliteral">&apos;&apos;</span>) {
 <a name="l00094"></a>00094                 <span class="comment">// Check the filename and return if already exists AND</span>
 <a name="l00095"></a>00095                 <span class="comment">// is not a normal file.</span>
 <a name="l00096"></a>00096                 <span class="keywordflow">if</span>(file_exists($filename) &amp;&amp; !is_file($filename)) {
-<a name="l00097"></a>00097                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00097"></a>00097                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#a8dd94ca1db9a48b21bad30ed114e7fbe">MAIN_Error::ERROR</a>, <span class="stringliteral">&apos;MAIN_Config::updateFromFile&apos;</span>, <span class="stringliteral">&quot;$filename does not exist.&quot;</span>);
 <a name="l00098"></a>00098                 } <a class="code" href="../../dc/d96/classMAIN__Config.html#a25b93ec03bb1cffdfaf33b9f9b60e853">$options</a> = parse_ini_file($filename, <span class="keyword">true</span>);
 <a name="l00099"></a>00099 
 <a name="l00100"></a>00100                 <span class="comment">// Check if the file failed to open,</span>
 <a name="l00101"></a>00101                 <span class="comment">// then check if it is writable.</span>
 <a name="l00102"></a>00102                 <span class="keywordflow">if</span>(<a class="code" href="../../dc/d96/classMAIN__Config.html#a25b93ec03bb1cffdfaf33b9f9b60e853">$options</a> === <span class="keyword">false</span>) {
-<a name="l00103"></a>00103                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00103"></a>00103                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#a8dd94ca1db9a48b21bad30ed114e7fbe">MAIN_Error::ERROR</a>, <span class="stringliteral">&apos;MAIN_Config::updateFromFile&apos;</span>, <span class="stringliteral">&quot;$filename failed to open.&quot;</span>);
 <a name="l00104"></a>00104                 } elseif($name == <span class="stringliteral">&apos;&apos;</span>) {
 <a name="l00105"></a>00105                         $this-&gt;options = <a class="code" href="../../dc/d96/classMAIN__Config.html#a25b93ec03bb1cffdfaf33b9f9b60e853">$options</a>;
 <a name="l00106"></a>00106                 } <span class="keywordflow">else</span> {
@@ -74,16 +74,16 @@
 <a name="l00120"></a>00120                 <span class="comment">// is not a normal file.</span>
 <a name="l00121"></a>00121                 $filename = realpath($filename);
 <a name="l00122"></a>00122                 <span class="keywordflow">if</span>(file_exists($filename) &amp;&amp; !is_file($filename)) {
-<a name="l00123"></a>00123                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00123"></a>00123                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#a8dd94ca1db9a48b21bad30ed114e7fbe">MAIN_Error::ERROR</a>, <span class="stringliteral">&apos;MAIN_Config::updateToFile&apos;</span>, <span class="stringliteral">&quot;$filename does not exist.&quot;</span>);
 <a name="l00124"></a>00124                 } $file = fopen($filename, <span class="charliteral">&apos;w&apos;</span>);
 <a name="l00125"></a>00125 
 <a name="l00126"></a>00126                 <span class="comment">// Check if the file failed to open,</span>
 <a name="l00127"></a>00127                 <span class="comment">// then check if it is writable.</span>
 <a name="l00128"></a>00128                 <span class="keywordflow">if</span>($file === <span class="keyword">false</span>) {
-<a name="l00129"></a>00129                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00129"></a>00129                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#a8dd94ca1db9a48b21bad30ed114e7fbe">MAIN_Error::ERROR</a>, <span class="stringliteral">&apos;MAIN_Config::updateToFile&apos;</span>, <span class="stringliteral">&quot;$filename failed to open.&quot;</span>);
 <a name="l00130"></a>00130                 } elseif(!is_writable($filename)) {
 <a name="l00131"></a>00131                         fclose($file);
-<a name="l00132"></a>00132                         <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00132"></a>00132                         <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d4/d5e/classMAIN__Error.html">MAIN_Error</a>(<a class="code" href="../../d4/d5e/classMAIN__Error.html#a8dd94ca1db9a48b21bad30ed114e7fbe">MAIN_Error::ERROR</a>, <span class="stringliteral">&apos;MAIN_Config::updateToFile&apos;</span>, <span class="stringliteral">&quot;$filename is not writeable.&quot;</span>);
 <a name="l00133"></a>00133                 }
 <a name="l00134"></a>00134 
 <a name="l00135"></a>00135                 $lines = array();
@@ -110,7 +110,7 @@
 <a name="l00156"></a>00156 }
 <a name="l00157"></a>00157 
 </pre></div></div>
-<hr size="1"/><address style="text-align: right;"><small>Generated on Thu Jan 28 21:25:45 2010 for WebApi by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue Feb 9 23:28:14 2010 for WebApi by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
