@@ -18,10 +18,11 @@ try {
 	MAIN_Autoloader::loadFile(ROOTDIR . '/custom.php');
 	foreach(scandir(ROOTDIR . '/plugins') as $filename) {
 		if(substr($filename, -5) == '.conf') {
-			$config->insertPlugin(substr($filename, 0, -5),
-			                      ROOTDIR . '/plugins/$filename');
 			$plugin = ROOTDIR . '/plugins/' . substr($filename, 0, -5) . '.php';
 			MAIN_Autoloader::loadFile($plugin);
+			$retval = $config->insertPlugin(substr($filename, 0, -5),
+			                      ROOTDIR . '/plugins/$filename');
+			if($retval instanceof MAIN_Error) throw $retval;
 		}
 	}
 		

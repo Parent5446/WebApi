@@ -1,0 +1,10 @@
+There must be a configuration file, even if blank, named <name of plugin>.conf,
+replacing <name of plugin> with the name of the plugin. Furthermore, a file with
+the same name except with a php extension (<name of plugin>.php) must contain the
+PHP code for the plugin.
+
+Before creating a plugin, be sure to check out the interface for WebApi compatible
+plugins in app/main/Config.php. This interface is for easy implementation of plugins.
+It is not mandatory for a plugin to implement this interface, but it is to the
+developer's advantage. IF YOU DECIDE TO USE THIS INTERFACE, YOUR MAIN PLUGIN CLASS
+MUST BE NAMED "PLUGIN_<name of plugin>", JUST HOW IT WAS IN THE FILE NAMES.

@@ -78,7 +78,46 @@ class MAIN_Config
 	 * @return bool True on success, false on failure
 	 */
 	public function insertPlugin($name, $filename) {
-		return $this->updateFromFile($filename, "plugin_$name");
+		$retval = $this->updateFromFile($filename, "plugin_$name");
+		if($retval instanceof MAIN_Error) {
+			return $retval;
+		}
+
+		$classname = "PLUGIN_$name";
+		if(class_exists($classname) && in_array('MAIN_Plugin', class_implements($classname))) {
+			// Plugin is a WebApi-compatible plugin, load object.
+			try {
+				$this->plugins[$name] = new $classname($this);
+			} catch(MAIN_Error $err) {
+				// Catch error and return it.
+				return $err;
+			}
+		} return true;
+	}
+
+	/**
+	 * Runs a hook on every loaded plugin.	
+	 *
+	 * For each plugin, runs the runHook function on the plugin. If it returns
+	 * false, cease the process and immediately return false. If true, continue
+	 * with the remaining plugins.
+	 *
+	 * @param string $name Name of the hook
+	 * @param array  $args Arguments for the hook
+	 *
+	 * @return bool True on success, false on failure, error, etc.
+	 */
+	public function runHook($name, $args = array()) {
+		if(!is_string($name) || !is_array($args)) {
+			return new MAIN_Error(MAIN_Error::ERROR, 'MAIN_Config::runHook',
+			                      "Incorrect parameter type given for hook $name.");
+		}
+
+		$retval = true;
+		foreach($this->plugins as $name => &$plugin) {
+			$retval = $plugin->runHook($name, $args);
+			if($retval === false) break;
+		} return (bool) $retval;
 	}
 
 	/**
@@ -155,3 +194,46 @@ class MAIN_Config
 	}
 }
 
+/**
+ * Interface for compatible WebApi classes. Determines what functions are necessary
+ * for MAIN_Config to be able to interact with the plugin when hooks are called.
+ *
+ * @package API
+ * @author Tyler Romeo <tylerromeo@gmail.com>
+ * @license http://opensource.org/licenses/gpl-3.0.html GNU General Public License 3.0
+ * @copyright Copyright (c) 2009, Tyler Romeo (Some Rights Reserved)
+ */
+interface MAIN_Plugin
+{
+	/**
+	 * Check for a valid WebApi class plugin.
+	 */
+	static const WEBAPI = true;
+
+	/**
+	 * Stores the configuration and performs other instantiation tasks.
+	 *
+	 * @param object &$config MAIN_Config object
+	 */
+	public function __construct(&$config);
+
+	/**
+	 * Run the hook $name, with the given arguments $args.
+	 *
+	 * First determines whether the hook is applicable for this plugin. If so,
+	 * it then handles the hook as necessary. Check the context of the hook
+	 * to determine which arguments are passed by reference so they can be
+	 * changed.
+	 *
+	 * The return value of this function MUST be boolean. If false, the hook
+	 * will cease immediately and return to the calling function. If true,
+	 * the hook will be run on the remaining plugins until complete. The
+	 * MAIN_Config::runHooks returns false if any plugin returns false.
+	 *
+	 * @param string $name Name of the hook being run
+	 * @param array  $args Arguments given for the hook
+	 *
+	 * @return bool True on success, false on failure
+	 */
+	public function runHook($name, $args = array());
+}
